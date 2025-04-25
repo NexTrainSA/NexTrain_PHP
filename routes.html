@@ -19,7 +19,6 @@
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
 
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-
     </script>
 </head>
 
@@ -44,13 +43,13 @@
     </header>
 
     <section class="content">
-        <div class="search" style="display: flex; align-items: center; gap: 8px;">
-            <md-outlined-text-field id="search-main" label="Pesquisar" style="flex: 1;"></md-outlined-text-field>
-            <md-filled-tonal-icon-button>
-                <md-icon class="error-icon-color">send</md-icon>
-            </md-filled-tonal-icon-button>
+        <div class="search">
+            <md-outlined-text-field id="search-main" label="Pesquisar" value="Exemplo"></md-outlined-text-field>
         </div>
+
         <div class="last-trains">
+
+
             <div class="card-train">
                 <md-filled-tonal-icon-button style="width: 18%;">
                     <md-icon class="subway-icon-color">directions_subway</md-icon>
@@ -63,118 +62,138 @@
                         </div>
                     </div>
                 </div>
-                <div class="train-status-box">
-                    <div class="centered-train-status-box">
-                        <span id="train-status">Embarque</span>
-                    </div>
-                </div>
+
             </div>
+
             <div class="card-train">
                 <md-filled-tonal-icon-button style="width: 18%;">
                     <md-icon class="subway-icon-color">directions_subway</md-icon>
                 </md-filled-tonal-icon-button>
                 <div class="train-text">
                     <div>
-                        <span id="train-name">DB 9360</span>
+                        <span id="train-name">DB 9360
+
+                        </span>
                         <div>
                             <span id="train-route">Trecho 3 para Trecho 4</span>
                         </div>
                     </div>
                 </div>
-                <div class="train-status-box">
-                    <div class="centered-train-status-box">
-                        <span id="train-status">Chegando</span>
-                    </div>
-                </div>
+
             </div>
-        </div>
-
-        </div>
-        <span class="category">Informações</span>
-
-        <div class="info">
-            <div class="card-train" id="card-status-train">
+            
+            <div class="card-train">
                 <md-filled-tonal-icon-button style="width: 18%;">
-                    <md-icon class="error-icon-color">error</md-icon>
+                    <md-icon class="subway-icon-color">directions_subway</md-icon>
                 </md-filled-tonal-icon-button>
                 <div class="train-text">
                     <div>
-                        <span id="train-name">Taxa de Atraso</span>
-                        <div>
+                        <span id="train-name">DB 9360
 
-                            <span id="train-route">3% </span>
+                        </span>
+                        <div>
+                            <span id="train-route">Trecho 3 para Trecho 4</span>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <div class="card-train" id="card-status-train">
+            <div class="card-train">
+                <md-filled-tonal-icon-button style="width: 18%;">
+                    <md-icon class="subway-icon-color">directions_subway</md-icon>
+                </md-filled-tonal-icon-button>
                 <div class="train-text">
                     <div>
-                        <span id="train-name">Próximo Trem</span>
+                        <span id="train-name">DB 9360
+                        </span>
                         <div>
-                            <span id="train-route">3 min</span>
+                            <span id="train-route">Trecho 3 para Trecho 4</span>
                         </div>
                     </div>
                 </div>
 
             </div>
+
+            <div class="card-train">
+                <md-filled-tonal-icon-button style="width: 18%;">
+                    <md-icon class="subway-icon-color">directions_subway</md-icon>
+                </md-filled-tonal-icon-button>
+                <div class="train-text">
+                    <div>
+                        <span id="train-name">DB 9360
+                        </span>
+                        <div>
+                            <span id="train-route">Trecho 3 para Trecho 4</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-train">
+                <md-filled-tonal-icon-button style="width: 18%;">
+                    <md-icon class="subway-icon-color">directions_subway</md-icon>
+                </md-filled-tonal-icon-button>
+                <div class="train-text">
+                    <div>
+                        <span id="train-name">DB 9360
+                        </span>
+                        <div>
+                            <span id="train-route">Trecho 3 para Trecho 4</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-train">
+                <md-filled-tonal-icon-button style="width: 18%;">
+                    <md-icon class="subway-icon-color">directions_subway</md-icon>
+                </md-filled-tonal-icon-button>
+                <div class="train-text">
+                    <div>
+                        <span id="train-name">DB 9360
+
+                        </span>
+                        <div>
+                            <span id="train-route">Trecho 3 para Trecho 4</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-train">
+                <md-filled-tonal-icon-button style="width: 18%;">
+                    <md-icon class="subway-icon-color">directions_subway</md-icon>
+                </md-filled-tonal-icon-button>
+                <div class="train-text">
+                    <div>
+                        <span id="train-name">DB 9360
+
+                        </span>
+                        <div>
+                            <span id="train-route">Trecho 3 para Trecho 4</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="alerts" id="card-status-train">
-            <span class="category">Alertas Recentes</span>
 
-            <div class="alerts-box">
-                <md-list style="max-width: 300px">
-                    <md-list-item>
-                        <div id="alert">
-                            <md-icon id="alert-badge-warn">notifications</md-icon>
-                            <span id="alert-text">Engarrafamento em Trecho 2</span>
-                        </div>
-                    </md-list-item>
 
-                    <md-list-item>
-                        <div id="alert">
-                            <md-icon id="alert-badge-critical">error</md-icon>
-                            <span id="alert-text">Queda de Energia em Trecho 1</span>
-                        </div>
-                    </md-list-item>
 
-                    <md-list-item>
-                        <div id="alert">
-                            <md-icon id="alert-badge-normal">cloud</md-icon>
-                            <span id="alert-text">Chuva Intensa em Trecho 4</span>
-                        </div>
-                    </md-list-item>
-                </md-list>
-            </div>
-            <div class="info">
-            </div>
-        </div>
+
+
+
     </section>
 
-    <footer style="display: flex; justify-content: space-around; align-items: center; padding: 16px;">
-        <div style="text-align: center;">
-            <md-filled-tonal-icon-button style="width: 100%;">
-                <md-icon class="error-icon-color">location_on</md-icon>
-            </md-filled-tonal-icon-button>
-            <span>Informações</span>
-        </div>
-        <div style="text-align: center;">
-            <md-filled-tonal-icon-button style="width: 100%;">
-                <md-icon class="error-icon-color">bookmark</md-icon>
-            </md-filled-tonal-icon-button>
-            <span>Rotas</span>
-        </div>
-        <div style="text-align: center;">
-            <md-filled-tonal-icon-button style="width: 100%;">
-                <md-icon class="error-icon-color">home_repair_service</md-icon>
-            </md-filled-tonal-icon-button>
-            <span>Manutenção</span>
-        </div>
+    <footer>
+        <h2>footer</h2>
     </footer>
-
     <style>
         form {
             display: flex;

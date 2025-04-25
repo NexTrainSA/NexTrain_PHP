@@ -46,8 +46,28 @@ md-outlined-text-field#search-main {
     margin-top: 8px;
 }
 
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-train#card-status-train {
+    width: 48%;
+    margin: 5px;
+}
+
+@media screen and (max-width: 420px) {
+    .info {
+        flex-direction: column;
+    }
+    
+    .card-train#card-status-train {
+        width: 39vh;
+    }
+}
+
 footer {
-    background-color: red;
+    background-color: rgba(189, 189, 189, 0.565);
     display: flex;
 }
 
@@ -79,7 +99,10 @@ div.train-status-box {
 
 div.centered-train-status-box {
     text-align: center;
-    /* TODO: Centralizar a div */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 span#train-status {
@@ -88,4 +111,49 @@ span#train-status {
     font-family: "Roboto";
     font-size: 3.5vw;
     padding: 5px;
+}
+
+span.category {
+    margin: 20px 0px; 
+    font-family: Roboto; 
+    font-weight: 500; 
+    color: #1D1B20; 
+    font-size: medium;
+}
+
+div.alerts-box {
+    background-color: #FEF7FF;
+}
+
+div#alert {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+span#alert-text {
+    font-family: Roboto;
+    font-size: small;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+
+md-icon#alert-badge-critical {
+    background-color: #FFD8E4;
+    border: 8px solid #FFD8E4;
+    border-radius: 25px;
+}
+
+md-icon#alert-badge-warn {
+    background-color: #F9DEDC;
+    border: 8px solid #F9DEDC;
+    border-radius: 25px;
+}
+
+md-icon#alert-badge-normal {
+    background-color: #CAC4D0;
+    border: 8px solid #CAC4D0;
+    border-radius: 25px;
 }
