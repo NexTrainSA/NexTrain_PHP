@@ -1,3 +1,10 @@
+body {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
 h1.center {
     text-align: center;
     font-family: 'Roboto';
@@ -157,3 +164,25 @@ md-icon#alert-badge-normal {
     border: 8px solid #CAC4D0;
     border-radius: 25px;
 }
+
+#body_initial {
+    background-color: #ffc61a;
+}
+#initial_page {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0; 
+}
+
+.container {
+    text-align: center; 
+    font-size: 40px;
+    color:#372a28;
+}
+.cal-sans-regular {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700 ;
+    font-style: italic;;
+  }
