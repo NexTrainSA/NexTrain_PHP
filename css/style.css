@@ -9,7 +9,7 @@ div.app-title {
 }
 
 nav#top-navbar {
-    background-color: #fce9ff;
+    background-color: rgb(255, 208, 0);
     align-items: center;
     justify-content: space-between;
     display: flex;

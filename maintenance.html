@@ -42,15 +42,19 @@
     </nav>
   </header>
 
-  <span class="category">Chamados em Aberto</span>
-  <span class="alerts-box">
+  <div class="last-trains">
+    <div class="card-train">
+        </md-filled-tonal-icon-button>
+        <div class="train-text">
+            <div>
+                <span id="train-name">Chamados em Aberto</span>
   
 
 
     <md-list style="max-width: 300px;">
         <md-list-item>
           <div id="alert">
-            <span id="alert-text">Trilhos Danificados no Trecho 5</span><md-checkbox
+            <span id="train-route">Trecho 1 para Trecho 5</span><md-checkbox
               touch-target="wrapper"></md-checkbox>
           </div>
         </md-list-item>
@@ -69,19 +73,7 @@
           </div>
         </md-list-item>
 
-
-
-        <div class="last-trains">
-          <div class="card-train">
-              </md-filled-tonal-icon-button>
-              <div class="train-text">
-                  <div>
-                      <span id="train-name">DB 8598</span>
-                      <div>
-                          <span id="train-route">Trecho 1 para Trecho 2</span>
-                      </div>
-                  </div>
-              </div>
+              
   
   
 
@@ -102,13 +94,39 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 16px;
+            gap: 30px;
           }
         </style>
+        
 
 
     </div>
+
   </span>
 </body>
+<footer style="display: flex; justify-content: space-around; align-items: center; padding: 16px;">
+  <div style="text-align: center;">
+      <md-filled-tonal-icon-button style="width: 100%;">
+          <md-icon class="error-icon-color">location_on</md-icon>
+      </md-filled-tonal-icon-button>
+      <span>Informações</span>
+  </div>
+  <div style="text-align: center;">
+      <a href="routes.html" id="routes-button" class="button">
+          <md-filled-tonal-icon-button style="width: 100%;">
+              <md-icon class="error-icon-color">bookmark</md-icon>
+          </md-filled-tonal-icon-button>
+      </a>
+      <span>Rotas</span>
+  </div>
+  <div style="text-align: center;">
+      <a href="maintenance.html" id="maintenance-button" class="button">
+          <md-filled-tonal-icon-button style="width: 100%;">
+              <md-icon class="error-icon-color">home_repair_service</md-icon>
+          </md-filled-tonal-icon-button>
+      </a>
+      <span>Manutenção</span>
+  </div>
+</footer>
 
 </html>
