@@ -1,6 +1,52 @@
-body {
+/*Teste:*/
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+
+html {
+    height: 100%;
     box-sizing: border-box;
+}
+
+body {
+    position: relative;
     width: 100%;
+    min-height: 100%;
     margin: 0 auto;
     padding: 0;
 }
@@ -74,7 +120,7 @@ md-outlined-text-field#search-main {
 }
 
 footer {
-    background-color: rgba(189, 189, 189, 0.565);
+    background-color: rgb(255, 208, 0);
     display: flex;
 }
 
@@ -116,7 +162,7 @@ span#train-status {
     font-style: normal;
     font-weight: 500;
     font-family: "Roboto";
-    font-size: 3.5vw;
+    font-size: 1.4vw;
     padding: 5px;
 }
 

@@ -24,28 +24,36 @@
 
     <body>
 
-        <header style="margin-left: -10px;">
+        <header>
             <nav id="top-navbar">
                 <div>
-
+                    <md-icon-button>
+                        <md-icon class="black">article</md-icon>
+                    </md-icon-button>
                 </div>
-                <div class="app-title">
-                    <h1 class="white center">NexTrain</h1>
-                </div>
-
-                <div></div>
             </nav>
         </header>
+        <div>
+        </div>
+        <section>
 
-        <section class="content" style="margin-top: 10%; border: 5px solid #FAFAFA; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 5px; margin-right: 15px;">
-            <h1 style="text-align: center; font-family: Roboto;">Login</h1>
-            <form name="loginForm" method="get" action="index.html" onsubmit="return validateForm()">
-                <md-outlined-text-field name="user" style="width: 100%;" label="Usuário" value=""></md-outlined-text-field>
-                <md-outlined-text-field name="pass" type="password" style="width: 100%;" label="Senha" value=""></md-outlined-text-field>
-
-                <md-outlined-button style="width: 100%;" type="submit">Enviar</md-outlined-button>
-            </form>
+            <h1 style="text-align: center; font-family: Roboto;">NEXTRAIN</h1>
+            <div class="login">
+                <span class="login">Login</span>
+               <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #292b2c;">
+                    <a class="navbar-brand">login</a>
+                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                        aria-expanded="false" aria-label="Toggle navigation"></button>
+                </nav>
+                    <div style="text-align: center;">
+                        <a href="routes.html" id="routes-button" class="button">
+                            <md-filled-tonal-icon-button style="width: 100%;">
+            </div>
         </section>
+        <div>
+        </div>
+        <md-divider></md-divider>
+        <span class="continue">or continue with</span>
 
         <style>
         form {
@@ -55,13 +63,8 @@
             gap: 16px;
         }
         body {
-            background-color: rgb(169, 13, 169);
-        }
-
-        nav#top-navbar {
-            background-color: rgb(140, 6, 140) !important;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
+            background-color: rgb(255, 211, 18);
+        
         }
 
         h1.white {
