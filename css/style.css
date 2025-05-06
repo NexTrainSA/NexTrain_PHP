@@ -1,64 +1,109 @@
-/*Teste:*/
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
-  
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
-
-
 html {
     height: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html.dark-mode {
+    background-color: black;
+    color: black;
 }
 
 body {
+    /*Modo claro*/
+    max-width: 100%;
     position: relative;
     width: 100%;
     min-height: 100%;
     margin: 0 auto;
     padding: 0;
+    overflow-x: hidden;
+}
+
+body.dark-mode {
+    background-color: black;
+    color: black;
+}
+
+body.dark-mode h3 {
+    margin: 20px 0px;
+    font-family: Roboto;
+    font-weight: 500;
+    color: white;
+    font-size: medium;
+}
+
+/*Menu do topo*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    background-color: #219ebc;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+    color: #023047;
+}
+
+.sidenav a:hover {
+    color: black;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+md-icon.black{
+    color: #023047;
 }
 
 h1.center {
     text-align: center;
-    font-family: 'Roboto';
 }
 
 div.app-title {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+}
+
+div.app-title img {
+    max-width: 100%;
+    width: 300px;
+    display: block;
+}
+
+div.app-title span {
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
 }
 
 nav#top-navbar {
@@ -67,11 +112,53 @@ nav#top-navbar {
     justify-content: space-between;
     display: flex;
     width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.searchbar {
+    padding: 3px;
+    display: flex;
+    gap: 20px;
+}
+
+.searchbar input[type="text"] {
+    padding: 10px;
+    border: none;
+    font-size: 17px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 600px) {
+    .searchbar input[type="text"] {
+        width: 100%;
+    }
+}
+
+button.fixed-btn {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: rgb(255, 208, 0);
+    color: black;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 9999;
 }
 
 header {
-    position: relative; 
-    margin: 0; padding: 0;
+    position: relative;
+    margin: 0;
+    padding: 0;
     gap: 0;
 }
 
@@ -82,15 +169,25 @@ md-icon.black {
 section.content {
     display: grid;
     padding: 10px;
-    background-color: #FEF7FF;
+    padding-top: 110px;
+    padding-bottom: 120px;
+    color: #023047;
 }
 
 md-outlined-text-field#search-main {
     width: 100%;
 }
 
+md-filled-tonal-icon-button.custom-button {
+    --md-sys-color-secondary-container: #219ebc;
+  }
+
+.custom-icon {
+    color: #023047;
+}
+
 .card-train {
-    background-color: #FEF7FF;
+    background-color: rgb(255, 242, 185);
     border: 1px solid #ECE6F0;
     border-radius: 12px;
     padding: 15px;
@@ -113,7 +210,7 @@ md-outlined-text-field#search-main {
     .info {
         flex-direction: column;
     }
-    
+
     .card-train#card-status-train {
         width: 45vh;
     }
@@ -166,23 +263,26 @@ span#train-status {
     padding: 5px;
 }
 
-span.category {
-    margin: 20px 0px; 
-    font-family: Roboto; 
-    font-weight: 500; 
-    color: #1D1B20; 
+h3 {
+    margin: 20px 0px;
+    font-family: Roboto;
+    font-weight: 500;
+    color: #1D1B20;
     font-size: medium;
 }
 
-div.alerts-box {
-    background-color: #FEF7FF;
-}
-
-div#alert {
+div.alerts {
     padding: 10px;
     display: flex;
     align-items: center;
     gap: 8px;
+    background-color: rgb(255, 242, 185)
+}
+
+div.alerts-box {
+    background-color: rgb(255, 242, 185);
+    border-radius: 8px;
+    padding: 10px;
 }
 
 span#alert-text {
@@ -214,21 +314,25 @@ md-icon#alert-badge-normal {
 #body_initial {
     background-color: #ffc61a;
 }
+
 #initial_page {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-    margin: 0; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 .container {
-    text-align: center; 
+    text-align: center;
     font-size: 40px;
-    color:#372a28;
+    color: #372a28;
 }
+
+
 .cal-sans-regular {
     font-family: "Montserrat", sans-serif;
-    font-weight: 700 ;
-    font-style: italic;;
-  }
+    font-weight: 700;
+    font-style: italic;
+    ;
+}

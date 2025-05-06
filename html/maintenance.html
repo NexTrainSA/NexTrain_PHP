@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script type="importmap">
+        {
+            "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+            }
+        }
+        </script>
+<script type="module">
+    import '@material/web/all.js';
+    import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+</script>
+
+<body>
+    <header> <!--Menu no topo da página (repete-se em todas as páginas)-->
+        <nav id="top-navbar">
+            <div>
+                <md-icon-button onclick="openNav()">
+                    <md-icon class="black">menu</md-icon>
+                </md-icon-button>
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="index.html">Dashboard</a>
+                    <a href="route.html">Rotas</a>
+                    <a href="notification.html">Notificações</a>
+                    <a href="reports.html">Análises</a>
+                </div>
+            </div>
+            <div class="app-title">
+                <img src="../imagens/logo.png">
+                <span>NexTrain</span>
+            </div>
+            <a href="user.html" style="margin-right: 8px;"> <!--Botão do usuário no topo direito-->
+                <i class="fas fa-user" style="font-size:24px; color: black;"></i>
+            </a>
+        </nav>
+    </header>
+
+    <button class="fixed-btn" onclick="toggleDarkMode()">Modo Escuro</button>
+
+    <section class="content">
+
+        <div class="searchbar">
+            <input type="text" placeholder="Buscar..." style="background-color: rgb(255, 242, 185); color: #023047;">
+            <md-filled-tonal-icon-button class="custom-button">
+                <md-icon class="custom-icon">send</md-icon>
+            </md-filled-tonal-icon-button>
+        </div>
+
+        <h3>Cuidados imediatos</h3>
+        <div class="card-train">
+            <md-icon id="alert-badge-critical">error</md-icon>
+            </md-filled-tonal-icon-button>
+            <div class="train-text">
+                <div>
+                    <span id="train-name">Queda de energia</span>
+                    <div>
+                        <span id="train-route">Queda de energia no Trecho 1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-train">
+            <md-icon id="alert-badge-critical">error</md-icon>
+            </md-filled-tonal-icon-button>
+            <div class="train-text">
+                <div>
+                    <span id="train-name">Queda de energia</span>
+                    <div>
+                        <span id="train-route">Queda de energia no Trecho 1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <h3>Alertas de Manutenção</h3>
+        <div class="malfunction">
+            <div class="card-train">
+                <i class="fa fa-close" style="font-size:80px; color: #023047;"></i>
+                <div>
+                    <div class="train-text">
+                        <span id="train-name">Alerta de Manutenção</span>
+                        <div>
+                            <span id="train-route">Trem D654 não iniciou manutenção</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="malfunction">
+            <div class="card-train">
+                <i class="fa fa-close" style="font-size:80px; color: #023047;"></i>
+                <div>
+                    <div class="train-text">
+                        <span id="train-name">Alerta de Manutenção</span>
+                        <div>
+                            <span id="train-route">Trem DZ213 não iniciou manutenção</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="malfunction">
+            <div class="card-train">
+                <i class="fa fa-check-circle" style="font-size: 80px; color: #023047;"></i>
+                <div>
+                    <div class="train-text">
+                        <span id="train-name">Alerta de Manutenção</span>
+                        <div>
+                            <span id="train-route">Trem D654 já está operando</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="malfunction">
+            <div class="card-train">
+                <i class='fas fa-exclamation-triangle' style='font-size: 80px; color: #023047;'></i>
+                <div class="train-text">
+                    <div>
+                        <span id="train-name">Alerta de Manutenção</span>
+                        <div>
+                            <span id="train-route">Trem D098 está em processo de manutenção</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer
+        style="background-color: rgb(255, 208, 0); width: 100%;position: fixed; bottom: 0; justify-content: center; align-items: center; height: 80px; margin-top: 50px;">
+        <p>&copy; 2025 SA NexTrain. Todos os direitos reservados.</p>
+    </footer>
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "400px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+
+</body>
+
+</html>
