@@ -4,11 +4,6 @@ html {
     overflow-x: hidden;
 }
 
-html.dark-mode {
-    background-color: black;
-    color: black;
-}
-
 body {
     /*Modo claro*/
     max-width: 100%;
@@ -20,6 +15,10 @@ body {
     overflow-x: hidden;
 }
 
+main {
+    flex: 1;
+}
+
 body.dark-mode {
     background-color: black;
     color: white;
@@ -27,16 +26,11 @@ body.dark-mode {
 
 body.dark-mode h3 {
     margin: 20px 0px;
-    font-family: Roboto;
     font-weight: 500;
     color: white;
     font-size: medium;
 }
 
-main {
-    flex: 1;
-}
-/*Menu do topo*/
 #sidebar {
     position: fixed;
     top: 0;
@@ -351,4 +345,5 @@ footer {
     align-items: center; 
     height: 80px; 
     margin-top: 50px;
+    color: black;
 }
