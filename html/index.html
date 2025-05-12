@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!--  Fontes e Estilos:  -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script type="importmap">
         {
             "imports": {
@@ -28,61 +31,31 @@
     <header> <!--Menu no topo da página (repete-se em todas as páginas)-->
         <nav id="top-navbar">
             <div>
-                <md-icon-button onclick="openNav()">
-                    <md-icon class="black">menu</md-icon>
+                <md-icon-button onclick="openNav()"> <!--  Botão para abrir sidebar  -->
+                    <!--  Aqui vai o ícone  -->
                 </md-icon-button>
-                <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="../html/maintenance.html">Manutenção</a>
-                    <a href="../html/routes.html">Rotas</a>
-                    <a href="../html/notification.html">Notificações</a>
-                    <a href="../html/reports.html">Análises</a>
-                </div>
+                
             </div>
             <div class="app-title">
                 <img src="../imagens/logo.png">
                 <span>NexTrain</span>
             </div>
-            <a href="user.html" style="margin-right: 8px;"> <!--Botão do usuário no topo direito-->
-                <i class="fas fa-user" style="font-size:24px; color: #023047;"></i>
-            </a>
+            <button type="button" id="dark-mode-button" onclick="toggleDarkMode()"> <!--Botão do usuário no topo direito-->
+                <i class="fas fa-user" style="font-size:24px; color: black;"></i>
+            </button>
         </nav>
     </header>
 
-    <button class="fixed-btn" onclick="toggleDarkMode()">Modo Escuro</button>
     <section class="content"> <!--Conteúdo da página-->
 
-        <div class="searchbar">
-            <input type="text" placeholder="Buscar..." style="background-color: rgb(255, 242, 185); color: #023047;">
-            <md-filled-tonal-icon-button class="custom-button">
-                <md-icon class="custom-icon">send</md-icon>
-            </md-filled-tonal-icon-button>
-        </div>
+            <div class="last-trains"> <!--  Informações dos trechos:  -->  
 
-        <div class="last-trains">
-            <div class="card-train">
-                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #219ebc;">
-                    <md-icon class="subway-icon-color" style="color: #023047;">directions_subway</md-icon>
-                </md-filled-tonal-icon-button>
-                <div class="train-text">
-                    <div>
-                        <span id="train-name">DB 8598</span>
-                        <div>
-                            <span id="train-route">Trecho 1 para Trecho 2</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="train-status-box">
-                    <div class="centered-train-status-box">
-                        <span id="train-status">Embarque</span>
-                    </div>
-                </div>
-            </div>
+                <h3>Seus trechos</h3>
 
-            <div class="last-trains">
-                <div class="card-train">
-                    <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #219ebc;">
-                        <md-icon class="subway-icon-color" style="color: #023047;">directions_subway</md-icon>
+                <!--  Card:  -->
+                <div class="card-train"> 
+                    <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
+                        <md-icon class="subway-icon-color" style="color: #415a77;">directions_subway</md-icon>
                     </md-filled-tonal-icon-button>
                     <div class="train-text">
                         <div>
@@ -92,16 +65,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="train-status-box">
-                        <div class="centered-train-status-box">
-                            <span id="train-status">Embarque</span>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="card-train">
-                    <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #219ebc;">
-                        <md-icon class="subway-icon-color" style="color: #023047;">directions_subway</md-icon>
+                
+                <!--  Card:  -->
+                <div class="card-train"> 
+                    <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
+                        <md-icon class="subway-icon-color" style="color: #415a77;">directions_subway</md-icon>
                     </md-filled-tonal-icon-button>
                     <div class="train-text">
                         <div>
@@ -111,79 +80,48 @@
                             </div>
                         </div>
                     </div>
-                    <div class="train-status-box">
-                        <div class="centered-train-status-box">
-                            <span id="train-status">Chegando</span>
-                        </div>
-                    </div>
                 </div>
-            </div>
 
-            <br> <!--Espaçamente-->
-
-            <h3>Informações</h3>
-            <div class="info">
-                <div class="card-train" id="card-status-train">
-                    <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #219ebc;">
-                        <md-icon class="error-icon-color" style="color: #023047;">error</md-icon>
-                    </md-filled-tonal-icon-button>
-                    </md-filled-tonal-icon-button>
-                    <div class="train-text">
-                        <div>
-                            <span id="train-name">Taxa de Atraso</span>
-                            <div>
-                                <span id="train-route">3% </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-train" id="card-status-train">
-                    <div class="train-text">
-                        <div>
-                            <span id="train-name">Próximo Trem</span>
-                            <div>
-                                <span id="train-route">3 min</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <br> <!--Espaçamente-->
-
-            <h3>Informações</h3>
-            <div class="info">
-                <div class="card-train" id="card-status-train">
-                    <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #219ebc;">
-                        <md-icon class="error-icon-color" style="color: #023047;">error</md-icon>
-                    </md-filled-tonal-icon-button>
-                    <div class="train-text">
-                        <div>
-                            <span id="train-name">Taxa de Atraso</span>
-                            <div>
-                                <span id="train-route">3% </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-train" id="card-status-train">
-                    <div class="train-text">
-                        <div>
-                            <span id="train-name">Próximo Trem</span>
-                            <div>
-                                <span id="train-route">3 min</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> <!--  Fim das Informações  -->
 
             <br> <!--Espaçamento-->
 
-            <div class="alert" id="card-status-train"> <!--Alertas recentes-->
+            <!--  Informações breves  -->
+            <h3>Informações</h3>
+            <div class="info">
+                <div class="card-train" id="card-status-train">
+                    <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
+                        <md-icon class="error-icon-color" style="color: #415a77;">error</md-icon>
+                    </md-filled-tonal-icon-button>
+                    <div class="train-text">
+                        <div>
+                            <span id="train-name">Taxa de Atraso</span>
+                            <div>
+                                <span id="train-route">3% </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-train" id="card-status-train">
+                    <div class="train-text">
+                        <div>
+                            <span id="train-name">Próximo Trem</span>
+                            <div>
+                                <span id="train-route">3 min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  Fim das Informações  -->
+
+            <br> <!--Espaçamento-->
+
+            <!--  Início dos Alertas recentes:  -->
+            <div class="alert" id="card-status-train"> 
                 <h3>Alertas recentes</h3>
                 <div class="alerts-box">
-                    <md-list style="max-width: 300px; background-color: rgb(255, 242, 185);">
+                    <md-list style="max-width: 300px; background-color: #778da9;">
                         <md-list-item>
                             <div id="alert">
                                 <md-icon id="alert-badge-warn">notifications</md-icon>
@@ -208,15 +146,20 @@
                     </md-list>
                 </div>
             </div>
+            <!--  Fim dos Alertas  -->
 
     </section>
+    <!--  Fim do Conteúdo -->
 
     <footer>
         <p>&copy; 2025 SA NexTrain. Todos os direitos reservados.</p>
     </footer>
 
+    <!--  Scripts:  -->
     <script src="../js/dark_mode.js"></script>
     <script src="../js/sidebar.js"></script>
+    <!--  Fim dos Scripts  -->
+      
 </body>
 
 </html>

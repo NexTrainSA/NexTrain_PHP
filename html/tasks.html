@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!--  Fontes e Estilos:  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="importmap">
+        {
+            "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+            }
+        }
+        </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+</head>
+
+<body>
+
+    <header> <!--Menu no topo da página (repete-se em todas as páginas)-->
+        <nav id="top-navbar">
+            <div>
+                <md-icon-button onclick="openNav()"> <!--  Botão para abrir sidebar  -->
+                    <!--  Aqui vai o ícone  -->
+                </md-icon-button>
+                
+            </div>
+            <div class="app-title">
+                <img src="../imagens/logo.png">
+                <span>NexTrain</span>
+            </div>
+            <button type="button" id="dark-mode-button" onclick="toggleDarkMode()"> <!--Botão do usuário no topo direito-->
+                <i class="fas fa-user" style="font-size:24px; color: black;"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="content"> <!--Conteúdo da página-->
+
+    </section>
+    <!--  Fim do Conteúdo -->
+
+    <footer>
+        <p>&copy; 2025 SA NexTrain. Todos os direitos reservados.</p>
+    </footer>
+
+    <!--  Scripts:  -->
+    <script src="../js/dark_mode.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <!--  Fim dos Scripts  -->
+      
+</body>
+
+</html>

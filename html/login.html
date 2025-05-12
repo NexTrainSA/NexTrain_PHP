@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  Fontes e Estilos:  -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <script src="./js/login.js"> </script>
     <script type="importmap">
+        
         {
             "imports": {
             "@material/web/": "https://esm.run/@material/web/"
@@ -23,9 +25,9 @@
     </script>
 </head>
 
-<body style="background-color: rgb(255, 208, 0);">
+<body style="background-color: #ffffff;">
     <section class="login-screen"
-        style="align-items: center; justify-content: center; background-color: rgb(255, 208, 0); display: flex;">
+        style="align-items: center; justify-content: center; background-color: #778da9; display: flex;">
         <div class="app-title">
             <img src="../imagens/logo.png" style="width: 100%; margin-top: 20px;">
             <span style="font-size: 60px;">NexTrain</span>
@@ -33,21 +35,22 @@
     </section>
     <br>
 
-    <div>
-        <div class="search-login-screen" style="display: flex; align-items: center; padding: 40px 50px 5px 50px;">
-            <md-outlined-text-field id="search-main" label="CPF" style="flex: 1;"></md-outlined-text-field>
+    <form action="login.php" method="post">
+        <div>
+            <div class="search-login-screen" style="display: flex; align-items: center; padding: 40px 50px 5px 50px;">
+                <md-outlined-text-field name="user" id="search-main" label="CPF" style="flex: 1;"></md-outlined-text-field>
+            </div>
+            <div class="search-login-screen" style="display: flex; align-items: center; padding: 40px 50px 5px 50px;">
+                <md-outlined-text-field name="pass" id="search-main" label="Senha" style="flex: 1;"></md-outlined-text-field>
+            </div>
         </div>
-        <div class="search-login-screen" style="display: flex; align-items: center; padding: 40px 50px 5px 50px;">
-            <md-outlined-text-field id="search-main" label="Senha" style="flex: 1;"></md-outlined-text-field>
+    
+        <div style="display: flex; justify-content: center; padding: 40px 50px 5px 50px;">
+            <md-filled-tonal-icon-button class="custom-button" style="width: 18%; --md-sys-color-secondary-container: #778da9;">
+                <md-icon class="custom-icon">login</md-icon>
+            </md-filled-tonal-icon-button>
         </div>
-    </div>
-
-    <div>
-    <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #219ebc; padding: 40px 50px 5px 50px; display: flex;">
-        <md-filled-tonal-icon-button class="custom-button">
-            <md-icon class="custom-icon">send</md-icon>
-        </md-filled-tonal-icon-button>
-    </div>
+    </form>
 </body>
 
 </html>

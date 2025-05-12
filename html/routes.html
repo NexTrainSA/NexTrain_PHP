@@ -3,11 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
+    <!--  Fontes e Estilos:  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <script type="importmap">
         {
             "imports": {
@@ -28,44 +30,39 @@
     <header> <!--Menu no topo da página (repete-se em todas as páginas)-->
         <nav id="top-navbar">
             <div>
-                <md-icon-button onclick="openNav()">
-                    <md-icon class="black">menu</md-icon>
+                <md-icon-button onclick="openNav()"> <!--  Botão para abrir sidebar  -->
+                    <!--  Aqui vai o ícone  -->
                 </md-icon-button>
-                <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="index.html">Dashboard</a>
-                    <a href="maintenance.html">Manutenção</a>
-                    <a href="notification.html">Notificações</a>
-                    <a href="reports.html">Análises</a>
-                </div>
+
             </div>
             <div class="app-title">
                 <img src="../imagens/logo.png">
                 <span>NexTrain</span>
             </div>
-            <a href="user.html" style="margin-right: 8px;"> <!--Botão do usuário no topo direito-->
+            <button type="button" id="dark-mode-button" onclick="toggleDarkMode()">
+                <!--Botão do usuário no topo direito-->
                 <i class="fas fa-user" style="font-size:24px; color: black;"></i>
-            </a>
+            </button>
         </nav>
     </header>
 
-    <button class="fixed-btn" onclick="toggleDarkMode()">Modo Escuro</button>
+    <section class="content"> <!--  Contéudo da Página:  -->
 
-    <section class="content">
-
+        <!-- Searchbar caso nada dê certo
         <div class="searchbar">
             <input type="text" placeholder="Buscar..." style="background-color: rgb(255, 242, 185); color: #023047;">
             <md-filled-tonal-icon-button class="custom-button">
                 <md-icon class="custom-icon">send</md-icon>
             </md-filled-tonal-icon-button>
         </div>
+        -->
 
+        <!--  Cards com os últimos trens:  -->
         <div class="last-trains">
-
-
+            <!--  Card  -->
             <div class="card-train">
-                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #219ebc;">
-                    <md-icon class="subway-icon-color" style="color: #023047;">directions_subway</md-icon>
+                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="subway-icon-color" style="color: #778da9;">directions_subway</md-icon>
                 </md-filled-tonal-icon-button>
                 <div class="train-text">
                     <div>
@@ -75,12 +72,86 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
+            <!--  Card  -->
             <div class="card-train">
-                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #219ebc;">
-                    <md-icon class="subway-icon-color" style="color: #023047;">directions_subway</md-icon>
+                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="subway-icon-color" style="color: #778da9;">directions_subway</md-icon>
+                </md-filled-tonal-icon-button>
+                <div class="train-text">
+                    <div>
+                        <span id="train-name">DB 9360
+
+                        </span>
+                        <div>
+                            <span id="train-route">Trecho 1 para Trecho 2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  Card  -->
+            <div class="card-train">
+                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="subway-icon-color" style="color: #778da9;">directions_subway</md-icon>
+                </md-filled-tonal-icon-button>
+                <div class="train-text">
+                    <div>
+                        <span id="train-name">DB 9360</span>
+                        <div>
+                            <span id="train-route">Trecho 1 para Trecho 2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  Card  -->
+            <div class="card-train">
+                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="subway-icon-color" style="color: #778da9;">directions_subway</md-icon>
+                </md-filled-tonal-icon-button>
+                <div class="train-text">
+                    <div>
+                        <span id="train-name">DB 9360
+                        </span>
+                        <div>
+                            <span id="train-route">Trecho 3 para Trecho 4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  Card  -->
+            <div class="card-train">
+                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="subway-icon-color" style="color: #778da9;">directions_subway</md-icon>
+                </md-filled-tonal-icon-button>
+                <div class="train-text">
+                    <div>
+                        <span id="train-name">DB 9360
+                        </span>
+                        <div>
+                            <span id="train-route">Trecho 3 para Trecho 4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  Card  -->
+            <div class="card-train">
+                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="subway-icon-color" style="color: #778da9;">directions_subway</md-icon>
+                </md-filled-tonal-icon-button>
+                <div class="train-text">
+                    <div>
+                        <span id="train-name">DB 9360
+                        </span>
+                        <div>
+                            <span id="train-route">Trecho 3 para Trecho 4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  Card  -->
+            <div class="card-train">
+                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="subway-icon-color" style="color: #778da9;">directions_subway</md-icon>
                 </md-filled-tonal-icon-button>
                 <div class="train-text">
                     <div>
@@ -92,12 +163,11 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
+            <!--  Card  -->
             <div class="card-train">
-                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #219ebc;">
-                    <md-icon class="subway-icon-color" style="color: #023047;">directions_subway</md-icon>
+                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="subway-icon-color" style="color: #778da9;">directions_subway</md-icon>
                 </md-filled-tonal-icon-button>
                 <div class="train-text">
                     <div>
@@ -109,99 +179,17 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
-            <div class="card-train">
-                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #219ebc;">
-                    <md-icon class="subway-icon-color" style="color: #023047;">directions_subway</md-icon>
-                </md-filled-tonal-icon-button>
-                <div class="train-text">
-                    <div>
-                        <span id="train-name">DB 9360
-                        </span>
-                        <div>
-                            <span id="train-route">Trecho 3 para Trecho 4</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="card-train">
-                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #219ebc;">
-                    <md-icon class="subway-icon-color" style="color: #023047;">directions_subway</md-icon>
-                </md-filled-tonal-icon-button>
-                <div class="train-text">
-                    <div>
-                        <span id="train-name">DB 9360
-                        </span>
-                        <div>
-                            <span id="train-route">Trecho 3 para Trecho 4</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="card-train">
-                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #219ebc;">
-                    <md-icon class="subway-icon-color" style="color: #023047;">directions_subway</md-icon>
-                </md-filled-tonal-icon-button>
-                <div class="train-text">
-                    <div>
-                        <span id="train-name">DB 9360
-                        </span>
-                        <div>
-                            <span id="train-route">Trecho 3 para Trecho 4</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="card-train">
-                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #219ebc;">
-                    <md-icon class="subway-icon-color" style="color: #023047;">directions_subway</md-icon>
-                </md-filled-tonal-icon-button>
-                <div class="train-text">
-                    <div>
-                        <span id="train-name">DB 9360
-
-                        </span>
-                        <div>
-                            <span id="train-route">Trecho 3 para Trecho 4</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="card-train">
-                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #219ebc;">
-                    <md-icon class="subway-icon-color" style="color: #023047;">directions_subway</md-icon>
-                </md-filled-tonal-icon-button>
-                <div class="train-text">
-                    <div>
-                        <span id="train-name">DB 9360
-
-                        </span>
-                        <div>
-                            <span id="train-route">Trecho 3 para Trecho 4</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
+            <!--  Fim dos cards  -->
         </div>
 
-    </section>
+    </section> <!--  Fim do Conteúdo  -->
 
     <footer>
         <p>&copy; 2025 SA NexTrain. Todos os direitos reservados.</p>
     </footer>
 
+    <!--  Scripts:  -->
     <script src="../js/dark_mode.js"></script>
     <script src="../js/sidebar.js"></script>
 </body>

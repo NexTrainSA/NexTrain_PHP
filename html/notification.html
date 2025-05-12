@@ -3,11 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <!--  Fontes e Estilos:  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script type="importmap">
+
         {
             "imports": {
             "@material/web/": "https://esm.run/@material/web/"
@@ -24,103 +27,99 @@
 
 <body>
 
-    <header>
+    <header> <!--Menu no topo da página (repete-se em todas as páginas)-->
         <nav id="top-navbar">
             <div>
-                <md-icon-button>
-                    <md-icon class="black">article</md-icon>
+                <md-icon-button onclick="openNav()"> <!--  Botão para abrir sidebar  -->
+                    <!--  Aqui vai o ícone  -->
                 </md-icon-button>
+
             </div>
             <div class="app-title">
-                <h1 class="center">NexTrain</h1>
+                <img src="../imagens/logo.png">
+                <span>NexTrain</span>
             </div>
-            <div>
-                <md-icon-button>
-                    <md-icon class="black">notifications</md-icon>
-                </md-icon-button>
-            </div>
+            <button type="button" id="dark-mode-button" onclick="toggleDarkMode()">
+                <!--Botão do usuário no topo direito-->
+                <i class="fas fa-user" style="font-size:24px; color: black;"></i>
+            </button>
         </nav>
     </header>
 
-    <div class="app">
-        <h1 class="center">Notificações</h1>
-    </div>
-
-    <div class="card-train">
-        <md-icon id="alert-badge-normal">cloud</md-icon>
-        </md-filled-tonal-icon-button>
-        <div class="train-text">
-            <div>
-                <span id="train-name">Chuvas Intensas</span>
+    <section class="content"> <!--  Conteúdo da Página:  -->
+        <!--  Card:  -->
+        <div class="card-train">
+            <md-icon id="alert-badge-normal">cloud</md-icon>
+            </md-filled-tonal-icon-button>
+            <div class="train-text">
                 <div>
-                    <span id="train-route">Fortes chuvas durante a rota do seu trem, aguarde!</span>
+                    <span id="train-name">Chuvas Intensas</span>
+                    <div>
+                        <span id="train-route">Fortes chuvas durante a rota do seu trem, aguarde!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  Card:  -->
+        <div class="card-train">
+            <md-icon id="alert-badge-warn">notifications</i></md-icon>
+            </md-filled-tonal-icon-button>
+            <div class="train-text">
+                <div>
+                    <span id="train-name">Atrasos
+
+                    </span>
+                    <div>
+                        <span id="train-route">Mudanças de Horários</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  Card:  -->
+        <div class="card-train">
+            <md-icon id="alert-badge-critical">error</md-icon>
+            </md-filled-tonal-icon-button>
+            <div class="train-text">
+                <div>
+                    <span id="train-name">Enchentes
+
+                    </span>
+                    <div>
+                        <span id="train-route">Alerta de Enchentes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  Card:  -->
+        <div class="card-train">
+            <md-icon id="alert-badge-normal">notifications</md-icon>
+            </md-filled-tonal-icon-button>
+            <div class="train-text">
+                <div>
+                    <span id="train-name"> Rota
+                    </span>
+                    <div>
+                        <span id="train-route">Acompanhe a rota em Tempo Real</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  Card:  -->
+        <div class="card-train">
+            <md-icon id="alert-badge-critical">error</md-icon>
+            </md-filled-tonal-icon-button>
+            <div class="train-text">
+                <div>
+                    <span id="train-name">Acidentes
+                    </span>
+                    <div>
+                        <span id="train-route">Ocorreu um Acidente, aguarde!</span>
+                    </div>
                 </div>
             </div>
         </div>
 
-    </div>
-
-    <div class="card-train">
-        <md-icon id="alert-badge-warn">notifications</i></md-icon>
-        </md-filled-tonal-icon-button>
-        <div class="train-text">
-            <div>
-                <span id="train-name">Atrasos
-
-                </span>
-                <div>
-                    <span id="train-route">Mudanças de Horários</span>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="card-train">
-        <md-icon id="alert-badge-critical">error</md-icon>
-        </md-filled-tonal-icon-button>
-        <div class="train-text">
-            <div>
-                <span id="train-name">Enchentes
-
-                </span>
-                <div>
-                    <span id="train-route">Alerta de Enchentes</span>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="card-train">
-        <md-icon id="alert-badge-normal">notifications</md-icon>
-        </md-filled-tonal-icon-button>
-        <div class="train-text">
-            <div>
-                <span id="train-name"> Rota
-                </span>
-                <div>
-                    <span id="train-route">Acompanhe a rota em Tempo Real</span>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="card-train">
-        <md-icon id="alert-badge-critical">error</md-icon>
-        </md-filled-tonal-icon-button>
-        <div class="train-text">
-            <div>
-                <span id="train-name">Acidentes
-                </span>
-                <div>
-                    <span id="train-route">Ocorreu um Acidente, aguarde!</span>
-                </div>
-            </div>
-        </div>
-
-    </div>
+    </section> <!--  Fim do Conteúdo  -->
 
     <footer>
         <p>&copy; 2025 SA NexTrain. Todos os direitos reservados.</p>

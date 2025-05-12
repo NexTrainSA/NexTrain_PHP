@@ -27,41 +27,46 @@
     <header> <!--Menu no topo da página (repete-se em todas as páginas)-->
         <nav id="top-navbar">
             <div>
-                <md-icon-button onclick="openNav()">
-                    <md-icon class="black">menu</md-icon>
+                <md-icon-button onclick="openNav()"> <!--  Botão para abrir sidebar  -->
+                    <!--  Aqui vai o ícone  -->
                 </md-icon-button>
-                <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="index.html">Dashboard</a>
-                    <a href="route.html">Rotas</a>
-                    <a href="notification.html">Notificações</a>
-                    <a href="reports.html">Análises</a>
-                </div>
+
             </div>
             <div class="app-title">
                 <img src="../imagens/logo.png">
                 <span>NexTrain</span>
             </div>
-            <a href="user.html" style="margin-right: 8px;"> <!--Botão do usuário no topo direito-->
+            <button type="button" id="dark-mode-button" onclick="toggleDarkMode()">
+                <!--Botão do usuário no topo direito-->
                 <i class="fas fa-user" style="font-size:24px; color: black;"></i>
-            </a>
+            </button>
         </nav>
     </header>
 
-    <button class="fixed-btn" onclick="toggleDarkMode()">Modo Escuro</button>
 
-    <section class="content">
 
-        <div class="searchbar">
-            <input type="text" placeholder="Buscar..." style="background-color: rgb(255, 242, 185); color: #023047;">
-            <md-filled-tonal-icon-button class="custom-button">
-                <md-icon class="custom-icon">send</md-icon>
-            </md-filled-tonal-icon-button>
-        </div>
+    <section class="content"> <!--  Conteúdo da Página:  -->
 
+        <!--  Alertas de cuidados imediatos  -->
         <h3>Cuidados imediatos</h3>
+        <!--  Card:  -->
         <div class="card-train">
-            <md-icon id="alert-badge-critical">error</md-icon>
+            <md-filled-tonal-icon-button style="font-size:40px; --md-sys-color-econdary-container: #ffffff;">
+                <md-icon id="alert-badge-warn" style="font-size:px; color: #023047;">notifications</md-icon>
+            </md-filled-tonal-icon-button>
+            <div class="train-text">
+                <div>
+                    <span id="train-name">Engarrafamento</span>
+                    <div>
+                        <span id="train-route">Engarrafamento no Trecho 2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  Card:  -->
+        <div class="card-train">
+            <md-filled-tonal-icon-button style="font-size:40px; --md-sys-color-econdary-container: #ffffff;">
+                <md-icon id="alert-badge-critical" style="font-size:px; color: #023047;">error</md-icon>
             </md-filled-tonal-icon-button>
             <div class="train-text">
                 <div>
@@ -72,37 +77,30 @@
                 </div>
             </div>
         </div>
+        <!--  Card:  -->
         <div class="card-train">
-            <md-icon id="alert-badge-critical">error</md-icon>
+            <md-filled-tonal-icon-button style="font-size:40px; --md-sys-color-econdary-container: #ffffff;">
+                <md-icon id="alert-badge-normal" style="font-size:px; color: #023047;">cloud</md-icon>
             </md-filled-tonal-icon-button>
             <div class="train-text">
                 <div>
-                    <span id="train-name">Queda de energia</span>
+                    <span id="train-name">Chuvas Intensas</span>
                     <div>
-                        <span id="train-route">Queda de energia no Trecho 1</span>
+                        <span id="train-route">Fortes chuvas no Trecho 4</span>
                     </div>
                 </div>
             </div>
         </div>
-        <br>
+        <!--  Fim dos alertas de cuidados  -->
 
+        <!--  Alertas de Manutenção:  -->
         <h3>Alertas de Manutenção</h3>
+        <!--  Card:  -->
         <div class="malfunction">
             <div class="card-train">
-                <i class="fa fa-close" style="font-size:80px; color: #023047;"></i>
-                <div>
-                    <div class="train-text">
-                        <span id="train-name">Alerta de Manutenção</span>
-                        <div>
-                            <span id="train-route">Trem D654 não iniciou manutenção</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="malfunction">
-            <div class="card-train">
-                <i class="fa fa-close" style="font-size:80px; color: #023047;"></i>
+                <md-filled-tonal-icon-button style="font-size:40px; --md-sys-color-econdary-container: #ffffff;">
+                    <md-icon id="alert-badge-warn" style="font-size:px; color: #023047;">notifications</md-icon>
+                </md-filled-tonal-icon-button>
                 <div>
                     <div class="train-text">
                         <span id="train-name">Alerta de Manutenção</span>
@@ -113,9 +111,12 @@
                 </div>
             </div>
         </div>
+        <!--  Card:  -->
         <div class="malfunction">
             <div class="card-train">
-                <i class="fa fa-check-circle" style="font-size: 80px; color: #023047;"></i>
+                <md-filled-tonal-icon-button style="font-size:40px; --md-sys-color-econdary-container: #ffffff;">
+                    <md-icon id="alert-badge-warn" style="font-size:px; color: #023047;">notifications</md-icon>
+                </md-filled-tonal-icon-button>
                 <div>
                     <div class="train-text">
                         <span id="train-name">Alerta de Manutenção</span>
@@ -126,9 +127,12 @@
                 </div>
             </div>
         </div>
+        <!--  Card:  -->
         <div class="malfunction">
             <div class="card-train">
-                <i class='fas fa-exclamation-triangle' style='font-size: 80px; color: #023047;'></i>
+                <md-filled-tonal-icon-button style="font-size:40px; --md-sys-color-econdary-container: #ffffff;">
+                    <md-icon id="alert-badge-warn" style="font-size:px; color: #023047;">notifications</md-icon>
+                </md-filled-tonal-icon-button>
                 <div class="train-text">
                     <div>
                         <span id="train-name">Alerta de Manutenção</span>
@@ -141,13 +145,14 @@
         </div>
 
     </section>
+    <!--  Fim do Conteúdo  -->
 
 
     <footer>
         <p>&copy; 2025 SA NexTrain. Todos os direitos reservados.</p>
     </footer>
 
-
+    <!--  Scripts:  -->
     <script src="../js/dark_mode.js"></script>
     <script src="../js/sidebar.js"></script>
 
