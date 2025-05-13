@@ -2,8 +2,6 @@
 
     session_start();
 
-    include("./db.php");
-
     if(isset($_POST["user"]) && isset($_POST["pass"])) {
         $u = $_POST["user"];
         $p = $_POST["pass"];
