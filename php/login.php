@@ -1,6 +1,9 @@
 <?php
 
     session_start();
+    include_once './db.php';
+
+    global $con;
 
     if(isset($_POST["user"]) && isset($_POST["pass"])) {
         $u = $_POST["user"];

@@ -8,7 +8,6 @@
     $db_host = $ini_array["nt_db_host"];
     $db_port = 6306;
 
-    global $con;
     $con = mysqli_connect($db_host, $db_user, $db_pass, $db_name, $db_port);
 
     if(!$con) {
