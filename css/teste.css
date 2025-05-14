@@ -99,6 +99,8 @@ div.app-title span {
 footer {
     background-color: #778da9; 
     width: 100%;
+    position: absolute;
+    bottom: 0;
     margin-bottom: 0; 
     justify-content: center; 
     align-items: center; 
