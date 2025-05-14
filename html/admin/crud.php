@@ -100,7 +100,7 @@
         
         <div class="flex-child">
             <h2>Inserção de Usuários</h2>
-            <form action="usermod_handler.php" method="POST">
+            <form action="php/usermod_handler.php" method="POST">
                         <?php
                             foreach($fields as $name) {
                                 if(str_starts_with($name, "id_")) {
@@ -120,7 +120,7 @@
         <?php
             if(array_key_exists("edit_id", $_GET)) {
                 echo "<div class='flex-child'><h2>Edição de Usuários</h2>";
-                echo "<form action='usermod_handler.php' method='POST'>";
+                echo "<form action='php/usermod_handler.php' method='POST'>";
                 $edit_id = $_GET["edit_id"];
                 $conn->real_query("SELECT * FROM usuario WHERE id_usuario = " . $edit_id);
                 $result3 = $conn->use_result();

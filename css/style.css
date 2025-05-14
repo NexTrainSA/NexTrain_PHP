@@ -21,7 +21,7 @@ main {
 
 body.dark-mode {
     background-color: rgb(71, 94, 117);
-    color: white;
+    color: white !important; 
 }
 
 
