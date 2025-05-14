@@ -34,13 +34,14 @@
                 <md-icon-button onclick="openNav()"> <!--  Botão para abrir sidebar  -->
                     <!--  Aqui vai o ícone  -->
                 </md-icon-button>
-                
+
             </div>
             <div class="app-title">
                 <img src="../imagens/logo.png">
                 <span>NexTrain</span>
             </div>
-            <button type="button" id="dark-mode-button" onclick="toggleDarkMode()"> <!--Botão do usuário no topo direito-->
+            <button type="button" id="dark-mode-button" onclick="toggleDarkMode()">
+                <!--Botão Dark mode no topo direio -->
                 <i class="fas fa-user" style="font-size:24px; color: black;"></i>
             </button>
         </nav>
@@ -48,105 +49,111 @@
 
     <section class="content"> <!--Conteúdo da página-->
 
-            <div class="last-trains"> <!--  Informações dos trechos:  -->  
+        <div class="last-trains"> <!--  Informações dos trechos:  -->
 
-                <h3>Seus trechos</h3>
+            <h3>Seus trechos</h3>
 
-                <!--  Card:  -->
-                <div class="card-train"> 
-                    <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
-                        <md-icon class="subway-icon-color" style="color: #415a77;">directions_subway</md-icon>
-                    </md-filled-tonal-icon-button>
-                    <div class="train-text">
+            <!--  Card:  -->
+            <div class="card-train">
+                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="subway-icon-color" style="color: #415a77;">directions_subway</md-icon>
+                </md-filled-tonal-icon-button>
+                <div class="train-text">
+                    <div>
+                        <span id="train-name">DB 8598</span>
                         <div>
-                            <span id="train-name">DB 8598</span>
-                            <div>
-                                <span id="train-route">Trecho 1 para Trecho 2</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!--  Card:  -->
-                <div class="card-train"> 
-                    <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
-                        <md-icon class="subway-icon-color" style="color: #415a77;">directions_subway</md-icon>
-                    </md-filled-tonal-icon-button>
-                    <div class="train-text">
-                        <div>
-                            <span id="train-name">DB 9360</span>
-                            <div>
-                                <span id="train-route">Trecho 3 para Trecho 4</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div> <!--  Fim das Informações  -->
-
-            <br> <!--Espaçamento-->
-
-            <!--  Informações breves  -->
-            <h3>Informações</h3>
-            <div class="info">
-                <div class="card-train" id="card-status-train">
-                    <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
-                        <md-icon class="error-icon-color" style="color: #415a77;">error</md-icon>
-                    </md-filled-tonal-icon-button>
-                    <div class="train-text">
-                        <div>
-                            <span id="train-name">Taxa de Atraso</span>
-                            <div>
-                                <span id="train-route">3% </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-train" id="card-status-train">
-                    <div class="train-text">
-                        <div>
-                            <span id="train-name">Próximo Trem</span>
-                            <div>
-                                <span id="train-route">3 min</span>
-                            </div>
+                            <span id="train-route">Trecho 1 para Trecho 2</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--  Fim das Informações  -->
 
-            <br> <!--Espaçamento-->
-
-            <!--  Início dos Alertas recentes:  -->
-            <div class="alert" id="card-status-train"> 
-                <h3>Alertas recentes</h3>
-                <div class="alerts-box">
-                    <md-list style="max-width: 300px; background-color: #778da9;">
-                        <md-list-item>
-                            <div id="alert">
-                                <md-icon id="alert-badge-warn">notifications</md-icon>
-                                <span id="alert-text">Engarrafamento em Trecho 2</span>
-                            </div>
-                        </md-list-item>
-
-                        <md-list-item>
-                            <div id="alert">
-                                <md-icon id="alert-badge-critical">error</md-icon>
-                                <span id="alert-text">Queda de Energia em Trecho 1</span>
-                            </div>
-                        </md-list-item>
-
-                        <md-list-item> <!--Alerta de chuva-->
-                            <div id="alert">
-                                <md-icon id="alert-badge-normal">cloud</md-icon>
-                                <span id="alert-text">Chuva Intensa em Trecho 4</span>
-                            </div>
-                        </md-list-item>
-
-                    </md-list>
+            <!--  Card:  -->
+            <div class="card-train">
+                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="subway-icon-color" style="color: #415a77;">directions_subway</md-icon>
+                </md-filled-tonal-icon-button>
+                <div class="train-text">
+                    <div>
+                        <span id="train-name">DB 9360</span>
+                        <div>
+                            <span id="train-route">Trecho 3 para Trecho 4</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!--  Fim dos Alertas  -->
+
+        </div> <!--  Fim das Informações  -->
+
+        <br> <!--Espaçamento-->
+
+        <!--  Informações breves  -->
+        <h3>Informações</h3>
+        <div class="info">
+            <div class="card-train" id="card-status-train">
+                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="error-icon-color" style="color: #415a77;">error</md-icon>
+                </md-filled-tonal-icon-button>
+                <div class="train-text">
+                    <div>
+                        <span id="train-name">Taxa de Atraso</span>
+                        <div>
+                            <span id="train-route">3% </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-train" id="card-status-train">
+                <div class="train-text">
+                    <div>
+                        <span id="train-name">Próximo Trem</span>
+                        <div>
+                            <span id="train-route">3 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  Fim das Informações  -->
+
+        <br> <!--Espaçamento-->
+
+        <!--  Início dos Alertas recentes:  -->
+        <div class="alert" id="card-status-train">
+            <h3>Alertas recentes</h3>
+            <div class="alerts-box">
+                <md-list style="max-width: 500px; background-color: #778da9;">
+                    <md-list-item>
+                        <div id="alert">
+                            <md-filled-tonal-icon-button
+                                style="font-size:40px; --md-sys-color-econdary-container: #ffffff;">
+                                <md-icon id="alert-badge-warn"
+                                    style="font-size:px; color: #023047;">notifications</md-icon>
+                            </md-filled-tonal-icon-button>
+
+                            <div class="train-text">
+                                <span id="train-name">Engarrafamento no Trecho 2</span>
+                            </div>
+                    </md-list-item>
+
+                    <md-list-item>
+                        <div id="alert">
+                            <md-icon id="alert-badge-critical">error</md-icon>
+                            <span id="alert-text">Queda de Energia em Trecho 1</span>
+                        </div>
+                    </md-list-item>
+
+                    <md-list-item> <!--Alerta de chuva-->
+                        <div id="alert">
+                            <md-icon id="alert-badge-normal">cloud</md-icon>
+                            <span id="alert-text">Chuva Intensa em Trecho 4</span>
+                        </div>
+                    </md-list-item>
+
+            </div>
+        </div>
+        </div>
+        <!--  Fim dos Alertas  -->
 
     </section>
     <!--  Fim do Conteúdo -->
@@ -159,7 +166,7 @@
     <script src="../js/dark_mode.js"></script>
     <script src="../js/sidebar.js"></script>
     <!--  Fim dos Scripts  -->
-      
+
 </body>
 
 </html>

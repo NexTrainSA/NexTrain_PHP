@@ -1,12 +1,11 @@
 <?php
-
     session_start();
-    include("./db.php");
+    include("./php/db.php");
 
     if(!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
-        include_once '../html/login.html';
+        include_once './html/login.html';
     }else{
-        include_once '../html/templates/header.html';
+        include_once './html/templates/header.html';
         $page = isset($_GET["page"]) ?$_GET["page"] : "index.html";
 
         if(str_contains($page, "admin")) {
@@ -15,7 +14,7 @@
                 die("<script>alert('Você não tem permissão para acessar esta página.'); document.location.href = '.'</script>");
             }
         }
-        include_once '../html/'.$page;
-        include_once '../html/templates/footer.html';
+        include_once './html/'.$page;
+        include_once './html/templates/footer.html';
     }
 ?>

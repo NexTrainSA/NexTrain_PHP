@@ -34,6 +34,16 @@
             return true;
         }
     }
+
+    function get_all_users_as_array() {
+        global $con;
+        $q = mysqli_query($con, "SELECT * FROM usuario");
+        $users = [];
+        while($row = mysqli_fetch_assoc($q)) {
+            $users[] = $row;
+        }
+        return $users;
+    }
     
     return false;
 ?>
