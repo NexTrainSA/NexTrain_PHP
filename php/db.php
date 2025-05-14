@@ -25,11 +25,23 @@
         return null;
     }
 
+    function get_permission_id_by_name($permissionName) {
+        global $con;
+        $query = "SELECT id_permissao FROM permissao WHERE nome_permissao = '$permissionName'";
+        $result = mysqli_query($con, $query);
+        if ($result) {
+            $row = mysqli_fetch_assoc($result);
+            return $row['id_permissao'];
+        }
+        return null;
+    }
+
     function check_user_permission($username, $permission) {
         global $con;
         $id = get_id_from_username($username);
+        $idperm = get_permission_id_by_name($permission);
 
-        $q = mysqli_query($con, "SELECT id_permissao FROM permissao_usuario WHERE id_usuario_permissao = '$id' AND nome_permissao = '$permission'");
+        $q = mysqli_query($con, "SELECT id_permissao FROM permissao_usuario WHERE id_usuario_permissao = '$id' AND id_permissao = '$idperm'");
         if(mysqli_num_rows($q) > 0) {
             return true;
         }
