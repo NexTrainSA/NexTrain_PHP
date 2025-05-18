@@ -298,3 +298,11 @@ footer {
     color: black;
     display: flex;
 }
+
+span#login-app-title {
+    padding: 20px 0px; 
+    font-size: 60px; 
+    font-family: Roboto; 
+    font-weight: 600; 
+    letter-spacing: 5px;
+}
