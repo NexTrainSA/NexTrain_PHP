@@ -35,13 +35,56 @@
             </div>
             <div class="app-title">
                 <img src="./imagens/logo.png">
-                <span>NexTrain</span>
+                <span id="app-title">NexTrain</span>
             </div>
-            <button type="button" id="dark-mode-button" onclick="toggleDarkMode()"> <!--Botão do usuário no topo direito-->
+            <button type="button" id="profile-button" onclick="document.getElementById('dialog-profile-info').open = true;">
+                <!--Botão de Perfil no topo direio -->
                 <i class="fas fa-user" style="font-size:24px; color: black;"></i>
+            </button>
+            <button type="button" id="dark-mode-button" onclick="toggleDarkMode()">
+                <!--Botão Dark mode no topo direio -->
+                <i class="fas fa-sun" style="font-size:24px; color: black;"></i>
             </button>
         </nav>
     </header>
+
+    <md-dialog id="dialog-profile-info"> <!-- Informações do Perfil -->
+        <div slot="content">
+          <!-- TODO: Renomear arquivo para um .php, por enquanto assim funciona. -->
+          <?php
+            echo "Usuário: ".$_SESSION['username'];
+            if(check_user_permission($_SESSION['username'], "ADMIN_PAGES")) echo "<br>Administrador";
+          ?>
+        </div>
+        <div slot="actions">
+            <md-text-button onclick="document.getElementById('dialog-profile-change-password').open = true">Alterar Senha</md-text-button>
+            <md-text-button onclick="document.getElementById('dialog-profile-info').close()">Fechar</md-text-button>
+        </div>
+    </md-dialog>
+
+    <md-dialog id="dialog-profile-change-password">
+        <div slot="content">
+          <!-- TODO: Renomear arquivo para um .php, por enquanto assim funciona. -->
+          <p>Altere sua senha</p>
+          <form action="php/changepassword.php" id="aaa" method="post">
+            <md-outlined-text-field type="password" name="oldpass" id="" label="Senha Anterior" style="flex:1;"></md-outlined-text-field>
+            <md-outlined-text-field type="password" name="newpass" id="" label="Nova Senha" style="flex:1;"></md-outlined-text-field> </md-outlined-text-field>
+          </form>
+        </div>
+        <div slot="actions">
+            <md-text-button form="aaa" onclick="document.getElementById('dialog-profile-change-password').close()">Confirmar</md-text-button>
+        </div>
+    </md-dialog>
+
+    <md-dialog id="dialog-alert" <?php if(isset($_GET['msg'])) echo 'open'; ?>>
+        <div slot="content">
+          <!-- TODO: Renomear arquivo para um .php, por enquanto assim funciona. -->
+          <p><?php echo($_GET['msg'])?></p>
+        </div>
+        <div slot="actions">
+            <md-text-button onclick="document.location.href = '.'">Confirmar</md-text-button>
+        </div>
+    </md-dialog>
 
     <script src="./js/dark_mode.js"></script>
     <script src="./js/sidebar.js"></script>
