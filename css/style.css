@@ -19,6 +19,13 @@ main {
     flex: 1;
 }
 
+span#app-title {
+    font-family: Roboto;
+
+    font-weight: 600; 
+    letter-spacing: 2.5px;
+}
+
 body.dark-mode {
     background-color: rgb(71, 94, 117);
     color: white !important; 
@@ -33,11 +40,22 @@ body.dark-mode h3 {
     font-size: medium;
 }
 
-#dark-mode-button {
+#dark-mode-button{
     margin-right: 8px; 
     appearance: none; 
     background: none; 
-    border:none
+    border:none;
+}
+
+dark-mode {
+    color: white;
+}
+
+#profile-button {
+    margin-right: 8px; 
+    appearance: none; 
+    background: none; 
+    border:none;
 }
 
 h1.center {
@@ -45,7 +63,7 @@ h1.center {
 }
 
 nav#top-navbar {
-    background-color: #617e9e;
+    background-color:  rgb(71, 94, 117);
     align-items: center;
     justify-content: space-between;
     display: flex;
@@ -58,6 +76,15 @@ nav#top-navbar {
 }
 
 div.app-title {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+div.app-title-darkmode {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -76,6 +103,7 @@ div.app-title span {
     font-size: 20px;
     font-weight: bold;
     color: black;
+    
 }
 
 /*

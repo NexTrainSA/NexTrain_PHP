@@ -50,7 +50,7 @@
             	}
 	    }
 
-        header("location: ../index.php?page=admin/crud.php");
+        header("location: ../index.php?page=admin/user_edit.php");
 
         }
 ?>

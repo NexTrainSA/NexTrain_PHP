@@ -33,15 +33,15 @@
                 </md-icon-button>
                 
             </div>
-            <div class="app-title">
+            <div class="app-title" style="cursor:grab" onclick="document.location.href = '.'">
                 <img src="./imagens/logo.png">
                 <span id="app-title">NexTrain</span>
             </div>
-            <button type="button" id="profile-button" onclick="document.getElementById('dialog-profile-info').open = true;">
+            <button type="button" style="cursor:grab" id="profile-button" onclick="document.getElementById('dialog-profile-info').open = true;">
                 <!--Botão de Perfil no topo direio -->
                 <i class="fas fa-user" style="font-size:24px; color: black;"></i>
             </button>
-            <button type="button" id="dark-mode-button" onclick="toggleDarkMode()">
+            <button type="button" style="cursor:grab" id="dark-mode-button" onclick="toggleDarkMode()">
                 <!--Botão Dark mode no topo direio -->
                 <i class="fas fa-sun" style="font-size:24px; color: black;"></i>
             </button>
@@ -52,8 +52,8 @@
         <div slot="content">
           <!-- TODO: Renomear arquivo para um .php, por enquanto assim funciona. -->
           <?php
-            echo "Usuário: ".$_SESSION['username'];
-            if(check_user_permission($_SESSION['username'], "ADMIN_PAGES")) echo "<br>Administrador";
+            echo "<div slot='headline'><h2>".$_SESSION['username']."</h2></div>";
+            if(check_user_permission($_SESSION['username'], "ADMIN_PAGES")) echo "<br><a href='?page=admin/index.php'>Administrador</a>";
           ?>
         </div>
         <div slot="actions">
@@ -65,7 +65,9 @@
     <md-dialog id="dialog-profile-change-password">
         <div slot="content">
           <!-- TODO: Renomear arquivo para um .php, por enquanto assim funciona. -->
-          <p>Altere sua senha</p>
+          <div slot="headline">
+            <h2>Altere sua senha</h2>
+          </div>
           <form action="php/changepassword.php" id="aaa" method="post">
             <md-outlined-text-field type="password" name="oldpass" id="" label="Senha Anterior" style="flex:1;"></md-outlined-text-field>
             <md-outlined-text-field type="password" name="newpass" id="" label="Nova Senha" style="flex:1;"></md-outlined-text-field> </md-outlined-text-field>
@@ -77,6 +79,9 @@
     </md-dialog>
 
     <md-dialog id="dialog-alert" <?php if(isset($_GET['msg'])) echo 'open'; ?>>
+        <div slot="headline">
+            <h2>Alerta</h2>
+        </div>
         <div slot="content">
           <!-- TODO: Renomear arquivo para um .php, por enquanto assim funciona. -->
           <p><?php echo($_GET['msg'])?></p>
