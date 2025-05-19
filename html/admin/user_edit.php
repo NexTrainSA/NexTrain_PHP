@@ -85,8 +85,9 @@
                                 }
                                 echo "<td>" . $x . "</td>";
                             }
-                            echo "<td><button onclick='document.location.href = document.location.href + `&delete_id=".$row["id_usuario"]."`'>Excluir</button></td>";
                             echo "<td><button onclick='document.location.href = document.location.href + `&edit_id=".$row["id_usuario"]."`'>Editar</button></td>";
+                            echo "<td><button onclick='document.location.href = `?page=admin/permission_edit.php&user_id=` + ".$row["id_usuario"]."'>Permissões</button></td>";
+                            echo "<td><button onclick='document.location.href = document.location.href + `&delete_id=".$row["id_usuario"]."`'>Excluir</button></td>";
 
                             echo "</tr>";
                         }

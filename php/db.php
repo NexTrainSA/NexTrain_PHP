@@ -36,6 +36,17 @@
         return null;
     }
 
+    function get_username_from_id($id) {
+        global $con;
+        $query = "SELECT username_usuario FROM usuario WHERE id_usuario = '$id'";
+        $result = mysqli_query($con, $query);
+        if ($result) {
+            $row = mysqli_fetch_assoc($result);
+            return $row['username_usuario'];
+        }
+        return null;
+    }
+
     function check_user_permission($username, $permission) {
         global $con;
         $id = get_id_from_username($username);
