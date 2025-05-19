@@ -52,7 +52,7 @@
         <div slot="content">
           <!-- TODO: Renomear arquivo para um .php, por enquanto assim funciona. -->
           <?php
-            echo "<div slot='headline'><h2>".$_SESSION['username']."</h2></div>";
+            echo "<div slot='headline'><span id='dialog-title'>".$_SESSION['username']."</span></div>";
             if(check_user_permission($_SESSION['username'], "ADMIN_PAGES")) echo "<br><a href='?page=admin/index.php'>Administrador</a>";
           ?>
         </div>
@@ -84,7 +84,7 @@
         </div>
         <div slot="content">
           <!-- TODO: Renomear arquivo para um .php, por enquanto assim funciona. -->
-          <p><?php echo($_GET['msg'])?></p>
+          <p><?php if(isset($_GET['msg'])) echo($_GET['msg'])?></p>
         </div>
         <div slot="actions">
             <md-text-button onclick="document.location.href = '.'">Confirmar</md-text-button>

@@ -334,3 +334,8 @@ span#login-app-title {
     font-weight: 600; 
     letter-spacing: 5px;
 }
+
+#dialog-title {
+    font-size: 22px;
+    font-weight: 600;
+}
