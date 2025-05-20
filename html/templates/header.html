@@ -55,6 +55,8 @@
             echo "<div slot='headline'><span id='dialog-title'>".$_SESSION['username']."</span></div>";
             if(check_user_permission($_SESSION['username'], "ADMIN_PAGES")) echo "<br><a href='?page=admin/index.php'>Administrador</a>";
           ?>
+
+          <br><a href="php/logout.php">Desconectar</a>
         </div>
         <div slot="actions">
             <md-text-button onclick="document.getElementById('dialog-profile-change-password').open = true">Alterar Senha</md-text-button>
