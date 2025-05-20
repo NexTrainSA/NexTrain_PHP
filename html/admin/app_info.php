@@ -14,7 +14,7 @@
     $commitDate->setTimezone(new \DateTimeZone('America/Sao_Paulo'));
     $commitAuthor = trim(exec('git log -n1 --pretty=%cn HEAD'));
 
-    echo "<br/><h1>Informações do App</h1>";
+    echo "<br/><h1 style='padding-top: 100px;'>Informações do App</h1>";
     echo "<h2>Versão: " . $commitHash . "</h2>";
     echo "<h2>Data do último commit: " . $commitDate->format('d/m/Y H:i:s') . "</h2>";
     echo "<h2>Autor do último commit: " . $commitAuthor . "</h2>";
