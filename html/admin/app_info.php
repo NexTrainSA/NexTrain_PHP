@@ -5,8 +5,10 @@
 </style>
 
 <?php
+    if(!check_user_permission($_SESSION["username"], "APP_INFO")) {
+        die ("<h1>Você não tem permissão para acessar essa página!</h1>");
+    }
 
-    include_once("./db.php");
     $commitHash = trim(exec('git log --pretty="%h" -n1 HEAD'));
     $commitDate = new \DateTime(trim(exec('git log -n1 --pretty=%ci HEAD')));
     $commitDate->setTimezone(new \DateTimeZone('America/Sao_Paulo'));
