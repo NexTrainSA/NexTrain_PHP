@@ -1,219 +1,366 @@
 /*  CSS de teste para Sidebar  */
 
 html {
-    height: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
-    max-width: 100%;
-    position: relative;
-    width: 100%;
-    min-height: 100%;
-    margin: 0 auto;
-    padding: 0;
-    overflow-x: hidden;
-    background-color: #ffffff;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #ffffff;
 }
 
 main {
-    flex: 1;
+  flex: 1;
+}
+
+span#app-title {
+  font-family: Roboto;
+
+  font-weight: 600;
+  letter-spacing: 2.5px;
 }
 
 body.dark-mode {
-    background-color: rgb(71, 94, 117);
-    color: white;
+  background-color: rgb(71, 94, 117);
+  color: white !important;
 }
 
 body.dark-mode h3 {
-    margin: 20px 0px;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-    font-size: medium;
-}
-
-body.dark-mode .content {
-    color: white;
+  margin: 20px 0px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  font-size: medium;
 }
 
 #dark-mode-button {
-    margin-right: 8px; 
-    appearance: none; 
-    background: none; 
-    border:none
-} 
+  margin-right: 8px;
+  appearance: none;
+  background: none;
+  border: none;
+}
+
+dark-mode {
+  color: white;
+}
+
+#profile-button {
+  margin-right: 8px;
+  appearance: none;
+  background: none;
+  border: none;
+}
+
+h1.center {
+  text-align: center;
+}
 
 nav#top-navbar {
-    background-color: #617e9e;
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
-    width: 100%;
-    height: 100px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-
-div.app-title {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-div.app-title img {
-    max-width: 100%;
-    width: 300px;
-    display: block;
-}
-
-div.app-title span {
-    margin-top: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    color: black;
-}
-
-
-#dark-mode-button {
-    margin-right: 8px; 
-    appearance: none; 
-    background: none; 
-    border:none
-}
-
-.content {
-    display: grid;
-    padding: 10px;
-    padding-top: 130px;
-    padding-bottom: 120px;
-    color: #023047;
-}
-
-/*  Rodapé: */
-footer {
-    background-color: #778da9; 
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 0; 
-    justify-content: center; 
-    align-items: center; 
-    height: 80px; 
-    margin-top: 50px;
-    color: black;
-    display: flex;
-}
-
-/*  Teste:  */
-
-.sidebar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
+  background-color: rgb(71, 94, 117);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
   position: fixed;
-  height: 100%;
-  overflow: auto;
-}
-
-/* Sidebar links */
-.sidebar a {
-  display: block;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-}
-
-/* Active/current link */
-.sidebar a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-/* Links on mouse-over */
-.sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
-
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
-}
-
-/* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-}
-
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
-}
-
-/* The side navigation menu */
-.sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 9999; /* Stay on top */
   top: 0;
   left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  z-index: 1000;
+  padding: 0 1rem;
 }
 
-/* The navigation menu links */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  background-color: #778da9;
+  ;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+}
+
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #023047;
   display: block;
   transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: black;
 }
 
-/* Position and style the close button (top right corner) */
 .sidenav .closebtn {
   position: absolute;
   top: 0;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #023047;
+
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
+md-icon.black {
+  color: #023047;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+
+div.app-title {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+div.app-title-darkmode {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.app-title img {
+  max-width: 100%;
+  width: 300px;
+  display: block;
+}
+
+div.app-title span {
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+
+}
+
+header {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+md-icon.black {
+  color: black;
+}
+
+.content {
+  display: grid;
+  padding: 10px;
+  padding-top: 130px;
+  padding-bottom: 120px;
+  color: #023047;
+}
+
+md-outlined-text-field#search-main {
+  width: 100%;
+}
+
+md-filled-tonal-icon-button.custom-button {
+  --md-sys-color-secondary-container: #778da9;
+}
+
+.custom-icon {
+  color: #023047;
+}
+
+.card-train {
+  background-color: #778da9;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+  margin-top: 8px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-train#card-status-train {
+  width: 48%;
+  margin: 5px;
+}
+
+md-icon.subway-icon-color {
+  color: #4F378A;
+}
+
+span#train-name {
+  color: #1D1B20;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.3;
+}
+
+span#train-route {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Roboto";
+}
+
+div.train-status-box {
+  border: 1px solid #CAC4D0;
+  border-radius: 12px;
+  width: 25vw;
+  position: sticky;
+  left: 100%;
+}
+
+div.centered-train-status-box {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+span#train-status {
+  font-style: normal;
+  font-weight: 500;
+  font-family: "Roboto";
+  font-size: 1.4vw;
+  padding: 5px;
+}
+
+h3 {
+  margin: 20px 0px;
+  font-family: Roboto;
+  font-weight: 500;
+  color: #1D1B20;
+  font-size: medium;
+}
+
+div.alerts {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #778da9
+}
+
+div.alerts-box {
+  background-color: #778da9;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+span#alert-text {
+  font-family: Roboto;
+  font-size: small;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+md-icon#alert-badge-critical {
+  background-color: #f2e9e4;
+  border: 8px solid #f2e9e4;
+  border-radius: 25px;
+}
+
+md-icon.darkmode #alert-badge-critical {
+  background-color: #415a77;
+  border: 8px solid #415a77;
+  border-radius: 25px;
+}
+
+md-icon#alert-badge-warn {
+  background-color: #f2e9e4;
+  border: 8px solid #f2e9e4;
+  border-radius: 25px;
+}
+
+md-icon.darkmode #alert-badge-warn {
+  background-color: #415a77;
+  border: 8px solid #415a77;
+  border-radius: 25px;
+}
+
+md-icon#alert-badge-normal {
+  background-color: #f2e9e4;
+  border: 8px solid #f2e9e4;
+  border-radius: 25px;
+}
+
+md-icon.darkmode #alert-badge-normal {
+  background-color: #415a77;
+  border: 8px solid #415a77;
+  border-radius: 25px;
+}
+
+#body_initial {
+  background-color: #0d1b2a;
+}
+
+#initial_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  font-size: 40px;
+  color: #372a28;
+}
+
+
+.cal-sans-regular {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  ;
+}
+
+/*  Rodapé: */
+footer {
+  background-color: #778da9;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  margin-top: 50px;
+  color: black;
+  display: flex;
+}
+
+span#login-app-title {
+  padding: 20px 0px;
+  font-size: 60px;
+  font-family: Roboto;
+  font-weight: 600;
+  letter-spacing: 5px;
+}
+
+#dialog-title {
+  font-size: 22px;
+  font-weight: 600;
 }
