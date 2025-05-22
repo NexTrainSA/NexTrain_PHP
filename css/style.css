@@ -43,7 +43,7 @@ body.dark-mode .card-train {
 }
 
 #dark-mode-button{
-    margin-right: 30px;
+    margin-right: 6rem;
     appearance: none;
     background: none;
     border: none;
@@ -58,7 +58,7 @@ body.dark-mode .alerts-box {
 
 
 #profile-button {
-    margin-right: 8px; 
+    margin-left: 21rem; 
     appearance: none; 
     background: none; 
     border:none;
@@ -92,13 +92,13 @@ nav#top-navbar {
   background-color: #778da9;
   overflow-x: hidden;
   transition: 0.3s;
-  padding-top: 60px;
+  padding-top: 2rem;
 }
 
 .sidenav a {
-  padding: 8px 32px;
+  padding: 0.5rem 2rem;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 1.25rem;
   color: #023047;
   display: block;
   transition: 0.3s;
@@ -110,15 +110,12 @@ nav#top-navbar {
 
 .sidenav .closebtn {
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
   background: none;
   border: none;
   cursor: pointer;
-  color: #023047;
-
 }
 
 div.app-title {
@@ -127,6 +124,7 @@ div.app-title {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-left: 23rem;
     
 }
 
