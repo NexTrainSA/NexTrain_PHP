@@ -21,31 +21,41 @@ main {
 
 span#app-title {
     font-family: Roboto;
-
     font-weight: 600; 
     letter-spacing: 2.5px;
 }
 
 body.dark-mode {
-    background-color: rgb(71, 94, 117); 
-    color: white !important; rk-mode h3 {
+    background-color: rgb(63, 83, 103); 
+    color: white !important; 
+    }
+
+body.dark-mode h3 {
     margin: 20px 0px;
     font-weight: 500;
     color: rgb(255, 255, 255);
     font-size: medium;
-    }
+}
+
+body.dark-mode .card-train {
+    background-color: rgb(56, 66, 79);
+    color: white;
 }
 
 #dark-mode-button{
-    margin-right: 8px; 
-    appearance: none; 
-    background: none; 
-    border:none;
+    margin-right: 30px;
+    appearance: none;
+    background: none;
+    border: none;
 }
 
-dark-mode {
-    color: white;
+body.dark-mode .alerts-box {
+    background-color: rgb(56, 66, 79); 
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
 }
+
 
 #profile-button {
     margin-right: 8px; 
@@ -57,19 +67,6 @@ dark-mode {
 h1.center {
     text-align: center;
 }
-
-/*nav#top-navbar {
-    background-color:  rgb(71, 94, 117);
-    align-items: center;
-    justify-content: space-between;
-    display: flex; 
-    width: 100%;
-    height: 100px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}*/
 
 nav#top-navbar {
   background-color: rgb(71, 94, 117);
@@ -93,7 +90,6 @@ nav#top-navbar {
   top: 0;
   left: 0;
   background-color: #778da9;
-  ;
   overflow-x: hidden;
   transition: 0.3s;
   padding-top: 60px;
@@ -156,8 +152,7 @@ div.app-title span {
     
 }
 
-/*
-.searchbar {
+/*.searchbar {
     padding: 3px;
     display: flex;
     gap: 20px;
@@ -172,13 +167,12 @@ div.app-title span {
     border-radius: 8px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
-    */
-
+    
 @media screen and (max-width: 600px) {
     .searchbar input[type="text"] {
         width: 100%;
     }
-}
+}*/
 
 header {
     position: relative;
@@ -362,7 +356,6 @@ md-icon.darkmode #alert-badge-normal{
     ;
 }
 
-/*  Rodapé: */
 footer {
     background-color: #778da9; 
     width: 100%;
