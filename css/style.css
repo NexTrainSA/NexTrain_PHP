@@ -30,17 +30,14 @@ main {
 
 span#app-title {
     font-family: Roboto;
-
     font-weight: 600; 
     letter-spacing: 2.5px;
 }
 
 body.dark-mode {
-    background-color: rgb(71, 94, 117);
+    background-color: rgb(63, 83, 103); 
     color: white !important; 
-}
-
-
+    }
 
 body.dark-mode h3 {
     margin: 20px 0px;
@@ -49,19 +46,28 @@ body.dark-mode h3 {
     font-size: medium;
 }
 
-#dark-mode-button{
-    margin-right: 8px; 
-    appearance: none; 
-    background: none; 
-    border:none;
-}
-
-dark-mode {
+body.dark-mode .card-train {
+    background-color: rgb(56, 66, 79);
     color: white;
 }
 
+#dark-mode-button{
+    margin-right: 6rem;
+    appearance: none;
+    background: none;
+    border: none;
+}
+
+body.dark-mode .alerts-box {
+    background-color: rgb(56, 66, 79); 
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+
 #profile-button {
-    margin-right: 8px; 
+    margin-left: 21rem; 
     appearance: none; 
     background: none; 
     border:none;
@@ -72,16 +78,53 @@ h1.center {
 }
 
 nav#top-navbar {
-    background-color:  rgb(71, 94, 117);
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
-    width: 100%;
-    height: 100px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+  background-color: rgb(71, 94, 117);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0 1rem;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  background-color: #778da9;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 2rem;
+}
+
+.sidenav a {
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: #023047;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: black;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 div.app-title {
@@ -90,6 +133,7 @@ div.app-title {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-left: 23rem;
     
 }
 
@@ -115,8 +159,7 @@ div.app-title span {
     
 }
 
-/*
-.searchbar {
+/*.searchbar {
     padding: 3px;
     display: flex;
     gap: 20px;
@@ -131,13 +174,12 @@ div.app-title span {
     border-radius: 8px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
-    */
-
+    
 @media screen and (max-width: 600px) {
     .searchbar input[type="text"] {
         width: 100%;
     }
-}
+}*/
 
 header {
     position: relative;
@@ -321,7 +363,6 @@ md-icon.darkmode #alert-badge-normal{
     ;
 }
 
-/*  Rodapé: */
 footer {
     background-color: #778da9; 
     width: 100%;

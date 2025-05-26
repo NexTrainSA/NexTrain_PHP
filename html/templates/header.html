@@ -28,10 +28,16 @@
     <header> <!--Menu no topo da página (repete-se em todas as páginas)-->
         <nav id="top-navbar">
             <div>
-                <md-icon-button onclick="openNav()"> <!--  Botão para abrir sidebar  -->
-                    <!--  Aqui vai o ícone  -->
+                <md-icon-button onclick="openNav()">
+                    <md-icon class="black">menu</md-icon>
                 </md-icon-button>
-                
+                <div id="mySidenav" class="sidenav">
+                    <button class="closebtn" onclick="closeNav()">&times;</button>
+                    <a href="?page=maintenance.html">Manutenção</a>
+                    <a href="?page=route.html">Rotas</a>
+                    <a href="?page=notification.html">Notificações</a>
+                    <a href="?page=reports.html">Análises</a>
+                </div>
             </div>
             <div class="app-title" style="cursor:grab" onclick="document.location.href = '.'">
                 <img src="./imagens/logo.png">

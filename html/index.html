@@ -41,7 +41,7 @@
                 </md-filled-tonal-icon-button>
                 <div class="train-text">
                     <div>
-                        <span id="train-name">DB 8598</span>
+                        <span id="train-name"style="color: #ffffff;">DB 8598</span>
                         <div>
                             <span id="train-route">Trecho 1 para Trecho 2</span>
                         </div>
@@ -56,7 +56,7 @@
                 </md-filled-tonal-icon-button>
                 <div class="train-text">
                     <div>
-                        <span id="train-name">DB 9360</span>
+                        <span id="train-name" style="color: #ffffff;">DB 9360</span>
                         <div>
                             <span id="train-route">Trecho 3 para Trecho 4</span>
                         </div>
@@ -77,17 +77,20 @@
                 </md-filled-tonal-icon-button>
                 <div class="train-text">
                     <div>
-                        <span id="train-name">Taxa de Atraso</span>
+                        <span id="train-name"style="color: #ffffff;">Taxa de Atraso</span>
                         <div>
-                            <span id="train-route">3% </span>
+                            <span id="train-route">3%</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="card-train" id="card-status-train">
+                <md-filled-tonal-icon-button style="width: 18%; --md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="subway-icon-color" style="color: #415a77;">directions_subway</md-icon>
+                </md-filled-tonal-icon-button>
                 <div class="train-text">
                     <div>
-                        <span id="train-name">Próximo Trem</span>
+                        <span id="train-name"style="color: #ffffff;">Próximo Trem</span>
                         <div>
                             <span id="train-route">3 min</span>
                         </div>
@@ -103,36 +106,28 @@
         <div class="alert" id="card-status-train">
             <h3>Alertas recentes</h3>
             <div class="alerts-box">
-                <md-list style="max-width: 500px; background-color: #778da9;">
-                    <md-list-item>
-                        <div id="alert">
-                            <md-filled-tonal-icon-button
-                                style="font-size:40px; --md-sys-color-econdary-container: #ffffff;">
-                                <md-icon id="alert-badge-warn"
-                                    style="font-size:px; color: #023047;">notifications</md-icon>
-                            </md-filled-tonal-icon-button>
 
-                            <div class="train-text">
-                                <span id="train-name">Engarrafamento no Trecho 2</span>
-                            </div>
-                    </md-list-item>
+                <md-list-item>
+                    <div id="alert">
+                        <md-icon id="alert-badge-warn" >notifications</md-icon>
+                        <span id="train-name"style="color: #ffffff;">Engarrafamento no Trecho 2</span>
+                    </div>
+                </md-list-item>
 
-                    <md-list-item>
-                        <div id="alert">
-                            <md-icon id="alert-badge-critical">error</md-icon>
-                            <span id="alert-text">Queda de Energia em Trecho 1</span>
-                        </div>
-                    </md-list-item>
+                <md-list-item>
+                    <div id="alert">
+                        <md-icon id="alert-badge-critical" >error</md-icon>
+                        <span id="train-name"style="color: #ffffff;">Queda de Energia em Trecho 1</span>
+                    </div>
+                </md-list-item>
 
-                    <md-list-item> <!--Alerta de chuva-->
-                        <div id="alert">
-                            <md-icon id="alert-badge-normal">cloud</md-icon>
-                            <span id="alert-text">Chuva Intensa em Trecho 4</span>
-                        </div>
-                    </md-list-item>
-
+                <md-list-item> <!--Alerta de chuva-->
+                    <div id="alert">
+                        <md-icon id="alert-badge-normal">cloud</md-icon>
+                        <span id="train-name"style="color: #ffffff;">Chuva Intensa em Trecho 4</span>
+                    </div>
+                </md-list-item>
             </div>
-        </div>
         </div>
         <!--  Fim dos Alertas  -->
 
