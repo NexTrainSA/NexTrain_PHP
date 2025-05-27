@@ -153,7 +153,24 @@ div.app-title span {
     color: black;
     
 }
- 
+
+/*.searchbar {
+    padding: 3px;
+    display: flex;
+    gap: 20px;
+}
+
+.searchbar input[type="text"] {
+    padding: 10px;
+    border: none;
+    font-size: 17px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+*/
+    
 @media screen and (max-width: 600px) {
     .searchbar input[type="text"] {
         width: 100%;
@@ -343,8 +360,9 @@ md-icon.darkmode #alert-badge-normal{
 footer {
     background-color: #778da9; 
     width: 100%;
-    position: fixed;
+    position: absolute;
     bottom: 0;
+    margin-bottom: 0; 
     justify-content: center; 
     align-items: center; 
     height: 80px; 
