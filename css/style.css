@@ -214,7 +214,7 @@ md-filled-tonal-icon-button.custom-button {
     padding: 1rem;
     display: flex;
     gap: 1rem;;
-    margin-top: 0.5rem 0;
+    margin-top: 8px;
 }
 
 .info {
@@ -245,11 +245,12 @@ span#train-route {
     font-family: "Roboto";
 }
 
-.train-status-box {
+div.train-status-box {
     border: 1px solid #CAC4D0;
     border-radius: 12px;
-    width: 100%;
-    padding: 0.5rem;
+    width: 25vw;
+    position: sticky;
+    left: 100%;
 }
 
 div.centered-train-status-box {
