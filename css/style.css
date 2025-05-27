@@ -16,18 +16,24 @@ body {
 
 main {
     flex: 1;
-    padding-top: 100px;
-    padding-bottom: 80px;
+}
+
+span#app-title {
+    font-family: Roboto;
+    font-weight: 600; 
+    letter-spacing: 2.5px;
 }
 
 body.dark-mode {
     background-color: rgb(63, 83, 103); 
-    color: white; 
+    color: white !important; 
     }
 
 body.dark-mode h3 {
-    color: white;
-    
+    margin: 20px 0px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    font-size: medium;
 }
 
 body.dark-mode .card-train {
@@ -35,17 +41,6 @@ body.dark-mode .card-train {
     color: white;
 }
 
-body.dark-mode {
-    background-color: rgb(71, 94, 117);
-    color: white !important;
-
-    rk-mode h3 {
-        margin: 20px 0px;
-        font-weight: 500;
-        color: rgb(255, 255, 255);
-        font-size: medium;
-    }
-}
 #dark-mode-button{
     margin-right: 6rem;
     appearance: none;
@@ -169,13 +164,12 @@ div.app-title span {
     border-radius: 8px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
-*/
     
 @media screen and (max-width: 600px) {
     .searchbar input[type="text"] {
         width: 100%;
     }
-}
+}*/
 
 header {
     position: relative;
@@ -210,10 +204,11 @@ md-filled-tonal-icon-button.custom-button {
 
 .card-train {
     background-color: #778da9;
+    border: 1px solid;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 15px;
     display: flex;
-    gap: 1rem;;
+    gap: 15px;
     margin-top: 8px;
 }
 
