@@ -16,24 +16,18 @@ body {
 
 main {
     flex: 1;
-}
-
-span#app-title {
-    font-family: Roboto;
-    font-weight: 600; 
-    letter-spacing: 2.5px;
+    padding-top: 100px;
+    padding-bottom: 80px;
 }
 
 body.dark-mode {
     background-color: rgb(63, 83, 103); 
-    color: white !important; 
+    color: white; 
     }
 
 body.dark-mode h3 {
-    margin: 20px 0px;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-    font-size: medium;
+    color: white;
+    
 }
 
 body.dark-mode .card-train {
@@ -41,6 +35,17 @@ body.dark-mode .card-train {
     color: white;
 }
 
+body.dark-mode {
+    background-color: rgb(71, 94, 117);
+    color: white !important;
+
+    rk-mode h3 {
+        margin: 20px 0px;
+        font-weight: 500;
+        color: rgb(255, 255, 255);
+        font-size: medium;
+    }
+}
 #dark-mode-button{
     margin-right: 6rem;
     appearance: none;
@@ -117,59 +122,30 @@ nav#top-navbar {
   cursor: pointer;
 }
 
-div.app-title {
-    width: 50%;
+.app-title-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 23rem;
-    
+    position: relative;
 }
 
-div.app-title-darkmode {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-div.app-title img {
-    max-width: 100%;
-    width: 300px;
+.app-title-container::after {
+    content: "Seu texto aqui";
     display: block;
-}
-
-div.app-title span {
-    margin-top: 5px;
     font-size: 20px;
     font-weight: bold;
     color: black;
-    
+    margin-top: 5px;
+    text-align: center;
 }
-
-/*.searchbar {
-    padding: 3px;
-    display: flex;
-    gap: 20px;
-}
-
-.searchbar input[type="text"] {
-    padding: 10px;
-    border: none;
-    font-size: 17px;
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-}
-    
+ 
 @media screen and (max-width: 600px) {
     .searchbar input[type="text"] {
         width: 100%;
     }
-}*/
+}
 
 header {
     position: relative;
@@ -204,12 +180,11 @@ md-filled-tonal-icon-button.custom-button {
 
 .card-train {
     background-color: #778da9;
-    border: 1px solid;
     border-radius: 8px;
-    padding: 15px;
+    padding: 1rem;
     display: flex;
-    gap: 15px;
-    margin-top: 8px;
+    gap: 1rem;;
+    margin-top: 0.5rem 0;
 }
 
 .info {
@@ -240,12 +215,11 @@ span#train-route {
     font-family: "Roboto";
 }
 
-div.train-status-box {
+.train-status-box {
     border: 1px solid #CAC4D0;
     border-radius: 12px;
-    width: 25vw;
-    position: sticky;
-    left: 100%;
+    width: 100%;
+    padding: 0.5rem;
 }
 
 div.centered-train-status-box {
@@ -356,9 +330,8 @@ md-icon.darkmode #alert-badge-normal{
 footer {
     background-color: #778da9; 
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    margin-bottom: 0; 
     justify-content: center; 
     align-items: center; 
     height: 80px; 
