@@ -122,23 +122,36 @@ nav#top-navbar {
   cursor: pointer;
 }
 
-.app-title-container {
-    width: 100%;
+div.app-title {
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
+    margin-left: 23rem;
+    
 }
 
-.app-title-container::after {
-    content: "Seu texto aqui";
+div.app-title-darkmode {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+div.app-title img {
+    max-width: 100%;
+    width: 300px;
     display: block;
+}
+
+div.app-title span {
+    margin-top: 5px;
     font-size: 20px;
     font-weight: bold;
     color: black;
-    margin-top: 5px;
-    text-align: center;
+    
 }
  
 @media screen and (max-width: 600px) {
