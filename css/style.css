@@ -298,6 +298,7 @@ md-icon#alert-badge-critical {
     background-color: #f2e9e4;
     border: 8px solid #f2e9e4;
     border-radius: 25px;
+    color: black;
 }
 md-icon.darkmode #alert-badge-critical{
     background-color: #415a77;
@@ -309,11 +310,13 @@ md-icon#alert-badge-warn {
     background-color: #f2e9e4;
     border: 8px solid #f2e9e4;
     border-radius: 25px;
+    color: black;
 }
 md-icon.darkmode #alert-badge-warn{
     background-color: #415a77;
     border: 8px solid #415a77;
     border-radius: 25px;
+    color: white;
 }
 
 md-icon#alert-badge-normal {
