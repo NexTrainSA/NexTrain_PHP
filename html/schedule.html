@@ -8,7 +8,7 @@
     <!--  Fontes e Estilos:  -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -29,115 +29,26 @@
 <body>
 
     <section class="content"> <!--Conteúdo da página-->
-        <div class="calendar-wrap">
-            <header>
-                <h1>Junho de 2025</h1>
-            </header>
-            <ul class="weekdays">
-                <li>Domingo</li>
-                <li>Segunda-feira</li>
-                <li>Terça-feira</li>
-                <li>Quarta-feira</li>
-                <li>Quinta-feira</li>
-                <li>Sexta-feira</li>
-                <li>Sábado</li>
-            </ul>
-            <ul class="days">
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">2</div>
-                </li>
-                <li class="day">
-                    <div class="date">3</div>
-                </li>
-                <li class="day">
-                    <div class="date">4</div>
-                </li>
-                <li class="day">
-                    <div class="date">5</div>
-                </li>
-                <li class="day">
-                    <div class="date">6</div>
-                </li>
-                <li class="day">
-                    <div class="date">7</div>
-                    <div class="event">
-                        <div class="event-desc">Terminar SA</div>
-                        <div class="event-time">7:00-12:00</div>
-                    </div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-                <li class="day">
-                    <div class="date">1</div>
-                </li>
-            </ul>
+        <div class="calendar">
+            <div class="calendar-header">
+                <button id="previousMonth">
+                    <i class="fa fa-chevron-left"></i>
+                </button>
+                <div class="month-year" id="monthYear"></div>
+                <button id="nextMonth">
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="days">
+                <div class="day">Domingo</div>
+                <div class="day">Segunda-feira</div>
+                <div class="day">Terça-feira</div>
+                <div class="day">Quarta-feira</div>
+                <div class="day">Quinta-feira</div>
+                <div class="day">Sexta-feira</div>
+                <div class="day">Sábado</div>
+            </div>
+            <div class="dates" id="dates"></div>
         </div>
     </section>
     <!--  Fim do Conteúdo -->
@@ -145,6 +56,7 @@
     <!--  Scripts:  -->
     <script src="./js/dark_mode.js"></script>
     <script src="./js/sidebar.js"></script>
+    <script src="../js/calendar.js"></script>
     <!--  Fim dos Scripts  -->
 
 </body>
