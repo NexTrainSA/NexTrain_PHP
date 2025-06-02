@@ -1,10 +1,4 @@
 
-* {
-margin: 0px;
-padding: 0px;
-box-sizing: border-box;
-
-}
 body {
     position: relative;
     width: 100%;
@@ -386,9 +380,11 @@ span#login-app-title {
 /*Calendário:*/
 
 .calendar {
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     height: auto;
-    display: flex;
+    display: grid;
+    margin: 0 auto;
     flex-direction: column;
     padding: 10px;
     background-color: #fff;
@@ -453,9 +449,13 @@ span#login-app-title {
     transition: 0.2s;
 }
 
-.date:hover
+.date:hover{
+    background: rgb(195, 232, 181);
+    color: black;
+}
+
 .date.active {
-    background: pink;
+    background: #778da9;
     color: #fff;
 }
 
@@ -465,4 +465,10 @@ span#login-app-title {
 
 .date.inactive:hover {
     color: #fff;
+}
+
+@media screen and (min-width: 1000px) {
+    .calendar {
+        max-width: 1000px;
+    }
 }

@@ -22,13 +22,11 @@ const updateCalendar = () => {
 
     let datesHTML = '';
 
-    // Dias do mês anterior (inativos)
     for (let i = firstDayIndex; i > 0; i--) {
         const prevDate = new Date(currentYear, currentMonth, 1 - i);
         datesHTML += `<div class="date inactive">${prevDate.getDate()}</div>`;
     }
 
-    // Dias do mês atual
     for (let i = 1; i <= totalDays; i++) {
         const date = new Date(currentYear, currentMonth, i);
         const isToday = date.toDateString() === new Date().toDateString();
