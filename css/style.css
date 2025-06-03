@@ -1,4 +1,3 @@
-
 body {
     position: relative;
     width: 100%;
@@ -14,14 +13,14 @@ main {
 
 span#app-title {
     font-family: Roboto;
-    font-weight: 600; 
+    font-weight: 600;
     letter-spacing: 2.5px;
 }
 
 body.dark-mode {
-    background-color: rgb(63, 83, 103); 
-    color: white !important; 
-    }
+    background-color: rgb(63, 83, 103);
+    color: white !important;
+}
 
 body.dark-mode h3 {
     margin: 20px 0px;
@@ -35,80 +34,66 @@ body.dark-mode .card-train {
     color: white;
 }
 
-#dark-mode-button{
-    margin-right: 6rem;
-    appearance: none;
-    background: none;
-    border: none;
-}
-
 body.dark-mode .alerts-box {
-    background-color: rgb(56, 66, 79); 
+    background-color: rgb(56, 66, 79);
     color: #ffffff;
     border-radius: 8px;
     padding: 10px;
-}
-
-
-#profile-button {
-    margin-left: 21rem; 
-    appearance: none; 
-    background: none; 
-    border:none;
 }
 
 h1.center {
     text-align: center;
 }
 
+/* Navbar e offcanvas: */
 nav#top-navbar {
-  background-color: rgb(71, 94, 117);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  padding: 0 1rem;
+    background-color: rgb(71, 94, 117);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 0 1rem;
 }
 
 .sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1001;
-  top: 0;
-  left: 0;
-  background-color: #778da9;
-  overflow-x: hidden;
-  transition: 0.3s;
-  padding-top: 2rem;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    background-color: #778da9;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 2rem;
 }
 
 .sidenav a {
-  padding: 0.5rem 2rem;
-  text-decoration: none;
-  font-size: 1.25rem;
-  color: #023047;
-  display: block;
-  transition: 0.3s;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: #023047;
+    display: block;
+    transition: 0.3s;
 }
 
 .sidenav a:hover {
-  color: black;
+    color: black;
 }
 
 .sidenav .closebtn {
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 div.app-title {
@@ -118,7 +103,7 @@ div.app-title {
     align-items: center;
     justify-content: center;
     margin-left: 23rem;
-    
+
 }
 
 div.app-title-darkmode {
@@ -140,30 +125,8 @@ div.app-title span {
     font-size: 20px;
     font-weight: bold;
     color: black;
-    
-}
 
-/*.searchbar {
-    padding: 3px;
-    display: flex;
-    gap: 20px;
 }
-
-.searchbar input[type="text"] {
-    padding: 10px;
-    border: none;
-    font-size: 17px;
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-}
-    
-@media screen and (max-width: 600px) {
-    .searchbar input[type="text"] {
-        width: 100%;
-    }
-}*/
 
 header {
     position: relative;
@@ -172,10 +135,9 @@ header {
     gap: 0;
 }
 
-md-icon.black {
-    color: black;
-}
+/**/
 
+/* Secction principal: */
 .content {
     display: grid;
     padding: 10px;
@@ -184,17 +146,90 @@ md-icon.black {
     color: #023047;
 }
 
+/**/
+
+/* Ícones e botões: */
+md-icon.black {
+    color: black;
+}
+
 md-outlined-text-field#search-main {
     width: 100%;
 }
 
 md-filled-tonal-icon-button.custom-button {
     --md-sys-color-secondary-container: #778da9;
-  }
+}
 
 .custom-icon {
     color: #023047;
 }
+
+md-icon#alert-badge-critical {
+    background-color: #f2e9e4;
+    border: 8px solid #f2e9e4;
+    border-radius: 25px;
+    color: black;
+}
+
+md-icon.darkmode #alert-badge-critical {
+    background-color: #415a77;
+    border: 8px solid #415a77;
+    border-radius: 25px;
+}
+
+md-icon#alert-badge-warn {
+    background-color: #f2e9e4;
+    border: 8px solid #f2e9e4;
+    border-radius: 25px;
+    color: black;
+}
+
+md-icon.darkmode #alert-badge-warn {
+    background-color: #415a77;
+    border: 8px solid #415a77;
+    border-radius: 25px;
+    color: white;
+}
+
+md-icon#alert-badge-normal {
+    background-color: #f2e9e4;
+    border: 8px solid #f2e9e4;
+    border-radius: 25px;
+}
+
+md-icon.darkmode #alert-badge-normal {
+    background-color: #415a77;
+    border: 8px solid #415a77;
+    border-radius: 25px;
+}
+
+#dark-mode-button {
+    margin-right: 6rem;
+    appearance: none;
+    background: none;
+    border: none;
+}
+
+#profile-button {
+    margin-left: 21rem;
+    appearance: none;
+    background: none;
+    border: none;
+}
+
+.header button {
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+/**/
 
 .card-train {
     background-color: #778da9;
@@ -288,42 +323,6 @@ span#alert-text {
     align-items: center;
 }
 
-md-icon#alert-badge-critical {
-    background-color: #f2e9e4;
-    border: 8px solid #f2e9e4;
-    border-radius: 25px;
-    color: black;
-}
-md-icon.darkmode #alert-badge-critical{
-    background-color: #415a77;
-    border: 8px solid #415a77;
-    border-radius: 25px;
-}
-
-md-icon#alert-badge-warn {
-    background-color: #f2e9e4;
-    border: 8px solid #f2e9e4;
-    border-radius: 25px;
-    color: black;
-}
-md-icon.darkmode #alert-badge-warn{
-    background-color: #415a77;
-    border: 8px solid #415a77;
-    border-radius: 25px;
-    color: white;
-}
-
-md-icon#alert-badge-normal {
-    background-color: #f2e9e4;
-    border: 8px solid #f2e9e4;
-    border-radius: 25px;
-}
-md-icon.darkmode #alert-badge-normal{
-    background-color: #415a77;
-    border: 8px solid #415a77;
-    border-radius: 25px;
-}
-
 #body_initial {
     background-color: #0d1b2a;
 }
@@ -342,7 +341,6 @@ md-icon.darkmode #alert-badge-normal{
     color: #372a28;
 }
 
-
 .cal-sans-regular {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
@@ -350,25 +348,11 @@ md-icon.darkmode #alert-badge-normal{
     ;
 }
 
-footer {
-    background-color: #778da9; 
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 0; 
-    justify-content: center; 
-    align-items: center; 
-    height: 80px; 
-    margin-top: 50px;
-    color: black;
-    display: flex;
-}
-
 span#login-app-title {
-    padding: 20px 0px; 
-    font-size: 60px; 
-    font-family: Roboto; 
-    font-weight: 600; 
+    padding: 20px 0px;
+    font-size: 60px;
+    font-family: Roboto;
+    font-weight: 600;
     letter-spacing: 5px;
 }
 
@@ -378,18 +362,16 @@ span#login-app-title {
 }
 
 /*Calendário:*/
-
 .calendar {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
-    display: grid;
     margin: 0 auto;
+    width: 600px;
+    height: auto;
+    display: flex;
     flex-direction: column;
     padding: 10px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .calendar-header {
@@ -406,20 +388,9 @@ span#login-app-title {
     width: 150px;
 }
 
-.header button {
-    display: flex;
-    align-items: center;
-    border: none;
-    border-radius: 50%;
-    background: #fff;
-    width: 40px;
-    height: 40px;
-    box-shadow: 0 0 4px rgba(0,0,0,0.2);
-}
-
 .days {
     display: grid;
-    grid-template-columns: repeat(7,1fr);
+    grid-template-columns: repeat(7, 1fr);
 }
 
 .day {
@@ -431,7 +402,7 @@ span#login-app-title {
 
 .dates {
     display: grid;
-    grid-template-columns: repeat(7,1fr);
+    grid-template-columns: repeat(7, 1fr);
     gap: 5px;
 }
 
@@ -449,13 +420,13 @@ span#login-app-title {
     transition: 0.2s;
 }
 
-.date:hover{
-    background: rgb(195, 232, 181);
-    color: black;
+.date:hover {
+    background: #a1f3be;
+    color: #fff;
 }
 
 .date.active {
-    background: #778da9;
+    background: #415a77;
     color: #fff;
 }
 
@@ -467,8 +438,77 @@ span#login-app-title {
     color: #fff;
 }
 
-@media screen and (min-width: 1000px) {
+/**/
+
+/* Rodapé: */
+footer {
+    background-color: #778da9;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin-top: 50px;
+    color: black;
+    display: flex;
+}
+
+/**/
+
+/* Responsividade: */
+
+@media screen and (min-width: 1200px) {
     .calendar {
-        max-width: 1000px;
+        width: 1000px;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+    .calendar {
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .calendar {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header {
+        flex-direction: row;
+    }
+
+    #monthYear {
+        text-align: center;
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+
+    .days {
+        /* Oculta os demais dias da semana */
+        display: none !important;
+    }
+
+    .dates {
+        /* Centraliza o único dia exibido */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .date {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        font-weight: bold;
     }
 }
