@@ -88,6 +88,7 @@ nav#top-navbar {
   padding-top: 2rem;
 }
 
+
 .sidenav a {
   padding: 0.5rem 2rem;
   text-decoration: none;
@@ -111,6 +112,14 @@ nav#top-navbar {
   cursor: pointer;
 }
 
+@media screen and (max-width: 768px){
+
+    .sidenav {
+        display: block;
+    }
+
+}
+
 div.app-title {
     width: 50%;
     display: flex;
@@ -130,9 +139,12 @@ div.app-title-darkmode {
 }
 
 div.app-title img {
-    max-width: 100%;
+    max-width: 50%;
     width: 300px;
     display: block;
+    float: left;
+    margin-right: 400px;
+
 }
 
 div.app-title span {
@@ -140,30 +152,10 @@ div.app-title span {
     font-size: 20px;
     font-weight: bold;
     color: black;
+    margin-right: 400px;
     
 }
 
-/*.searchbar {
-    padding: 3px;
-    display: flex;
-    gap: 20px;
-}
-
-.searchbar input[type="text"] {
-    padding: 10px;
-    border: none;
-    font-size: 17px;
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-}
-    
-@media screen and (max-width: 600px) {
-    .searchbar input[type="text"] {
-        width: 100%;
-    }
-}*/
 
 header {
     position: relative;
