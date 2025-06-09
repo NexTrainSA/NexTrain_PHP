@@ -340,8 +340,8 @@ span#alert-text {
 
 /*Calendário:*/
 .calendar {
+    width: 100%;
     margin: 0 auto;
-    width: 600px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -418,7 +418,6 @@ span#alert-text {
 /**/
 
 /* Rodapé: */
-
 section.content {
     padding-bottom: 5rem;
 }
@@ -428,7 +427,6 @@ section.content {
         padding-bottom: 20%;
     }
 }
-
 
 footer {
     background-color: #778da9;
@@ -444,30 +442,24 @@ footer {
     font-weight: 500;
     border-top: 1px solid;
 }
-
-/**/
-
-/* Gráficos: */
-.graphs {
-    margin: 0 auto;
-}
 /**/
 
 /* Responsividade: */
 
-@media screen and (min-width: 1200px) {
+/* Calendário*/
+@media (min-width: 361px) and (max-width: 499px) {
     .calendar {
-        width: 1000px;
+        width: 100%;
     }
 }
 
 @media (min-width: 500px) and (max-width: 768px) {
     .calendar {
-        width: 450px;
+        width: 100%;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 360px) {
     .calendar {
         width: 100%;
         padding: 15px;
@@ -489,13 +481,11 @@ footer {
         margin: 0 10px;
     }
 
-    .days {
-        /* Oculta os demais dias da semana */
+    .days { /* Oculta os outros dias */
         display: none !important;
     }
 
-    .dates {
-        /* Centraliza o único dia exibido */
+    .dates { /* Centraliza o dia que aparece */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -508,6 +498,7 @@ footer {
         font-weight: bold;
     }
 }
+/**/
 
 @media screen and (max-width: 500px) {
     nav#top-navbar {
