@@ -94,5 +94,5 @@ nextMonthElement.addEventListener('click', () => {
 // Atualiza o calendário com o resize da tela
 window.addEventListener('resize', updateCalendar);
 
-// Atualiza o calendário quando a página é carregada
+// Atualiza o calendário quando a página é carregada (claramente)
 updateCalendar();
