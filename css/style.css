@@ -26,10 +26,7 @@ body.dark-mode {
 }
 
 body.dark-mode h3 {
-    margin: 20px 0px;
-    font-weight: 500;
     color: rgb(255, 255, 255);
-    font-size: medium;
 }
 
 body.dark-mode .card-train {
@@ -448,6 +445,12 @@ footer {
     border-top: 1px solid;
 }
 
+/**/
+
+/* Gráficos: */
+.graphs {
+    margin: 0 auto;
+}
 /**/
 
 /* Responsividade: */
