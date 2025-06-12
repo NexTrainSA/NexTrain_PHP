@@ -340,7 +340,7 @@ span#alert-text {
 
 /*Calendário:*/
 .calendar {
-    width: 100%;
+    max-width: 85%;
     margin: 0 auto;
     height: auto;
     display: flex;
@@ -398,7 +398,7 @@ span#alert-text {
 }
 
 .date:hover {
-    background: #a1f3be;
+    background: #91c9a5;
     color: #fff;
 }
 
@@ -442,26 +442,15 @@ footer {
     font-weight: 500;
     border-top: 1px solid;
 }
+
 /**/
 
 /* Responsividade: */
 
 /* Calendário*/
-@media (min-width: 361px) and (max-width: 499px) {
-    .calendar {
-        width: 100%;
-    }
-}
-
-@media (min-width: 500px) and (max-width: 768px) {
-    .calendar {
-        width: 100%;
-    }
-}
 
 @media screen and (max-width: 360px) {
     .calendar {
-        width: 100%;
         padding: 15px;
     }
 
@@ -481,11 +470,13 @@ footer {
         margin: 0 10px;
     }
 
-    .days { /* Oculta os outros dias */
+    .days {
+        /* Oculta os outros dias */
         display: none !important;
     }
 
-    .dates { /* Centraliza o dia que aparece */
+    .dates {
+        /* Centraliza o dia que aparece */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -498,6 +489,7 @@ footer {
         font-weight: bold;
     }
 }
+
 /**/
 
 @media screen and (max-width: 500px) {
@@ -515,26 +507,26 @@ footer {
         font-size: 20px;
         letter-spacing: 2px;
         margin-top: 20px;
-        font: "Roboto";
+        font-family: "Roboto";
     }
 
     .card-train {
         margin: 10px 5%;
     }
 
-   i.dark-mode-button {
+    i.dark-mode-button {
 
-    margin-right: 300px;
+        margin-right: 300px;
 
-   }
+    }
 
-   div.top-btn-group {
+    div.top-btn-group {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-   }
+    }
 
-   #profile-button {
-    margin-left: 40%;
-   }
+    #profile-button {
+        margin-left: 40%;
+    }
 }
