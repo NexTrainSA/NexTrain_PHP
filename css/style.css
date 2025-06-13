@@ -57,6 +57,7 @@ nav#top-navbar {
     left: 0;
     z-index: 1000;
     padding: 0 2rem;
+    border-bottom: 1px solid;
 }
 
 .app-title {
@@ -73,7 +74,7 @@ nav#top-navbar {
 
 .app-title span {
     padding: 20px 0px;
-    font-size: 60px;
+    font-size: 35px;
     font-family: Roboto;
     font-weight: 600;
     letter-spacing: 5px;
@@ -183,7 +184,6 @@ md-icon.darkmode #alert-badge-normal {
 }
 
 #profile-button {
-    margin-left: 21rem;
     appearance: none;
     background: none;
     border: none;
