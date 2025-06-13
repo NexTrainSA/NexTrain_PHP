@@ -360,7 +360,6 @@ span#alert-text {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    color: black !important;
 }
 
 .header {
@@ -368,7 +367,7 @@ span#alert-text {
     justify-content: space-between;
     align-items: center;
     width: 150px;
-    color: black !important;
+    
 }
 
 .days {
@@ -510,6 +509,10 @@ footer {
         height: 80px;
         padding: 0 1rem;
 
+    }
+
+    footer {
+        position: fixed;
     }
 
     .app-title {
