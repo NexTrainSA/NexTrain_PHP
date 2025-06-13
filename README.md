@@ -8,7 +8,16 @@
 
 
 ## Sobre
-The 'SwerveRobot-Snapshot' repository is a place where members of **CyberRain#9611** is testing their swerve drive funcionalities during 2025 season first weeks.
+Este repositório contém o código-fonte do [NexTrain_PHP](http://179.222.224.43:6080/).
+
+Trabalho desenvolvido por:
+- João Rodrigo Heinzelmann Luckow @plugner
+- Fernanda Ribeiro Sant'Anna
+- Mariana Lopes Carvalho Pita
+- Gabriela Vitória Maes
+- Yasmin Victhoria da Silva
+
+**Turma:** EMDS 24/M6 - TDES 23/M1
 
 ## Features
 - Login de usuário integrado ao banco de dados
