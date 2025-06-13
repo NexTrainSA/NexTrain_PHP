@@ -82,6 +82,7 @@ nav#top-navbar {
     font-family: Roboto;
     font-weight: 600;
     letter-spacing: 5px;
+    color:white
 }
 
 .sidenav {
@@ -105,6 +106,8 @@ nav#top-navbar {
     color: #023047;
     display: block;
     transition: 0.3s;
+    font-family: Roboto;
+    font-weight: 500;
 }
 
 .sidenav a:hover {
@@ -186,6 +189,7 @@ md-icon.darkmode #alert-badge-normal {
     background: none;
     border: none;
 }
+
 
 #profile-button {
     appearance: none;
@@ -459,6 +463,7 @@ footer {
 @media screen and (max-width: 525px) {
     .date {
         padding: 5px;
+        text-align: center;
     }
 }
 
@@ -493,6 +498,7 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
     }
 
     .date {
@@ -510,6 +516,8 @@ footer {
         height: 80px;
         padding: 0 1rem;
         position: fixed;
+        margin-bottom: 10px;
+    
     }
 
     footer {
@@ -528,7 +536,7 @@ footer {
     }
 
     .card-train {
-        margin: 10px 5%;
+        margin-bottom: 10px;
     }
 
     i.dark-mode-button {
