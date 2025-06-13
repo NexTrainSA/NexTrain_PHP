@@ -16,15 +16,18 @@ function getCookie(cname) {
     return "";
 }
 
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
+function setCookie(name,value,days) {
+  var expires = "";
+  if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days*24*60*60*1000));
+      expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
 
-window.onload(() => {
-    console.log("load");
-})
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    setCookie("darkMode", document.body.classList.contains("dark-mode") ? "true" : "false", 30);
 
-if(getCookie("darkMode") === "true") {
-    toggleDarkMode();
-    console.log("Dark Mode")
 }
