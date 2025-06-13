@@ -26,7 +26,7 @@ main {
 
 body.dark-mode {
     background-color: rgb(63, 83, 103);
-    color: white !important;
+    color: #FAFAFA !important;
 }
 
 body.dark-mode h3 {
@@ -35,7 +35,7 @@ body.dark-mode h3 {
 
 body.dark-mode .card-train {
     background-color: rgb(56, 66, 79);
-    color: white;
+    color: #FAFAFA;
 }
 
 body.dark-mode .alerts-box {
@@ -165,7 +165,7 @@ md-icon.darkmode #alert-badge-warn {
     background-color: #415a77;
     border: 8px solid #415a77;
     border-radius: 25px;
-    color: white;
+    color: #FAFAFA;
 }
 
 md-icon#alert-badge-normal {
