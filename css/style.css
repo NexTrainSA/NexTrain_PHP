@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     position: relative;
     width: 100%;
@@ -356,6 +360,7 @@ span#alert-text {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    color: black !important;
 }
 
 .header {
@@ -363,6 +368,7 @@ span#alert-text {
     justify-content: space-between;
     align-items: center;
     width: 150px;
+    color: black !important;
 }
 
 .days {
@@ -392,9 +398,10 @@ span#alert-text {
     margin: auto;
     font-weight: 600;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     transition: 0.2s;
+    color: black !important;
 }
 
 .date:hover {
@@ -448,6 +455,12 @@ footer {
 /* Responsividade: */
 
 /* Calendário*/
+
+@media screen and (max-width: 525px) {
+    .date {
+        padding: 5px;
+    }
+}
 
 @media screen and (max-width: 360px) {
     .calendar {

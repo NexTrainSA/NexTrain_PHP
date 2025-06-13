@@ -14,7 +14,7 @@ const updateCalendar = () => {  // Função principal que atualiza o calendário
     const lastDay = new Date(currentYear, currentMonth + 1, 0); // Dia 0 do mês seguinte é o último do mês atual
     const totalDays = lastDay.getDate();
     const firstDayIndex = firstDay.getDay(); // Qual dia da semana (domingo=0)
-    const isSmallScreen = window.innerWidth <= 360;
+    const isSmallScreen = window.innerWidth <= 380;
 
     // Tela mobile: 
     if (isSmallScreen) {
