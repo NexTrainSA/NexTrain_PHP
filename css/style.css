@@ -430,6 +430,7 @@ section.content {
 
 @media screen and (max-width: 500px) {
     section.content {
+        padding-top: 20%;
         padding-bottom: 20%;
     }
 }
@@ -508,7 +509,7 @@ footer {
     nav#top-navbar {
         height: 80px;
         padding: 0 1rem;
-
+        position: fixed;
     }
 
     footer {
