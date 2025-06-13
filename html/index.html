@@ -33,7 +33,7 @@
 
         <div class="last-trains"> <!--  Informações dos trechos:  -->
 
-            <h3>Seus trechos</h3>
+            <h3 style="text-align: center;">Seus trechos</h3>
 
             <!--  Card:  -->
             <div class="card-train">
@@ -42,7 +42,7 @@
                 </md-filled-tonal-icon-button>
                 <div class="train-text">
                     <div>
-                        <span id="train-name"style="color: #ffffff;">DB 8598</span>
+                        <span id="train-name" style="color: #ffffff;">DB 8598</span>
                         <div>
                             <span id="train-route">Trecho 1 para Trecho 2</span>
                         </div>
@@ -70,7 +70,7 @@
         <br> <!--Espaçamento-->
 
         <!--  Informações breves  -->
-        <h3>Informações</h3>
+        <h3 style="text-align: center;">Informações</h3>
         <div class="info">
             <div class="card-train" id="card-status-train">
                 <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
@@ -78,7 +78,7 @@
                 </md-filled-tonal-icon-button>
                 <div class="train-text">
                     <div>
-                        <span id="train-name"style="color: #ffffff;">Taxa de Atraso</span>
+                        <span id="train-name" style="color: #ffffff;">Taxa de Atraso</span>
                         <div>
                             <span id="train-route">3%</span>
                         </div>
@@ -91,7 +91,7 @@
                 </md-filled-tonal-icon-button>
                 <div class="train-text">
                     <div>
-                        <span id="train-name"style="color: #ffffff;">Próximo Trem</span>
+                        <span id="train-name" style="color: #ffffff;">Próximo Trem</span>
                         <div>
                             <span id="train-route">3 min</span>
                         </div>
@@ -105,29 +105,20 @@
 
         <!--  Início dos Alertas recentes:  -->
         <div class="alert" id="card-status-train">
-            <h3>Alertas recentes</h3>
+            <h3 style="text-align: center;">Alertas recentes</h3>
             <div class="alerts-box">
-
-                <md-list-item>
-                    <div id="alert">
-                        <md-icon id="alert-badge-warn" >notifications</md-icon>
-                        <span id="train-name"style="color: #ffffff;">Engarrafamento no Trecho 2</span>
-                    </div>
-                </md-list-item>
-
-                <md-list-item>
-                    <div id="alert">
-                        <md-icon id="alert-badge-critical" >error</md-icon>
-                        <span id="train-name"style="color: #ffffff;">Queda de Energia em Trecho 1</span>
-                    </div>
-                </md-list-item>
-
-                <md-list-item> <!--Alerta de chuva-->
-                    <div id="alert">
-                        <md-icon id="alert-badge-normal">cloud</md-icon>
-                        <span id="train-name"style="color: #ffffff;">Chuva Intensa em Trecho 4</span>
-                    </div>
-                </md-list-item>
+                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="error-icon-color" style="color: #415a77;">error</md-icon>
+                </md-filled-tonal-icon-button>
+                <span id="train-name" style="color: #ffffff;">Taxa de Atraso</span>
+                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="error-icon-color" style="color: #415a77;">error</md-icon>
+                </md-filled-tonal-icon-button>
+                <span id="train-name" style="color: #ffffff;">Taxa de Atraso</span>
+                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="error-icon-color" style="color: #415a77;">error</md-icon>
+                </md-filled-tonal-icon-button>
+                <span id="train-name" style="color: #ffffff;">Taxa de Atraso</span>
             </div>
         </div>
         <!--  Fim dos Alertas  -->
