@@ -24,30 +24,33 @@
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
 </head>
-
-<div class="login-titlle" style="display: flex; flex-direction: column; align-items: center; background-color: #778da9;">
-                <img src="./imagens/logo.png" style="width: 30%;">
-                <span id="login-app-title" style="width: 20%;">NexTrain</span>
-</div>
-
 <body style="background-color: #ffffff;">
+
+    <div class="login-title" style="display: flex; flex-direction: column; align-items: center; background-color: #778da9;">
+                    <img src="./imagens/logo.png" style="width: 50%; padding: 10px;">
+    </div>
+
     <br>
-    <form action="./php/login.php" method="post" style="width: 100%;">
-            
-            <div>
-                <div class="search-login-screen" style="display: flex; align-items: center; padding: 40px 50px 5px 50px;">
-                    <md-outlined-text-field name="user" id="search-main" label="Nome de Usuário" style="flex: 1;"></md-outlined-text-field>
+
+    <div class="login-form">
+        <span style="padding-left: 2%; font-family: Roboto; font-size: large;">Conecte-se ao <strong>NexTrain</strong></span>
+        <form action="./php/login.php" method="post" style="width: 100%;">
+                <div>
+                    <div class="search-login-screen" style="display: flex; align-items: center; padding: 40px 50px 5px 50px;">
+                        <md-outlined-text-field name="user" id="search-main" label="Nome de Usuário" style="flex: 1;"></md-outlined-text-field>
+                    </div>
+                    <div class="search-login-screen" style="display: flex; align-items: center; padding: 40px 50px 5px 50px;">
+                        <md-outlined-text-field type="password" name="pass" id="search-main" label="Senha" style="flex: 1;"></md-outlined-text-field>
+                    </div>
                 </div>
-                <div class="search-login-screen" style="display: flex; align-items: center; padding: 40px 50px 5px 50px;">
-                    <md-outlined-text-field type="password" name="pass" id="search-main" label="Senha" style="flex: 1;"></md-outlined-text-field>
+                <div style="display: flex; justify-content: center; padding: 40px 50px 5px 50px;">
+                    <md-filled-tonal-icon-button class="custom-button" style="width: 18%; --md-sys-color-secondary-container: #778da9;">
+                        <md-icon class="custom-icon">login</md-icon>
+                    </md-filled-tonal-icon-button>
                 </div>
-            </div>
-            <div style="display: flex; justify-content: center; padding: 40px 50px 5px 50px;">
-                <md-filled-tonal-icon-button class="custom-button" style="width: 18%; --md-sys-color-secondary-container: #778da9;">
-                    <md-icon class="custom-icon">login</md-icon>
-                </md-filled-tonal-icon-button>
-            </div>
         </form>
+    </div>
+
 </body>
 
 </html>
