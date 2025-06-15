@@ -103,22 +103,31 @@
 
         <br> <!--Espaçamento-->
 
-        <!--  Início dos Alertas recentes:  -->
-        <div class="alert" id="card-status-train">
+        <!--  Início dos Alertas recentes:  --> <!-- color: #e63946; color: #ffb703; -->
+        <div class="alert"></div>
             <h3 style="text-align: center;">Alertas recentes</h3>
-            <div class="alerts-box">
-                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
-                    <md-icon class="error-icon-color" style="color: #415a77;">error</md-icon>
-                </md-filled-tonal-icon-button>
-                <span id="train-name" style="color: #ffffff;">Taxa de Atraso</span>
-                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
-                    <md-icon class="error-icon-color" style="color: #415a77;">error</md-icon>
-                </md-filled-tonal-icon-button>
-                <span id="train-name" style="color: #ffffff;">Taxa de Atraso</span>
-                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
-                    <md-icon class="error-icon-color" style="color: #415a77;">error</md-icon>
-                </md-filled-tonal-icon-button>
-                <span id="train-name" style="color: #ffffff;">Taxa de Atraso</span>
+            <div id="alerts-box" class="danger">
+                <div class="alert-item" style="display:flex; align-items: center;">
+                    <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="alert-danger">thunderstorm</md-icon>
+                    </md-filled-tonal-icon-button>
+                    <div class="alert-content" style="display: flex; flex-direction: column;">
+                        <span class="alert-title"><b>Chuva</b></span>
+                        <span class="alert-location"><i>Trecho 1</i></span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="alerts-box" class="warning">
+                <div class="alert-item" style="display:flex; align-items: center;">
+                    <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="alert-warning">warning</md-icon>
+                    </md-filled-tonal-icon-button>
+                    <div class="alert-content" style="display: flex; flex-direction: column;">
+                        <span class="alert-title"><b>Destritos na Pista</b></span>
+                        <span class="alert-location"><i>Trecho 4</i></span>
+                    </div>
+                </div>
             </div>
         </div>
         <!--  Fim dos Alertas  -->
