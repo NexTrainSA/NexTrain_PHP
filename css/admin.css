@@ -1,0 +1,56 @@
+body {
+    background-color: #dbd4bf !important;
+    font-size: 18px;
+}
+
+* {
+    font-family: Roboto;
+    color: #000000 !important;
+}
+
+md-icon {
+    font-family: 'Material Symbols Outlined';
+}
+
+.sidenav a {
+    color: #023047 !important;
+}
+
+a {
+    color: blue !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-family: Roboto !important;
+}
+
+input {
+    border: 2px solid #a39774;
+    background-color: #b5ab8d;
+}
+
+table, th, td {
+    border: 1.25px solid;
+}
+
+td {
+    font-style: italic;
+}
+
+tr:nth-child(even) {background-color: #b5ab8d;}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+    margin: 20px;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+}
+
+.grid-container {
+    display: grid;
+}

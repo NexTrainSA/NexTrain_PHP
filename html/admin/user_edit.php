@@ -23,41 +23,8 @@
 
     <!-- https://www.w3schools.com/css/css_table_style.asp !-->
 
-    <style>
+    <link rel="stylesheet" href="css/admin.css">
 
-        body {
-            background-color: #dbd4bf;
-            font-size: 18px;
-        }
-
-        input {
-            border: 2px solid #a39774;
-            background-color: #b5ab8d;
-        }
-
-        table, th, td {
-            border: 1.25px solid;
-        }
-        
-        td {
-            font-style: italic;
-        }
-
-        tr:nth-child(even) {background-color: #b5ab8d;}
-
-        .flex-container {
-            display: flex;
-        }
-
-        .flex-child {
-            flex: 1;
-            margin: 20px;
-        }  
-
-        .flex-child:first-child {
-            margin-right: 20px;
-        }
-    </style>
 
 
     <div class="flex-container">
