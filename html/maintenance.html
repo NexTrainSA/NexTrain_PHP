@@ -68,55 +68,47 @@
 
         <!--  Alertas de Manutenção:  -->
         <h3 style="text-align: center;">Alertas de Manutenção</h3>
-        <!--  Card:  -->
         <div class="malfunction">
-            <div class="card-train">
-                <md-filled-tonal-icon-button style="font-size:40px; --md-sys-color-econdary-container: #ffffff;">
-                    <i class="fa-solid fa-screwdriver-wrench" style="color:#778da9;"></i></md-icon>
-                </md-filled-tonal-icon-button>
-                <div>
-                    <div class="train-text">
-                        <span id="train-name" style="color: white">Alerta de Manutenção</span>
-                        <div>
-                            <span id="train-route">Trem DZ213 não iniciou manutenção</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--  Card:  -->
-        <div class="malfunction">
-            <div class="card-train">
-                <md-filled-tonal-icon-button style="font-size:40px; --md-sys-color-econdary-container: #ffffff;">
-                    <i class="fa-solid fa-screwdriver-wrench"style="color:#778da9"></i></md-icon>
-                </md-filled-tonal-icon-button>
-                <div>
-                    <div class="train-text">
-                        <span id="train-name" style="color: white">Alerta de Manutenção</span>
-                        <div>
-                            <span id="train-route">Trem D654 já está operando</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--  Card:  -->
-        <div class="malfunction">
-            <div class="card-train">
-                <md-filled-tonal-icon-button style="font-size:40px; --md-sys-color-econdary-container: #ffffff;">
-                    <i class="fa-solid fa-screwdriver-wrench" style="color:#778da9"></i></md-icon>
-                </md-filled-tonal-icon-button>
-                <div class="train-text">
-                    <div>
-                        <span id="train-name" style="color: white">Alerta de Manutenção</span>
-                        <div>
-                            <span id="train-route">Trem D098 está em processo de manutenção</span>
-                        </div>
+            <div id="alerts-box">
+                <div class="alert-item" style="display:flex; align-items: center;">
+                    <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="alert">handyman</md-icon>
+                    </md-filled-tonal-icon-button>
+                    <div class="alert-content" style="display: flex; flex-direction: column;">
+                        <span class="alert-title"><b>Alerta de Manutenção</b></span>
+                        <span class="alert-location"><i>Trem DZ213 ainda não iniciou manutenção</i></span>
                     </div>
                 </div>
             </div>
         </div>
 
+        <div class="malfunction">
+            <div id="alerts-box">
+                <div class="alert-item" style="display:flex; align-items: center;">
+                    <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="alert">handyman</md-icon>
+                    </md-filled-tonal-icon-button>
+                    <div class="alert-content" style="display: flex; flex-direction: column;">
+                        <span class="alert-title"><b>Alerta de Manutenção</b></span>
+                        <span class="alert-location"><i>Trem D654 já está operando</i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="malfunction">
+            <div id="alerts-box">
+                <div class="alert-item" style="display:flex; align-items: center;">
+                    <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
+                    <md-icon class="alert">handyman</md-icon>
+                    </md-filled-tonal-icon-button>
+                    <div class="alert-content" style="display: flex; flex-direction: column;">
+                        <span class="alert-title"><b>Alerta de Manutenção</b></span>
+                        <span class="alert-location"><i>Trem D098 está em processo de manutenção</i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!--  Fim do Conteúdo  -->
 
