@@ -29,44 +29,38 @@
         <!--  Alertas de cuidados imediatos  -->
         <h3 style="text-align:center;">Cuidados imediatos</h3>
         <!--  Card:  -->
-        <div class="card-train">
-            <md-filled-tonal-icon-button style="font-size:40px; --md-sys-color-econdary-container: #ffffff;">
-                <i class="fa-solid fa-car" style="color: #778da9"></i></md-icon>
-            </md-filled-tonal-icon-button>
-            <div class="train-text">
-                <div>
-                    <span id="train-name"style="color: white">Engarrafamento</span>
-                    <div>
-                        <span id="train-route">Engarrafamento no Trecho 2</span>
-                    </div>
+        <div id="alerts-box" class="warning">
+            <div class="alert-item" style="display:flex; align-items: center;">
+                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
+                <md-icon class="alert-warning">directions_car</md-icon>
+                </md-filled-tonal-icon-button>
+                <div class="alert-content" style="display: flex; flex-direction: column;">
+                    <span class="alert-title"><b>Engarrafamento</b></span>
+                    <span class="alert-location"><i>Trecho 1</i></span>
                 </div>
             </div>
         </div>
         <!--  Card:  -->
-        <div class="card-train">
-            <md-filled-tonal-icon-button style="font-size:40px; --md-sys-color-econdary-container: #ffffff;">
-                <i class="fa-solid fa-circle-exclamation" style="color:#778da9"></i></md-icon>
-            </md-filled-tonal-icon-button>
-            <div class="train-text">
-                <div>
-                    <span id="train-name" style="color: white">Queda de energia</span>
-                    <div>
-                        <span id="train-route">Queda de energia no Trecho 1</span>
-                    </div>
+         <div id="alerts-box" class="warning">
+            <div class="alert-item" style="display:flex; align-items: center;">
+                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
+                <md-icon class="alert-warning">warning</md-icon>
+                </md-filled-tonal-icon-button>
+                <div class="alert-content" style="display: flex; flex-direction: column;">
+                    <span class="alert-title"><b>Queda de Energia</b></span>
+                    <span class="alert-location"><i>Trecho 1</i></span>
                 </div>
             </div>
         </div>
         <!--  Card:  -->
-        <div class="card-train">
-            <md-filled-tonal-icon-button style="font-size:40px; --md-sys-color-econdary-container: #ffffff;">
-                <i class="fa-solid fa-cloud-rain" style="color: #778da9"></i></md-icon>
-            </md-filled-tonal-icon-button>
-            <div class="train-text">
-                <div>
-                    <span id="train-name" style="color: white">Chuvas Intensas</span>
-                    <div>
-                        <span id="train-route">Fortes chuvas no Trecho 4</span>
-                    </div>
+        <div id="alerts-box" class="danger">
+            <div class="alert-item" style="display:flex; align-items: center;">
+                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
+                <md-icon class="alert-danger">thunderstorm</md-icon>
+                </md-filled-tonal-icon-button>
+                <div class="alert-content" style="display: flex; flex-direction: column;">
+                    <span class="alert-title"><b>Chuva</b></span>
+                    <span class="alert-location"><i>Trecho 1</i></span>
                 </div>
             </div>
         </div>
