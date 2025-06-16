@@ -38,13 +38,16 @@
                 <md-icon-button onclick="openNav()">
                     <md-icon class="black">menu</md-icon>
                 </md-icon-button>
-                <div id="mySidenav" class="sidenav" style="width: 0%;">
-                    <button class="closebtn" onclick="closeNav()">&times;</button>
-                    <a href="?page=maintenance.html">Manutenção</a>
-                    <a href="?page=routes.html">Rotas</a>
-                    <a href="?page=notification.html">Notificações</a>
-                    <a href="?page=reports.html">Análises</a>
-                    <a href="?page=schedule.html">Agenda</a>
+                <div id="mySidenav" class="sidenav" style="width: 0%;"> <!-- TODO: Adicionar nome de usuário no final-->
+                    <div style="display:flex; flex-direction: column; align-items: self-start;">
+                        <button class="closebtn" onclick="closeNav()">&times;</button>
+                        <a href="?page=index.html">Início</a>
+                        <a href="?page=maintenance.html">Manutenção</a>
+                        <a href="?page=routes.html">Rotas</a>
+                        <a href="?page=notification.html">Notificações</a>
+                        <a href="?page=reports.html">Análises</a>
+                        <a href="?page=schedule.html">Agenda</a>
+                    </div>
                 </div>
             </div>
             <div class="app-title" style="display: grid; cursor:pointer; place-items: center;" onclick="document.location.href = '.'">
