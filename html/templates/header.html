@@ -47,15 +47,17 @@
                     <a href="?page=schedule.html">Agenda</a>
                 </div>
             </div>
-            <div class="app-title" style="cursor:grab" onclick="document.location.href = '.'">
-                <div style="width: 75%;">
-                    <img src="./imagens/logo.png">
-                    <span id="login-app-title">NexTrain</span>
+            <div class="app-title" style="display: grid; cursor:pointer; place-items: center;" onclick="document.location.href = '.'">
+                <div id="navbar-img-container">
+                    <div id="navbar-img">
+                        <img src="./imagens/logo.png">
+                    </div>
+                    <span id="login-app-title" style="text-align:center; color: #FAFAFA;">NexTrain</span>
                 </div>
             </div>
             <div class="top-btn-group">
                 
-                <button type="button" style="cursor:grab" id="profile-button"
+                <button type="button" style="cursor:pointer;" id="profile-button"
                     onclick="document.getElementById('dialog-profile-info').open = true;">
                     <!--Botão de Perfil no topo direio -->
                     <i id="dark-mode-sun" class="fas fa-user"></i>

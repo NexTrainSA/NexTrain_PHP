@@ -69,7 +69,7 @@ nav#top-navbar {
     align-items: center;
     gap: 25%;
     max-width: 12.5rem;
-    cursor: grab;
+    cursor: pointer;
 }
 
 .app-title img {
@@ -218,7 +218,8 @@ md-icon.darkmode #alert-badge-normal {
     appearance: none;
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    cursor: pointer;
 }
 
 
@@ -226,7 +227,7 @@ md-icon.darkmode #alert-badge-normal {
     appearance: none;
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 /**/
@@ -240,6 +241,7 @@ md-icon.darkmode #alert-badge-normal {
     gap: 15px;
     margin-top: 8px;
     margin: 5px;
+
 }
 
 .info {
@@ -475,6 +477,31 @@ footer {
     border-top: 1px solid;
 }
 
+md-fab.nxt-btn {
+    width: 100%; 
+    padding: 0 20%;
+}
+
+div#navbar-img {
+    width: 90%;
+    padding-left: 45px;
+}
+
+div.top-btn-group {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+div#navbar-img-container {
+    width: 110%;
+}
+
+span#login-app-title {
+    text-align: center;
+    color: #000000;
+    padding-left: 45px;
+}
 /**/
 
 /* Responsividade: */
@@ -546,7 +573,8 @@ footer {
     }
 
     .app-title {
-        margin-left: 5.5rem;
+        padding-left: 20px;
+        
     }
 
     span#login-app-title {
@@ -555,6 +583,8 @@ footer {
         text-align: center;
         margin-top: 20px;
         font-family: "Roboto";
+        
+        
     }
 
     .card-train {
@@ -574,6 +604,10 @@ footer {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        gap: 10px;
+        gap: 10px !important;
+    }
+
+    div#navbar-img {
+        width: 70%;
     }
 }
