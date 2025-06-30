@@ -82,12 +82,11 @@
 
                 map.setCenter(place.geometry.location);
                 map.setZoom(14);
-                marker.setPosition(place.geometry.location);
+                marker.setPosition(place.geometry.location); // Move o marker para o lugar que a pessoa digitou. 
             });
         }
     </script>
 
-    <!-- Carregando a API com biblioteca 'places' -->
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCucR2GshMjgmaOGkv89Va1zsgQosLg8yg&callback=initMap&libraries=places"
         async defer>
