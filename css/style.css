@@ -515,7 +515,7 @@ span#login-app-title {
     }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 380px) {
     .calendar {
         padding: 15px;
     }
