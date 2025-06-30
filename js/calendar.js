@@ -18,7 +18,7 @@ const updateCalendar = () => {  // Função principal que atualiza o calendário
 
     // Tela mobile: 
     if (isSmallScreen) {
-        const dayNumber = currentDate.getDate(); 
+        const dayNumber = currentDate.getDate();
         const weekdayName = currentDate.toLocaleDateString('pt-BR', {
             weekday: 'long'
         });
@@ -62,12 +62,52 @@ const updateCalendar = () => {  // Função principal que atualiza o calendário
         const date = new Date(currentYear, currentMonth, i);
         const isToday = date.toDateString() === new Date().toDateString();
         const activeClass = isToday ? 'active' : '';
-        datesHTML += `<div class="date ${activeClass}">${i}</div>`;
+
+        // Textos do tooltip:
+        const dayOfWeek = date.getDay(); // Verifica o dia para mudar o texto do tooltip
+        let tooltipText = 'Aproveite enquanto não tem trabalho.'; // Texto padrão
+        if (dayOfWeek === 0 || dayOfWeek === 6) { // Sábado é (6) e domingo é (0)
+            tooltipText = 'Vai dormir!'; // Texto especial para fim de semana
+        }
+
+        // Coloca cada dia dentro do "date-container" e inclui um tooltip oculto com o texto correto
+        datesHTML += `
+            <div class="date-container">
+                <div class="date ${activeClass}" data-day="${i}">${i}</div>
+                <div class="tooltip">${tooltipText}</div>
+            </div>
+        `;
     }
+        // Fim dos Textos do tooltip
 
     // Insere os dias dentro do HTML:
     datesElement.innerHTML = datesHTML;
+
+    // Ativa os tooltips
+    setupTooltips();
 };
+
+// Função que adiciona tooltips clicáveis aos elementos com a classe "date"
+function setupTooltips() {
+    const allDates = document.querySelectorAll('.date');
+
+    allDates.forEach(date => {
+        date.addEventListener('click', function (e) {
+            // Esconde qualquer tooltip já visível
+            document.querySelectorAll('.date').forEach(d => d.classList.remove('show-tooltip'));
+
+            // Mostra o tooltip do dia clicado
+            this.classList.add('show-tooltip');
+
+            e.stopPropagation(); // Impede que o clique feche o tooltip imediatamente
+        });
+    });
+
+    // Se o usuário clicar fora de qualquer dia, o tooltip desaparece
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.date').forEach(d => d.classList.remove('show-tooltip'));
+    });
+}
 
 // Botão de voltar: 
 previousMonthElement.addEventListener('click', () => {
@@ -86,7 +126,7 @@ nextMonthElement.addEventListener('click', () => {
     } else {
         currentDate.setMonth(currentDate.getMonth() + 1); // Em telas grandes, avança um mês
     }
-    updateCalendar(); // Atualiza a exibição
+    updateCalendar();
 });
 
 window.addEventListener('resize', updateCalendar); // Atualiza o calendário com o resize da tela
