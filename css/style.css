@@ -82,7 +82,7 @@ nav#top-navbar {
     font-family: Roboto;
     font-weight: 600;
     letter-spacing: 5px;
-    color:white
+    color: white
 }
 
 .sidenav {
@@ -394,7 +394,7 @@ span#alert-text {
     justify-content: space-between;
     align-items: center;
     width: 150px;
-    
+
 }
 
 .days {
@@ -478,7 +478,7 @@ footer {
 }
 
 md-fab.nxt-btn {
-    width: 100%; 
+    width: 100%;
     padding: 0 20%;
 }
 
@@ -502,13 +502,125 @@ span#login-app-title {
     color: #000000;
     padding-left: 45px;
 }
+
 /**/
 
-/* Responsividade: */
+/*Calendário:*/
+.calendar {
+    width: 85%;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day {
+    text-align: center;
+    padding: 5px;
+    color: #999FA6;
+    font-weight: 500;
+}
+
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    font-weight: 600;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: 0.2s;
+    color: black !important;
+}
+
+.date:hover {
+    background: #91c9a5;
+    color: #fff;
+}
+
+.date.active {
+    background: #415a77;
+    color: #fff;
+}
+
+.date.inactive {
+    color: #d2d2d2;
+}
+
+.date.inactive:hover {
+    color: #fff;
+}
+
+.date-container {
+    position: relative;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 6px;
+    z-index: 10;
+}
+
+/* Mostrar tooltip ao clicar */
+.date.show-tooltip+.tooltip {
+    display: block;
+}
+
+/* Mostrar tooltip ao passar o mouse (hover) */
+@media (hover: hover) {
+    .date:hover+.tooltip {
+        display: block;
+    }
+}
+
+/**/
 
 /* Calendário*/
 
-@media screen and (max-width: 525px) {
+@media screen and (max-width: 425px) {
     .date {
         padding: 5px;
         text-align: center;
@@ -565,7 +677,7 @@ span#login-app-title {
         padding: 0 1rem;
         position: fixed;
         margin-bottom: 10px;
-    
+
     }
 
     footer {
@@ -574,7 +686,7 @@ span#login-app-title {
 
     .app-title {
         padding-left: 20px;
-        
+
     }
 
     span#login-app-title {
@@ -583,8 +695,8 @@ span#login-app-title {
         text-align: center;
         margin-top: 20px;
         font-family: "Roboto";
-        
-        
+
+
     }
 
     .card-train {
