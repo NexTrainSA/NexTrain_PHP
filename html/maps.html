@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa com Busca</title>
+    <meta charset="UTF-8">
+    <!--  Fontes e Estilos:  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="importmap">
+        {
+            "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+            }
+        }
+        </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+            max-width: 85%;
+            margin: 1rem auto;
+            border-radius: 8px;
+        }
+
+        #search-box {
+            width: 85%;
+            max-width: 500px;
+            padding: 10px;
+            margin: 1rem auto;
+            display: block;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="content">
+        <input id="search-box" type="text" placeholder="Digite um lugar..." />
+        <div id="map"></div>
+    </section>
+
+    <script src="maps.js">
+        let map;
+        let marker;
+
+        function initMap() {
+            const defaultLocation = { lat: -26.3045, lng: -48.8487 }; // Joinville
+
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: defaultLocation,
+                zoom: 12
+            });
+
+            marker = new google.maps.Marker({
+                map: map,
+                position: defaultLocation
+            });
+
+            const input = document.getElementById("search-box");
+            const autocomplete = new google.maps.places.Autocomplete(input);
+
+            autocomplete.bindTo("bounds", map);
+
+            autocomplete.addListener("place_changed", () => {
+                const place = autocomplete.getPlace();
+                if (!place.geometry || !place.geometry.location) {
+                    alert("Local não encontrado");
+                    return;
+                }
+
+                // Centraliza o mapa e move o marcador
+                map.setCenter(place.geometry.location);
+                map.setZoom(14);
+                marker.setPosition(place.geometry.location);
+            });
+        }
+    </script>
+
+    <!-- Carregando a API com biblioteca 'places' -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCucR2GshMjgmaOGkv89Va1zsgQosLg8yg&callback=initMap&libraries=places"
+        async defer>
+        </script>
+
+    <footer>
+        <p>&copy; 2025 SA NexTrain. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./js/dark_mode.js"></script>
+    <script src="./js/sidebar.js"></script>
+
+</body>
