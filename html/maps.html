@@ -79,8 +79,7 @@
                     alert("Local não encontrado");
                     return;
                 }
-
-                // Centraliza o mapa e move o marcador
+                
                 map.setCenter(place.geometry.location);
                 map.setZoom(14);
                 marker.setPosition(place.geometry.location);
