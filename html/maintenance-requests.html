@@ -38,7 +38,7 @@
         .form-manutencao {
             max-width: 800px;
             margin: 30px auto;
-            background-color: white;
+            background-color: whitesmoke;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -113,6 +113,26 @@
         .form-manutencao select:invalid,
         .form-manutencao textarea:invalid {
             border-color: rgb(115, 149, 184);
+        }
+
+        /* Dark Mode */
+
+        body.dark-mode .form-manutencao {
+            background-color: rgb(53, 72, 90);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        body.dark-mode .form-manutencao legend {
+            color: #fafafa !important;
+        }
+
+        body.dark-mode .form-manutencao label {
+            color: #fafafa !important;
+        }
+
+        body.dark-mode .form-manutencao button {
+            background-color: rgb(88, 116, 143);
+            color: white !important;
         }
     </style>
 
