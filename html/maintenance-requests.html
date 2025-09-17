@@ -29,13 +29,13 @@
 <body>
 
     <style>
-        .form-manutencao * {
+        .form-maintenance * {
             font-family: Arial, sans-serif !important;
             color: #333 !important;
             font-size: 14px !important;
         }
 
-        .form-manutencao {
+        .form-maintenance {
             max-width: 800px;
             margin: 30px auto;
             background-color: whitesmoke;
@@ -44,39 +44,39 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .form-manutencao h1 {
+        .form-maintenance h1 {
             text-align: center;
             font-size: 22px;
             margin-bottom: 25px;
             color: #222;
         }
 
-        .form-manutencao fieldset {
+        .form-maintenance fieldset {
             border: 1px solid #ddd;
             border-radius: 4px;
             margin-bottom: 20px;
             padding: 15px;
         }
 
-        .form-manutencao legend {
+        .form-maintenance legend {
             font-weight: bold;
             padding: 0 10px;
             font-size: 15px;
             color: #555;
         }
 
-        .form-manutencao .form-group {
+        .form-maintenance .form-group {
             margin-bottom: 15px;
         }
 
-        .form-manutencao label {
+        .form-maintenance label {
             display: block;
             margin-bottom: 5px;
         }
 
-        .form-manutencao input,
-        .form-manutencao select,
-        .form-manutencao textarea {
+        .form-maintenance input,
+        .form-maintenance select,
+        .form-maintenance textarea {
             width: 100%;
             padding: 8px;
             font-size: 14px;
@@ -87,13 +87,13 @@
             color: #000 !important;
         }
 
-        .form-manutencao input:focus,
-        .form-manutencao select:focus,
-        .form-manutencao textarea:focus {
+        .form-maintenance input:focus,
+        .form-maintenance select:focus,
+        .form-maintenance textarea:focus {
             outline: 2px solid rgb(115, 149, 184);
         }
 
-        .form-manutencao button {
+        .form-maintenance button {
             background-color: rgb(71, 94, 117);
             color: white !important;
             padding: 10px 20px;
@@ -105,42 +105,42 @@
             transition: background-color 0.3s;
         }
 
-        .form-manutencao button:hover {
+        .form-maintenance button:hover {
             background-color: rgb(115, 149, 184);
         }
 
-        .form-manutencao input:invalid,
-        .form-manutencao select:invalid,
-        .form-manutencao textarea:invalid {
+        .form-maintenance input:invalid,
+        .form-maintenance select:invalid,
+        .form-maintenance textarea:invalid {
             border-color: rgb(115, 149, 184);
         }
 
         /* Dark Mode */
 
-        body.dark-mode .form-manutencao {
+        body.dark-mode .form-maintenance {
             background-color: rgb(53, 72, 90);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
-        body.dark-mode .form-manutencao legend {
+        body.dark-mode .form-maintenance legend {
             color: #fafafa !important;
         }
 
-        body.dark-mode .form-manutencao label {
+        body.dark-mode .form-maintenance label {
             color: #fafafa !important;
         }
 
-        body.dark-mode .form-manutencao button {
+        body.dark-mode .form-maintenance button {
             background-color: rgb(88, 116, 143);
         }
 
-        body.dark-mode .form-manutencao h1 {
+        body.dark-mode .form-maintenance h1 {
             color: #fafafa !important;
         }
     </style>
 
     <section class="content">
-        <div class="form-manutencao">
+        <div class="form-maintenance">
             <h1>Chamado de Manutenção</h1>
             <form id="formOS" onsubmit="return validateForm(event)">
                 <fieldset>
@@ -201,9 +201,9 @@
                         <label for="tecnico">Técnico Responsável:*</label>
                         <select id="tecnico" required>
                             <option value="">Selecione...</option>
-                            <option value="João Silva">João Silva</option>
-                            <option value="Maria Souza">Maria Souza</option>
-                            <option value="Pedro Costa">Pedro Costa</option>
+                            <option value="João Silva">A</option>
+                            <option value="Maria Souza">B</option>
+                            <option value="Pedro Costa">C</option>
                         </select>
                     </div>
                 </fieldset>

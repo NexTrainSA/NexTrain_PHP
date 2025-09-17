@@ -62,6 +62,7 @@ function validateForm(event) {
   }
 
   if (isValid) {
+    INSERT_request.php;
     alert("Seu chamado foi recebido! Torça para não sermos como a TI da escola e demorarmos mais de 6 meses para resolver um probleminha ;)");
     document.getElementById('formOS').reset(); // Isso faz resetar todo o formulário
   }

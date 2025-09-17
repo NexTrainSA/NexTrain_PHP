@@ -8,7 +8,7 @@ body {
     min-height: 100%;
     margin: 0;
     overflow-x: hidden;
-    background-color: #FAFAFA;
+    background-color: #EDF2F4;
 }
 
 main {
@@ -25,7 +25,7 @@ main {
 }
 
 body.dark-mode {
-    background-color: rgb(63, 83, 103);
+    background-color: rgb(71, 117, 111);
     color: #FAFAFA !important;
 }
 
@@ -51,7 +51,7 @@ h1.center {
 
 /* Navbar e offcanvas: */
 nav#top-navbar {
-    background-color: rgb(71, 94, 117);
+    background-color: #2b2d42;
     display: flex;
     align-items: center;
     justify-content: space-between;
