@@ -30,7 +30,7 @@ body.dark-mode {
 }
 
 body.dark-mode h3 {
-    color: rgb(255, 255, 255);
+    color: rgb(32, 30, 30);
 }
 
 body.dark-mode .card-train {
@@ -183,7 +183,7 @@ md-icon#alert-badge-critical {
 }
 
 md-icon.darkmode #alert-badge-critical {
-    background-color: #415a77;
+    background-color: #0418cc;
     border: 8px solid #415a77;
     border-radius: 25px;
 }
@@ -210,7 +210,7 @@ md-icon#alert-badge-normal {
 
 md-icon.darkmode #alert-badge-normal {
     background-color: #99d5da;
-    border: 8px solid #415a77;
+    border: 8px solid lab(17.37% 19.91 -40.58);
     border-radius: 25px;
 }
 
@@ -233,7 +233,7 @@ md-icon.darkmode #alert-badge-normal {
 /**/
 
 .card-train {
-    background-color: #778da9;
+    background-color: lab(17.37% 19.91 -40.58);
     border: 1px solid;
     border-radius: 8px;
     padding: 15px;
@@ -255,7 +255,7 @@ md-icon.darkmode #alert-badge-normal {
 }
 
 md-icon.subway-icon-color {
-    color: #4F378A;
+    color: lab(17.37% 19.91 -40.58);
 }
 
 span#train-name {
@@ -324,11 +324,11 @@ div#alerts-box {
 }
 
 div#alerts-box.warning {
-    background-color: rgba(255, 183, 3, 0.7);
+    background-color: rgba(3, 163, 255, 0.7);
 }
 
 div#alerts-box.danger {
-    background-color: rgba(230, 57, 70, 0.8);
+    background-color: rgba(57, 74, 230, 0.8);
 }
 
 span#alert-text {

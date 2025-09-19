@@ -87,6 +87,7 @@ function create_requests_table()
         tecnico_responsavel VARCHAR(100),
         data_entrada DATE  NOT NULL,
         data_saida DATE NOT NULL,
+        FOREIGN KEY (id_funcionario) REFERENCES usuario(id_usuario)
     )";
     if (mysqli_query($con, $sql)) {
         return true;

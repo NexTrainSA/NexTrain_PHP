@@ -14,7 +14,7 @@ $DATA_ENTRADA = $_POST['data_entrada'];
 $DATA_SAIDA = $_POST['data_saida'];
 
 $stmt = $con->prepare("INSERT INTO maintenance_requests (ordem_servico, nome_funcionario, cpf_funcionario, id_funcionario, telefone_funcionario, info_trem, descricao_problema, tecnico_responsavel, data_entrada, data_saida) VALUES(?, ? , ?, ?, ?, ?, ?, ? STR_TO_DATE(?) STR_TO_DATE(?))");
-$stmt->bind_param(isiiisssss $nomeFuncionario, $idFuncionario)
+$stmt->bind_param(isiiisssss $ORDEM_SERVICO, $NOME_FUNCIONARIO, $CPF_FUNCIONARIO, $ID_FUNCIONARIO, $TELEFONE_FUNCIONARIO, $INFO_TREM, $DESCRICAO_PROBLEMA, $TECNICO_RESPONSAVEL,  $DATA_ENTRADA, $DATA_SAIDA )
 
 if ($stmt -> execute()) {
 } else {
