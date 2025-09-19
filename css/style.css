@@ -25,12 +25,12 @@ main {
 }
 
 body.dark-mode {
-    background-color: #D90429;
+    background-color: #314d72;
     color: #FAFAFA !important;
 }
 
 body.dark-mode h3 {
-    color: #EF233C;
+    color: #5f80e9;
 }
 
 body.dark-mode .card-train {
@@ -51,7 +51,7 @@ h1.center {
 
 /* Navbar e offcanvas: */
 nav#top-navbar {
-    background-color: #D90429;
+    background-color: #04a7d9;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -255,7 +255,7 @@ md-icon.darkmode #alert-badge-normal {
 }
 
 md-icon.subway-icon-color {
-    color: lab(17.37% 19.91 -40.58);
+    color: lab(54.84% -12.05 -32.57);
 }
 
 span#train-name {
