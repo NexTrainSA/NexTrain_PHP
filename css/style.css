@@ -25,7 +25,7 @@ main {
 }
 
 body.dark-mode {
-    background-color: rgb(133, 191, 206);
+    background-color: #D90429;
     color: #FAFAFA !important;
 }
 
@@ -91,7 +91,7 @@ nav#top-navbar {
     z-index: 1001;
     top: 0;
     left: 0;
-    background-color: #778da9;
+    background-color: #152f52;
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 2rem;
