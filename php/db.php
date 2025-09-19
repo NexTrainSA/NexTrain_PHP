@@ -96,4 +96,27 @@ function create_requests_table()
     }
 }
 
+function create_schedule_table()
+{
+    global $con;
+    $sql = "CREATE TABLE IF NOT EXISTS schedule (
+         INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        nome_funcionario VARCHAR(100) NOT NULL,
+        cpf_funcionario VARCHAR(11) NOT NULL,
+        id_funcionario INT NOT NULL,
+        telefone_funcionario VARCHAR(11),
+        info_trem VARCHAR(100),
+        descricao_problema TEXT NOT NULL,
+        tecnico_responsavel VARCHAR(100),
+        data_entrada DATE  NOT NULL,
+        data_saida DATE NOT NULL,
+        FOREIGN KEY (id_funcionario) REFERENCES usuario(id_usuario)
+    )";
+    if (mysqli_query($con, $sql)) {
+        return true;
+    } else {
+        return "Erro: " . mysqli_error($con);
+    }
+}
+
 return false;

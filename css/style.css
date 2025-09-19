@@ -30,7 +30,7 @@ body.dark-mode {
 }
 
 body.dark-mode h3 {
-    color: rgb(32, 30, 30);
+    color: #EF233C;
 }
 
 body.dark-mode .card-train {
@@ -51,7 +51,7 @@ h1.center {
 
 /* Navbar e offcanvas: */
 nav#top-navbar {
-    background-color: #2b2d42;
+    background-color: #D90429;
     display: flex;
     align-items: center;
     justify-content: space-between;
