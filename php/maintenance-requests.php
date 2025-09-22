@@ -21,7 +21,9 @@
         </script>
     <script type="module">
         import '@material/web/all.js';
-        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+        import {
+            styles as typescaleStyles
+        } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
 </head>
@@ -152,13 +154,20 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="cpf">CPF:*</label>
+                        <label for="cpf">CPF:*</label> <!--  Não acho necessário mas deu trabalho para fazer no JS -->
                         <input type="text" id="cpf" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="id-funcionario">ID de funcionário:*</label>
-                        <input type="text" id="id-funcionario" required>
+                        <label for="id-funcionario">ID do funcionário:*</label>
+                        <select id="funcionario" required>
+                            <option value="">Selecione...</option>
+                            <?php
+                            include("listar_funcionarios.php");
+                            foreach ($funcionarios as $linha) {
+                                echo  "<option value='" . $linha['id_usuario'] . "'>" . $linha['id_usuario'] . "</option>";
+                            } ?>
+                        </select>
                     </div>
 
                     <div class="form-group">
@@ -198,27 +207,25 @@
                     </div>
 
                     <div class="form-group">
-                        <!--include("listar_funcionarios.php");
-                        foreach($funcionarios as $linha) {
-                            echo "<option value='" . $linha['nome_funcionario'] . "'>" . $linha['nome_funcionario'] . "</option>";
-                    }-->
                         <label for="tecnico">Técnico Responsável:*</label>
                         <select id="tecnico" required>
                             <option value="">Selecione...</option>
-                            <option value="João Silva">A</option>
-                            <option value="Maria Souza">B</option>
-                            <option value="Pedro Costa">C</option>
+                            <?php
+                            include("listar_funcionarios.php");
+                            foreach ($funcionarios as $linha) {
+                                echo  "<option value='" . $linha['id_usuario'] . "'>" . $linha['username_usuario'] . "</option>";
+                            } ?>
                         </select>
                     </div>
                 </fieldset>
-                <button type="submit">Enviar Ordem</button>
+                <button type="submit">Enviar Chamado</button>
             </form>
         </div>
     </section>
 
     <!--  Scripts:  -->
     <script src="./js/dark_mode.js"></script>
-    <script src="../js/maintenance-requests.js"></script>
+    <script src="./js/maintenance-requests.js"></script>
     <!--  Fim dos Scripts  -->
 
 </body>

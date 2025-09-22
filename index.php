@@ -15,6 +15,7 @@
             }
         }
         include_once './html/'.$page;
+        include_once './php/'.$page;
         include_once './html/templates/footer.html';
     }
 ?>

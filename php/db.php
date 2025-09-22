@@ -82,12 +82,13 @@ function create_requests_table()
         cpf_funcionario VARCHAR(11) NOT NULL,
         id_funcionario INT NOT NULL,
         telefone_funcionario VARCHAR(11),
-        info_trem VARCHAR(100),
+        id_trem VARCHAR(100),
         descricao_problema TEXT NOT NULL,
         tecnico_responsavel VARCHAR(100),
         data_entrada DATE  NOT NULL,
         data_saida DATE NOT NULL,
-        FOREIGN KEY (id_funcionario) REFERENCES usuario(id_usuario)
+        FOREIGN KEY (id_funcionario) REFERENCES usuario(id_usuario),
+        FOREIGN KEY (id_trem) REFERENCES trains(id_trem)
     )";
     if (mysqli_query($con, $sql)) {
         return true;
@@ -101,7 +102,7 @@ function create_schedule_table()
     global $con;
     $sql = "CREATE TABLE IF NOT EXISTS schedule (
         id_tarefa INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-        fk_funcionario INT NOT NULL,
+        id_funcionario INT NOT NULL,
         descricao_tarefa TEXT NOT NULL,
         FOREIGN KEY (id_funcionario) REFERENCES usuario(id_usuario)
     )";
@@ -112,4 +113,43 @@ function create_schedule_table()
     }
 }
 
+function create_trains_table()
+{
+    global $con;
+    $sql = "CREATE TABLE IF NOT EXISTS trains (
+        id_trem INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        nome_trem VARCHAR(100) NOT NULL,
+        id_funcionario_encarregado_trem INT NOT NULL,
+        modelo_trem VARCHAR(100) NOT NULL,
+        infos_trem VARCHAR(255) NULL,
+        FOREIGN KEY (id_funcionario_encarregado_trem) REFERENCES usuario(id_usuario)
+    )";
+
+    // Inserir as infos dos trens
+
+    if (mysqli_query($con, $sql)) {
+        return true;
+    } else {
+        return "Erro: " . mysqli_error($con);
+    }
+}
 return false;
+
+function insert_train($nome_trem, $id_funcionario_encarregado_trem, $modelo_trem, $infos_trem = null)
+{
+    global $con;
+    $nome_trem = mysqli_real_escape_string($con, $nome_trem);
+    $modelo_trem = mysqli_real_escape_string($con, $modelo_trem);
+    $infos_trem = $infos_trem ? mysqli_real_escape_string($con, $infos_trem) : null;
+
+    $sql = "INSERT INTO trains (nome_trem, id_funcionario_encarregado_trem, modelo_trem, infos_trem)
+            VALUES ('$nome_trem', $id_funcionario_encarregado_trem, '$modelo_trem', " . ($infos_trem ? "'$infos_trem'" : "NULL") . ")";
+    if (mysqli_query($con, $sql)) {
+        return true;
+    } else {
+        return "Erro: " . mysqli_error($con);
+    }
+}
+
+insert_train("D85", 2, "Modelo AAA", "Infos...");
+insert_train("F68", 6, "Modelo BBB", "Infos...");
