@@ -25,7 +25,7 @@ main {
 }
 
 body.dark-mode {
-    background-color: #314d72;
+    background-color: #DB9F68;
     color: #FAFAFA !important;
 }
 
@@ -172,7 +172,7 @@ md-icon.alert-danger {
 }
 
 md-icon.alert-warning {
-    color: #03fff2;
+    color: #92512E;
 }
 
 md-icon#alert-badge-critical {
@@ -183,14 +183,14 @@ md-icon#alert-badge-critical {
 }
 
 md-icon.darkmode #alert-badge-critical {
-    background-color: #0418cc;
-    border: 8px solid #415a77;
+    background-color: #6E2C0B;
+    border: 8px solid #DB9F68;
     border-radius: 25px;
 }
 
 md-icon#alert-badge-warn {
-    background-color: #f2e9e4;
-    border: 8px solid #f2e9e4;
+    background-color: #6E2C0B;
+    border: 8px solid #DB9F68;
     border-radius: 25px;
     color: black;
 }
