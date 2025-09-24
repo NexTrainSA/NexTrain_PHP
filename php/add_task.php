@@ -31,13 +31,13 @@
 <body>
 
     <style>
-        .form-maintenance * {
+        .form-schedule * {
             font-family: Arial, sans-serif !important;
             color: #333 !important;
             font-size: 14px !important;
         }
 
-        .form-maintenance {
+        .form-schedule {
             max-width: 800px;
             margin: 30px auto;
             background-color: whitesmoke;
@@ -46,39 +46,39 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .form-maintenance h1 {
+        .form-schedule h1 {
             text-align: center;
             font-size: 22px;
             margin-bottom: 25px;
             color: #222;
         }
 
-        .form-maintenance fieldset {
+        .form-schedule fieldset {
             border: 1px solid #ddd;
             border-radius: 4px;
             margin-bottom: 20px;
             padding: 15px;
         }
 
-        .form-maintenance legend {
+        .form-schedule legend {
             font-weight: bold;
             padding: 0 10px;
             font-size: 15px;
             color: #555;
         }
 
-        .form-maintenance .form-group {
+        .form-schedule .form-group {
             margin-bottom: 15px;
         }
 
-        .form-maintenance label {
+        .form-schedule label {
             display: block;
             margin-bottom: 5px;
         }
 
-        .form-maintenance input,
-        .form-maintenance select,
-        .form-maintenance textarea {
+        .form-schedule input,
+        .form-schedule select,
+        .form-schedule textarea {
             width: 100%;
             padding: 8px;
             font-size: 14px;
@@ -89,13 +89,13 @@
             color: #000 !important;
         }
 
-        .form-maintenance input:focus,
-        .form-maintenance select:focus,
-        .form-maintenance textarea:focus {
+        .form-schedule input:focus,
+        .form-schedule select:focus,
+        .form-schedule textarea:focus {
             outline: 2px solid rgb(115, 149, 184);
         }
 
-        .form-maintenance button {
+        .form-schedule button {
             background-color: rgb(71, 94, 117);
             color: white !important;
             padding: 10px 20px;
@@ -107,56 +107,46 @@
             transition: background-color 0.3s;
         }
 
-        .form-maintenance button:hover {
+        .form-schedule button:hover {
             background-color: rgb(115, 149, 184);
         }
 
-        .form-maintenance input:invalid,
-        .form-maintenance select:invalid,
-        .form-maintenance textarea:invalid {
+        .form-schedule input:invalid,
+        .form-schedule select:invalid,
+        .form-schedule textarea:invalid {
             border-color: rgb(115, 149, 184);
         }
 
         /* Dark Mode */
 
-        body.dark-mode .form-maintenance {
+        body.dark-mode .form-schedule {
             background-color: rgb(53, 72, 90);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
-        body.dark-mode .form-maintenance legend {
+        body.dark-mode .form-schedule legend {
             color: #fafafa !important;
         }
 
-        body.dark-mode .form-maintenance label {
+        body.dark-mode .form-schedule label {
             color: #fafafa !important;
         }
 
-        body.dark-mode .form-maintenance button {
+        body.dark-mode .form-schedule button {
             background-color: rgb(88, 116, 143);
         }
 
-        body.dark-mode .form-maintenance h1 {
+        body.dark-mode .form-schedule h1 {
             color: #fafafa !important;
         }
     </style>
 
     <section class="content">
-        <div class="form-maintenance">
-            <h1>Chamado de Manutenção</h1>
+        <div class="form-schedule">
+            <h1>Adicionar tarefa</h1>
             <form id="formOS" onsubmit="return validateForm(event)">
                 <fieldset>
                     <legend>Suas informações:</legend>
-
-                    <div class="form-group">
-                        <label for="nome">Nome completo:*</label>
-                        <input type="text" id="nome" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cpf">CPF:*</label> <!--  Não acho necessário mas deu trabalho para fazer no JS -->
-                        <input type="text" id="cpf" required>
-                    </div>
 
                     <div class="form-group">
                         <label for="id-funcionario">ID do funcionário:*</label>
@@ -169,66 +159,25 @@
                             } ?>
                         </select>
                     </div>
-
-                    <div class="form-group">
-                        <label for="telefone">Telefone:*</label>
-                        <input type="tel" id="telefone" required>
-                    </div>
                 </fieldset>
 
-                <fieldset>
-                    <legend>Informações do Trem:</legend>
-                    <div class="form-group">
-                        <label for="trem">Trem:*</label>
-                        <select id="trem" required>
-                            <option value="">Selecione...</option>
-                            <?php
-                            include("listar_trem.php");
-                            foreach ($trens as $linha) {
-                                echo  "<option value='" . $linha['id_trem'] . "'>" . $linha['nome_trem'] . "</option>";
-                            } ?>
-                        </select>
-                    </div>
-                </fieldset>
 
                 <fieldset>
-                    <legend>Descrição do Problema</legend>
-
+                    <legend>Sua nova tarefa:</legend>
                     <div class="form-group">
-                        <label for="dataEntrada">Data de Entrada:*</label>
-                        <input type="date" id="dataEntrada" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="dataSaida">Data Prevista de Saída:*</label>
-                        <input type="date" id="dataSaida" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="descricao">Descrição do Problema:*</label>
+                        <label for="descricao">Descrição da tarefa:*</label>
                         <textarea id="descricao" rows="4" required></textarea>
                     </div>
-
-                    <div class="form-group">
-                        <label for="tecnico">Técnico Responsável:*</label>
-                        <select id="tecnico" required>
-                            <option value="">Selecione...</option>
-                            <?php
-                            include("listar_funcionarios.php");
-                            foreach ($funcionarios as $linha) {
-                                echo  "<option value='" . $linha['id_usuario'] . "'>" . $linha['username_usuario'] . "</option>";
-                            } ?>
-                        </select>
-                    </div>
                 </fieldset>
-                <button type="submit">Enviar Chamado</button>
+                <button type="submit">Adicionar tarefa</button>
+                
             </form>
         </div>
     </section>
 
     <!--  Scripts:  -->
     <script src="./js/dark_mode.js"></script>
-    <script src="./js/maintenance-requests.js"></script>
+    <script src="./js/add_task.js"></script>
     <!--  Fim dos Scripts  -->
 
 </body>

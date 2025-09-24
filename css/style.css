@@ -8,9 +8,22 @@ body {
     min-height: 100%;
     margin: 0;
     overflow-x: hidden;
-    background-color: #eff1f3;
+    background-color: #ffffff;
 }
+h2#train-name {
+    font-family: 'Roboto';
+    font-size: 15px;
+    color: #ffffff;
+    margin-right: 50px;
 
+}
+h2.alert-title {
+    font-family: 'Roboto';
+    font-size: 15px;
+    color: #ffffff;
+     transform: translateX(20px);
+
+}
 main {
     flex: 1;
 }
@@ -25,13 +38,19 @@ main {
 }
 
 body.dark-mode {
-    background-color: #847577;
+    background-color: #687b8f;;
     color: #FAFAFA !important;
+}
+body.dark-mode h2#train-name {
+    font-family: 'Roboto';
+    font-size: 15px;
+    color: black;
+
 }
 
 body.dark-mode h2 {
     color: #000000;
-    font: 18px roboto;
+    font-family: 'Roboto';
     font-size: 15px;
 }
 
@@ -72,7 +91,7 @@ h1.center {
 
 /* Navbar e offcanvas: */
 nav#top-navbar {
-    background-color:#A6A2A2 ;
+    background-color: #43627f;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -255,7 +274,7 @@ md-icon.darkmode #alert-badge-normal {
 /**/
 
 .card-train {
-    background-color: #847577;
+    background-color: #687b8f;
     border: 1px solid;
     border-radius: 8px;
     padding: 15px;
@@ -331,11 +350,11 @@ div.alerts {
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: #847577;
+    background-color: #687b8f;
 }
 
 div#alerts-box {
-    background-color: #847577;
+    background-color: #687b8f;
     border: 1px solid;
     border-radius: 8px;
     margin: 10px;
@@ -346,11 +365,11 @@ div#alerts-box {
 }
 
 div#alerts-box.warning {
-    background-color: #847577;
+    background-color: #687b8f;
 }
 
 div#alerts-box.danger {
-    background-color: #847577;
+    background-color: #687b8f;
 }
 
 span#alert-text {

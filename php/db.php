@@ -73,6 +73,7 @@ function get_all_users_as_array()
     return $users;
 }
 
+// Função para criar a tabela de chamados de manutenção
 function create_requests_table()
 {
     global $con;
@@ -97,6 +98,7 @@ function create_requests_table()
     }
 }
 
+// Função para criar tabela para schedule/tarefas
 function create_schedule_table()
 {
     global $con;
@@ -113,6 +115,24 @@ function create_schedule_table()
     }
 }
 
+// Função para inserir na tabela schedule
+function insert_schedule($id_tarefa, $id_funcionario, $descricao_tarefa)
+{
+    global $con;
+    $id_tarefa = mysqli_real_escape_string($con, $id_tarefa);
+    $id_funcionario = mysqli_real_escape_string($con, $id_funcionario);
+    $descricao_tarefa = mysqli_real_escape_string($con, $descricao_tarefa);
+
+    $sql = "INSERT INTO trains (nome_trem, id_funcionario_encarregado_trem, modelo_trem, infos_trem)
+            VALUES ('$id_tarefa', $id_funcionario, '$descricao_tarefa', " . ")";
+    if (mysqli_query($con, $sql)) {
+        return true;
+    } else {
+        return "Erro: " . mysqli_error($con);
+    }
+}
+
+// Função para criar a tabela com as informações dos trens
 function create_trains_table()
 {
     global $con;
@@ -125,15 +145,12 @@ function create_trains_table()
         FOREIGN KEY (id_funcionario_encarregado_trem) REFERENCES usuario(id_usuario)
     )";
 
-    // Inserir as infos dos trens
-
     if (mysqli_query($con, $sql)) {
         return true;
     } else {
         return "Erro: " . mysqli_error($con);
     }
 }
-return false;
 
 function insert_train($nome_trem, $id_funcionario_encarregado_trem, $modelo_trem, $infos_trem = null)
 {
@@ -151,5 +168,9 @@ function insert_train($nome_trem, $id_funcionario_encarregado_trem, $modelo_trem
     }
 }
 
-insert_train("D85", 2, "Modelo AAA", "Infos...");
+// Inserção dos dados dos primeiros trens:
+/* insert_train("D85", 2, "Modelo AAA", "Infos...");
 insert_train("F68", 6, "Modelo BBB", "Infos...");
+insert_train("DZ213", 3, "Modelo CCC", "Infos...");
+insert_train("D098", 24, "Modelo DDD", "Infos...");
+insert_train("D654", 20, "Modelo EEE", "Infos..."); */

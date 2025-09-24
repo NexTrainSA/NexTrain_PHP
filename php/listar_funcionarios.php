@@ -7,5 +7,3 @@ $stmt->execute();
 $resultado = $stmt->get_result();
 
 $funcionarios = $resultado->FETCH_ALL(MYSQLI_ASSOC);
-
-?>

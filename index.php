@@ -14,6 +14,7 @@
                 die("<script>alert('Você não tem permissão para acessar esta página.'); document.location.href = '.'</script>");
             }
         }
+
         include_once './html/'.$page;
         include_once './php/'.$page;
         include_once './html/templates/footer.html';
