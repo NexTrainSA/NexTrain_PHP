@@ -273,26 +273,38 @@ md-icon.darkmode #alert-badge-normal {
 
 /**/
 
+/* Legacy card styles - kept for compatibility */
 .card-train {
-    background-color: #687b8f;
-    border: 1px solid;
-    border-radius: 8px;
-    padding: 15px;
+    background-color: #FFFFFF;
+    border: 1px solid #E7E0EC;
+    border-radius: 12px;
+    padding: 20px;
     display: flex;
-    gap: 15px;
-    margin-top: 8px;
-    margin: 5px;
+    align-items: center;
+    gap: 16px;
+    margin: 8px 0;
+    transition: all 0.2s ease;
+}
 
+.card-train:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+body.dark-mode .card-train {
+    background-color: #1D1B20;
+    border-color: #938F99;
 }
 
 .info {
     display: flex;
     justify-content: space-between;
+    gap: 16px;
 }
 
 .card-train#card-status-train {
     width: 48%;
-    margin: 5px;
+    margin: 8px 0;
 }
 
 md-icon.subway-icon-color {
@@ -338,11 +350,15 @@ span#train-status {
 }
 
 h3 {
-    margin: 20px 10px;
-    font-family: Roboto;
+    margin: 20px 0;
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: #1D1B20;
-    font-size: large;
+    font-size: 1.25rem;
+}
+
+body.dark-mode h3 {
+    color: #E6E1E5;
 }
 
 div.alerts {
@@ -353,23 +369,34 @@ div.alerts {
     background-color: #687b8f;
 }
 
+/* Legacy alert boxes - updated for Material Design */
 div#alerts-box {
-    background-color: #687b8f;
-    border: 1px solid;
-    border-radius: 8px;
-    margin: 10px;
-    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #E7E0EC;
+    border-radius: 12px;
+    margin: 12px 0;
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+div#alerts-box:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 div#alerts-box.warning {
-    background-color: #687b8f;
+    border-left: 4px solid #F57C00;
 }
 
 div#alerts-box.danger {
-    background-color: #687b8f;
+    border-left: 4px solid #D32F2F;
+}
+
+body.dark-mode div#alerts-box {
+    background-color: #1D1B20;
+    border-color: #938F99;
 }
 
 span#alert-text {
@@ -472,33 +499,517 @@ span#alert-text {
 
 .date:hover {
     background: #E5E6E4;
-    color: #E5E6E4;
+    color: #E6E6E4;
 }
 
 .date.active {
     background: #A6A2A2;
-    color: #E5E6E4;
+    color: #E6E6E4;
 }
 
 .date.inactive {
-    color: #E5E6E4;
+    color: #E6E6E4;
 }
 
 .date.inactive:hover {
-    color: #E5E6E4;
+    color: #E6E6E4;
 }
 
 /**/
 
 /* Rodapé: */
-section.content {
-    padding-bottom: 5rem;
+/* Dashboard Layout */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    padding: 40px 16px;
+}
+
+.welcome-content h1.dashboard-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #1D1B20;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+}
+
+.welcome-content .dashboard-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: #49454F;
+    margin: 0;
+    font-weight: 400;
+}
+
+body.dark-mode .welcome-content h1.dashboard-title {
+    color: #E6E1E5;
+}
+
+body.dark-mode .welcome-content .dashboard-subtitle {
+    color: #CAC4D0;
+}
+
+/* Stats Section */
+.stats-section {
+    margin-bottom: 16px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.stat-card {
+    background: #F7F2FA;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #E7E0EC;
+    transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.stat-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stat-icon {
+    background: #6750A4;
+    color: white;
+    border-radius: 50%;
+    padding: 12px;
+    font-size: 24px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1D1B20;
+    line-height: 1;
+}
+
+.stat-label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    color: #49454F;
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+body.dark-mode .stat-card {
+    background: #49454F;
+    border-color: #938F99;
+}
+
+body.dark-mode .stat-value {
+    color: #E6E1E5;
+}
+
+body.dark-mode .stat-label {
+    color: #CAC4D0;
+}
+
+/* Section Headers */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1D1B20;
+    margin: 0;
+}
+
+body.dark-mode .section-title {
+    color: #E6E1E5;
+}
+
+/* Routes Section */
+.routes-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.route-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #E7E0EC;
+    transition: all 0.2s ease;
+}
+
+.route-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.route-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.route-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+}
+
+.route-icon {
+    background: #E8F5E8;
+    color: #2E7D32;
+    border-radius: 50%;
+    padding: 12px;
+    font-size: 24px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.route-info h3.route-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #1D1B20;
+    margin: 0 0 4px 0;
+}
+
+.route-info .route-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    color: #49454F;
+    margin: 0;
+}
+
+.status-chip {
+    --md-assist-chip-label-text-color: #1D1B20;
+    --md-assist-chip-outline-color: #79747E;
+}
+
+.status-on-time {
+    --md-assist-chip-container-color: #E8F5E8;
+    --md-assist-chip-label-text-color: #2E7D32;
+    --md-assist-chip-outline-color: #4CAF50;
+}
+
+.status-delayed {
+    --md-assist-chip-container-color: #FFF3E0;
+    --md-assist-chip-label-text-color: #E65100;
+    --md-assist-chip-outline-color: #FF9800;
+}
+
+body.dark-mode .route-card {
+    background: #1D1B20;
+    border-color: #938F99;
+}
+
+body.dark-mode .route-info h3.route-name {
+    color: #E6E1E5;
+}
+
+body.dark-mode .route-info .route-description {
+    color: #CAC4D0;
+}
+
+/* Alerts Section */
+.alerts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.alert-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #E7E0EC;
+    transition: all 0.2s ease;
+}
+
+.alert-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.alert-icon {
+    margin-top: 2px;
+}
+
+.alert-warning .alert-icon {
+    color: #F57C00;
+}
+
+.alert-info .alert-icon {
+    color: #1976D2;
+}
+
+.alert-info {
+    flex: 1;
+}
+
+.alert-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1D1B20;
+    margin: 0 0 4px 0;
+}
+
+.alert-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    color: #49454F;
+    margin: 0 0 6px 0;
+}
+
+.alert-time {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    color: #79747E;
+}
+
+body.dark-mode .alert-card {
+    background: #1D1B20;
+    border-color: #938F99;
+}
+
+body.dark-mode .alert-title {
+    color: #E6E1E5;
+}
+
+body.dark-mode .alert-description {
+    color: #CAC4D0;
+}
+
+body.dark-mode .alert-time {
+    color: #938F99;
+}
+
+/* Actions Section */
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+/* Material Design Button Styles */
+md-filled-button {
+    --md-filled-button-container-color: #6750A4;
+    --md-filled-button-label-text-color: #FFFFFF;
+    --md-filled-button-icon-color: #FFFFFF;
+    margin: 4px;
+}
+
+md-outlined-button {
+    --md-outlined-button-outline-color: #79747E;
+    --md-outlined-button-label-text-color: #6750A4;
+    --md-outlined-button-icon-color: #6750A4;
+    margin: 4px;
+}
+
+md-text-button {
+    --md-text-button-label-text-color: #6750A4;
+    --md-text-button-icon-color: #6750A4;
+}
+
+body.dark-mode md-filled-button {
+    --md-filled-button-container-color: #D0BCFF;
+    --md-filled-button-label-text-color: #381E72;
+    --md-filled-button-icon-color: #381E72;
+}
+
+body.dark-mode md-outlined-button {
+    --md-outlined-button-outline-color: #938F99;
+    --md-outlined-button-label-text-color: #D0BCFF;
+    --md-outlined-button-icon-color: #D0BCFF;
+}
+
+body.dark-mode md-text-button {
+    --md-text-button-label-text-color: #D0BCFF;
+    --md-text-button-icon-color: #D0BCFF;
+}
+
+/* Material Design Card Styles */
+md-card {
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    transition: all 0.2s ease;
+}
+
+md-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Material Design Chip Styles */
+md-chip {
+    --md-chip-container-shape: 8px;
+}
+
+/* Enhanced Visual Effects */
+.dashboard-container {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth transitions for interactive elements */
+.stat-card,
+.route-card,
+.alert-card {
+    cursor: pointer;
+}
+
+.stat-card:active,
+.route-card:active,
+.alert-card:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced focus states for accessibility */
+.stat-card:focus-visible,
+.route-card:focus-visible,
+.alert-card:focus-visible {
+    outline: 2px solid #6750A4;
+    outline-offset: 2px;
+}
+
+body.dark-mode .stat-card:focus-visible,
+body.dark-mode .route-card:focus-visible,
+body.dark-mode .alert-card:focus-visible {
+    outline-color: #D0BCFF;
+}
+
+/* Improved spacing between sections */
+.routes-section,
+.alerts-section,
+.actions-section {
+    scroll-margin-top: 100px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .dashboard-container {
+        padding: 16px 12px;
+        gap: 24px;
+    }
+    
+    .welcome-content h1.dashboard-title {
+        font-size: 2rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .route-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .info {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .card-train#card-status-train {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 500px) {
-    section.content {
-        padding-top: 20%;
-        padding-bottom: 20%;
+    .dashboard-container {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    
+    .welcome-section {
+        padding: 20px 8px;
+    }
+    
+    .welcome-content h1.dashboard-title {
+        font-size: 1.75rem;
+    }
+    
+    .actions-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .stats-grid {
+        gap: 12px;
+    }
+    
+    .stat-content {
+        gap: 12px;
+    }
+    
+    .route-header {
+        gap: 12px;
     }
 }
 
@@ -519,7 +1030,17 @@ footer {
 
 md-fab.nxt-btn {
     width: 100%;
-    padding: 0 20%;
+    max-width: 400px;
+    margin: 16px auto 0;
+    --md-fab-container-color: #6750A4;
+    --md-fab-label-text-color: #FFFFFF;
+    --md-fab-icon-color: #FFFFFF;
+}
+
+body.dark-mode md-fab.nxt-btn {
+    --md-fab-container-color: #D0BCFF;
+    --md-fab-label-text-color: #381E72;
+    --md-fab-icon-color: #381E72;
 }
 
 div#navbar-img {
