@@ -8,6 +8,7 @@
     <!--  Fontes e Estilos:  -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,6 +24,20 @@
         import '@material/web/all.js';
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+        
+        // Ensure icons are loaded properly
+        document.addEventListener('DOMContentLoaded', function() {
+            // Force icon font load
+            const testIcon = document.createElement('md-icon');
+            testIcon.textContent = 'schedule';
+            testIcon.style.position = 'absolute';
+            testIcon.style.left = '-9999px';
+            document.body.appendChild(testIcon);
+            
+            setTimeout(() => {
+                document.body.removeChild(testIcon);
+            }, 100);
+        });
     </script>
 </head>
 
@@ -33,7 +48,7 @@
         <!-- Welcome Section -->
         <section class="welcome-section">
             <div class="welcome-content">
-                <h1 class="dashboard-title">Olá, <?php echo $_SESSION['nomeCompleto_usuario']; ?>.</h1>
+                <h1 class="dashboard-title">Olá, <?php echo $_SESSION['nome_completo_usuario']; ?>.</h1>
                 <p class="dashboard-subtitle">Gerencie suas rotas e mantenha-se atualizado</p>
             </div>
         </section>
@@ -53,7 +68,7 @@
                 
                 <md-card class="stat-card">
                     <div class="stat-content">
-                        <md-icon class="stat-icon">directions_subway</md-icon>
+                        <md-icon class="stat-icon">train</md-icon>
                         <div class="stat-info">
                             <span class="stat-value">3 min</span>
                             <span class="stat-label">Próximo Trem</span>
@@ -193,6 +208,7 @@
     </footer>
 
     <!--  Scripts:  -->
+    <script src="./js/icon-loader.js"></script>
     <script src="./js/dark_mode.js"></script>
     <script src="./js/sidebar.js"></script>
     <!--  Fim dos Scripts  -->

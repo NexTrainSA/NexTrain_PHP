@@ -625,8 +625,12 @@ body.dark-mode .welcome-content .dashboard-subtitle {
 }
 
 body.dark-mode .stat-card {
-    background: #49454F;
+    background: #1d1b20;
     border-color: #938F99;
+}
+
+body.dark-mode {
+    color: white !important;
 }
 
 body.dark-mode .stat-value {
@@ -1282,4 +1286,626 @@ span#login-app-title {
     div#navbar-img {
         width: 70%;
     }
+}
+
+/* Routes Page Styles */
+.routes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Page Header */
+.page-header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.page-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 500;
+    color: #1D1B20;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #49454F;
+    margin: 0;
+    font-weight: 400;
+}
+
+body.dark-mode .page-title {
+    color: #E6E1E5;
+}
+
+body.dark-mode .page-subtitle {
+    color: #CAC4D0;
+}
+
+/* Action Bar */
+.action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.search-and-filters {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 300px;
+}
+
+.search-field {
+    flex: 1;
+    max-width: 400px;
+}
+
+/* Filters Panel */
+.filters-panel {
+    background: #F7F2FA;
+    border: 1px solid #E7E0EC;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 16px;
+    animation: slideDown 0.3s ease;
+}
+
+body.dark-mode .filters-panel {
+    background: #49454F;
+    border-color: #938F99;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.filters-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    min-width: 150px;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+/* Routes Grid */
+.routes-grid-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.routes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+/* Route Detail Cards */
+.route-detail-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 0;
+    border: 1px solid #E7E0EC;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.route-detail-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+}
+
+.route-detail-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(103, 80, 164, 0.1),
+        transparent
+    );
+    transition: left 0.5s;
+}
+
+.route-detail-card:hover::before {
+    left: 100%;
+}
+
+body.dark-mode .route-detail-card {
+    background: #1D1B20;
+    border-color: #938F99;
+}
+
+.route-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Route Header */
+.route-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.route-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6750A4 0%, #7C4DFF 100%);
+    flex-shrink: 0;
+}
+
+.route-icon-wrapper .route-icon {
+    color: white;
+    font-size: 24px;
+}
+
+.route-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.route-info .route-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1D1B20;
+    margin: 0 0 4px 0;
+    line-height: 1.2;
+}
+
+.route-info .route-line {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    color: #49454F;
+    margin: 0;
+    font-weight: 400;
+}
+
+body.dark-mode .route-info .route-name {
+    color: #E6E1E5;
+}
+
+body.dark-mode .route-info .route-line {
+    color: #CAC4D0;
+}
+
+/* Status Chips */
+.status-maintenance {
+    --md-assist-chip-container-color: #FFF3E0;
+    --md-assist-chip-label-text-color: #E65100;
+    --md-assist-chip-outline-color: #FF9800;
+}
+
+/* Route Details */
+.route-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.route-path {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: #F7F2FA;
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+
+body.dark-mode .route-path {
+    background: #49454F;
+}
+
+.route-path .station {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #1D1B20;
+    flex: 1;
+    min-width: 80px;
+    text-align: center;
+}
+
+body.dark-mode .route-path .station {
+    color: #E6E1E5;
+}
+
+.path-arrow {
+    color: #79747E;
+    font-size: 18px;
+}
+
+body.dark-mode .path-arrow {
+    color: #938F99;
+}
+
+/* Route Stats */
+.route-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background: #FAFAFA;
+    border-radius: 6px;
+}
+
+body.dark-mode .stat-item {
+    background: #2B2930;
+}
+
+.stat-icon {
+    color: #6750A4;
+    font-size: 16px;
+}
+
+body.dark-mode .stat-icon {
+    color: #D0BCFF;
+}
+
+.stat-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #49454F;
+}
+
+body.dark-mode .stat-text {
+    color: #CAC4D0;
+}
+
+/* Route Actions */
+.route-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    border-top: 1px solid #E7E0EC;
+}
+
+body.dark-mode .route-actions {
+    border-color: #938F99;
+}
+
+/* Load More Section */
+.load-more-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.load-more-btn {
+    min-width: 200px;
+}
+
+/* Enhanced Route Card Interactions */
+.route-detail-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.route-detail-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(103, 80, 164, 0.1),
+        transparent
+    );
+    transition: left 0.5s;
+}
+
+.route-detail-card:hover::before {
+    left: 100%;
+}
+
+/* Status-specific styling for route icons */
+.route-detail-card:has(.status-on-time) .route-icon-wrapper {
+    background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+}
+
+.route-detail-card:has(.status-delayed) .route-icon-wrapper {
+    background: linear-gradient(135deg, #FF9800 0%, #FFB74D 100%);
+}
+
+.route-detail-card:has(.status-maintenance) .route-icon-wrapper {
+    background: linear-gradient(135deg, #F44336 0%, #EF5350 100%);
+}
+
+/* Loading states */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #6750A4;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Empty state styling */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #79747E;
+}
+
+.empty-state md-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+    color: #CAC4D0;
+}
+
+.empty-state h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    color: #49454F;
+}
+
+.empty-state p {
+    font-size: 0.875rem;
+    color: #79747E;
+}
+
+body.dark-mode .empty-state h3 {
+    color: #CAC4D0;
+}
+
+body.dark-mode .empty-state p {
+    color: #938F99;
+}
+
+/* Filter panel animations */
+.filters-panel {
+    transform-origin: top;
+}
+
+.filters-panel.show {
+    animation: expandPanel 0.3s ease-out;
+}
+
+.filters-panel.hide {
+    animation: collapsePanel 0.3s ease-in;
+}
+
+@keyframes expandPanel {
+    from {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    to {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+@keyframes collapsePanel {
+    from {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+    to {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+}
+
+/* Route card stagger animation */
+.routes-grid .route-detail-card {
+    animation: slideInUp 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.routes-grid .route-detail-card:nth-child(1) { animation-delay: 0.1s; }
+.routes-grid .route-detail-card:nth-child(2) { animation-delay: 0.2s; }
+.routes-grid .route-detail-card:nth-child(3) { animation-delay: 0.3s; }
+.routes-grid .route-detail-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Comprehensive Icon Loading System */
+@font-face {
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    font-weight: 100 700;
+    src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v145/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY3JY.woff2) format('woff2');
+    font-display: block;
+}
+
+/* Force Material Icon Font Loading */
+.material-icons-load-test {
+    font-family: 'Material Symbols Outlined';
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    visibility: hidden;
+}
+
+.material-icons-load-test::before {
+    content: "schedule";
+}
+
+/* Enhanced MD-Icon Styling */
+md-icon {
+    font-family: 'Material Symbols Outlined' !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+}
+
+/* Specific icon size overrides */
+md-icon.stat-icon {
+    font-size: 24px !important;
+}
+
+md-icon.route-icon {
+    font-size: 24px !important;
+}
+
+md-icon.alert-icon {
+    font-size: 20px !important;
+}
+
+md-icon.path-arrow {
+    font-size: 18px !important;
+}
+
+/* Icon loading animation to prevent flash of missing icons */
+@keyframes iconLoad {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+md-icon {
+    animation: iconLoad 0.3s ease-in;
+}
+
+/* Ensure icons inside material components display correctly */
+md-filled-button md-icon,
+md-outlined-button md-icon,
+md-text-button md-icon,
+md-icon-button md-icon,
+md-fab md-icon,
+md-chip md-icon {
+    font-family: 'Material Symbols Outlined' !important;
+}
+
+/* Icon Loading States */
+body:not(.icons-loaded) md-icon {
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+body.icons-loaded md-icon {
+    opacity: 1;
+}
+
+/* Specific visibility rules for problematic icons */
+body:not(.icons-loaded) .stat-icon,
+body:not(.icons-loaded) .route-icon,
+body:not(.icons-loaded) .alert-icon {
+    min-width: 24px;
+    min-height: 24px;
+    background-color: rgba(103, 80, 164, 0.2);
+    border-radius: 50%;
+    position: relative;
+}
+
+body:not(.icons-loaded) .stat-icon::before,
+body:not(.icons-loaded) .route-icon::before,
+body:not(.icons-loaded) .alert-icon::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(103, 80, 164, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body.icons-loaded .stat-icon,
+body.icons-loaded .route-icon,
+body.icons-loaded .alert-icon {
+    background-color: transparent;
+}
+
+body.icons-loaded .stat-icon::before,
+body.icons-loaded .route-icon::before,
+body.icons-loaded .alert-icon::before {
+    display: none;
 }

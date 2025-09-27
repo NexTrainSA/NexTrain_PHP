@@ -148,18 +148,23 @@
         </div>
     </md-dialog>
 
-    <md-dialog id="dialog-alert" <?php if(isset($_GET['msg'])) echo 'open' ; ?>>
-        <div slot="headline">
-            <h2>Alerta</h2>
+    <md-dialog id="dialog-alert" <?php if(isset($_GET['msg'])) echo 'open'; ?>>
+        <div slot="headline" style="display: flex; align-items: center; gap: 8px; padding: 16px 24px 0 24px;">
+            <md-icon style="color: #3f3f3e; font-size: 32px;">warning</md-icon>
+            <span style="color: #4a6382; font-size: 1.3rem; font-weight: 600;">Alerta</span>
         </div>
-        <div slot="content">
-            <!-- TODO: Renomear arquivo para um .php, por enquanto assim funciona. -->
-            <p>
-                <?php if(isset($_GET['msg'])) echo($_GET['msg'])?>
+        <div slot="content" style="padding: 12px 24px 0 24px;">
+            <p style="color: #222; font-size: 1.1rem; margin: 0; text-align: center;">
+                <?php if(isset($_GET['msg'])) echo(htmlspecialchars($_GET['msg'])); ?>
             </p>
         </div>
-        <div slot="actions">
-            <md-text-button onclick="document.location.href = '.'">Confirmar</md-text-button>
+        <div slot="actions" style="display: flex; justify-content: center; padding: 16px 0 0 0;">
+            <md-filled-button 
+                style="--md-filled-button-container-color: #4a6382; color: #fff; font-weight: 500; border-radius: 24px; min-width: 120px;"
+                onclick="document.location.href = '.'">
+                <md-icon slot="icon" style="font-size: 20px;">check_circle</md-icon>
+                Confirmar
+            </md-filled-button>
         </div>
     </md-dialog>
 

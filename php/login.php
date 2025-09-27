@@ -13,8 +13,9 @@
         
         if(mysqli_num_rows($q) > 0) {
             $_SESSION["username"] = $u;
-            $_SESSION["nomeCompleto_usuario"] = mysqli_fetch_assoc($q)["nome_completo_usuario"];
             $_SESSION["loggedin"] = true;
+
+            $_SESSION = array_merge($_SESSION, mysqli_fetch_assoc($q));
         }
     }
 
