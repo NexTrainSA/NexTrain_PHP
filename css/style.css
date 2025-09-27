@@ -1020,7 +1020,7 @@ body.dark-mode .alert-card:focus-visible {
 footer {
     background-color: #a6a2a2;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     margin-bottom: 0;
     justify-content: center;
