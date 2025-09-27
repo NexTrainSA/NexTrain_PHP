@@ -191,7 +191,7 @@ div.alert-item {
 
 div.alert-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 span.alert-title {
