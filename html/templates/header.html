@@ -75,38 +75,76 @@
     </header>
 
     <md-dialog id="dialog-profile-info"> <!-- Informações do Perfil -->
-        <div slot="content">
-            <!-- TODO: Renomear arquivo para um .php, por enquanto assim funciona. -->
-            <?php
-            echo "<div slot='headline'><span id='dialog-title'>".$_SESSION['username']."</span></div>";
-            if(check_user_permission($_SESSION['username'], "ADMIN_PAGES")) echo "<br><a href='?page=admin/index.php'>Administrador</a>";
-          ?>
-
-            <br><a href="php/logout.php">Desconectar</a>
+        <div slot="headline" style="display: flex; align-items: center; gap: 12px;">
+            <md-icon style="font-size: 26px; color: var(--md-sys-color-primary);">account_circle</md-icon>
+            <span id="dialog-title" style="font-size: 1.25rem; font-weight: 500;">
+                <?php echo htmlspecialchars($_SESSION['username']); ?>
+            </span>
         </div>
-        <div slot="actions">
-            <md-text-button onclick="document.getElementById('dialog-profile-change-password').open = true">Alterar
-                Senha</md-text-button>
-            <md-text-button onclick="document.getElementById('dialog-profile-info').close()">Fechar</md-text-button>
+        <div slot="content" style="display: flex; flex-direction: column; gap: 16px; min-width: 260px;">
+            <?php if(check_user_permission($_SESSION['username'], "ADMIN_PAGES")): ?>
+                <md-filled-tonal-button style="width: 100%;" onclick="window.location.href='?page=admin/index.php'">
+                    <md-icon slot="icon">admin_panel_settings</md-icon>
+                    Administrador
+                </md-filled-tonal-button>
+            <?php endif; ?>
+            <md-filled-tonal-button style="width: 100%;" onclick="window.location.href='php/logout.php'">
+                <md-icon slot="icon">logout</md-icon>
+                Desconectar
+            </md-filled-tonal-button>
+        </div>
+        <div slot="actions" style="display: flex; justify-content: flex-end; gap: 8px;">
+            <md-text-button onclick="document.getElementById('dialog-profile-change-password').open = true">
+                <md-icon slot="icon">lock</md-icon>
+                Alterar Senha
+            </md-text-button>
+            <md-text-button onclick="document.getElementById('dialog-profile-info').close()">
+                <md-icon slot="icon">close</md-icon>
+                Fechar
+            </md-text-button>
         </div>
     </md-dialog>
 
     <md-dialog id="dialog-profile-change-password">
-        <div slot="content">
-            <!-- TODO: Renomear arquivo para um .php, por enquanto assim funciona. -->
-            <div slot="headline">
-                <h2>Altere sua senha</h2>
-            </div>
-            <form action="php/changepassword.php" id="aaa" method="post">
-                <md-outlined-text-field type="password" name="oldpass" id="" label="Senha Anterior"
-                    style="flex:1;"></md-outlined-text-field>
-                <md-outlined-text-field type="password" name="newpass" id="" label="Nova Senha"
-                    style="flex:1;"></md-outlined-text-field> </md-outlined-text-field>
-            </form>
+        <div slot="headline" style="display: flex; align-items: center; gap: 12px;">
+            <md-icon style="font-size: 26px; color: var(--md-sys-color-primary);">lock</md-icon>
+            <span style="font-size: 1.25rem; font-weight: 500;">Alterar Senha</span>
         </div>
-        <div slot="actions">
-            <md-text-button form="aaa"
-                onclick="document.getElementById('dialog-profile-change-password').close()">Confirmar</md-text-button>
+        <form action="php/changepassword.php" id="change-password-form" method="post" slot="content" style="display: flex; flex-direction: column; gap: 20px; min-width: 280px;">
+            <md-outlined-text-field 
+                type="password" 
+                name="oldpass" 
+                label="Senha Atual" 
+                required 
+                style="width: 100%;">
+                <md-icon slot="leading-icon">lock</md-icon>
+            </md-outlined-text-field>
+            <md-outlined-text-field 
+                type="password" 
+                name="newpass" 
+                label="Nova Senha" 
+                required 
+                style="width: 100%;">
+                <md-icon slot="leading-icon">vpn_key</md-icon>
+            </md-outlined-text-field>
+            <md-outlined-text-field 
+                type="password" 
+                name="confirmpass" 
+                label="Confirmar Nova Senha" 
+                required 
+                style="width: 100%;">
+                <md-icon slot="leading-icon">check</md-icon>
+            </md-outlined-text-field>
+        </form>
+        <div slot="actions" style="display: flex; justify-content: flex-end; gap: 8px;">
+            <md-text-button onclick="document.getElementById('dialog-profile-change-password').close()">
+                <md-icon slot="icon">close</md-icon>
+                Cancelar
+            </md-text-button>
+            <md-filled-button form="change-password-form" type="submit">
+                <md-icon slot="icon">check_circle</md-icon>
+                Confirmar
+            </md-filled-button>
         </div>
     </md-dialog>
 
