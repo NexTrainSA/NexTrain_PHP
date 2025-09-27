@@ -24,33 +24,100 @@
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
 </head>
-<body style="background-color: #ffffff;">
+<body style="background: linear-gradient(135deg, #4a6382 0%, #778da9 100%); min-height: 100vh; font-family: 'Roboto', sans-serif; margin: 0;">
 
-    <div class="login-title" style="display: flex; flex-direction: column; align-items: center; background-color: #4a6382;">
-                    <img src="imagens/NexTrain.png" style="width: 50%; padding: 10px;">
+    <div class="login-title" style="display: flex; flex-direction: column; align-items: center; background: rgba(74,99,130,0.95); box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
+        <img src="imagens/NexTrain.png" style="max-width: 120px; width: 100%; height: auto; filter: drop-shadow(0 2px 8px #2222);">
     </div>
 
-    <br>
-
-    <div class="login-form">
-        <span style="padding-left: 2%; font-family: Roboto; font-size: large;">Conecte-se ao <strong>NexTrain</strong></span>
+    <div class="login-form" style="max-width: 400px; margin: 40px auto 0 auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(74,99,130,0.12); padding: 32px 32px 24px 32px;">
+        <span style="display: block; text-align: center; font-size: 1.25rem; color: #4a6382; font-weight: 500; margin-bottom: 24px;">
+            Conecte-se ao <strong>NexTrain</strong>
+        </span>
         <form action="./php/login.php" method="post" style="width: 100%;">
-                <div>
-                    <div class="search-login-screen" style="display: flex; align-items: center; padding: 40px 50px 5px 50px;">
-                        <md-outlined-text-field name="user" id="search-main" label="Nome de Usuário" style="flex: 1;"></md-outlined-text-field>
-                    </div>
-                    <div class="search-login-screen" style="display: flex; align-items: center; padding: 40px 50px 5px 50px;">
-                        <md-outlined-text-field type="password" name="pass" id="search-main" label="Senha" style="flex: 1;"></md-outlined-text-field>
-                    </div>
+            <div>
+                <div class="search-login-screen" style="display: flex; align-items: center; margin-bottom: 18px;">
+                    <md-outlined-text-field name="user" id="search-main" label="Nome de Usuário" style="flex: 1; --md-outlined-text-field-container-color: #f5f8fa;"></md-outlined-text-field>
                 </div>
-                <div style="display: flex; justify-content: center; padding: 40px 50px 5px 50px;">
-                    <md-filled-tonal-icon-button class="custom-button" style="width: 18%; --md-sys-color-secondary-container: #778da9;">
-                        <md-icon class="custom-icon">login</md-icon>
-                    </md-filled-tonal-icon-button>
+                <div class="search-login-screen" style="display: flex; align-items: center; margin-bottom: 18px;">
+                    <md-outlined-text-field type="password" name="pass" id="search-main" label="Senha" style="flex: 1; --md-outlined-text-field-container-color: #f5f8fa;"></md-outlined-text-field>
                 </div>
+            </div>
+            <span style="display: block; text-align: center; font-size: 1rem; color: #778da9; margin-bottom: 18px;">
+                Não tem uma conta? 
+                <strong style="color: #4a6382; cursor: pointer; text-decoration: underline;" onclick="document.getElementById('dialog-profile-info').open = true">Registre-se aqui</strong>
+            </span>
+            <div style="display: flex; justify-content: center;">
+                <md-filled-tonal-icon-button class="custom-button" style="width: 48px; height: 48px; --md-sys-color-secondary-container: #4a6382; border-radius: 50%; box-shadow: 0 2px 8px #dadada33;">
+                    <md-icon class="custom-icon" style="font-size: 28px; color: #f5f8fa;">login</md-icon>
+                </md-filled-tonal-icon-button>
+            </div>
         </form>
     </div>
 
+    <md-dialog id="dialog-profile-info">
+        <div slot="headline" style="text-align: center;">
+            <h2 style="margin: 0; font-family: 'Roboto', sans-serif; color: #4a6382;">Cadastro</h2>
+            <p style="margin: 8px 0 0 0; color: #778da9; font-size: 1rem;">Crie sua conta NexTrain</p>
+        </div>
+        <div slot="content">
+            <form action="php/register.php" id="register-form" method="post" style="display: flex; flex-direction: column; gap: 18px; margin-top: 10px;">
+                <md-outlined-text-field 
+                    type="text" 
+                    name="user" 
+                    label="Usuário"
+                    style="flex:1; --md-outlined-text-field-container-color: #f5f8fa;">
+                    <md-icon slot="leading-icon">person</md-icon>
+                </md-outlined-text-field>
+                <md-outlined-text-field 
+                    type="email" 
+                    name="email" 
+                    label="Email"
+                    style="flex:1; --md-outlined-text-field-container-color: #f5f8fa;">
+                    <md-icon slot="leading-icon">mail</md-icon>
+                </md-outlined-text-field>
+                <md-outlined-text-field 
+                    type="password" 
+                    name="pass" 
+                    label="Senha"
+                    style="flex:1; --md-outlined-text-field-container-color: #f5f8fa;">
+                    <md-icon slot="leading-icon">lock</md-icon>
+                </md-outlined-text-field>
+            </form>
+        </div>
+        <div slot="actions" style="display: flex; justify-content: space-between; padding: 16px;">
+            <md-filled-button 
+                style="--md-filled-button-container-color: #4a6382; color: #fff; font-weight: 500;"
+                onclick="document.getElementById('register-form').submit()">
+                Registrar
+            </md-filled-button>
+            <md-text-button 
+                style="color: #4a6382;"
+                onclick="document.getElementById('dialog-profile-info').close()">
+                Fechar
+            </md-text-button>
+        </div>
+    </md-dialog>
+
+    <md-dialog id="dialog-alert" <?php if(isset($_GET['msg'])) echo 'open'; ?>>
+        <div slot="headline" style="display: flex; align-items: center; gap: 8px; padding: 16px 24px 0 24px;">
+            <md-icon style="color: #3f3f3e; font-size: 32px;">warning</md-icon>
+            <span style="color: #4a6382; font-size: 1.3rem; font-weight: 600;">Alerta</span>
+        </div>
+        <div slot="content" style="padding: 12px 24px 0 24px;">
+            <p style="color: #222; font-size: 1.1rem; margin: 0; text-align: center;">
+                <?php if(isset($_GET['msg'])) echo(htmlspecialchars($_GET['msg'])); ?>
+            </p>
+        </div>
+        <div slot="actions" style="display: flex; justify-content: center; padding: 16px 0 0 0;">
+            <md-filled-button 
+                style="--md-filled-button-container-color: #4a6382; color: #fff; font-weight: 500; border-radius: 24px; min-width: 120px;"
+                onclick="document.location.href = '.'">
+                <md-icon slot="icon" style="font-size: 20px;">check_circle</md-icon>
+                Confirmar
+            </md-filled-button>
+        </div>
+    </md-dialog>
 </body>
 
 </html>
