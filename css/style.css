@@ -588,6 +588,7 @@ body.dark-mode .welcome-content .dashboard-subtitle {
     display: flex;
     align-items: center;
     gap: 16px;
+
 }
 
 .stat-icon {
@@ -619,7 +620,7 @@ body.dark-mode .welcome-content .dashboard-subtitle {
 .stat-label {
     font-family: 'Roboto', sans-serif;
     font-size: 0.875rem;
-    color: #49454F;
+    color: #000000;
     font-weight: 400;
     margin-top: 4px;
 }
@@ -668,7 +669,7 @@ body.dark-mode .section-title {
 }
 
 .route-card {
-    background: #FFFFFF;
+    background: #687b8f;
     border-radius: 12px;
     padding: 20px;
     border: 1px solid #E7E0EC;
@@ -717,7 +718,7 @@ body.dark-mode .section-title {
 .route-info .route-description {
     font-family: 'Roboto', sans-serif;
     font-size: 0.875rem;
-    color: #49454F;
+    color: #000000;
     margin: 0;
 }
 
@@ -759,7 +760,7 @@ body.dark-mode .route-info .route-description {
 }
 
 .alert-card {
-    background: #FFFFFF;
+    background: #687b8f;
     border-radius: 12px;
     padding: 16px;
     border: 1px solid #E7E0EC;
@@ -796,21 +797,21 @@ body.dark-mode .route-info .route-description {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     font-weight: 500;
-    color: #1D1B20;
+    color: #000000;
     margin: 0 0 4px 0;
 }
 
 .alert-description {
     font-family: 'Roboto', sans-serif;
     font-size: 0.875rem;
-    color: #49454F;
+    color: #1c1b1d;
     margin: 0 0 6px 0;
 }
 
 .alert-time {
     font-family: 'Roboto', sans-serif;
     font-size: 0.75rem;
-    color: #79747E;
+    color: #39373b;
 }
 
 body.dark-mode .alert-card {

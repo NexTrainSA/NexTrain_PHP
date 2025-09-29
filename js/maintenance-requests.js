@@ -10,7 +10,7 @@ document.getElementById('cpf').addEventListener('input', function () {
   this.value = cpf;
 });
 
-// Máscara para telefone: (99) 99999-9999
+// Máscara para telefone:
 document.getElementById('telefone').addEventListener('input', function () {
   let tel = this.value.replace(/\D/g, '');
   if (tel.length > 11) tel = tel.slice(0, 11);
@@ -68,4 +68,32 @@ function validateForm(event) {
   }
 
   return false;
+}
+
+// Validar o formulário:
+function validateForm(event) {
+  event.preventDefault(); // Tem que ter!!!
+
+  const ordemServico = document.getElementById('ordem_servico').value;
+  const nomeFuncionario = document.getElementById('nome_funcionario').value;
+  const cpf = document.getElementById('cpf').value;
+  const idFuncionario = document.getElementById('id_funcionario').value;
+  const telefoneFuncionario = document.getElementById('telefone_funcionario').value;
+  const idTrem = document.getElementById('id_trem').value;
+  const descricaoProblema = document.getElementById('descricao_problema').value;
+  const tecnicoResponsavel = document.getElementById('tecnico_responsavel').value;
+  const dataEntrada = document.getElementById('data_entrada').value;
+  const dataSaida = document.getElementById('data_saida').value;
+
+  if (!ordemServico || !nomeFuncionario || !cpf || !idFuncionario || !telefoneFuncionario || !idTrem || !descricaoProblema || !tecnicoResponsavel || !dataEntrada || !dataSaida) {
+    alert('Preencha todos os campos obrigatórios!');
+    return false;
+  }
+
+  include(insert_requests.php);
+  alert("Seu chamado foi recebido! Torça para não sermos como a TI da escola e demorarmos mais de 6 meses para resolver um probleminha ;)");
+  event.target.submit(); // Envia o formulário
+  document.getElementById('formOS').reset(); // Isso faz resetar todo o formulário
+
+  return true;
 }
