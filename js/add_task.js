@@ -1,7 +1,7 @@
 function validateForm(event) {
     event.preventDefault(); // Tem que ter!!!
 
-    const funcionario = document.getElementById('funcionario').value;
+    const funcionario = document.getElementById('id_funcionario').value;
     const descricao = document.getElementById('descricao').value;
 
     if (!funcionario || !descricao) {
@@ -9,7 +9,7 @@ function validateForm(event) {
         return false;
     }
 
-    include(insert_task.php);
+    include('insert_task.php');
     alert("Tarefa adicionada ;)");
     event.target.submit(); // Envia o formulário
     document.getElementById('formOS').reset(); // Isso faz resetar todo o formulário

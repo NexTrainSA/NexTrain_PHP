@@ -147,7 +147,7 @@ function create_trains_table()
     }
 }
 
-// Função para inserir na tabela schedule
+/* Função para inserir na tabela schedule
 function insert_schedule($id_tarefa, $id_funcionario, $descricao_tarefa)
 {
     global $con;
@@ -162,7 +162,7 @@ function insert_schedule($id_tarefa, $id_funcionario, $descricao_tarefa)
     } else {
         return "Erro: " . mysqli_error($con);
     }
-}
+}*/
 
 function insert_train($nome_trem, $id_funcionario_encarregado_trem, $modelo_trem, $infos_trem = null)
 {

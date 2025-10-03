@@ -144,7 +144,7 @@
     <section class="content">
         <div class="form-maintenance">
             <h1>Chamado de Manutenção</h1>
-            <form id="formOS" onsubmit="return validateForm(event)">
+            <form id="formOS" action="./php/insert_requests.php" onsubmit="return validateForm(event)">
                 <fieldset>
                     <legend>Suas informações:</legend>
 
