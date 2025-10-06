@@ -12,8 +12,8 @@ $TECNICO_RESPONSAVEL = $_POST['tecnico'] ?? '';
 $DATA_ENTRADA = $_POST['dataEntrada'] ?? '';
 $DATA_SAIDA = $_POST['dataSaida'] ?? '';
 
-$stmt = $con->prepare("INSERT INTO maintenance_requests (nome_funcionario, cpf_funcionario, id_funcionario, telefone_funcionario, info_trem, descricao_problema, tecnico_responsavel, data_entrada, data_saida) VALUES(?, ? , ?, ?, ?, ?, ?, ? STR_TO_DATE(?) STR_TO_DATE(?))");
-$stmt->bind_param("isiisissss", $NOME_FUNCIONARIO, $CPF_FUNCIONARIO, $ID_FUNCIONARIO, $TELEFONE_FUNCIONARIO, $ID_TREM, $DESCRICAO_PROBLEMA, $TECNICO_RESPONSAVEL, $DATA_ENTRADA, $DATA_SAIDA);
+$stmt = $con->prepare("INSERT INTO chamados_manutencao (nome_funcionario, cpf_funcionario, id_funcionario, telefone_funcionario, id_trem, descricao_problema, data_entrada, data_saida) VALUES(?, ?, ?, ?, ?, ? STR_TO_DATE(?) STR_TO_DATE(?))");
+$stmt->bind_param("siiiisss", $NOME_FUNCIONARIO, $CPF_FUNCIONARIO, $ID_FUNCIONARIO, $TELEFONE_FUNCIONARIO, $ID_TREM, $DESCRICAO_PROBLEMA, $DATA_ENTRADA, $DATA_SAIDA);
 
 if ($stmt->execute()) {
 } else {

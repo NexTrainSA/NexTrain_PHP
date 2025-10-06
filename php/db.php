@@ -85,7 +85,6 @@ function get_all_users_as_array()
     return $users;
 }
 
-// Função para criar a tabela de chamados de manutenção
 function create_requests_table()
 {
     global $con;

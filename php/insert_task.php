@@ -2,11 +2,11 @@
 
 require_once('db.php');
 
-$ID_FUNCIONARIO = $_POST['id_funcionario'];
-$DESCRICAO_PROBLEMA = $_POST['descricao_problema'];
+$ID_FUNCIONARIO = $_POST['id_funcionario']?? '';
+$DESCRICAO_PROBLEMA = $_POST['descricao_tarefa']?? '';
 
 
-$stmt = $con->prepare("INSERT INTO schedule (id_funcionario, descricao_tarefa) VALUES(?, ? )");
+$stmt = $con->prepare("INSERT INTO agenda (id_funcionario, descricao_tarefa) VALUES(?, ? )");
 $stmt->bind_param("is", $ID_FUNCIONARIO, $DESCRICAO_TAREFA);
 
 if ($stmt->execute()) {

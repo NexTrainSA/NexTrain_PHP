@@ -24,6 +24,9 @@ h2.alert-title {
      transform: translateX(20px);
 
 }
+h1.report-title {
+    font-family: 'Roboto';
+}
 main {
     flex: 1;
 }
@@ -207,6 +210,8 @@ span.alert-location {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
 }
+
+
 
 md-icon.alert-danger {
     color: #847577;
