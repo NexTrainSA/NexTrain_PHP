@@ -208,18 +208,6 @@
                         <label for="descricao">Descrição do Problema:*</label>
                         <textarea id="descricao" rows="4" required></textarea>
                     </div>
-
-                    <div class="form-group">
-                        <label for="tecnico">Técnico Responsável:*</label>
-                        <select id="tecnico" required>
-                            <option value="">Selecione...</option>
-                            <?php
-                            include("listar_funcionarios.php");
-                            foreach ($funcionarios as $linha) {
-                                echo  "<option value='" . $linha['id_usuario'] . "'>" . $linha['username_usuario'] . "</option>";
-                            } ?>
-                        </select>
-                    </div>
                 </fieldset>
                 <button type="submit">Enviar Chamado</button>
             </form>

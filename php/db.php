@@ -73,7 +73,7 @@ function get_all_users_as_array()
     return $users;
 }
 
-// Função para criar a tabela de chamados de manutenção
+/* Função para criar a tabela de chamados de manutenção
 function create_requests_table()
 {
     global $con;
@@ -96,7 +96,7 @@ function create_requests_table()
     } else {
         return "Erro: " . mysqli_error($con);
     }
-}
+}*/
 
 // Função para criar tabela para schedule/tarefas
 function create_schedule_table()
@@ -167,10 +167,3 @@ function insert_train($nome_trem, $id_funcionario_encarregado_trem, $modelo_trem
         return "Erro: " . mysqli_error($con);
     }
 }
-
-// Inserção dos dados dos primeiros trens:
-/* insert_train("D85", 2, "Modelo AAA", "Infos...");
-insert_train("F68", 6, "Modelo BBB", "Infos...");
-insert_train("DZ213", 3, "Modelo CCC", "Infos...");
-insert_train("D098", 24, "Modelo DDD", "Infos...");
-insert_train("D654", 20, "Modelo EEE", "Infos..."); */
