@@ -18,35 +18,35 @@
                     <md-icon class="stat-icon users-icon">group</md-icon>
                     <div class="stat-info">
                         <?php
-                            global $con;
-                            $conn = $con;
-                            $conn->real_query("SELECT COUNT(*) as count FROM usuario;");
-                            $result = $conn->use_result();
-                            $userCount = $result->fetch_assoc()['count'];
-                            $result->free();
+                        global $con;
+                        $conn = $con;
+                        $conn->real_query("SELECT COUNT(*) as count FROM usuario;");
+                        $result = $conn->use_result();
+                        $userCount = $result->fetch_assoc()['count'];
+                        $result->free();
                         ?>
                         <span class="stat-value"><?php echo $userCount; ?></span>
                         <span class="stat-label">Usuários</span>
                     </div>
                 </div>
             </md-card>
-            
+
             <md-card class="stat-card">
                 <div class="stat-content">
                     <md-icon class="stat-icon permissions-icon">security</md-icon>
                     <div class="stat-info">
                         <?php
-                            $conn->real_query("SELECT COUNT(*) as count FROM permissao;");
-                            $result = $conn->use_result();
-                            $permCount = $result->fetch_assoc()['count'];
-                            $result->free();
+                        $conn->real_query("SELECT COUNT(*) as count FROM permissao;");
+                        $result = $conn->use_result();
+                        $permCount = $result->fetch_assoc()['count'];
+                        $result->free();
                         ?>
                         <span class="stat-value"><?php echo $permCount; ?></span>
                         <span class="stat-label">Permissões</span>
                     </div>
                 </div>
             </md-card>
-            
+
             <md-card class="stat-card">
                 <div class="stat-content">
                     <md-icon class="stat-icon system-icon">monitor_heart</md-icon>
@@ -65,7 +65,7 @@
             <h2 class="section-title">Gerenciamento</h2>
             <p class="section-subtitle">Acesse as ferramentas de administração</p>
         </div>
-        
+
         <div class="management-grid">
             <md-card class="management-card" onclick="navigateTo('?page=admin/user_edit.php')">
                 <div class="card-content">
@@ -78,7 +78,7 @@
                             <p class="card-description">Criar, editar e excluir usuários do sistema</p>
                         </div>
                     </div>
-                    
+
                     <div class="card-actions">
                         <md-text-button>
                             <md-icon slot="icon">arrow_forward</md-icon>
@@ -99,7 +99,7 @@
                             <p class="card-description">Gerenciar permissões e acessos dos usuários</p>
                         </div>
                     </div>
-                    
+
                     <div class="card-actions">
                         <md-text-button>
                             <md-icon slot="icon">arrow_forward</md-icon>
@@ -120,7 +120,7 @@
                             <p class="card-description">Visualizar informações técnicas e versão</p>
                         </div>
                     </div>
-                    
+
                     <div class="card-actions">
                         <md-text-button>
                             <md-icon slot="icon">arrow_forward</md-icon>
@@ -141,7 +141,7 @@
                             <p class="card-description">Gerenciar e monitorar o banco de dados</p>
                         </div>
                     </div>
-                    
+
                     <div class="card-actions">
                         <md-text-button>
                             <md-icon slot="icon">arrow_forward</md-icon>
@@ -158,7 +158,7 @@
         <div class="section-header">
             <h2 class="section-title">Atividade Recente</h2>
         </div>
-        
+
         <md-card class="activity-card">
             <div class="activity-content">
                 <div class="activity-item">
@@ -168,7 +168,7 @@
                         <span class="activity-time">Há 2 horas</span>
                     </div>
                 </div>
-                
+
                 <div class="activity-item">
                     <md-icon class="activity-icon">security</md-icon>
                     <div class="activity-info">
@@ -176,7 +176,7 @@
                         <span class="activity-time">Há 4 horas</span>
                     </div>
                 </div>
-                
+
                 <div class="activity-item">
                     <md-icon class="activity-icon">update</md-icon>
                     <div class="activity-info">
@@ -190,31 +190,31 @@
 </main>
 
 <script>
-function navigateTo(url) {
-    window.location.href = url;
-}
+    function navigateTo(url) {
+        window.location.href = url;
+    }
 
-function refreshData() {
-    window.location.reload();
-}
+    function refreshData() {
+        window.location.reload();
+    }
 
-function openSystemSettings() {
-    alert('Configurações do sistema - Em desenvolvimento');
-}
+    function openSystemSettings() {
+        alert('Configurações do sistema - Em desenvolvimento');
+    }
 
-function openDatabaseManager() {
-    alert('Gerenciador de banco de dados - Em desenvolvimento');
-}
+    function openDatabaseManager() {
+        alert('Gerenciador de banco de dados - Em desenvolvimento');
+    }
 
-// Immediate icon fix for admin page
-if (typeof window.fixAdminIcons === 'function') {
-    window.fixAdminIcons();
-} else {
-    // Fallback if script hasn't loaded yet
-    setTimeout(function() {
-        if (typeof window.fixAdminIcons === 'function') {
-            window.fixAdminIcons();
-        }
-    }, 500);
-}
+    // Immediate icon fix for admin page
+    if (typeof window.fixAdminIcons === 'function') {
+        window.fixAdminIcons();
+    } else {
+        // Fallback if script hasn't loaded yet
+        setTimeout(function() {
+            if (typeof window.fixAdminIcons === 'function') {
+                window.fixAdminIcons();
+            }
+        }, 500);
+    }
 </script>

@@ -1,127 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-<link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-<script type="importmap">
-        {
-            "imports": {
-            "@material/web/": "https://esm.run/@material/web/"
-            }
-        }
-        </script>
-<script type="module">
-    import '@material/web/all.js';
-    import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alertas e Manutenções | SA NexTrain</title>
 
-    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-</script>
+    <!-- Fontes e Ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/maintenance.css">
+
+    <!-- Material Web -->
+    <script type="importmap">
+    {
+        "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+        }
+    }
+    </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+</head>
 
 <body>
-    <section class="content"> <!--  Conteúdo da Página:  -->
+    <main class="routes-container">
+        <!-- Cabeçalho -->
+        <section class="page-header">
+            <div class="header-content">
+                <h1 class="page-title">Alertas e Manutenções</h1>
+                <p class="page-subtitle">Veja os trens e trajetos que estão com avisos ativos</p>
+            </div>
+        </section>
 
-        <!--  Alertas de cuidados imediatos  -->
-        <h3 style="text-align:center;">Cuidados imediatos</h3>
-        <!--  Card:  -->
-        <div id="alerts-box" class="warning">
-            <div class="alert-item" style="display:flex; align-items: center;">
-                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
-                    <md-icon class="alert-danger">Flood</md-icon>
-                </md-filled-tonal-icon-button>
-                <div class="alert-content" style="display: flex; flex-direction: column;">
-                    <h2 style="text-align: center;" class="alert-title"><b> Enchente </b></h2>
-                    <span class="alert-location"><i>Trecho 1</i></span>
-                </div>
-            </div>
-        </div>
-        <!--  Card:  -->
-        <div id="alerts-box" class="warning">
-            <div class="alert-item" style="display:flex; align-items: center;">
-                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
-                    <md-icon class="alert-danger">Dangerous</md-icon>
-                </md-filled-tonal-icon-button>
-                <div class="alert-content" style="display: flex; flex-direction: column;">
-                    <h2  style="text-align: center;" class="alert-title"><b>Emergência</b></h2>
-                    <span class="alert-location"><i>Trecho 1</i></span>
-                </div>
-            </div>
-        </div>
-        <!--  Card:  -->
-        <div id="alerts-box" class="danger">
-            <div class="alert-item" style="display:flex; align-items: center;">
-                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
-                    <md-icon class="alert-danger">Thunderstorm</md-icon>
-                </md-filled-tonal-icon-button>
-                <div class="alert-content" style="display: flex; flex-direction: column;">
-                    <h2  style="text-align: center;" class="alert-title"><b>Chuva</b></h2>
-                    <span class="alert-location"><i>Trecho 1</i></span>
-                </div>
-            </div>
-        </div>
-        <!--  Fim dos alertas de cuidados  -->
+        <!-- Cards de Alertas -->
+        <section class="routes-grid-section">
+            <div class="routes-grid">
 
-        <!--  Alertas de Manutenção:  -->
-        <h3 style="text-align: center;">Alertas de Manutenção</h3>
-        <div class="malfunction">
-            <div id="alerts-box">
-                <div class="alert-item" style="display:flex; align-items: center;">
-                    <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
-                        <md-icon class="alert">handyman</md-icon>
-                    </md-filled-tonal-icon-button>
-                    <div class="alert-content" style="display: flex; flex-direction: column;">
-                        <h2 class="alert-title">Alerta de Manutenção</h2>
-                        <span class="alert-location"><i>Trem DZ213 ainda não iniciou manutenção</i></span>
+                <!-- Card 1 -->
+                <md-card class="route-alert-card thunderstorm">
+                    <div class="route-card-content">
+                        <div class="route-header">
+                            <div class="route-icon-wrapper">
+                                <md-icon class="route-icon">train</md-icon>
+                            </div>
+                            <div class="route-info">
+                                <h3 class="route-name">DB 8598</h3>
+                                <p class="route-line">Linha Azul</p>
+                            </div>
+                            <md-chip label="Trovoada no trajeto" class="status-chip alert-thunder">
+                                <md-icon slot="icon">bolt</md-icon>
+                            </md-chip>
+                        </div>
+                        <p class="alert-description">Alerta de tempestade detectado entre Estação Central e Terminal
+                            Norte.</p>
                     </div>
-                </div>
-            </div>
-        </div>
+                </md-card>
 
-        <div class="malfunction">
-            <div id="alerts-box">
-                <div class="alert-item" style="display:flex; align-items: center;">
-                    <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
-                        <md-icon class="alert">handyman</md-icon>
-                    </md-filled-tonal-icon-button>
-                    <div class="alert-content" style="display: flex; flex-direction: column;">
-                        <h2 class="alert-title">Alerta de Manutenção</h2>
-                        <span class="alert-location"><i>Trem D654 já está operando</i></span>
+                <!-- Card 2 -->
+                <md-card class="route-alert-card obstacle">
+                    <div class="route-card-content">
+                        <div class="route-header">
+                            <div class="route-icon-wrapper">
+                                <md-icon class="route-icon">train</md-icon>
+                            </div>
+                            <div class="route-info">
+                                <h3 class="route-name">DB 9360</h3>
+                                <p class="route-line">Linha Verde</p>
+                            </div>
+                            <md-chip label="Objeto no trilho" class="status-chip alert-obstacle">
+                                <md-icon slot="icon">warning</md-icon>
+                            </md-chip>
+                        </div>
+                        <p class="alert-description">Sensor detectou um objeto obstruindo o trilho próximo à Estação
+                            Sul.</p>
                     </div>
-                </div>
-            </div>
-        </div>
+                </md-card>
 
-        <div class="malfunction">
-            <div id="alerts-box">
-                <div class="alert-item" style="display:flex; align-items: center;">
-                    <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
-                        <md-icon class="alert">handyman</md-icon>
-                    </md-filled-tonal-icon-button>
-                    <div class="alert-content" style="display: flex; flex-direction: column;">
-                        <h2 class="alert-title">Alerta de Manutenção</h2>
-                        <span class="alert-location"><i>Trem D098 está em processo de manutenção</i></span>
+                <!-- Card 3 -->
+                <md-card class="route-alert-card mechanical">
+                    <div class="route-card-content">
+                        <div class="route-header">
+                            <div class="route-icon-wrapper">
+                                <md-icon class="route-icon">train</md-icon>
+                            </div>
+                            <div class="route-info">
+                                <h3 class="route-name">DB 7521</h3>
+                                <p class="route-line">Linha Vermelha</p>
+                            </div>
+                            <md-chip label="Falha mecânica" class="status-chip alert-mechanical">
+                                <md-icon slot="icon">build</md-icon>
+                            </md-chip>
+                        </div>
+                        <p class="alert-description">O trem apresentou falha mecânica e está parado no Distrito
+                            Industrial.</p>
                     </div>
-                </div>
-            </div>
-        </div>
+                </md-card>
 
-        <md-fab class="nxt-btn" onclick="document.location.href = '?page=maintenance-requests.php'"
-            label="Abrir chamado de manutenção">
+                <!-- Card 4 -->
+                <md-card class="route-alert-card accident">
+                    <div class="route-card-content">
+                        <div class="route-header">
+                            <div class="route-icon-wrapper">
+                                <md-icon class="route-icon">train</md-icon>
+                            </div>
+                            <div class="route-info">
+                                <h3 class="route-name">DB 4182</h3>
+                                <p class="route-line">Linha Amarela</p>
+                            </div>
+                            <md-chip label="Acidente detectado" class="status-chip alert-accident">
+                                <md-icon slot="icon">emergency</md-icon>
+                            </md-chip>
+                        </div>
+                        <p class="alert-description">Acidente registrado próximo ao Centro Histórico. Equipe a caminho.
+                        </p>
+                    </div>
+                </md-card>
+            </div>
+        </section>
+
+
+        <!-- Botão Flutuante -->
+        <md-fab class="nxt-btn" label="Abrir chamado de manutenção"
+            onclick="window.location.href='?page=maintenance-requests.php'">
             <md-icon slot="icon">add</md-icon>
         </md-fab>
+    </main>
 
-    </section>
-    <!--  Fim do Conteúdo  -->
-
-    <!--  Scripts:  -->
+    <!-- Scripts -->
     <script src="./js/dark_mode.js"></script>
     <script src="./js/sidebar.js"></script>
-
 </body>
 
 </html>

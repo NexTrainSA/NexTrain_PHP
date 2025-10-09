@@ -46,7 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remover'])) {
     $stmt->bind_param("i", $id_trem);
 
     if ($stmt->execute()) {
-    
     } else {
         echo "erro ao remover trem.";
     }

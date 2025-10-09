@@ -478,7 +478,9 @@ input {
     font-family: 'Roboto', sans-serif;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid #E7E0EC;
     border-collapse: collapse;
 }
@@ -506,8 +508,8 @@ body.dark-mode input {
     color: #E6E1E5;
 }
 
-body.dark-mode table, 
-body.dark-mode th, 
+body.dark-mode table,
+body.dark-mode th,
 body.dark-mode td {
     border-color: #3A3A3A;
 }
@@ -1156,13 +1158,13 @@ body.dark-mode .matrix-footer {
         align-items: stretch;
         gap: 12px;
     }
-    
+
     .matrix-footer {
         flex-direction: column;
         align-items: stretch;
         gap: 16px;
     }
-    
+
     .bulk-actions {
         justify-content: center;
     }
@@ -1173,32 +1175,32 @@ body.dark-mode .matrix-footer {
         padding: 16px;
         gap: 16px;
     }
-    
+
     .permission-item {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
         padding: 16px;
     }
-    
+
     .permission-switch {
         align-self: flex-end;
     }
-    
+
     .matrix-container {
         max-height: 400px;
     }
-    
+
     .permissions-matrix th,
     .permissions-matrix td {
         padding: 12px 8px;
         font-size: 0.75rem;
     }
-    
+
     .user-column {
         min-width: 150px;
     }
-    
+
     .permission-column {
         min-width: 80px;
     }
@@ -1210,20 +1212,20 @@ body.dark-mode .matrix-footer {
         align-items: flex-start;
         gap: 12px;
     }
-    
+
     .bulk-actions {
         flex-direction: column;
         gap: 8px;
     }
-    
+
     .bulk-actions md-outlined-button {
         width: 100%;
     }
-    
+
     .matrix-footer md-filled-button {
         width: 100%;
     }
-    
+
     .permission-header span {
         font-size: 0.75rem;
         text-align: center;
@@ -1593,24 +1595,24 @@ body.dark-mode .env-value {
         grid-template-columns: 1fr;
         gap: 16px;
     }
-    
+
     .system-stats {
         grid-template-columns: 1fr;
         gap: 12px;
         padding: 16px;
     }
-    
+
     .environment-grid {
         grid-template-columns: 1fr;
         gap: 16px;
         padding: 20px;
     }
-    
+
     .phpinfo-wrapper {
         padding: 12px;
         max-height: 300px;
     }
-    
+
     .system-actions {
         justify-content: center;
     }
@@ -1620,20 +1622,20 @@ body.dark-mode .env-value {
     .info-card {
         padding: 20px;
     }
-    
+
     .info-header {
         gap: 10px;
     }
-    
+
     .info-value {
         font-size: 1.1rem;
     }
-    
+
     .env-item {
         padding: 12px;
         gap: 12px;
     }
-    
+
     .error-card {
         padding: 32px 24px;
         margin: 30% auto;

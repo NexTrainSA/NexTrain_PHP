@@ -10,6 +10,7 @@ body {
     overflow-x: hidden;
     background-color: #ffffff;
 }
+
 h2#train-name {
     font-family: 'Roboto';
     font-size: 15px;
@@ -17,16 +18,19 @@ h2#train-name {
     margin-right: 50px;
 
 }
+
 h2.alert-title {
     font-family: 'Roboto';
     font-size: 15px;
     color: #ffffff;
-     transform: translateX(20px);
+    transform: translateX(20px);
 
 }
+
 h1.report-title {
     font-family: 'Roboto';
 }
+
 main {
     flex: 1;
 }
@@ -41,9 +45,11 @@ main {
 }
 
 body.dark-mode {
-    background-color: #687b8f;;
+    background-color: #687b8f;
+    ;
     color: #FAFAFA !important;
 }
+
 body.dark-mode h2#train-name {
     font-family: 'Roboto';
     font-size: 15px;
@@ -61,12 +67,12 @@ body.dark-mode h3 {
     color: #ffffff;
 }
 
-body.darkmode #alert-title.span{
+body.darkmode #alert-title.span {
     color: #000000;
 }
 
 body.dark-mode .card-train {
-    background-color: #eff1f3; 
+    background-color: #eff1f3;
     color: #000000;
 }
 
@@ -76,18 +82,21 @@ body.dark-mode #alerts-box.danger {
     border-radius: 8px;
     padding: 10px;
 }
+
 body.dark-mode #alerts-box.warning {
     background-color: #eff1f3;
     color: #000000;
     border-radius: 8px;
     padding: 10px;
 }
+
 body.dark-mode #alerts-box {
     background-color: #eff1f3;
     color: #000000;
     border-radius: 8px;
     padding: 10px;
 }
+
 h1.center {
     text-align: center;
 }
@@ -451,7 +460,6 @@ span#alert-text {
     flex-direction: column;
     padding: 10px;
     background-color: #E5E6E4
-
 }
 
 .calendar-header {
@@ -907,6 +915,7 @@ md-chip {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -954,36 +963,36 @@ body.dark-mode .alert-card:focus-visible {
         padding: 16px 12px;
         gap: 24px;
     }
-    
+
     .welcome-content h1.dashboard-title {
         font-size: 2rem;
     }
-    
+
     .stats-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .section-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
     }
-    
+
     .route-content {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
     }
-    
+
     .actions-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .info {
         flex-direction: column;
         gap: 12px;
     }
-    
+
     .card-train#card-status-train {
         width: 100%;
     }
@@ -996,28 +1005,28 @@ body.dark-mode .alert-card:focus-visible {
         padding-left: 12px;
         padding-right: 12px;
     }
-    
+
     .welcome-section {
         padding: 20px 8px;
     }
-    
+
     .welcome-content h1.dashboard-title {
         font-size: 1.75rem;
     }
-    
+
     .actions-grid {
         grid-template-columns: 1fr;
         gap: 12px;
     }
-    
+
     .stats-grid {
         gap: 12px;
     }
-    
+
     .stat-content {
         gap: 12px;
     }
-    
+
     .route-header {
         gap: 12px;
     }
@@ -1382,6 +1391,7 @@ body.dark-mode .filters-panel {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1442,12 +1452,10 @@ body.dark-mode .filters-panel {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(103, 80, 164, 0.1),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(103, 80, 164, 0.1),
+            transparent);
     transition: left 0.5s;
 }
 
@@ -1649,12 +1657,10 @@ body.dark-mode .route-actions {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(103, 80, 164, 0.1),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(103, 80, 164, 0.1),
+            transparent);
     transition: left 0.5s;
 }
 
@@ -1697,7 +1703,9 @@ body.dark-mode .route-actions {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Empty state styling */
@@ -1750,6 +1758,7 @@ body.dark-mode .empty-state p {
         transform: scaleY(0);
         opacity: 0;
     }
+
     to {
         transform: scaleY(1);
         opacity: 1;
@@ -1761,6 +1770,7 @@ body.dark-mode .empty-state p {
         transform: scaleY(1);
         opacity: 1;
     }
+
     to {
         transform: scaleY(0);
         opacity: 0;
@@ -1773,16 +1783,28 @@ body.dark-mode .empty-state p {
     animation-fill-mode: both;
 }
 
-.routes-grid .route-detail-card:nth-child(1) { animation-delay: 0.1s; }
-.routes-grid .route-detail-card:nth-child(2) { animation-delay: 0.2s; }
-.routes-grid .route-detail-card:nth-child(3) { animation-delay: 0.3s; }
-.routes-grid .route-detail-card:nth-child(4) { animation-delay: 0.4s; }
+.routes-grid .route-detail-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.routes-grid .route-detail-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.routes-grid .route-detail-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.routes-grid .route-detail-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
 
 @keyframes slideInUp {
     from {
         transform: translateY(30px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -1850,8 +1872,13 @@ md-icon.path-arrow {
 
 /* Icon loading animation to prevent flash of missing icons */
 @keyframes iconLoad {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 md-icon {
