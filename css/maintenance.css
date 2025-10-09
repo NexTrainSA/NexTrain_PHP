@@ -18,7 +18,7 @@
 
 .page-subtitle {
     font-size: 1.1rem;
-    color: #555;
+    color: #000000;
 }
 
 .routes-grid {
@@ -31,7 +31,7 @@
 .route-alert-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 16px;
-    background: #fff;
+    background: #687b8f;
 }
 
 .route-alert-card:hover {
@@ -63,13 +63,13 @@
 
 .route-info p {
     margin: 0;
-    color: #777;
+    color: #201f1f;
     font-size: 0.9rem;
 }
 
 .alert-description {
     margin-top: 0.8rem;
-    color: #333;
+    color: #0c0c0c;
     font-size: 0.95rem;
     line-height: 1.4;
 }
@@ -99,6 +99,108 @@
     background-color: #ef535033;
     color: #b71c1c;
 }
+
+/* 🌙 DARK MODE */
+body.dark-mode {
+    background-color: #687b8f;
+    color: #FAFAFA;
+}
+
+/* Container principal */
+body.dark-mode .routes-container {
+    color: #FAFAFA;
+}
+
+/* Cabeçalho da página */
+body.dark-mode .page-title {
+    color: #ffffff;
+}
+
+body.dark-mode .page-subtitle {
+    color: #E6E1E5;
+}
+
+/* Cards */
+body.dark-mode .route-alert-card {
+    background: #2B2930;
+    color: #E6E1E5;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .route-alert-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 18px rgba(255, 255, 255, 0.05);
+}
+
+/* Cabeçalho do card */
+body.dark-mode .route-header {
+    border-bottom: 1px solid #938F99;
+}
+
+/* Ícones */
+body.dark-mode .route-icon-wrapper {
+    background: #49454F;
+}
+
+body.dark-mode .route-icon {
+    color: #D0BCFF;
+}
+
+/* Textos do card */
+body.dark-mode .route-info h3 {
+    color: #FAFAFA;
+}
+
+body.dark-mode .route-info p {
+    color: #CAC4D0;
+}
+
+body.dark-mode .alert-description {
+    color: #E6E1E5;
+}
+
+/* Chips e alertas */
+body.dark-mode .status-chip {
+    background-color: #49454F;
+    color: #E6E1E5;
+}
+
+/* Tipos de alerta – adaptados ao dark mode */
+body.dark-mode .alert-thunder {
+    background-color: #FFD74022;
+    color: #FFCA28;
+}
+
+body.dark-mode .alert-obstacle {
+    background-color: #FF704322;
+    color: #EF9A9A;
+}
+
+body.dark-mode .alert-mechanical {
+    background-color: #64B5F622;
+    color: #90CAF9;
+}
+
+body.dark-mode .alert-accident {
+    background-color: #EF535022;
+    color: #E57373;
+}
+
+/* Responsividade mantém as mesmas regras */
+@media (max-width: 600px) {
+    body.dark-mode .page-title {
+        font-size: 1.6rem;
+    }
+
+    body.dark-mode .page-subtitle {
+        font-size: 1rem;
+    }
+
+    body.dark-mode .route-info h3 {
+        font-size: 1rem;
+    }
+}
+
 
 /* Responsividade */
 @media (max-width: 600px) {
