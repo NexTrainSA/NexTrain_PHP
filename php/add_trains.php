@@ -143,79 +143,46 @@
 
     <section class="content">
         <div class="form-maintenance">
-            <h1>Chamado de Manutenção</h1>
-            <form id="formOS" action="./php/insert_requests.php" method="post">
+            <h1>Adicionar trem</h1>
+            <form id="formOS" action="./php/insert_train.php" method="post">
                 <fieldset>
                     <legend>Suas informações:</legend>
 
-                    <!-- <div class="form-group">
-                        <label for="nome">Nome completo:*</label>
-                        <input type="text" id="nome" name="nome" required>
+                    <div class="form-group">
+                        <label for="nome">Nome do trem:*</label>
+                        <input type="input" id="nome-trem" name="nome-trem" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="cpf">CPF:*</label> Não acho necessário mas deu trabalho para fazer no JS 
-                        <input type="text" id="cpf" name="cpf" required>
-                    </div> -->
-
-                    <div class="form-group">
-                        <label for="id-funcionario">ID do funcionário:*</label>
-                        <select id="funcionario" name="funcionario" required>
+                        <label for="id-funcionario">Nome do funcionário:*</label>
+                        <select id="id-funcionario" name="id-funcionario" required>
                             <option value="">Selecione...</option>
                             <?php
                             include("listar_funcionarios.php");
                             foreach ($funcionarios as $linha) {
-                                echo  "<option value='" . $linha['id_usuario'] . "'>" . $linha['id_usuario'] . "</option>";
+                                echo  "<option value='" . $linha['id_usuario'] . "'>" . $linha['username_usuario'] . "</option>";
                             } ?>
                         </select>
                     </div>
 
-                    <!-- <div class="form-group">
-                        <label for="telefone">Telefone:*</label>
-                        <input type="tel" id="telefone" required>
-                    </div> -->
-                </fieldset>
+                    <fieldset>
 
-                <fieldset>
-                    <legend>Informações do Trem:</legend>
-                    <div class="form-group">
-                        <label for="trem">Trem:*</label>
-                        <select id="trem" name="trem" required>
-                            <option value="">Selecione...</option>
-                            <?php
-                            include("listar_trem.php");
-                            foreach ($trens as $linha) {
-                                echo  "<option value='" . $linha['id_trem'] . "'>" . $linha['nome_trem'] . "</option>";
-                            } ?>
-                        </select>
-                    </div>
-                </fieldset>
+                        <div class="form-group">
+                            <label for="modelo-trem">Modelo do trem:*</label>
+                            <textarea id="modelo-trem" name="modelo-trem" rows="4" required></textarea>
+                        </div>
 
-      <fieldset>
-        <legend>Descrição do Problema</legend>
+                        <div class="form-group">
+                            <label for="infos-trem">Informações do trem:</label>
+                            <textarea id="infos-trem" name="infos-trem" rows="4"></textarea>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="dataEntrada">Data de Entrada:*</label>
-                        <input type="date" id="dataEntrada" name="dataEntrada" required>
-                    </div>
+                    </fieldset>
 
-                    <!-- <div class="form-group">
-                        <label for="dataSaida">Data Prevista de Saída:*</label>
-                        <input type="date" id="dataSaida" name="dataSaida" required>
-                    </div> -->
-
-                    <div class="form-group">
-                        <label for="descricao">Descrição do Problema:*</label>
-                        <textarea id="descricao" name="descricao" rows="4" required></textarea>
-                    </div>
-
-                </fieldset>
-
-      <button type="submit">Enviar Chamado</button>
-    </form>
-  </div>
-</section>
-
+                    <button type="submit" value="Enviar Novo Trem">Enviar Novo Trem</button>
+            </form>
+        </div>
+    </section>
 
     <!--  Scripts:  -->
     <script src="./js/dark_mode.js"></script>
