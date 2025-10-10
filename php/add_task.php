@@ -150,7 +150,7 @@
 
                     <div class="form-group">
                         <label for="id_funcionario">ID do funcionário:*</label>
-                        <select id="id_funcionario" required>
+                        <select id="id_funcionario" name="id_funcionario" required>
                             <option value="">Selecione...</option>
                             <?php
                             include("listar_funcionarios.php");
@@ -166,7 +166,11 @@
                     <legend>Sua nova tarefa:</legend>
                     <div class="form-group">
                         <label for="descricao_tarefa">Descrição da tarefa:*</label>
-                        <textarea id="descricao_tarefa" required></textarea>
+                        <textarea id="descricao_tarefa" name="descricao_tarefa" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="data_tarefa">Data:*</label>
+                        <input type="date" id="data-tarefa" name="data_tarefa" required>
                     </div>
                 </fieldset>
                 <button type="submit">Adicionar tarefa</button>

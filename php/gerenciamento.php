@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['adicionar'])) {
     exit;
 }
 
+//Informações do trem
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['atualizar'])) {
     $stmt = $con->prepare("UPDATE trens SET nome_trem=?, modelo_trem=?, capacidade=?, ano_fabricacao=? WHERE id_trem=?");
     $stmt->bind_param("ssiii", $NOME_TREM, $MODELO_TREM, $CAPACIDADE, $ANO_FABRICACAO, $ID_TREM);
