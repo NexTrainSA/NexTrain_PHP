@@ -20,3 +20,16 @@ function translateStationStatus($status) {
             return 'Desconhecido';
     }
 }
+
+function getIconFromStatus($status) {
+    switch($status) {
+        case 'OPEN':
+            return 'success';
+        case 'MAINTENANCE':
+            return 'maintenance';
+        case 'PERMANENTLY_CLOSED':
+            return 'inactive';
+        default:
+            return 'warning';
+    }
+}

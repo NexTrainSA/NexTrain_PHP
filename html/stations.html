@@ -58,44 +58,12 @@
                     <md-outlined-text-field id="route-search" label="Buscar por estação" type="search" class="search-field">
                         <md-icon slot="leading-icon">search</md-icon>
                     </md-outlined-text-field>
-
-                    <md-outlined-button id="filter-btn" onclick="toggleFilters()">
-                        <md-icon slot="icon">filter_list</md-icon>
-                        Filtros
-                    </md-outlined-button>
                 </div>
 
                 <md-filled-button id="add-route-btn">
                     <md-icon slot="icon">add</md-icon>
                     Nova Estação
                 </md-filled-button>
-            </div>
-
-            <!-- Filters Panel (Initially Hidden) -->
-            <div id="filters-panel" class="filters-panel" style="display: none;">
-                <div class="filters-content">
-                    <div class="filter-group">
-                        <md-outlined-select label="Status">
-                            <md-select-option value="all">
-                                <div slot="headline">Todos</div>
-                            </md-select-option>
-                            <md-select-option value="active">
-                                <div slot="headline">Ativo</div>
-                            </md-select-option>
-                            <md-select-option value="delayed">
-                                <div slot="headline">Atrasado</div>
-                            </md-select-option>
-                            <md-select-option value="maintenance">
-                                <div slot="headline">Manutenção</div>
-                            </md-select-option>
-                        </md-outlined-select>
-                    </div>
-
-                    <div class="filter-actions">
-                        <md-text-button onclick="clearFilters()">Limpar</md-text-button>
-                        <md-filled-tonal-button onclick="applyFilters()">Aplicar</md-filled-tonal-button>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -118,8 +86,8 @@
                                 <h3 class="route-name">'.$estacao['nome_estacao'].'</h3>
                                 <p class="route-line">'.translateStationStatus($estacao['status_estacao']).'</p>
                             </div>
-                            <md-chip label="'.translateStationStatus($estacao['status_estacao']).'" class="status-chip status-'.$estacao['status_estacao'].'">
-                                <md-icon slot="icon">check_circle</md-icon>
+                            <md-chip label="'.$estacao['status_estacao'].'" class="status-chip status-'.$estacao['status_estacao'].'">
+                                <!-- <md-icon slot="icon">'.getIconFromStatus($estacao['status_estacao']).'</md-icon> -->
                             </md-chip>
                         </div>
 
