@@ -48,14 +48,14 @@
         <!-- Page Header -->
         <section class="page-header">
             <div class="header-content">
-                <h1 class="page-title">Pra qual lugar você vai?</h1>
-                <p class="page-subtitle">Visualize e gerencie todas as suas rotas de trem</p>
+                <h1 class="page-title">Lista de Estações</h1>
+                <p class="page-subtitle">Visualize e gerencie as estações no ferrorama</p>
             </div>
 
             <!-- Action Bar -->
             <div class="action-bar">
                 <div class="search-and-filters">
-                    <md-outlined-text-field id="route-search" label="Buscar rotas" type="search" class="search-field">
+                    <md-outlined-text-field id="route-search" label="Buscar por estação" type="search" class="search-field">
                         <md-icon slot="leading-icon">search</md-icon>
                     </md-outlined-text-field>
 
@@ -65,17 +65,10 @@
                     </md-outlined-button>
                 </div>
 
-                <md-filled-button id="add-route-btn" onclick="window.location.href='?page=add_itinerary.php'">
+                <md-filled-button id="add-route-btn">
                     <md-icon slot="icon">add</md-icon>
-                    Novo Itinerário
+                    Nova Estação
                 </md-filled-button>
-
-                <md-filled-button id="add-route-btn" onclick="window.location.href='?page=add_routes.php'">
-                    <md-icon slot="icon">add</md-icon>
-                    Novo Trem
-                </md-filled-button>
-
-
             </div>
 
             <!-- Filters Panel (Initially Hidden) -->
@@ -98,20 +91,6 @@
                         </md-outlined-select>
                     </div>
 
-                    <div class="filter-group">
-                        <md-outlined-select label="Linha">
-                            <md-select-option value="all">
-                                <div slot="headline">Todas as Linhas</div>
-                            </md-select-option>
-                            <md-select-option value="line1">
-                                <div slot="headline">Linha 1</div>
-                            </md-select-option>
-                            <md-select-option value="line2">
-                                <div slot="headline">Linha 2</div>
-                            </md-select-option>
-                        </md-outlined-select>
-                    </div>
-
                     <div class="filter-actions">
                         <md-text-button onclick="clearFilters()">Limpar</md-text-button>
                         <md-filled-tonal-button onclick="applyFilters()">Aplicar</md-filled-tonal-button>
@@ -126,41 +105,22 @@
                 <!-- Route Card 1 -->
                  <?php
 
-                include_once("php/listar_trem.php");
-                foreach($trens as $train) {
+                include_once("php/listar_estacao.php");
+                foreach($estacoes as $estacao) {
                     echo('
-                <md-card class="route-detail-card" onclick="viewRouteDetails(`'.$train['nome_trem'].'`)">
+                <md-card class="route-detail-card" onclick="viewRouteDetails(`'.$estacao['nome_estacao'].'`)">
                     <div class="route-card-content">
                         <div class="route-header">
                             <div class="route-icon-wrapper">
-                                <md-icon class="route-icon">train</md-icon>
+                                <md-icon class="route-icon">location_city</md-icon>
                             </div>
                             <div class="route-info">
-                                <h3 class="route-name">'.$train['nome_trem'].'</h3>
-                                <p class="route-line">Linha Principal</p>
+                                <h3 class="route-name">'.$estacao['nome_estacao'].'</h3>
+                                <p class="route-line">'.translateStationStatus($estacao['status_estacao']).'</p>
                             </div>
-                            <md-chip label="No horário" class="status-chip status-on-time">
+                            <md-chip label="No horário" class="status-chip status-'.$estacao['status_estacao'].'">
                                 <md-icon slot="icon">check_circle</md-icon>
                             </md-chip>
-                        </div>
-
-                        <div class="route-details">
-                            <div class="route-path">
-                                <span class="station">Estação Central</span>
-                                <md-icon class="path-arrow">arrow_forward</md-icon>
-                                <span class="station">Terminal Norte</span>
-                            </div>
-
-                            <div class="route-stats">
-                                <div class="stat-item">
-                                    <md-icon class="stat-icon">schedule</md-icon>
-                                    <span class="stat-text">45 min</span>
-                                </div>
-                                <div class="stat-item">
-                                    <md-icon class="stat-icon">location_on</md-icon>
-                                    <span class="stat-text">8 paradas</span>
-                                </div>
-                            </div>
                         </div>
 
                         <div class="route-actions">
@@ -181,7 +141,7 @@
             <div class="load-more-section">
                 <md-outlined-button class="load-more-btn">
                     <md-icon slot="icon">expand_more</md-icon>
-                    Carregar Mais Rotas
+                    Carregar Mais Estações
                 </md-outlined-button>
             </div>
         </section>
@@ -193,7 +153,7 @@
     <script src="./js/icon-loader.js"></script>
     <script src="./js/dark_mode.js"></script>
     <script src="./js/sidebar.js"></script>
-    <script src="./js/routes.js"></script>
+    <script src="./js/stations.js"></script>
 </body>
 
 </html>

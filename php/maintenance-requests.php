@@ -144,19 +144,9 @@
     <section class="content">
         <div class="form-maintenance">
             <h1>Chamado de Manutenção</h1>
-            <form id="formOS" action="./php/insert_requests.php" method="post">
+            <form id="formOS" action="../html/index.html" method="post">
                 <fieldset>
                     <legend>Suas informações:</legend>
-
-                    <!-- <div class="form-group">
-                        <label for="nome">Nome completo:*</label>
-                        <input type="text" id="nome" name="nome" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cpf">CPF:*</label> Não acho necessário mas deu trabalho para fazer no JS 
-                        <input type="text" id="cpf" name="cpf" required>
-                    </div> -->
 
                     <div class="form-group">
                         <label for="id-funcionario">ID do funcionário:*</label>
@@ -170,10 +160,6 @@
                         </select>
                     </div>
 
-                    <!-- <div class="form-group">
-                        <label for="telefone">Telefone:*</label>
-                        <input type="tel" id="telefone" required>
-                    </div> -->
                 </fieldset>
 
                 <fieldset>
@@ -199,11 +185,6 @@
                         <input type="date" id="dataEntrada" name="dataEntrada" required>
                     </div>
 
-                    <!-- <div class="form-group">
-                        <label for="dataSaida">Data Prevista de Saída:*</label>
-                        <input type="date" id="dataSaida" name="dataSaida" required>
-                    </div> -->
-
                     <div class="form-group">
                         <label for="descricao">Descrição do Problema:*</label>
                         <textarea id="descricao" name="descricao" rows="4" required></textarea>
@@ -211,7 +192,7 @@
 
                 </fieldset>
 
-                <button type="submit">Enviar Chamado</button>
+                <button type="submit" value="Enviar Chamado">Enviar Chamado</button>
             </form>
         </div>
     </section>
