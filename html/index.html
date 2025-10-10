@@ -105,9 +105,9 @@
             <div class="routes-grid">
                 <?php
 
-                include_once("api/trains/list.php");
+                include_once("php/listar_trem.php");
 
-                foreach(get_trains() as $train) {
+                foreach($trens as $train) {
                     echo('
                 <md-card class="route-card">
                     <div class="route-content">

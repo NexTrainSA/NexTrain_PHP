@@ -119,8 +119,8 @@
                 <!-- Route Card 1 -->
                  <?php
 
-                include_once("api/trains/list.php");
-                foreach(get_trains() as $train) {
+                include_once("php/listar_trem.php");
+                foreach($trens as $train) {
                     echo('
                 <md-card class="route-detail-card" onclick="viewRouteDetails(`'.$train['nome_trem'].'`)">
                     <div class="route-card-content">
