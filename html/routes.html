@@ -72,7 +72,7 @@
 
                 <md-filled-button id="add-route-btn" onclick="window.location.href='?page=add_routes.php'">
                     <md-icon slot="icon">add</md-icon>
-                    Nova Rota
+                    Novo Trem
                 </md-filled-button>
 
 
@@ -124,15 +124,20 @@
         <section class="routes-grid-section">
             <div class="routes-grid">
                 <!-- Route Card 1 -->
-                <md-card class="route-detail-card" onclick="viewRouteDetails('DB8598')">
+                 <?php
+
+                include_once("php/listar_trem.php");
+                foreach($trens as $train) {
+                    echo('
+                <md-card class="route-detail-card" onclick="viewRouteDetails(`'.$train['nome_trem'].'`)">
                     <div class="route-card-content">
                         <div class="route-header">
                             <div class="route-icon-wrapper">
                                 <md-icon class="route-icon">train</md-icon>
                             </div>
                             <div class="route-info">
-                                <h3 class="route-name">DB 8598</h3>
-                                <p class="route-line">Linha Azul</p>
+                                <h3 class="route-name">'.$train['nome_trem'].'</h3>
+                                <p class="route-line">Linha Principal</p>
                             </div>
                             <md-chip label="No horário" class="status-chip status-on-time">
                                 <md-icon slot="icon">check_circle</md-icon>
@@ -168,148 +173,8 @@
                             </md-icon-button>
                         </div>
                     </div>
-                </md-card>
-
-                <!-- Route Card 2 -->
-                <md-card class="route-detail-card" onclick="viewRouteDetails('DB9360')">
-                    <div class="route-card-content">
-                        <div class="route-header">
-                            <div class="route-icon-wrapper">
-                                <md-icon class="route-icon">train</md-icon>
-                            </div>
-                            <div class="route-info">
-                                <h3 class="route-name">DB 9360</h3>
-                                <p class="route-line">Linha Verde</p>
-                            </div>
-                            <md-chip label="Atraso 5min" class="status-chip status-delayed">
-                                <md-icon slot="icon">access_time</md-icon>
-                            </md-chip>
-                        </div>
-
-                        <div class="route-details">
-                            <div class="route-path">
-                                <span class="station">Terminal Sul</span>
-                                <md-icon class="path-arrow">arrow_forward</md-icon>
-                                <span class="station">Centro Comercial</span>
-                            </div>
-
-                            <div class="route-stats">
-                                <div class="stat-item">
-                                    <md-icon class="stat-icon">schedule</md-icon>
-                                    <span class="stat-text">32 min</span>
-                                </div>
-                                <div class="stat-item">
-                                    <md-icon class="stat-icon">location_on</md-icon>
-                                    <span class="stat-text">6 paradas</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="route-actions">
-                            <md-text-button>
-                                <md-icon slot="icon">visibility</md-icon>
-                                Ver Detalhes
-                            </md-text-button>
-                            <md-icon-button>
-                                <md-icon>more_vert</md-icon>
-                            </md-icon-button>
-                        </div>
-                    </div>
-                </md-card>
-
-                <!-- Route Card 3 -->
-                <md-card class="route-detail-card" onclick="viewRouteDetails('DB7521')">
-                    <div class="route-card-content">
-                        <div class="route-header">
-                            <div class="route-icon-wrapper">
-                                <md-icon class="route-icon">train</md-icon>
-                            </div>
-                            <div class="route-info">
-                                <h3 class="route-name">DB 7521</h3>
-                                <p class="route-line">Linha Vermelha</p>
-                            </div>
-                            <md-chip label="Manutenção" class="status-chip status-maintenance">
-                                <md-icon slot="icon">build</md-icon>
-                            </md-chip>
-                        </div>
-
-                        <div class="route-details">
-                            <div class="route-path">
-                                <span class="station">Aeroporto</span>
-                                <md-icon class="path-arrow">arrow_forward</md-icon>
-                                <span class="station">Distrito Industrial</span>
-                            </div>
-
-                            <div class="route-stats">
-                                <div class="stat-item">
-                                    <md-icon class="stat-icon">schedule</md-icon>
-                                    <span class="stat-text">28 min</span>
-                                </div>
-                                <div class="stat-item">
-                                    <md-icon class="stat-icon">location_on</md-icon>
-                                    <span class="stat-text">5 paradas</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="route-actions">
-                            <md-text-button>
-                                <md-icon slot="icon">visibility</md-icon>
-                                Ver Detalhes
-                            </md-text-button>
-                            <md-icon-button>
-                                <md-icon>more_vert</md-icon>
-                            </md-icon-button>
-                        </div>
-                    </div>
-                </md-card>
-
-                <!-- Route Card 4 -->
-                <md-card class="route-detail-card" onclick="viewRouteDetails('DB4182')">
-                    <div class="route-card-content">
-                        <div class="route-header">
-                            <div class="route-icon-wrapper">
-                                <md-icon class="route-icon">train</md-icon>
-                            </div>
-                            <div class="route-info">
-                                <h3 class="route-name">DB 4182</h3>
-                                <p class="route-line">Linha Amarela</p>
-                            </div>
-                            <md-chip label="No horário" class="status-chip status-on-time">
-                                <md-icon slot="icon">check_circle</md-icon>
-                            </md-chip>
-                        </div>
-
-                        <div class="route-details">
-                            <div class="route-path">
-                                <span class="station">Campus Universitário</span>
-                                <md-icon class="path-arrow">arrow_forward</md-icon>
-                                <span class="station">Centro Histórico</span>
-                            </div>
-
-                            <div class="route-stats">
-                                <div class="stat-item">
-                                    <md-icon class="stat-icon">schedule</md-icon>
-                                    <span class="stat-text">38 min</span>
-                                </div>
-                                <div class="stat-item">
-                                    <md-icon class="stat-icon">location_on</md-icon>
-                                    <span class="stat-text">7 paradas</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="route-actions">
-                            <md-text-button>
-                                <md-icon slot="icon">visibility</md-icon>
-                                Ver Detalhes
-                            </md-text-button>
-                            <md-icon-button>
-                                <md-icon>more_vert</md-icon>
-                            </md-icon-button>
-                        </div>
-                    </div>
-                </md-card>
+                </md-card>');}
+                ?>
             </div>
 
             <!-- Load More Button -->

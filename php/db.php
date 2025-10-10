@@ -14,6 +14,12 @@ if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+function get_con() 
+{
+    global $con;
+    return $con;
+}
+
 function get_id_from_username($username)
 {
     global $con;
@@ -85,3 +91,96 @@ function get_all_users_as_array()
     return $users;
 }
 
+function create_requests_table()
+{
+    global $con;
+    $sql = "CREATE TABLE IF NOT EXISTS maintenance_requests (
+        ordem_servico INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        nome_funcionario VARCHAR(100) NOT NULL,
+        cpf_funcionario VARCHAR(11) NOT NULL,
+        id_funcionario INT NOT NULL,
+        telefone_funcionario VARCHAR(11),
+        id_trem VARCHAR(100),
+        descricao_problema TEXT NOT NULL,
+        tecnico_responsavel VARCHAR(100),
+        data_entrada DATE  NOT NULL,
+        data_saida DATE NOT NULL,
+        FOREIGN KEY (id_funcionario) REFERENCES usuario(id_usuario),
+        FOREIGN KEY (id_trem) REFERENCES trains(id_trem)
+    )";
+    if (mysqli_query($con, $sql)) {
+        return true;
+    } else {
+        return "Erro: " . mysqli_error($con);
+    }
+}
+
+// Função para criar tabela para schedule/tarefas
+function create_schedule_table()
+{
+    global $con;
+    $sql = "CREATE TABLE IF NOT EXISTS schedule (
+        id_tarefa INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        id_funcionario INT NOT NULL,
+        descricao_tarefa TEXT NOT NULL,
+        FOREIGN KEY (id_funcionario) REFERENCES usuario(id_usuario)
+    )";
+    if (mysqli_query($con, $sql)) {
+        return true;
+    } else {
+        return "Erro: " . mysqli_error($con);
+    }
+}
+
+// Função para criar a tabela com as informações dos trens
+function create_trains_table()
+{
+    global $con;
+    $sql = "CREATE TABLE IF NOT EXISTS trains (
+        id_trem INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        nome_trem VARCHAR(100) NOT NULL,
+        id_funcionario_encarregado_trem INT NOT NULL,
+        modelo_trem VARCHAR(100) NOT NULL,
+        infos_trem VARCHAR(255) NULL,
+        FOREIGN KEY (id_funcionario_encarregado_trem) REFERENCES usuario(id_usuario)
+    )";
+
+    if (mysqli_query($con, $sql)) {
+        return true;
+    } else {
+        return "Erro: " . mysqli_error($con);
+    }
+}
+
+/* Função para inserir na tabela schedule
+function insert_schedule($id_tarefa, $id_funcionario, $descricao_tarefa)
+{
+    global $con;
+    $id_tarefa = mysqli_real_escape_string($con, $id_tarefa);
+    $id_funcionario = mysqli_real_escape_string($con, $id_funcionario);
+    $descricao_tarefa = mysqli_real_escape_string($con, $descricao_tarefa);
+
+    $sql = "INSERT INTO trains (nome_trem, id_funcionario_encarregado_trem, modelo_trem, infos_trem)
+            VALUES ('$id_tarefa', $id_funcionario, '$descricao_tarefa', " . ")";
+    if (mysqli_query($con, $sql)) {
+        return true;
+    } else {
+        return "Erro: " . mysqli_error($con);
+    }
+}*/
+
+function insert_train($nome_trem, $id_funcionario_encarregado_trem, $modelo_trem, $infos_trem = null)
+{
+    global $con;
+    $nome_trem = mysqli_real_escape_string($con, $nome_trem);
+    $modelo_trem = mysqli_real_escape_string($con, $modelo_trem);
+    $infos_trem = $infos_trem ? mysqli_real_escape_string($con, $infos_trem) : null;
+
+    $sql = "INSERT INTO trains (nome_trem, id_funcionario_encarregado_trem, modelo_trem, infos_trem)
+            VALUES ('$nome_trem', $id_funcionario_encarregado_trem, '$modelo_trem', " . ($infos_trem ? "'$infos_trem'" : "NULL") . ")";
+    if (mysqli_query($con, $sql)) {
+        return true;
+    } else {
+        return "Erro: " . mysqli_error($con);
+    }
+}

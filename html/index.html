@@ -103,13 +103,19 @@
             </div>
 
             <div class="routes-grid">
+                <?php
+
+                include_once("php/listar_trem.php");
+
+                foreach($trens as $train) {
+                    echo('
                 <md-card class="route-card">
                     <div class="route-content">
                         <div class="route-header">
                             <md-icon class="route-icon">train</md-icon>
                             <div class="route-info">
-                                <h3 class="route-name">DB 8598</h3>
-                                <p class="route-description">Trecho 1 → Trecho 2</p>
+                                <h3 class="route-name">'.$train["nome_trem"].'</h3>
+                                <p class="route-description">'.$train["modelo_trem"].'</p>
                             </div>
                         </div>
                         <div class="route-status">
@@ -119,23 +125,10 @@
                         </div>
                     </div>
                 </md-card>
+                ');
+                }
 
-                <md-card class="route-card">
-                    <div class="route-content">
-                        <div class="route-header">
-                            <md-icon class="route-icon">train</md-icon>
-                            <div class="route-info">
-                                <h3 class="route-name">DB 9360</h3>
-                                <p class="route-description">Trecho 3 → Trecho 4</p>
-                            </div>
-                        </div>
-                        <div class="route-status">
-                            <md-chip label="Atraso 2min" class="status-chip status-delayed">
-                                <md-icon slot="icon">access_time</md-icon>
-                            </md-chip>
-                        </div>
-                    </div>
-                </md-card>
+                ?>
             </div>
         </section>
 
