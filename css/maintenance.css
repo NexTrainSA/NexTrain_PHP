@@ -1,0 +1,218 @@
+.routes-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    color: #1e1e1e;
+}
+
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: #000000;
+}
+
+.routes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Cards gerais */
+.route-alert-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px;
+    background: #687b8f;
+}
+
+.route-alert-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+.route-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.route-icon-wrapper {
+    background: #e8eaf6;
+    border-radius: 50%;
+    padding: 0.6rem;
+}
+
+.route-icon {
+    color: #3f51b5;
+    font-size: 1.5rem;
+}
+
+.route-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.route-info p {
+    margin: 0;
+    color: #201f1f;
+    font-size: 0.9rem;
+}
+
+.alert-description {
+    margin-top: 0.8rem;
+    color: #0c0c0c;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Chips e cores de alerta */
+.status-chip {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.alert-thunder {
+    background-color: #ffd74033;
+    color: #f57f17;
+}
+
+.alert-obstacle {
+    background-color: #ff704333;
+    color: #d32f2f;
+}
+
+.alert-mechanical {
+    background-color: #64b5f633;
+    color: #1976d2;
+}
+
+.alert-accident {
+    background-color: #ef535033;
+    color: #b71c1c;
+}
+
+/* 🌙 DARK MODE */
+body.dark-mode {
+    background-color: #687b8f;
+    color: #FAFAFA;
+}
+
+/* Container principal */
+body.dark-mode .routes-container {
+    color: #FAFAFA;
+}
+
+/* Cabeçalho da página */
+body.dark-mode .page-title {
+    color: #ffffff;
+}
+
+body.dark-mode .page-subtitle {
+    color: #E6E1E5;
+}
+
+/* Cards */
+body.dark-mode .route-alert-card {
+    background: #2B2930;
+    color: #E6E1E5;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .route-alert-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 18px rgba(255, 255, 255, 0.05);
+}
+
+/* Cabeçalho do card */
+body.dark-mode .route-header {
+    border-bottom: 1px solid #938F99;
+}
+
+/* Ícones */
+body.dark-mode .route-icon-wrapper {
+    background: #49454F;
+}
+
+body.dark-mode .route-icon {
+    color: #D0BCFF;
+}
+
+/* Textos do card */
+body.dark-mode .route-info h3 {
+    color: #FAFAFA;
+}
+
+body.dark-mode .route-info p {
+    color: #CAC4D0;
+}
+
+body.dark-mode .alert-description {
+    color: #E6E1E5;
+}
+
+/* Chips e alertas */
+body.dark-mode .status-chip {
+    background-color: #49454F;
+    color: #E6E1E5;
+}
+
+/* Tipos de alerta – adaptados ao dark mode */
+body.dark-mode .alert-thunder {
+    background-color: #FFD74022;
+    color: #FFCA28;
+}
+
+body.dark-mode .alert-obstacle {
+    background-color: #FF704322;
+    color: #EF9A9A;
+}
+
+body.dark-mode .alert-mechanical {
+    background-color: #64B5F622;
+    color: #90CAF9;
+}
+
+body.dark-mode .alert-accident {
+    background-color: #EF535022;
+    color: #E57373;
+}
+
+/* Responsividade mantém as mesmas regras */
+@media (max-width: 600px) {
+    body.dark-mode .page-title {
+        font-size: 1.6rem;
+    }
+
+    body.dark-mode .page-subtitle {
+        font-size: 1rem;
+    }
+
+    body.dark-mode .route-info h3 {
+        font-size: 1rem;
+    }
+}
+
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .page-title {
+        font-size: 1.6rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+    }
+
+    .route-info h3 {
+        font-size: 1rem;
+    }
+}

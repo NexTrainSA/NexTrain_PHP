@@ -78,7 +78,7 @@ const updateCalendar = () => {  // Função principal que atualiza o calendário
             </div>
         `;
     }
-        // Fim dos Textos do tooltip
+    // Fim dos Textos do tooltip
 
     // Insere os dias dentro do HTML:
     datesElement.innerHTML = datesHTML;

@@ -8,6 +8,9 @@
     <!--  Fontes e Estilos:  -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,131 +26,191 @@
         import '@material/web/all.js';
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+
+        // Ensure icons are loaded properly
+        document.addEventListener('DOMContentLoaded', function () {
+            // Force icon font load
+            const testIcon = document.createElement('md-icon');
+            testIcon.textContent = 'schedule';
+            testIcon.style.position = 'absolute';
+            testIcon.style.left = '-9999px';
+            document.body.appendChild(testIcon);
+
+            setTimeout(() => {
+                document.body.removeChild(testIcon);
+            }, 100);
+        });
     </script>
 </head>
 
 
 <body>
 
-    <section class="content"> <!--Conteúdo da página-->
+    <main class="dashboard-container">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="welcome-content">
+                <h1 class="dashboard-title">Olá,
+                    <?php echo $_SESSION['nome_completo_usuario']; ?>.
+                </h1>
+                <p class="dashboard-subtitle">Mantenha-se atualizado sobre suas rotas e programação.</p>
+            </div>
+        </section>
 
-        <div class="last-trains"> <!--  Informações dos trechos:  -->
-
-            <h3 style="text-align: center;">Seus trechos</h3>
-
-            <!--  Card:  -->
-            <div class="card-train">
-                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
-                    <md-icon class="subway-icon-color" style="color: #847577;">directions_subway</md-icon>
-                </md-filled-tonal-icon-button>
-                <div class="train-text">
-                    <div>
-                        <h2 id="train-name" >DB 8598</h2>
-                        <div>
-                            <span id="train-route">Trecho 1 para Trecho 2</span>
+        <!-- Quick Stats Cards -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <md-card class="stat-card">
+                    <div class="stat-content">
+                        <md-icon class="stat-icon">schedule</md-icon>
+                        <div class="stat-info">
+                            <span class="stat-value">97%</span>
+                            <span class="stat-label">Pontualidade</span>
                         </div>
                     </div>
-                </div>
-            </div>
+                </md-card>
 
-            <!--  Card:  -->
-            <div class="card-train">
-                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
-                    <md-icon class="subway-icon-color" style="color: #847577;">directions_subway</md-icon>
-                </md-filled-tonal-icon-button>
-                <div class="train-text">
-                    <div>
-                        <h2 id="train-name";>DB 9360</h2>
-                        <div>
-                            <span id="train-route">Trecho 3 para Trecho 4</span>
+                <md-card class="stat-card">
+                    <div class="stat-content">
+                        <md-icon class="stat-icon">train</md-icon>
+                        <div class="stat-info">
+                            <span class="stat-value">3 min</span>
+                            <span class="stat-label">Próximo Trem</span>
                         </div>
                     </div>
-                </div>
-            </div>
+                </md-card>
 
-            <md-fab class="nxt-btn" onclick="document.location.href = '?page=routes.html'" label="Ver mais rotas">
-                <md-icon slot="icon">add</md-icon>
-            </md-fab>
-
-        </div> <!--  Fim das Informações  -->
-
-        <br> <!--Espaçamento-->
-
-        <!--  Informações breves  -->
-        <h3 style="text-align: center;">Informações</h3>
-        <div class="info">
-            <div class="card-train" id="card-status-train">
-                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
-                    <md-icon class="error-icon-color" style="color: #847577;">error</md-icon>
-                </md-filled-tonal-icon-button>
-                <div class="train-text">
-                    <div>
-                        <h2 id="train-name" >Taxa de Atraso</h2>
-                        <div>
-                            <span id="train-route">3%</span>
+                <md-card class="stat-card">
+                    <div class="stat-content">
+                        <md-icon class="stat-icon">warning</md-icon>
+                        <div class="stat-info">
+                            <span class="stat-value">2</span>
+                            <span class="stat-label">Alertas Ativos</span>
                         </div>
                     </div>
-                </div>
+                </md-card>
             </div>
-            <div class="card-train" id="card-status-train">
-                <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
-                    <md-icon class="subway-icon-color" style="color: #847577;">directions_subway</md-icon>
-                </md-filled-tonal-icon-button>
-                <div class="train-text">
-                    <div>
-                        <h2 id="train-name" >Próximo Trem</h2>
-                        <div>
-                            <span id="train-route">3 min</span>
+        </section>
+
+        <!-- Your Routes Section -->
+        <section class="routes-section">
+            <div class="section-header">
+                <h2 class="section-title">Suas Rotas</h2>
+                <md-text-button onclick="document.location.href = '?page=routes.html'">
+                    Ver todas
+                    <md-icon slot="icon">arrow_forward</md-icon>
+                </md-text-button>
+            </div>
+
+            <div class="routes-grid">
+                <md-card class="route-card">
+                    <div class="route-content">
+                        <div class="route-header">
+                            <md-icon class="route-icon">train</md-icon>
+                            <div class="route-info">
+                                <h3 class="route-name">DB 8598</h3>
+                                <p class="route-description">Trecho 1 → Trecho 2</p>
+                            </div>
+                        </div>
+                        <div class="route-status">
+                            <md-chip label="No horário" class="status-chip status-on-time">
+                                <md-icon slot="icon">check_circle</md-icon>
+                            </md-chip>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!--  Fim das Informações  -->
+                </md-card>
 
-        <br> <!--Espaçamento-->
-
-        <!--  Início dos Alertas recentes:  --> <!-- color: #e63946; color: #ffb703; -->
-        <div class="alert"></div>
-            <h3 style="text-align: center;">Alertas recentes</h3>
-            <div id="alerts-box" class="danger">
-                <div class="alert-item" style="display:flex; align-items: center;">
-                    <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
-                    <md-icon class="alert-danger">thunderstorm</md-icon>
-                    </md-filled-tonal-icon-button>
-                    <div class="alert-content" style="display: flex; flex-direction: column;">
-                        <h2 class="alert-title">Chuva</h2>
-                        <span class="alert-location"><i>Trecho 1</i></span>
+                <md-card class="route-card">
+                    <div class="route-content">
+                        <div class="route-header">
+                            <md-icon class="route-icon">train</md-icon>
+                            <div class="route-info">
+                                <h3 class="route-name">DB 9360</h3>
+                                <p class="route-description">Trecho 3 → Trecho 4</p>
+                            </div>
+                        </div>
+                        <div class="route-status">
+                            <md-chip label="Atraso 2min" class="status-chip status-delayed">
+                                <md-icon slot="icon">access_time</md-icon>
+                            </md-chip>
+                        </div>
                     </div>
-                </div>
+                </md-card>
+            </div>
+        </section>
+
+        <!-- Alerts Section -->
+        <section class="alerts-section">
+            <div class="section-header">
+                <h2 class="section-title">Alertas Recentes</h2>
+                <md-text-button onclick="document.location.href = '?page=maintenance.html'">
+                    Ver todos
+                    <md-icon slot="icon">arrow_forward</md-icon>
+                </md-text-button>
             </div>
 
-            <div id="alerts-box" class="warning">
-                <div class="alert-item" style="display:flex; align-items: center;">
-                    <md-filled-tonal-icon-button style="--md-sys-color-secondary-container: #ffffff;">
-                    <md-icon class="alert-danger">thunderstorm</md-icon>
-                    </md-filled-tonal-icon-button>
-                    <div class="alert-content" style="display: flex; flex-direction: column;">
-                        <h2 class="alert-title"> Chuva</h2>
-                        <span class="alert-location"><i>Trecho 1</i></span>
+            <div class="alerts-list">
+                <md-card class="alert-card alert-warning">
+                    <div class="alert-content">
+                        <md-icon class="alert-icon">thunderstorm</md-icon>
+                        <div class="alert-info">
+                            <h4 class="alert-title">Condições Climáticas</h4>
+                            <p class="alert-description">Chuva intensa no Trecho 1</p>
+                            <span class="alert-time">Há 15 minutos</span>
+                        </div>
+                        <md-icon-button class="alert-action">
+                            <md-icon>more_vert</md-icon>
+                        </md-icon-button>
                     </div>
-                </div>
+                </md-card>
+
+                <md-card class="alert-card alert-info">
+                    <div class="alert-content">
+                        <md-icon class="alert-icon">info</md-icon>
+                        <div class="alert-info">
+                            <h4 class="alert-title">Manutenção Programada</h4>
+                            <p class="alert-description">Manutenção preventiva no Trecho 2</p>
+                            <span class="alert-time">Há 1 hora</span>
+                        </div>
+                        <md-icon-button class="alert-action">
+                            <md-icon>more_vert</md-icon>
+                        </md-icon-button>
+                    </div>
+                </md-card>
             </div>
+        </section>
 
-            <md-fab class="nxt-btn" onclick="document.location.href = '?page=maintenance.html'" label="Ver mais alertas">
-                <md-icon slot="icon">add</md-icon>
-            </md-fab>
-        </div>
-        <!--  Fim dos Alertas  -->
 
-    </section>
+        <!-- Quick Actions -->
+        <section class="actions-section">
+            <div class="actions-grid">
+                <md-filled-button onclick="document.location.href = '?page=routes.html'">
+                    <md-icon slot="icon">route</md-icon>
+                    Gerenciar Rotas
+                </md-filled-button>
+
+                <md-outlined-button onclick="document.location.href = '?page=maintenance.html'">
+                    <md-icon slot="icon">build</md-icon>
+                    Manutenção
+                </md-outlined-button>
+
+                <md-outlined-button onclick="document.location.href = '?page=reports.html'">
+                    <md-icon slot="icon">analytics</md-icon>
+                    Relatórios
+                </md-outlined-button>
+
+                <md-outlined-button onclick="document.location.href = '?page=schedule.html'">
+                    <md-icon slot="icon">schedule</md-icon>
+                    Agenda
+                </md-outlined-button>
+            </div>
+        </section>
+    </main>
     <!--  Fim do Conteúdo -->
 
-    <footer>
-        <p>&copy; 2025 SA NexTrain. Todos os direitos reservados.</p>
-    </footer>
 
     <!--  Scripts:  -->
+    <script src="./js/icon-loader.js"></script>
     <script src="./js/dark_mode.js"></script>
     <script src="./js/sidebar.js"></script>
     <!--  Fim dos Scripts  -->

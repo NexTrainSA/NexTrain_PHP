@@ -10,7 +10,7 @@ document.getElementById('cpf').addEventListener('input', function () {
   this.value = cpf;
 });
 
-// Máscara para telefone: (99) 99999-9999
+// Máscara para telefone:
 document.getElementById('telefone').addEventListener('input', function () {
   let tel = this.value.replace(/\D/g, '');
   if (tel.length > 11) tel = tel.slice(0, 11);
@@ -62,9 +62,9 @@ function validateForm(event) {
   }
 
   if (isValid) {
-    include(insert_requests.php);
+    //include(insert_requests.php);
     alert("Seu chamado foi recebido! Torça para não sermos como a TI da escola e demorarmos mais de 6 meses para resolver um probleminha ;)");
-    document.getElementById('formOS').reset(); // Isso faz resetar todo o formulário
+    //document.getElementById('formOS').reset(); // Isso faz resetar todo o formulário
   }
 
   return false;

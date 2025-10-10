@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -16,38 +16,76 @@
     <script type="importmap">
         {
             "imports": {
-            "@material/web/": "https://esm.run/@material/web/"
+                "@material/web/": "https://esm.run/@material/web/"
             }
         }
-        </script>
+    </script>
+
     <script type="module">
         import '@material/web/all.js';
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
 
-    <style> body {background-color: #FAFAFA !important; /* TODO: Desabilitando dark mode nesta página por enquanto.*/} </style>
+    <style>
+        body {
+            background-color: #FAFAFA !important;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Centraliza o título no mesmo padrão das outras páginas */
+        .page-header {
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e1e1e;
+        }
+
+        /* Ajuste dos gráficos */
+        .graphs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        canvas {
+            width: 100%;
+            max-width: 700px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .page-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <section class="content" style="margin-top: 20px;">
+    <section class="page-header">
+        <h1 class="page-title">Relatórios</h1>
+    </section>
+
+    <section class="content">
         <div class="graphs">
-            <canvas id="myChart" style="width:100%; max-width:700px; margin: 0 auto;"></canvas><br><br>
-            <canvas id="myPieChart" style="width:100%;max-width:700px; margin: 0 auto;"></canvas>
+            <canvas id="myChart"></canvas>
+            <canvas id="myPieChart"></canvas>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 SA NexTrain. Todos os direitos reservados.</p>
-    </footer>
-
-    <!--  Scripts:  -->
+    <!-- Scripts -->
     <script src="./js/dark_mode.js"></script>
     <script src="./js/sidebar.js"></script>
     <script src="./js/reports.js"></script>
-    <!--  Fim dos Scripts  -->
 
 </body>
-
 </html>

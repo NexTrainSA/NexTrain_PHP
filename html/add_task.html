@@ -149,8 +149,8 @@
                     <legend>Suas informações:</legend>
 
                     <div class="form-group">
-                        <label for="id-funcionario">ID do funcionário:*</label>
-                        <select id="funcionario" required>
+                        <label for="id_funcionario">ID do funcionário:*</label>
+                        <select id="id_funcionario" required>
                             <option value="">Selecione...</option>
                             <?php
                             include("listar_funcionarios.php");
@@ -165,12 +165,12 @@
                 <fieldset>
                     <legend>Sua nova tarefa:</legend>
                     <div class="form-group">
-                        <label for="descricao">Descrição da tarefa:*</label>
-                        <textarea id="descricao" rows="4" required></textarea>
+                        <label for="descricao_tarefa">Descrição da tarefa:*</label>
+                        <textarea id="descricao_tarefa" required></textarea>
                     </div>
                 </fieldset>
                 <button type="submit">Adicionar tarefa</button>
-                
+
             </form>
         </div>
     </section>
