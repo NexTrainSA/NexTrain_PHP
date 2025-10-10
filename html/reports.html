@@ -2,176 +2,162 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <!--  Fontes e Estilos:  -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-     <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-pie.min.js"></script>
-    <style type="text/css">      
-      html, body, #container { 
-        width: 100%; height: 100%; margin: 0; padding: 0; 
-      } 
-    </style>
+  <!-- Fontes e Estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <script type="importmap">
-        {
-            "imports": {
-                "@material/web/": "https://esm.run/@material/web/"
-            }
-        }
-    </script>
+  <!-- AnyChart -->
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+  <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" rel="stylesheet">
+  <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" rel="stylesheet">
 
-    <script type="module">
-        import '@material/web/all.js';
-        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
-        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-    </script>
+  <style>
+    body {
+      background-color: #FAFAFA;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-    <style>
-        body {
-            background-color: #FAFAFA !important;
-            font-family: 'Roboto', sans-serif;
-        }
+    .page-header {
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 40px;
+    }
 
-        .page-header {
-            text-align: center;
-            margin-top: 60px;
-            margin-bottom: 40px;
-        }
+    .page-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e1e1e;
+    }
 
-        .page-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #1e1e1e;
-        }
+    /* Layout dos gráficos */
+    .dashboard {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 0 20px;
+    }
 
-        /* Layout dos gráficos */
-        .dashboard {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            justify-items: center;
-            padding: 0 20px;
-        }
+    .column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+    }
 
-        .column {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
+    h2 {
+      color: #1e1e1e;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
 
-        h2 {
-            color: #1e1e1e;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
+    .chart-box {
+      width: 300px;
+      height: 300px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
 
-        canvas {
-            background: #fff;
-            padding: 10px;
-            border-radius: 16px;
-            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-            width: 230px;
-            height: 230px;
-        }
-
-        /* Responsividade */
-        @media (max-width: 900px) {
-            .dashboard {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    @media (max-width: 900px) {
+      .dashboard {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <section class="page-header">
-        <h1 class="page-title">Relatórios</h1>
-    </section>
+  <section class="page-header">
+    <h1 class="page-title">Relatórios</h1>
+  </section>
 
-    <section class="content">
-        <div class="dashboard">
+  <section class="content">
+    <div class="dashboard">
+      <!-- COLUNA ÚNICA COM DOIS GRÁFICOS -->
+      <div class="column">
+        <h2>Relatórios de Desempenho</h2>
+        <div id="container1" class="chart-box"></div>
+        <div id="container2" class="chart-box"></div>
+      </div>
+    </div>
+  </section>
 
-            <!-- COLUNA 1 -->
-            <div class="column">
-                <h2> Operações de Trem </h2>
-                <canvas id="chart1"></canvas>
-                <canvas id="chart2"></canvas>
-                <canvas id="chart3"></canvas>
-            </div>
+  <script>
+    anychart.onDocumentReady(function () {
 
-            <!-- COLUNA 2 -->
-            <div class="column">
-                <h2> Manutenção de Trem </h2>
-                <canvas id="chart4"></canvas>
-                <canvas id="chart5"></canvas>
-                <canvas id="chart6"></canvas>
-            </div>
+      // Função para criar gráficos parecidos com o exemplo
+      function criarGrafico(containerId, titulo, dados) {
+        var chart = anychart.pie(dados);
 
-            <!-- COLUNA 3 -->
-            <div class="column">
-                <h2>Usuários e Demandas</h2>
-                <canvas id="chart7"></canvas>
-                <canvas id="chart8"></canvas>
-                <canvas id="chart9"></canvas>
-            </div>
+        var palette = anychart.palettes.distinctColors();
+        palette.items([
+          { color: '#7d9db6' },
+          { color: '#8db59d' },
+          { color: '#f38367' },
+          { color: '#b97792' }
+        ]);
 
-        </div>
-    </section>
+        chart
+          .radius('43%')
+          .innerRadius('60%')
+          .palette(palette);
 
-    <!-- Scripts -->
-    <script src="./js/dark_mode.js"></script>
-    <script src="./js/sidebar.js"></script>
-    <script src="./js/reports.js"></script>
+        chart
+          .outline()
+          .width('3%')
+          .fill(function () {
+            return anychart.color.darken(this.sourceColor, 0.25);
+          });
 
-    <script>
-        const colors = [
-    ['#444444', '#999999', '#CCCCCC'], 
-    ['#555555', '#AAAAAA', '#DDDDDD'], 
-    ['#666666', '#BBBBBB', '#EEEEEE']  
-];
+        chart.tooltip().format('Percentual: {%PercentValue}%');
 
-        const labels = ['Operando', 'Atrasado', 'Em Manutenção'];
+        var label = anychart.standalones.label();
+        label
+          .enabled(true)
+          .text(titulo)
+          .width('100%')
+          .height('100%')
+          .adjustFontSize(true, true)
+          .minFontSize(10)
+          .maxFontSize(22)
+          .fontColor('#60727b')
+          .position('center')
+          .anchor('center')
+          .hAlign('center')
+          .vAlign('middle');
 
-        function createChart(id, dataColors) {
-            new Chart(document.getElementById(id), {
-                type: 'pie',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        data: [
-                            Math.floor(Math.random() * 60) + 20,
-                            Math.floor(Math.random() * 30),
-                            Math.floor(Math.random() * 20)
-                        ],
-                        backgroundColor: dataColors
-                    }]
-                },
-                options: {
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
-                        }
-                    }
-                }
-            });
-        }
+        chart.center().content(label);
+        chart.container(containerId);
+        chart.draw();
+      }
 
-        // Cria os 9 gráficos
-        for (let i = 1; i <= 9; i++) {
-            const colorSet = colors[(i - 1) % 3];
-            createChart(`chart${i}`, colorSet);
-        }
-    </script>
+      // Gráfico 1
+      criarGrafico('container1', 'Operações de Trem', [
+        ['Operando', 65],
+        ['Atrasado', 20],
+        ['Em Manutenção', 15]
+      ]);
+
+      // Gráfico 2
+      criarGrafico('container2', 'Satisfação dos Usuários', [
+        ['Alta', 70],
+        ['Média', 20],
+        ['Baixa', 10]
+      ]);
+    });
+  </script>
 
 </body>
 </html>
