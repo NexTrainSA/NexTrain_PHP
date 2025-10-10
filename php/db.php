@@ -21,7 +21,8 @@ function get_id_from_username($username)
     $result = mysqli_query($con, $query);
     if ($result) {
         $row = mysqli_fetch_assoc($result);
-        return $row['id_usuario'];
+        mysqli_free_result($result);
+        return $row ? $row['id_usuario'] : null;
     }
     return null;
 }
@@ -33,7 +34,8 @@ function get_permission_id_by_name($permissionName)
     $result = mysqli_query($con, $query);
     if ($result) {
         $row = mysqli_fetch_assoc($result);
-        return $row['id_permissao'];
+        mysqli_free_result($result);
+        return $row ? $row['id_permissao'] : null;
     }
     return null;
 }
@@ -45,7 +47,8 @@ function get_username_from_id($id)
     $result = mysqli_query($con, $query);
     if ($result) {
         $row = mysqli_fetch_assoc($result);
-        return $row['username_usuario'];
+        mysqli_free_result($result);
+        return $row ? $row['username_usuario'] : null;
     }
     return null;
 }
@@ -56,10 +59,19 @@ function check_user_permission($username, $permission)
     $id = get_id_from_username($username);
     $idperm = get_permission_id_by_name($permission);
 
+    if (!$id || !$idperm) {
+        return false;
+    }
+
     $q = mysqli_query($con, "SELECT id_permissao FROM permissao_usuario WHERE id_usuario_permissao = '$id' AND id_permissao = '$idperm'");
-    if (mysqli_num_rows($q) > 0) {
+    if ($q && mysqli_num_rows($q) > 0) {
+        mysqli_free_result($q);
         return true;
     }
+    if ($q) {
+        mysqli_free_result($q);
+    }
+    return false;
 }
 
 function get_all_users_as_array()
@@ -73,7 +85,6 @@ function get_all_users_as_array()
     return $users;
 }
 
-/* Função para criar a tabela de chamados de manutenção
 function create_requests_table()
 {
     global $con;
@@ -115,23 +126,6 @@ function create_schedule_table()
     }
 }
 
-// Função para inserir na tabela schedule
-function insert_schedule($id_tarefa, $id_funcionario, $descricao_tarefa)
-{
-    global $con;
-    $id_tarefa = mysqli_real_escape_string($con, $id_tarefa);
-    $id_funcionario = mysqli_real_escape_string($con, $id_funcionario);
-    $descricao_tarefa = mysqli_real_escape_string($con, $descricao_tarefa);
-
-    $sql = "INSERT INTO trains (nome_trem, id_funcionario_encarregado_trem, modelo_trem, infos_trem)
-            VALUES ('$id_tarefa', $id_funcionario, '$descricao_tarefa', " . ")";
-    if (mysqli_query($con, $sql)) {
-        return true;
-    } else {
-        return "Erro: " . mysqli_error($con);
-    }
-}
-
 // Função para criar a tabela com as informações dos trens
 function create_trains_table()
 {
@@ -151,6 +145,23 @@ function create_trains_table()
         return "Erro: " . mysqli_error($con);
     }
 }
+
+/* Função para inserir na tabela schedule
+function insert_schedule($id_tarefa, $id_funcionario, $descricao_tarefa)
+{
+    global $con;
+    $id_tarefa = mysqli_real_escape_string($con, $id_tarefa);
+    $id_funcionario = mysqli_real_escape_string($con, $id_funcionario);
+    $descricao_tarefa = mysqli_real_escape_string($con, $descricao_tarefa);
+
+    $sql = "INSERT INTO trains (nome_trem, id_funcionario_encarregado_trem, modelo_trem, infos_trem)
+            VALUES ('$id_tarefa', $id_funcionario, '$descricao_tarefa', " . ")";
+    if (mysqli_query($con, $sql)) {
+        return true;
+    } else {
+        return "Erro: " . mysqli_error($con);
+    }
+}*/
 
 function insert_train($nome_trem, $id_funcionario_encarregado_trem, $modelo_trem, $infos_trem = null)
 {
