@@ -66,11 +66,12 @@
                 </div>
 
                 <md-filled-button id="add-route-btn">
-                    <md-icon slot="icon">add</md-icon>
+                    <md-icon slot="icon" onclick="window.location.href='?page=maintenance-requests.php'">add</md-icon>
                     Nova Rota
                 </md-filled-button>
             </div>
 
+            <!-- Filters Panel (Initially Hidden) -->
             <div id="filters-panel" class="filters-panel" style="display: none;">
                 <div class="filters-content">
                     <div class="filter-group">
@@ -311,10 +312,16 @@
                     Carregar Mais Rotas
                 </md-outlined-button>
             </div>
+
+            <md-fab class="nxt-btn" label="Adicionar Trem"
+                onclick="window.location.href='?page=add_trains.php'">
+                <md-icon slot="icon">add</md-icon>
+            </md-fab>
+
         </section>
     </main>
 
-   
+
 
     <!--  Scripts:  -->
     <script src="./js/icon-loader.js"></script>
