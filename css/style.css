@@ -735,29 +735,6 @@ body.dark-mode .section-title {
     margin: 0;
 }
 
-.status-OPEN {
-    --md-assist-chip-container-color: #E8F5E8;
-    --md-assist-chip-label-text-color: #2E7D32;
-    --md-assist-chip-outline-color: #4CAF50;
-}
-
-.status-PERMANENTLY_CLOSED {
-    --md-assist-chip-container-color: #FFF3E0;
-    --md-assist-chip-label-text-color: #e60000;
-    --md-assist-chip-outline-color: #ff4800;
-}
-
-.status-UNKNOWN {
-    --md-assist-chip-label-text-color: #1D1B20;
-    --md-assist-chip-outline-color: #79747E;
-}
-
-.status-MAINTENANCE {
-    --md-assist-chip-container-color: #FFF3E0;
-    --md-assist-chip-label-text-color: #E65100;
-    --md-assist-chip-outline-color: #FF9800;
-}
-
 .status-chip {
     --md-assist-chip-label-text-color: #1D1B20;
     --md-assist-chip-outline-color: #79747E;
@@ -1700,8 +1677,20 @@ body.dark-mode .route-actions {
     background: linear-gradient(135deg, #FF9800 0%, #FFB74D 100%);
 }
 
-.route-detail-card:has(.status-maintenance) .route-icon-wrapper {
+.route-detail-card:has(.status-MAINTENANCE) .route-icon-wrapper {
     background: linear-gradient(135deg, #F44336 0%, #EF5350 100%);
+}
+
+.route-detail-card:has(.status-OPEN) .route-icon-wrapper {
+    background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+}
+
+.route-detail-card:has(.status-PERMANENTLY_CLOSED) .route-icon-wrapper {
+    background: linear-gradient(135deg, #af4c4c 0%, #bb6666 100%);
+}
+
+.route-detail-card:has(.status-UNKNOWN) .route-icon-wrapper {
+    background: linear-gradient(135deg, #4e4e4e 0%, #696969 100%);
 }
 
 /* Loading states */

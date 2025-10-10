@@ -118,7 +118,7 @@
                                 <h3 class="route-name">'.$estacao['nome_estacao'].'</h3>
                                 <p class="route-line">'.translateStationStatus($estacao['status_estacao']).'</p>
                             </div>
-                            <md-chip label="No horário" class="status-chip status-'.$estacao['status_estacao'].'">
+                            <md-chip label="'.translateStationStatus($estacao['status_estacao']).'" class="status-chip status-'.$estacao['status_estacao'].'">
                                 <md-icon slot="icon">check_circle</md-icon>
                             </md-chip>
                         </div>
