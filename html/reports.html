@@ -7,14 +7,12 @@
 
   <!-- Fontes e Estilos -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- AnyChart -->
   <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
   <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
   <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-pie.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-bar.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/themes/dark_blue.min.js"></script>
   <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" rel="stylesheet">
   <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" rel="stylesheet">
 
@@ -38,40 +36,39 @@
       color: #1e1e1e;
     }
 
-    /* Layout dos gráficos */
     .dashboard {
-      display: flex;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 40px;
-      padding: 0 20px;
+      justify-items: center;
+      padding: 0 20px 60px;
     }
 
     .column {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 50px;
+      gap: 30px;
     }
 
     h2 {
       color: #1e1e1e;
-      margin-bottom: 10px;
       font-weight: 600;
+      margin-bottom: 10px;
     }
 
     .chart-box {
-      width: 300px;
-      height: 300px;
+      width: 320px;
+      height: 320px;
       background: #fff;
       border-radius: 16px;
       box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
       padding: 10px;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
       .dashboard {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -85,22 +82,38 @@
 
   <section class="content">
     <div class="dashboard">
-      <!-- COLUNA ÚNICA COM DOIS GRÁFICOS -->
+
+      <!-- COLUNA 1 - OPERAÇÕES DO TREM -->
       <div class="column">
-        <h2>Relatórios de Desempenho</h2>
-        <div id="container1" class="chart-box"></div>
-        <div id="container2" class="chart-box"></div>
+        <h2>Operações do Trem</h2>
+        <div id="chartPontualidade" class="chart-box"></div>
+        <div id="chartAlertas" class="chart-box"></div>
+        <div id="chartMotivos" class="chart-box"></div>
       </div>
+
+      <!-- COLUNA 2 - MANUTENÇÃO -->
+      <div class="column">
+        <h2>Relatório de Manutenção</h2>
+        <div id="chartEquipamentos" class="chart-box"></div>
+      </div>
+
+      <!-- COLUNA 3 - RELATÓRIOS PARA PESSOAS -->
+      <div class="column">
+        <h2>Relatórios para Pessoas</h2>
+        <div id="chartTempo" class="chart-box"></div>
+        <div id="chartMovimento" class="chart-box"></div>
+        <div id="chartSatisfacao" class="chart-box"></div>
+      </div>
+
     </div>
   </section>
 
   <script>
     anychart.onDocumentReady(function () {
 
-      // Função para criar gráficos parecidos com o exemplo
-      function criarGrafico(containerId, titulo, dados) {
+      // === FUNÇÃO PARA CRIAR GRÁFICOS DE PIZZA ===
+      function criarGraficoPizza(containerId, titulo, dados) {
         var chart = anychart.pie(dados);
-
         var palette = anychart.palettes.distinctColors();
         palette.items([
           { color: '#7d9db6' },
@@ -143,17 +156,81 @@
         chart.draw();
       }
 
-      // Gráfico 1
-      criarGrafico('container1', 'Operações de Trem', [
-        ['Operando', 65],
-        ['Atrasado', 20],
-        ['Em Manutenção', 15]
+      // === FUNÇÃO PARA CRIAR GRÁFICO DE BARRAS CLARO (coluna 3) ===
+      function criarGraficoBarraClaro(containerId, titulo, dados, eixoX, eixoY) {
+        var chart = anychart.bar();
+        chart.animation(true);
+        chart.padding([10, 40, 5, 20]);
+        chart.title(titulo);
+
+        var series = chart.bar(dados);
+
+        // Paleta de cores clara
+        series.normal().fill('#7d9db6');
+        series.hovered().fill('#8db59d');
+        series.selected().fill('#f38367');
+
+        series.tooltip()
+          .position('right')
+          .anchor('left-center')
+          .offsetX(5)
+          .offsetY(0)
+          .titleFormat('{%X}')
+          .format('{%Value}');
+
+        chart.xAxis().title(eixoX);
+        chart.yAxis().title(eixoY);
+
+        chart.container(containerId);
+        chart.draw();
+      }
+
+      // === GRÁFICOS DE OPERAÇÕES ===
+      criarGraficoPizza('chartPontualidade', 'Pontualidade do Trem', [
+        ['Pontual', 70],
+        ['Com Atraso', 25],
+        ['Cancelado', 5]
       ]);
 
-      // Gráfico 2
-      criarGrafico('container2', 'Satisfação dos Usuários', [
-        ['Alta', 70],
-        ['Média', 20],
+      criarGraficoPizza('chartAlertas', 'Trens em Alerta', [
+        ['Sem alerta', 60],
+        ['Atraso', 25],
+        ['Falha técnica', 15]
+      ]);
+
+      criarGraficoPizza('chartMotivos', 'Motivos de Atraso', [
+        ['Manutenção', 40],
+        ['Clima', 25],
+        ['Demanda', 20],
+        ['Outros', 15]
+      ]);
+
+      // === GRÁFICOS DE MANUTENÇÃO ===
+      criarGraficoPizza('chartEquipamentos', 'Status dos Equipamentos', [
+        ['Funcionando', 80],
+        ['Manutenção', 15],
+        ['Parado', 5]
+      ]);
+
+      // === GRÁFICOS PARA PESSOAS (BARRAS CLARAS) ===
+      criarGraficoBarraClaro('chartTempo', 'Tempo Médio de Viagem por Trem', [
+        ['Trem A', 40],
+        ['Trem B', 55],
+        ['Trem C', 35],
+        ['Trem D', 50]
+      ], 'Trem', 'Minutos');
+
+      criarGraficoBarraClaro('chartMovimento', 'Horário de Maior Movimento', [
+        ['05h - 07h', 35],
+        ['07h - 09h', 70],
+        ['09h - 17h', 50],
+        ['17h - 19h', 90],
+        ['19h - 22h', 60]
+      ], 'Horário', 'Índice de Movimento');
+
+      criarGraficoPizza('chartSatisfacao', 'Nível de Satisfação dos Usuários', [
+        ['Alta', 65],
+        ['Média', 25],
         ['Baixa', 10]
       ]);
     });
