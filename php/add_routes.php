@@ -143,37 +143,16 @@
 
     <section class="content">
         <div class="form-schedule">
-            <h1>Adicionar tarefa</h1>
+            <h1>Adicionar Rota</h1>
             <form id="formOS" action="../html/index.html" method="post">
                 <fieldset>
-                    <legend>Suas informações:</legend>
-
+                    <legend>Adicione:</legend>
                     <div class="form-group">
-                        <label for="id_funcionario">ID do funcionário:*</label>
-                        <select id="id_funcionario" name="id_funcionario" required>
-                            <option value="">Selecione...</option>
-                            <?php
-                            include("listar_funcionarios.php");
-                            foreach ($funcionarios as $linha) {
-                                echo  "<option value='" . $linha['id_usuario'] . "'>" . $linha['id_usuario'] . "</option>";
-                            } ?>
-                        </select>
+                        <label for="destino">Destino:*</label>
+                        <textarea id="destino" name="destino" required></textarea>
                     </div>
                 </fieldset>
-
-
-                <fieldset>
-                    <legend>Sua nova tarefa:</legend>
-                    <div class="form-group">
-                        <label for="descricao_tarefa">Descrição da tarefa:*</label>
-                        <textarea id="descricao_tarefa" name="descricao_tarefa" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="data_tarefa">Data:*</label>
-                        <input type="date" id="data-tarefa" name="data_tarefa" required>
-                    </div>
-                </fieldset>
-                <button type="submit" value="Adicionar Tarefa">Adicionar Tarefa</button>
+                <button type="submit" value="Adicionar Rota">Adicionar Rota</button>
 
             </form>
         </div>
