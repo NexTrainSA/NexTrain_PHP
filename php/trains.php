@@ -44,12 +44,14 @@
 
 <body>
 
+    <h1>ATENÇÃO! No momento, esta página é uma cópia da página de rotas.</h1>
+
     <main class="routes-container">
         <!-- Page Header -->
         <section class="page-header">
             <div class="header-content">
-                <h1 class="page-title">Pra qual lugar você vai?</h1>
-                <p class="page-subtitle">Visualize e gerencie todas as suas rotas de trem</p>
+                <h1 class="page-title">Gerenciar Rotas</h1>
+                <p class="page-subtitle">Visualize e gerencie todas as rotas de trem</p>
             </div>
 
             <!-- Action Bar -->
@@ -314,7 +316,9 @@
         </section>
     </main>
 
-   
+    <footer>
+        <p>&copy; 2025 SA NexTrain. Todos os direitos reservados.</p>
+    </footer>
 
     <!--  Scripts:  -->
     <script src="./js/icon-loader.js"></script>

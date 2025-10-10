@@ -107,7 +107,7 @@ function create_requests_table()
     } else {
         return "Erro: " . mysqli_error($con);
     }
-}
+}*/
 
 // Função para criar tabela para schedule/tarefas
 function create_schedule_table()
