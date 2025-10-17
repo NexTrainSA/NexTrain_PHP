@@ -651,6 +651,13 @@ body.dark-mode .section-title {
     gap: 12px;
 }
 
+.alert-warning .alert-icon {
+    color: #F57C00;
+}
+
+.alert-info .alert-icon {
+    color: #1976D2;
+}
 
 /* Actions Section */
 .actions-grid {
@@ -1761,4 +1768,3 @@ body.icons-loaded .route-icon::before,
 body.icons-loaded .alert-icon::before {
     display: none;
 }
-
