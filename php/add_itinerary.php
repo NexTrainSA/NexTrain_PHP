@@ -29,135 +29,147 @@
 </head>
 
 <style>
-        .form-schedule * {
-            font-family: Arial, sans-serif !important;
-            color: #333 !important;
-            font-size: 14px !important;
-        }
+    .form-schedule * {
+        font-family: Arial, sans-serif !important;
+        color: #333 !important;
+        font-size: 14px !important;
+    }
 
-        .form-schedule {
-            max-width: 800px;
-            margin: 30px auto;
-            background-color: whitesmoke;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    .form-schedule {
+        max-width: 800px;
+        margin: 30px auto;
+        background-color: whitesmoke;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .form-schedule h1 {
-            text-align: center;
-            font-size: 22px;
-            margin-bottom: 25px;
-            color: #222;
-        }
+    .form-schedule h1 {
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 25px;
+        color: #222;
+    }
 
-        .form-schedule fieldset {
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            padding: 15px;
-        }
+    .form-schedule fieldset {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        padding: 15px;
+    }
 
-        .form-schedule legend {
-            font-weight: bold;
-            padding: 0 10px;
-            font-size: 15px;
-            color: #555;
-        }
+    .form-schedule legend {
+        font-weight: bold;
+        padding: 0 10px;
+        font-size: 15px;
+        color: #555;
+    }
 
-        .form-schedule .form-group {
-            margin-bottom: 15px;
-        }
+    .form-schedule .form-group {
+        margin-bottom: 15px;
+    }
 
-        .form-schedule label {
-            display: block;
-            margin-bottom: 5px;
-        }
+    .form-schedule label {
+        display: block;
+        margin-bottom: 5px;
+    }
 
-        .form-schedule input,
-        .form-schedule select,
-        .form-schedule textarea {
-            width: 100%;
-            padding: 8px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            background-color: #fff;
-            color: #000 !important;
-        }
+    .form-schedule input,
+    .form-schedule select,
+    .form-schedule textarea {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #fff;
+        color: #000 !important;
+    }
 
-        .form-schedule input:focus,
-        .form-schedule select:focus,
-        .form-schedule textarea:focus {
-            outline: 2px solid rgb(115, 149, 184);
-        }
+    .form-schedule input:focus,
+    .form-schedule select:focus,
+    .form-schedule textarea:focus {
+        outline: 2px solid rgb(115, 149, 184);
+    }
 
-        .form-schedule button {
-            background-color: rgb(71, 94, 117);
-            color: white !important;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 15px;
-            transition: background-color 0.3s;
-        }
+    .form-schedule button {
+        background-color: rgb(71, 94, 117);
+        color: white !important;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 15px;
+        transition: background-color 0.3s;
+    }
 
-        .form-schedule button:hover {
-            background-color: rgb(115, 149, 184);
-        }
+    .form-schedule button:hover {
+        background-color: rgb(115, 149, 184);
+    }
 
-        .form-schedule input:invalid,
-        .form-schedule select:invalid,
-        .form-schedule textarea:invalid {
-            border-color: rgb(115, 149, 184);
-        }
+    .form-schedule input:invalid,
+    .form-schedule select:invalid,
+    .form-schedule textarea:invalid {
+        border-color: rgb(115, 149, 184);
+    }
 
-        /* Dark Mode */
+    /* Dark Mode */
 
-        body.dark-mode .form-schedule {
-            background-color: rgb(53, 72, 90);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
+    body.dark-mode .form-schedule {
+        background-color: rgb(53, 72, 90);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
 
-        body.dark-mode .form-schedule legend {
-            color: #fafafa !important;
-        }
+    body.dark-mode .form-schedule legend {
+        color: #fafafa !important;
+    }
 
-        body.dark-mode .form-schedule label {
-            color: #fafafa !important;
-        }
+    body.dark-mode .form-schedule label {
+        color: #fafafa !important;
+    }
 
-        body.dark-mode .form-schedule button {
-            background-color: rgb(88, 116, 143);
-        }
+    body.dark-mode .form-schedule button {
+        background-color: rgb(88, 116, 143);
+    }
 
-        body.dark-mode .form-schedule h1 {
-            color: #fafafa !important;
-        }
-    </style>
+    body.dark-mode .form-schedule h1 {
+        color: #fafafa !important;
+    }
+</style>
 
 <body>
 
     <section class="content">
         <div class="form-schedule">
             <h1>Adicionar Itinerário</h1>
-            <form id="formOS" action="../html/index.html" method="post">
+            <form id="formOS" action="./php/insert_itinerary.php" method="post">
                 <fieldset>
                     <legend>Adicione:</legend>
                     <div class="form-group">
                         <label for="origem">Origem:*</label>
-                        <textarea id="origem" name="origem" required></textarea>
+                        <select id="origem" name="origem" required>
+                            <option value="">Selecione...</option>
+                            <?php
+                            include("listar_estacao.php");
+                            foreach ($estacoes as $linha) {
+                                echo  "<option value='" . $linha['id_estacao'] . "'>" . $linha['nome_estacao'] . "</option>";
+                            } ?>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="destino">Destino:*</label>
-                        <textarea id="destino" name="destino" required></textarea>
+                        <select id="destino" name="destino" required>
+                            <option value="">Selecione...</option>
+                            <?php
+                            foreach ($estacoes as $linha) {
+                                echo  "<option value='" . $linha['id_estacao'] . "'>" . $linha['nome_estacao'] . "</option>";
+                            } ?>
+                        </select>
                     </div>
                 </fieldset>
-                <button type="submit" value="Adicionar Rota">Adicionar Itinerário</button>
-
+                <button type="submit" value="Adicionar Itinerário">Adicionar Itinerário</button>
             </form>
         </div>
     </section>

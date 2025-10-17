@@ -144,7 +144,7 @@
     <section class="content">
         <div class="form-schedule">
             <h1>Adicionar Estação</h1>
-            <form id="formOS" action="../html/index.html" method="post">
+            <form id="formOS" action="./php/insert_station.php" method="post">
                 <fieldset>
                     <legend>Adicione:</legend>
                     <div class="form-group">

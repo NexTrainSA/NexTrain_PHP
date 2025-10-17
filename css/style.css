@@ -119,7 +119,7 @@ nav#top-navbar {
     z-index: 1001;
     top: 0;
     left: 0;
-    background-color: #A6A2A2;
+    background-color: #43627f;
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 2rem;
@@ -251,6 +251,7 @@ md-icon.darkmode #alert-badge-normal {
     border: none;
     font-size: 1.25rem;
 }
+
 md-icon.subway-icon-color {
     color: #847577;
 }
@@ -611,45 +612,6 @@ body.dark-mode .section-title {
     gap: 16px;
 }
 
-.route-card {
-    background: #687b8f;
-    border-radius: 12px;
-    padding: 20px;
-    border: 1px solid #E7E0EC;
-    transition: all 0.2s ease;
-}
-
-.route-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transform: translateY(-1px);
-}
-
-.route-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.route-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex: 1;
-}
-
-.route-icon {
-    background: #E8F5E8;
-    color: #2E7D32;
-    border-radius: 50%;
-    padding: 12px;
-    font-size: 24px;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .route-info h3.route-name {
     font-family: 'Roboto', sans-serif;
     font-size: 1.125rem;
@@ -682,19 +644,6 @@ body.dark-mode .section-title {
     --md-assist-chip-outline-color: #FF9800;
 }
 
-body.dark-mode .route-card {
-    background: #1D1B20;
-    border-color: #938F99;
-}
-
-body.dark-mode .route-info h3.route-name {
-    color: #E6E1E5;
-}
-
-body.dark-mode .route-info .route-description {
-    color: #CAC4D0;
-}
-
 /* Alerts Section */
 .alerts-list {
     display: flex;
@@ -702,77 +651,6 @@ body.dark-mode .route-info .route-description {
     gap: 12px;
 }
 
-.alert-card {
-    background: #687b8f;
-    border-radius: 12px;
-    padding: 16px;
-    border: 1px solid #E7E0EC;
-    transition: all 0.2s ease;
-}
-
-.alert-card:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.alert-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-}
-
-.alert-icon {
-    margin-top: 2px;
-}
-
-.alert-warning .alert-icon {
-    color: #F57C00;
-}
-
-.alert-info .alert-icon {
-    color: #1976D2;
-}
-
-.alert-info {
-    flex: 1;
-}
-
-.alert-title {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #000000;
-    margin: 0 0 4px 0;
-}
-
-.alert-description {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.875rem;
-    color: #1c1b1d;
-    margin: 0 0 6px 0;
-}
-
-.alert-time {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.75rem;
-    color: #39373b;
-}
-
-body.dark-mode .alert-card {
-    background: #1D1B20;
-    border-color: #938F99;
-}
-
-body.dark-mode .alert-title {
-    color: #E6E1E5;
-}
-
-body.dark-mode .alert-description {
-    color: #CAC4D0;
-}
-
-body.dark-mode .alert-time {
-    color: #938F99;
-}
 
 /* Actions Section */
 .actions-grid {
@@ -1883,3 +1761,4 @@ body.icons-loaded .route-icon::before,
 body.icons-loaded .alert-icon::before {
     display: none;
 }
+

@@ -149,8 +149,8 @@
                     <legend>Suas informações:</legend>
 
                     <div class="form-group">
-                        <label for="id-funcionario">ID do funcionário:*</label>
-                        <select id="funcionario" name="funcionario" required>
+                        <label for="id-funcionario">Seu ID de funcionário:*</label>
+                        <select id="funcionario" name="funcionario_manda" required>
                             <option value="">Selecione...</option>
                             <?php
                             include("listar_funcionarios.php");
@@ -163,15 +163,15 @@
                 </fieldset>
 
                 <fieldset>
-                    <legend>Informações do Trem:</legend>
+                    <legend>Quem vai receber o alerta:</legend>
                     <div class="form-group">
-                        <label for="trem">Trem:*</label>
-                        <select id="trem" name="trem" required>
+                       <label for="id-funcionario">Nome de quem vai recebr o Alerta:*</label>
+                        <select id="funcionario" name="funcionario_recebe" required>
                             <option value="">Selecione...</option>
                             <?php
-                            include("listar_trem.php");
-                            foreach ($trens as $linha) {
-                                echo  "<option value='" . $linha['id_trem'] . "'>" . $linha['nome_trem'] . "</option>";
+                            include("listar_funcionarios.php");
+                            foreach ($funcionarios as $linha) {
+                                echo  "<option value='" . $linha['id_usuario'] . "'>" . $linha['username_usuario'] . "</option>";
                             } ?>
                         </select>
                     </div>
@@ -179,11 +179,6 @@
 
                 <fieldset>
                     <legend>Descrição do Problema</legend>
-
-                    <div class="form-group">
-                        <label for="dataEntrada">Data de Entrada:*</label>
-                        <input type="date" id="dataEntrada" name="dataEntrada" required>
-                    </div>
 
                     <div class="form-group">
                         <label for="descricao">Descrição do Problema:*</label>

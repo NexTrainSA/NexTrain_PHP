@@ -2,7 +2,7 @@
 
 require_once('db.php');
 
-$stmt = $con->prepare("SELECT * FROM estacao");
+$stmt = $con->prepare("SELECT id_estacao, nome_estacao, status_estacao FROM estacao");
 $stmt->execute();
 $resultado = $stmt->get_result();
 
@@ -19,7 +19,7 @@ function translateStationStatus($status) {
         default:
             return 'Desconhecido';
     }
-}
+};
 
 function getIconFromStatus($status) {
     switch($status) {
@@ -31,5 +31,5 @@ function getIconFromStatus($status) {
             return 'inactive';
         default:
             return 'warning';
-    }
-}
+    };
+};

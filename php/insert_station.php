@@ -2,13 +2,11 @@
 
 require_once('db.php');
 
-$ID_FUNCIONARIO = $_POST['funcionario'] ?? '';
-$ID_TREM = $_POST['trem'] ?? '';
-$DESCRICAO_PROBLEMA = $_POST['descricao'] ?? '';
-$DATA_ENTRADA = $_POST['dataEntrada'] ?? '';
+$NOME_ESTACAO = $_POST['nome_estacao'] ?? '';
+$STATUS_ESTACAO = $_POST['status_estacao'] ?? '';
 
-$stmt = $con->prepare("INSERT INTO chamados_manutencao (id_funcionario, id_trem, descricao_problema, data_entrada) VALUES(?, ?, ?, ?)");
-$stmt->bind_param("iiss", $ID_FUNCIONARIO, $ID_TREM, $DESCRICAO_PROBLEMA, $DATA_ENTRADA);
+$stmt = $con->prepare("INSERT INTO estacao (nome_estacao, status_estacao) VALUES(?, ?)");
+$stmt->bind_param("ss", $NOME_ESTACAO, $STATUS_ESTACAO);
 
 if ($stmt->execute()) {
 } else {
@@ -18,4 +16,4 @@ if ($stmt->execute()) {
 $stmt->close();
 $con->close();
 
-header("Location: ../html/maintenance.html");
+header("Location: ../html/index.html");

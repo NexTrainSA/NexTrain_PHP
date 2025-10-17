@@ -144,7 +144,7 @@
     <section class="content">
         <div class="form-schedule">
             <h1>Adicionar tarefa</h1>
-            <form id="formOS" action="../html/index.html" method="post">
+            <form id="formOS" action="./php/insert_task.php" method="post">
                 <fieldset>
                     <legend>Suas informações:</legend>
 
@@ -160,8 +160,6 @@
                         </select>
                     </div>
                 </fieldset>
-
-
                 <fieldset>
                     <legend>Sua nova tarefa:</legend>
                     <div class="form-group">

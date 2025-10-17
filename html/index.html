@@ -177,9 +177,19 @@
         <!-- Quick Actions -->
         <section class="actions-section">
             <div class="actions-grid">
+                <md-outlined-button onclick="document.location.href = '?page=schedule.html'">
+                    <md-icon slot="icon">schedule</md-icon>
+                    Agenda
+                </md-outlined-button>
+
+                <md-outlined-button onclick="document.location.href = '?page=itinerary.html'">
+                    <md-icon slot="icon">train</md-icon>
+                    Itinerários
+                </md-outlined-button>
+
                 <md-outlined-button onclick="document.location.href = '?page=routes.html'">
                     <md-icon slot="icon">route</md-icon>
-                    Gerenciar Rotas
+                    Rotas
                 </md-outlined-button>
 
                 <md-outlined-button onclick="document.location.href = '?page=maintenance.html'">
@@ -187,23 +197,21 @@
                     Manutenção
                 </md-outlined-button>
 
+                <md-outlined-button onclick="document.location.href = '?page=maps.html'">
+                    <md-icon slot="icon">map</md-icon>
+                    Mapa
+                </md-outlined-button>
+                
                 <md-outlined-button onclick="document.location.href = '?page=reports.html'">
                     <md-icon slot="icon">analytics</md-icon>
                     Relatórios
                 </md-outlined-button>
 
-                <md-outlined-button onclick="document.location.href = '?page=schedule.html'">
-                    <md-icon slot="icon">schedule</md-icon>
-                    Agenda
-                </md-outlined-button>
                 <md-outlined-button onclick="document.location.href = '?page=trains.html'">
                     <md-icon slot="icon">train</md-icon>
                     Trens
                 </md-outlined-button>
-                <md-outlined-button onclick="document.location.href = '?page=maps.html'">
-                    <md-icon slot="icon">map</md-icon>
-                    Mapa
-                </md-outlined-button>
+
             </div>
         </section>
     </main>
