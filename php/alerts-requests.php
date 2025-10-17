@@ -187,7 +187,7 @@
 
                 </fieldset>
 
-                <button type="submit" value="Enviar Chamado">Enviar Chamado</button>
+                <button type="submit" value="Enviar Chamado">Enviar Alerta</button>
             </form>
         </div>
     </section>
