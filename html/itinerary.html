@@ -55,7 +55,7 @@
             <!-- Action Bar -->
             <div class="action-bar">
                 <div class="search-and-filters">
-                    <md-outlined-text-field id="route-search" label="Buscar rotas" type="search" class="search-field">
+                    <md-outlined-text-field id="route-search" label="Buscar Itinerários" type="search" class="search-field">
                         <md-icon slot="leading-icon">search</md-icon>
                     </md-outlined-text-field>
 
@@ -120,19 +120,14 @@
             <div class="routes-grid">
                 <!-- Route Card 1 -->
                  <?php
-
-                include_once("php/listar_trem.php");
-                foreach($trens as $train) {
+                include_once("php/listar_itinerario.php");
+                foreach($itinerarios as $linha) {
                     echo('
-                <md-card class="route-detail-card" onclick="viewRouteDetails(`'.$train['nome_trem'].'`)">
+                <md-card class="route-detail-card">
                     <div class="route-card-content">
                         <div class="route-header">
                             <div class="route-icon-wrapper">
                                 <md-icon class="route-icon">train</md-icon>
-                            </div>
-                            <div class="route-info">
-                                <h3 class="route-name">'.$train['nome_trem'].'</h3>
-                                <p class="route-line">Linha Principal</p>
                             </div>
                             <md-chip label="No horário" class="status-chip status-on-time">
                                 <md-icon slot="icon">check_circle</md-icon>
@@ -147,36 +142,21 @@
                             </div>
 
                             <div class="route-stats">
-                                <div class="stat-item">
-                                    <md-icon class="stat-icon">schedule</md-icon>
-                                    <span class="stat-text">45 min</span>
-                                </div>
-                                <div class="stat-item">
-                                    <md-icon class="stat-icon">location_on</md-icon>
-                                    <span class="stat-text">8 paradas</span>
-                                </div>
+                                
                             </div>
                         </div>
 
-                        <div class="route-actions">
-                            <md-text-button>
-                                <md-icon slot="icon">visibility</md-icon>
-                                Ver Detalhes
-                            </md-text-button>
-                            <md-icon-button>
-                                <md-icon>more_vert</md-icon>
-                            </md-icon-button>
-                        </div>
                     </div>
                 </md-card>');}
                 ?>
             </div>
+            <!--  Fim 1º Card  -->
 
             <!-- Load More Button -->
             <div class="load-more-section">
                 <md-outlined-button class="load-more-btn">
                     <md-icon slot="icon">expand_more</md-icon>
-                    Carregar Mais Rotas
+                    Carregar Mais Itinerários
                 </md-outlined-button>
             </div>
         </section>

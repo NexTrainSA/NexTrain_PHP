@@ -72,6 +72,22 @@ body.darkmode #alert-title.span {
 }
 
 
+
+
+body.dark-mode #alerts-box.warning {
+    background-color: #eff1f3;
+    color: #000000;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+body.dark-mode #alerts-box {
+    background-color: #eff1f3;
+    color: #000000;
+    border-radius: 8px;
+    padding: 10px;
+}
+
 h1.center {
     text-align: center;
 }
@@ -197,6 +213,14 @@ span.alert-location {
 
 
 
+md-icon.alert-danger {
+    color: #847577;
+}
+
+md-icon.alert-warning {
+    color: #CFD2CD77;
+}
+
 md-icon#alert-badge-critical {
     background-color: #847577;
     border: 8px solid #847577;
@@ -250,6 +274,42 @@ md-icon.darkmode #alert-badge-normal {
     background: none;
     border: none;
     font-size: 1.25rem;
+}
+
+/**/
+
+/* Legacy card styles - kept for compatibility */
+.card-train {
+    background-color: #FFFFFF;
+    border: 1px solid #E7E0EC;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 8px 0;
+    transition: all 0.2s ease;
+}
+
+.card-train:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+body.dark-mode .card-train {
+    background-color: #1D1B20;
+    border-color: #938F99;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.card-train#card-status-train {
+    width: 48%;
+    margin: 8px 0;
 }
 
 md-icon.subway-icon-color {
@@ -612,6 +672,45 @@ body.dark-mode .section-title {
     gap: 16px;
 }
 
+.route-card {
+    background: #687b8f;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #E7E0EC;
+    transition: all 0.2s ease;
+}
+
+.route-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.route-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.route-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+}
+
+.route-icon {
+    background: #E8F5E8;
+    color: #2E7D32;
+    border-radius: 50%;
+    padding: 12px;
+    font-size: 24px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .route-info h3.route-name {
     font-family: 'Roboto', sans-serif;
     font-size: 1.125rem;
@@ -644,11 +743,46 @@ body.dark-mode .section-title {
     --md-assist-chip-outline-color: #FF9800;
 }
 
+body.dark-mode .route-card {
+    background: #1D1B20;
+    border-color: #938F99;
+}
+
+body.dark-mode .route-info h3.route-name {
+    color: #E6E1E5;
+}
+
+body.dark-mode .route-info .route-description {
+    color: #CAC4D0;
+}
+
 /* Alerts Section */
 .alerts-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+.alert-card {
+    background: #687b8f;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #E7E0EC;
+    transition: all 0.2s ease;
+}
+
+.alert-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.alert-icon {
+    margin-top: 2px;
 }
 
 .alert-warning .alert-icon {
@@ -657,6 +791,48 @@ body.dark-mode .section-title {
 
 .alert-info .alert-icon {
     color: #1976D2;
+}
+
+.alert-info {
+    flex: 1;
+}
+
+.alert-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000000;
+    margin: 0 0 4px 0;
+}
+
+.alert-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    color: #1c1b1d;
+    margin: 0 0 6px 0;
+}
+
+.alert-time {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    color: #39373b;
+}
+
+body.dark-mode .alert-card {
+    background: #1D1B20;
+    border-color: #938F99;
+}
+
+body.dark-mode .alert-title {
+    color: #E6E1E5;
+}
+
+body.dark-mode .alert-description {
+    color: #CAC4D0;
+}
+
+body.dark-mode .alert-time {
+    color: #938F99;
 }
 
 /* Actions Section */
@@ -1768,3 +1944,4 @@ body.icons-loaded .route-icon::before,
 body.icons-loaded .alert-icon::before {
     display: none;
 }
+

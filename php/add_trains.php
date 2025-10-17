@@ -29,115 +29,115 @@
 </head>
 
 <style>
-        .form-maintenance * {
-            font-family: Arial, sans-serif !important;
-            color: #333 !important;
-            font-size: 14px !important;
-        }
+    .form-maintenance * {
+        font-family: Arial, sans-serif !important;
+        color: #333 !important;
+        font-size: 14px !important;
+    }
 
-        .form-maintenance {
-            max-width: 800px;
-            margin: 30px auto;
-            background-color: whitesmoke;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    .form-maintenance {
+        max-width: 800px;
+        margin: 30px auto;
+        background-color: whitesmoke;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .form-maintenance h1 {
-            text-align: center;
-            font-size: 22px;
-            margin-bottom: 25px;
-            color: #222;
-        }
+    .form-maintenance h1 {
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 25px;
+        color: #222;
+    }
 
-        .form-maintenance fieldset {
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            padding: 15px;
-        }
+    .form-maintenance fieldset {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        padding: 15px;
+    }
 
-        .form-maintenance legend {
-            font-weight: bold;
-            padding: 0 10px;
-            font-size: 15px;
-            color: #555;
-        }
+    .form-maintenance legend {
+        font-weight: bold;
+        padding: 0 10px;
+        font-size: 15px;
+        color: #555;
+    }
 
-        .form-maintenance .form-group {
-            margin-bottom: 15px;
-        }
+    .form-maintenance .form-group {
+        margin-bottom: 15px;
+    }
 
-        .form-maintenance label {
-            display: block;
-            margin-bottom: 5px;
-        }
+    .form-maintenance label {
+        display: block;
+        margin-bottom: 5px;
+    }
 
-        .form-maintenance input,
-        .form-maintenance select,
-        .form-maintenance textarea {
-            width: 100%;
-            padding: 8px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            background-color: #fff;
-            color: #000 !important;
-        }
+    .form-maintenance input,
+    .form-maintenance select,
+    .form-maintenance textarea {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #fff;
+        color: #000 !important;
+    }
 
-        .form-maintenance input:focus,
-        .form-maintenance select:focus,
-        .form-maintenance textarea:focus {
-            outline: 2px solid rgb(115, 149, 184);
-        }
+    .form-maintenance input:focus,
+    .form-maintenance select:focus,
+    .form-maintenance textarea:focus {
+        outline: 2px solid rgb(115, 149, 184);
+    }
 
-        .form-maintenance button {
-            background-color: rgb(71, 94, 117);
-            color: white !important;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 15px;
-            transition: background-color 0.3s;
-        }
+    .form-maintenance button {
+        background-color: rgb(71, 94, 117);
+        color: white !important;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 15px;
+        transition: background-color 0.3s;
+    }
 
-        .form-maintenance button:hover {
-            background-color: rgb(115, 149, 184);
-        }
+    .form-maintenance button:hover {
+        background-color: rgb(115, 149, 184);
+    }
 
-        .form-maintenance input:invalid,
-        .form-maintenance select:invalid,
-        .form-maintenance textarea:invalid {
-            border-color: rgb(115, 149, 184);
-        }
+    .form-maintenance input:invalid,
+    .form-maintenance select:invalid,
+    .form-maintenance textarea:invalid {
+        border-color: rgb(115, 149, 184);
+    }
 
-        /* Dark Mode */
+    /* Dark Mode */
 
-        body.dark-mode .form-maintenance {
-            background-color: rgb(53, 72, 90);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
+    body.dark-mode .form-maintenance {
+        background-color: rgb(53, 72, 90);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
 
-        body.dark-mode .form-maintenance legend {
-            color: #fafafa !important;
-        }
+    body.dark-mode .form-maintenance legend {
+        color: #fafafa !important;
+    }
 
-        body.dark-mode .form-maintenance label {
-            color: #fafafa !important;
-        }
+    body.dark-mode .form-maintenance label {
+        color: #fafafa !important;
+    }
 
-        body.dark-mode .form-maintenance button {
-            background-color: rgb(88, 116, 143);
-        }
+    body.dark-mode .form-maintenance button {
+        background-color: rgb(88, 116, 143);
+    }
 
-        body.dark-mode .form-maintenance h1 {
-            color: #fafafa !important;
-        }
-    </style>
+    body.dark-mode .form-maintenance h1 {
+        color: #fafafa !important;
+    }
+</style>
 
 <body>
 
@@ -165,19 +165,16 @@
                         </select>
                     </div>
 
-                    <fieldset>
+                    <div class="form-group">
+                        <label for="modelo-trem">Modelo do trem:*</label>
+                        <input id="modelo-trem" name="modelo-trem" rows="4" required></textarea>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="modelo-trem">Modelo do trem:*</label>
-                            <textarea id="modelo-trem" name="modelo-trem" rows="4" required></textarea>
-                        </div>
+                    <div class="form-group">
+                        <label for="infos-trem">Informações do trem:</label>
+                        <textarea id="infos-trem" name="infos-trem" rows="4"></textarea>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="infos-trem">Informações do trem:</label>
-                            <textarea id="infos-trem" name="infos-trem" rows="4"></textarea>
-                        </div>
-
-                    </fieldset>
 
                     <button type="submit" value="Enviar Novo Trem">Enviar Novo Trem</button>
             </form>
