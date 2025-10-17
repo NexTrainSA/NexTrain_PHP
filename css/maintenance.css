@@ -187,7 +187,7 @@ body.dark-mode .alert-accident {
 }
 
 /* Responsividade mantém as mesmas regras */
-@media (max-width: 600px) {
+@media (max-width: 400px) {
     body.dark-mode .page-title {
         font-size: 1.6rem;
     }
@@ -203,7 +203,7 @@ body.dark-mode .alert-accident {
 
 
 /* Responsividade */
-@media (max-width: 600px) {
+@media (max-width: 400px) {
     .page-title {
         font-size: 1.6rem;
     }

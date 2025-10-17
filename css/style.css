@@ -71,31 +71,6 @@ body.darkmode #alert-title.span {
     color: #000000;
 }
 
-body.dark-mode .card-train {
-    background-color: #eff1f3;
-    color: #000000;
-}
-
-body.dark-mode #alerts-box.danger {
-    background-color: #eff1f3;
-    color: #000000;
-    border-radius: 8px;
-    padding: 10px;
-}
-
-body.dark-mode #alerts-box.warning {
-    background-color: #eff1f3;
-    color: #000000;
-    border-radius: 8px;
-    padding: 10px;
-}
-
-body.dark-mode #alerts-box {
-    background-color: #eff1f3;
-    color: #000000;
-    border-radius: 8px;
-    padding: 10px;
-}
 
 h1.center {
     text-align: center;
@@ -222,14 +197,6 @@ span.alert-location {
 
 
 
-md-icon.alert-danger {
-    color: #847577;
-}
-
-md-icon.alert-warning {
-    color: #CFD2CD77;
-}
-
 md-icon#alert-badge-critical {
     background-color: #847577;
     border: 8px solid #847577;
@@ -284,43 +251,6 @@ md-icon.darkmode #alert-badge-normal {
     border: none;
     font-size: 1.25rem;
 }
-
-/**/
-
-/* Legacy card styles - kept for compatibility */
-.card-train {
-    background-color: #FFFFFF;
-    border: 1px solid #E7E0EC;
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin: 8px 0;
-    transition: all 0.2s ease;
-}
-
-.card-train:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transform: translateY(-1px);
-}
-
-body.dark-mode .card-train {
-    background-color: #1D1B20;
-    border-color: #938F99;
-}
-
-.info {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-}
-
-.card-train#card-status-train {
-    width: 48%;
-    margin: 8px 0;
-}
-
 md-icon.subway-icon-color {
     color: #847577;
 }

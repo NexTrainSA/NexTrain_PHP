@@ -28,9 +28,7 @@
     </script>
 </head>
 
-<body>
-
-    <style>
+<style>
         .form-schedule * {
             font-family: Arial, sans-serif !important;
             color: #333 !important;
@@ -140,6 +138,8 @@
             color: #fafafa !important;
         }
     </style>
+
+<body>
 
     <section class="content">
         <div class="form-schedule">
