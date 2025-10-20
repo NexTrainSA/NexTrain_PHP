@@ -143,45 +143,40 @@
 
     <section class="content">
         <div class="form-schedule">
-            <h1>Adicionar Estação</h1>
-            <form id="formOS" action="./php/insert_station.php" method="post">
+            <h1>Adicionar Itinerário</h1>
+            <form id="formOS" action="./php/insert_route.php" method="post">
                 <fieldset>
                     <legend>Adicione:</legend>
                     <div class="form-group">
-                        <label for="nome_estacao">Nome da Estação:*</label>
-                        <input id="nome_estacao" name="nome_estacao" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="status_estacao">Status da Estação:*</label>
-                        <select id="status_estacao" name="status_estacao" required>
+                        <label for="itinerary">Itinerário da Rota</label>
+                        <select id="itinerary" name="itinerary" required>
                             <option value="">Selecione...</option>
                             <?php
-                            include("listar_estacao.php");
-                            foreach ($estacoes as $estacao) {
-                                echo  "<option value='" . $estacao['status_estacao'] . "'>" . $estacao['status_estacao'] . "</option>";
+                            include("listar_itinerario.php");
+                            foreach ($itinerarios as $itinerario) {
+                                echo '<option value="'.$itinerario["id_itinerario"].'">' . $itinerario["nome_origem"] . ' -> ' . $itinerario["nome_destino"] . '</option>';
                             } ?>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="connections">Ligações: </label>
-                        <select id="connections" name="connections[]" required multiple="multiple">
+                        <label for="trajectory">Trajeto: </label>
+                        <select id="trajectory" name="trajectory" required>
+                            <option value="">Selecione...</option>
                             <?php
-                            foreach ($estacoes as $estacao) {
-                                echo  "<option value=" . $estacao['id_estacao'] . ">".$estacao['nome_estacao']."</option>";
+                            foreach ($estacoes as $itinerario) {
+                                echo  "<option value='" . $itinerario['nome_estacao'] . "</option>";
                             } ?>
                         </select>
                     </div>
                 </fieldset>
-
-                <button type="submit" value="Adicionar Estação">Adicionar Estação</button>
-
+                <button type="submit" value="Adicionar Itinerário">Adicionar Itinerário</button>
             </form>
         </div>
     </section>
 
     <!--  Scripts:  -->
     <script src="./js/dark_mode.js"></script>
-    <script src="./js/add_task.js"></script>
+    <script src="./js/graph_relations_updater.js"></script>
     <!--  Fim dos Scripts  -->
 
 </body>

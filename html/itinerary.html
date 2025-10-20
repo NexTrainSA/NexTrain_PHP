@@ -121,7 +121,7 @@
                 <!-- Route Card 1 -->
                  <?php
                 include_once("php/listar_itinerario.php");
-                foreach($itinerarios as $linha) {
+                foreach($itinerarios as $itinerario) {
                     echo('
                 <md-card class="route-detail-card">
                     <div class="route-card-content">
@@ -136,9 +136,9 @@
 
                         <div class="route-details">
                             <div class="route-path">
-                                <span class="station">Estação Central</span>
+                                <span class="station">'.$itinerario['nome_origem'].'</span>
                                 <md-icon class="path-arrow">arrow_forward</md-icon>
-                                <span class="station">Terminal Norte</span>
+                                <span class="station">'.$itinerario['nome_destino'].'</span>
                             </div>
 
                             <div class="route-stats">
