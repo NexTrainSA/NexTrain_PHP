@@ -144,7 +144,7 @@
     <section class="content">
         <div class="form-maintenance">
             <h1>Enviar Alerta</h1>
-            <form id="formOS" action="../html/index.html" method="post">
+            <form id="formOS" action="./php/insert_alerts_requests.php" method="post">
                 <fieldset>
                     <legend>Suas informações:</legend>
 

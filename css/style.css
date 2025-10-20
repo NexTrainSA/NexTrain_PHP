@@ -56,15 +56,15 @@ body.dark-mode h2#train-name {
 
 }
 
-body.dark-mode h2 {
-    color: #000000;
-}
-
 body.dark-mode h3 {
     color: #ffffff;
 }
 
-body.darkmode #alert-title.span {
+body.dark-mode h2 {
+    color: black;
+    font-family: 'Roboto';
+}
+body.dark-mode #alert-title.span {
     color: #000000;
 }
 
