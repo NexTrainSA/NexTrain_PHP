@@ -10,4 +10,4 @@ $stmt->execute();
 $resultado = $stmt->get_result();
 $connections = $resultado->FETCH_ALL(MYSQLI_ASSOC);
 
-var_dump($connections);
+echo json_encode($connections);
