@@ -52,15 +52,12 @@ body.dark-mode {
 
 body.dark-mode h2#train-name {
     font-family: 'Roboto';
-    font-size: 15px;
     color: black;
 
 }
 
 body.dark-mode h2 {
     color: #000000;
-    font-family: 'Roboto';
-    font-size: 15px;
 }
 
 body.dark-mode h3 {
@@ -70,9 +67,6 @@ body.dark-mode h3 {
 body.darkmode #alert-title.span {
     color: #000000;
 }
-
-
-
 
 body.dark-mode #alerts-box.warning {
     background-color: #eff1f3;
@@ -987,6 +981,10 @@ body.dark-mode .alert-card:focus-visible {
     .card-train#card-status-train {
         width: 100%;
     }
+
+    .routes-container {
+        max-width: 768px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -1020,6 +1018,10 @@ body.dark-mode .alert-card:focus-visible {
 
     .route-header {
         gap: 12px;
+    }
+
+    .routes-container {
+        max-width: 500px;
     }
 }
 

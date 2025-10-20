@@ -165,7 +165,7 @@
                 <fieldset>
                     <legend>Quem vai receber o alerta:</legend>
                     <div class="form-group">
-                       <label for="id-funcionario">Nome de quem vai recebr o Alerta:*</label>
+                       <label for="id-funcionario">Nome de quem vai receber o Alerta:*</label>
                         <select id="funcionario" name="funcionario_recebe" required>
                             <option value="">Selecione...</option>
                             <?php
