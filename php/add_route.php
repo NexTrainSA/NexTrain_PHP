@@ -158,15 +158,14 @@
                             } ?>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="trajectory-group">
                         <label for="trajectory">Trajeto: </label>
-                        <select id="trajectory" name="trajectory" required>
-                            <option value="">Selecione...</option>
+                        <!-- <select id="trajectory" name="trajectory" required>
                             <?php
-                            foreach ($estacoes as $itinerario) {
-                                echo  "<option value='" . $itinerario['nome_estacao'] . "</option>";
+                            foreach ($estacoes as $estacao) {
+                                echo  "<option value='" . $itinerario['nome_'] . "</option>";
                             } ?>
-                        </select>
+                        </select> -->
                     </div>
                 </fieldset>
                 <button type="submit" value="Adicionar Itinerário">Adicionar Itinerário</button>
