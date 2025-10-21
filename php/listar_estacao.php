@@ -19,7 +19,7 @@ foreach ($estacoes1 as $estacao) {
     array_push($estacoes2, $estacao);
 }
 
-var_dump($estacoes2);
+$estacoes = $estacoes2;
 
 function translateStationStatus($status) {
     switch($status) {

@@ -48,23 +48,12 @@
         <!-- Page Header -->
         <section class="page-header">
             <div class="header-content">
-                <h1 class="page-title">Pra qual lugar você vai?</h1>
-                <p class="page-subtitle">Visualize e gerencie todos os itinerários de trem</p>
+                <h1 class="page-title">Gerenciamento de Itinerários</h1>
+                <p class="page-subtitle">Visualize e gerencie todos os itinerários</p>
             </div>
 
             <!-- Action Bar -->
             <div class="action-bar">
-                <div class="search-and-filters">
-                    <md-outlined-text-field id="route-search" label="Buscar Itinerários" type="search" class="search-field">
-                        <md-icon slot="leading-icon">search</md-icon>
-                    </md-outlined-text-field>
-
-                    <md-outlined-button id="filter-btn" onclick="toggleFilters()">
-                        <md-icon slot="icon">filter_list</md-icon>
-                        Filtros
-                    </md-outlined-button>
-                </div>
-
                 <md-filled-button id="add-route-btn" onclick="window.location.href='?page=add_itinerary.php'">
                     <md-icon slot="icon">add</md-icon>
                     Novo Itinerário
@@ -106,11 +95,6 @@
                             </md-select-option>
                         </md-outlined-select>
                     </div>
-
-                    <div class="filter-actions">
-                        <md-text-button onclick="clearFilters()">Limpar</md-text-button>
-                        <md-filled-tonal-button onclick="applyFilters()">Aplicar</md-filled-tonal-button>
-                    </div>
                 </div>
             </div>
         </section>
@@ -127,11 +111,11 @@
                     <div class="route-card-content">
                         <div class="route-header">
                             <div class="route-icon-wrapper">
-                                <md-icon class="route-icon">train</md-icon>
+                                <md-icon class="route-icon">map</md-icon>
                             </div>
-                            <md-chip label="No horário" class="status-chip status-on-time">
-                                <md-icon slot="icon">check_circle</md-icon>
-                            </md-chip>
+                            <div class="route-info">
+                                <h3 class="route-name">Itinerário '.$itinerario['id_itinerario'].'</h3>
+                            </div>
                         </div>
 
                         <div class="route-details">
@@ -140,10 +124,6 @@
                                 <md-icon class="path-arrow">arrow_forward</md-icon>
                                 <span class="station">'.$itinerario['nome_destino'].'</span>
                             </div>
-
-                            <div class="route-stats">
-                                
-                            </div>
                         </div>
 
                     </div>
@@ -151,14 +131,6 @@
                 ?>
             </div>
             <!--  Fim 1º Card  -->
-
-            <!-- Load More Button -->
-            <div class="load-more-section">
-                <md-outlined-button class="load-more-btn">
-                    <md-icon slot="icon">expand_more</md-icon>
-                    Carregar Mais Itinerários
-                </md-outlined-button>
-            </div>
         </section>
     </main>
 

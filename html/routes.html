@@ -48,22 +48,12 @@
         <!-- Page Header -->
         <section class="page-header">
             <div class="header-content">
-                <h1 class="page-title">Pra qual lugar você vai?</h1>
-                <p class="page-subtitle">Visualize e gerencie todas as suas rotas de trem</p>
+                <h1 class="page-title">Gerenciamento de Rotas</h1>
+                <p class="page-subtitle">Visualize e gerencie todas as rotas</p>
             </div>
 
             <!-- Action Bar -->
             <div class="action-bar">
-                <div class="search-and-filters">
-                    <md-outlined-text-field id="route-search" label="Buscar rotas" type="search" class="search-field">
-                        <md-icon slot="leading-icon">search</md-icon>
-                    </md-outlined-text-field>
-
-                    <md-outlined-button id="filter-btn" onclick="toggleFilters()">
-                        <md-icon slot="icon">filter_list</md-icon>
-                        Filtros
-                    </md-outlined-button>
-                </div>
 
                 <md-filled-button id="add-route-btn" onclick="window.location.href='?page=add_route.php'">
                     <md-icon slot="icon">add</md-icon>
@@ -117,21 +107,21 @@
 
         <!-- Routes Grid -->
         <section class="routes-grid-section">
-            <div class="routes-grid">
+            <div class="routes-page-grid">
                 <!-- Route Card 1 -->
                  <?php
 
-                include_once("php/listar_trem.php");
-                foreach($trens as $train) {
+                include_once("php/listar_rotas.php");
+                foreach($routes as $route) {
                     echo('
-                <md-card class="route-detail-card" onclick="viewRouteDetails(`'.$train['nome_trem'].'`)">
+                <md-card class="route-detail-card" onclick="viewRouteDetails(`'.$route['id_rota'].'`)">
                     <div class="route-card-content">
                         <div class="route-header">
                             <div class="route-icon-wrapper">
-                                <md-icon class="route-icon">train</md-icon>
+                                <md-icon class="route-icon">route</md-icon>
                             </div>
                             <div class="route-info">
-                                <h3 class="route-name">'.$train['nome_trem'].'</h3>
+                                <h3 class="route-name">Rota '.$route['id_rota'].'</h3>
                                 <p class="route-line">Linha Principal</p>
                             </div>
                             <md-chip label="No horário" class="status-chip status-on-time">
@@ -140,22 +130,9 @@
                         </div>
 
                         <div class="route-details">
-                            <div class="route-path">
-                                <span class="station">Estação Central</span>
-                                <md-icon class="path-arrow">arrow_forward</md-icon>
-                                <span class="station">Terminal Norte</span>
-                            </div>
+                            '.render_route_path($route).'
 
-                            <div class="route-stats">
-                                <div class="stat-item">
-                                    <md-icon class="stat-icon">schedule</md-icon>
-                                    <span class="stat-text">45 min</span>
-                                </div>
-                                <div class="stat-item">
-                                    <md-icon class="stat-icon">location_on</md-icon>
-                                    <span class="stat-text">8 paradas</span>
-                                </div>
-                            </div>
+                            <span class="stat-label">Via '.get_trajectory_station_names($route["caminho_rota"]).'</span>
                         </div>
 
                         <div class="route-actions">
@@ -170,14 +147,6 @@
                     </div>
                 </md-card>');}
                 ?>
-            </div>
-
-            <!-- Load More Button -->
-            <div class="load-more-section">
-                <md-outlined-button class="load-more-btn">
-                    <md-icon slot="icon">expand_more</md-icon>
-                    Carregar Mais Rotas
-                </md-outlined-button>
             </div>
         </section>
     </main>
