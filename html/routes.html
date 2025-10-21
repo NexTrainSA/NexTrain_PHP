@@ -118,13 +118,13 @@
                     <div class="route-card-content">
                         <div class="route-header">
                             <div class="route-icon-wrapper">
-                                <md-icon class="route-icon">route</md-icon>
+                                <md-icon class="route-icon">'.($route['id_orig'] == $route['id_dest'] ? "circle" : "route").'</md-icon>
                             </div>
                             <div class="route-info">
                                 <h3 class="route-name">Rota '.$route['id_rota'].'</h3>
-                                <p class="route-line">Linha Principal</p>
+                                <p class="route-line">'.($route['id_orig'] == $route['id_dest'] ? "Linha Circular" : "Linha Simples").'</p>
                             </div>
-                            <md-chip label="No horário" class="status-chip status-on-time">
+                            <md-chip label="Status" class="status-chip">
                                 <md-icon slot="icon">check_circle</md-icon>
                             </md-chip>
                         </div>
