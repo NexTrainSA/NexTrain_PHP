@@ -21,6 +21,19 @@ foreach ($estacoes1 as $estacao) {
 
 $estacoes = $estacoes2;
 
+function parseStationStatusToColor($status) {
+    switch($status) {
+        case 'OPEN':
+            return 'green';
+        case 'MAINTENANCE':
+            return 'orange';
+        case 'PERMANENTLY_CLOSED':
+            return 'red';
+        default:
+            return 'gray';
+    }
+};
+
 function translateStationStatus($status) {
     switch($status) {
         case 'OPEN':

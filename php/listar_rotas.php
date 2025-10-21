@@ -58,7 +58,7 @@ function render_route_path($route) {
         global $con;
         $stmt = $con->prepare("SELECT nome_estacao FROM estacao WHERE id_estacao = ?");
         $stmt->bind_param("i", $station_id);
-    $stmt->execute();
+        $stmt->execute();
         $result = $stmt->get_result();
         if ($row = $result->fetch_assoc()) {
             $html .= '<span class="station">'.$row['nome_estacao'].'</span>';
