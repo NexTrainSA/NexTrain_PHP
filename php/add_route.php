@@ -141,7 +141,7 @@
 
 <body>
 
-    <section class="content">
+    <section class="content" >
         <div class="form-schedule">
             <h1>Adicionar Itinerário</h1>
             <form id="formOS" action="./php/insert_route.php" method="post">
@@ -170,8 +170,12 @@
                 </fieldset>
                 <button type="submit" value="Adicionar Itinerário">Adicionar Itinerário</button>
             </form>
+    <?php
+        include_once("php/graph_view.php");
+    ?>
         </div>
     </section>
+
 
     <!--  Scripts:  -->
     <script src="./js/dark_mode.js"></script>
