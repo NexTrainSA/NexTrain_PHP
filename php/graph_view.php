@@ -8,8 +8,8 @@
 
     ';
         include_once('db.php');
-        include('listar_estacao.php');
-        include('listar_arestas_estacao.php');
+        include_once('listar_estacao.php');
+        include_once('listar_arestas_estacao.php');
 
         $x = 0;
         $y = 0;
