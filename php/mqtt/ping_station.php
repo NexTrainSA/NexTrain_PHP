@@ -2,7 +2,7 @@
     include_once 'mqtt.php';
     
     $stationName = $_GET['station'] ?? '';
-    $stationTopic = "nextrain_production/stations/" . $stationName;
+    $stationTopic = "nextrain/stations/" . $stationName;
     $mqtt->publish($stationTopic . "/ping", "ping", 0);
 
     $receivedPong = false;
@@ -10,7 +10,7 @@
     $mqtt->subscribe($stationTopic . "/pong", function ($topic, $message) {
         // Handle pong response here
         if ($message === 'pong') {
-            echo "Station is online.";
+            echo '{"status":"online"}';
             $receivedPong = true;
             die();
         }
@@ -19,7 +19,7 @@
     $callback = function ($mqtt, $elapsedTime) {
         if($elapsedTime > 2) {
             $mqtt->interrupt();
-            die("Station is offline.");
+            die('{"status":"offline"}');
         }
     };
 

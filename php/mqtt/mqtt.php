@@ -22,5 +22,3 @@ $mqtt->connect($connSettings, true);
 if (!$mqtt->isConnected()) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
-$mqtt->publish($mqtt_topic, "test", 0);

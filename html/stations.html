@@ -12,6 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="./js/stations.js"></script>
 
     <script type="importmap">
         {
@@ -84,6 +85,7 @@
                             </div>
                             <div class="route-info">
                                 <h3 class="route-name">'.$estacao['nome_estacao'].'</h3>
+                                <span onload=""></span>
                                 <p class="route-line">'.translateStationStatus($estacao['status_estacao']).'</p>
                             </div>
                             <md-chip label="'.$estacao['status_estacao'].'" class="status-chip status-'.$estacao['status_estacao'].'">
@@ -125,7 +127,6 @@
     <script src="./js/icon-loader.js"></script>
     <script src="./js/dark_mode.js"></script>
     <script src="./js/sidebar.js"></script>
-    <script src="./js/stations.js"></script>
 </body>
 
 </html>
