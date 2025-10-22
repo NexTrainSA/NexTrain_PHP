@@ -9,7 +9,7 @@ $mqtt_topic = "nextrain_production";
 $mqtt_user = $ini_array["nt_mqtt_user"];
 $mqtt_pass = $ini_array["nt_mqtt_pass"];
 $mqtt_host = $ini_array["nt_mqtt_host"];
-$mqtt_port = 6883;
+$mqtt_port = $ini_array["nt_mqtt_port"];
 
 $mqtt = new \PhpMqtt\Client\MqttClient($mqtt_host, $mqtt_port, "nextrain_mqtt_client_" . uniqid());
 $connSettings = (new \PhpMqtt\Client\ConnectionSettings)
@@ -20,5 +20,5 @@ $connSettings = (new \PhpMqtt\Client\ConnectionSettings)
 $mqtt->connect($connSettings, true);
 
 if (!$mqtt->isConnected()) {
-    die("Connection failed: " . mysqli_connect_error());
+    die("Connection failed");
 }
