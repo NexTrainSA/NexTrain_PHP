@@ -157,8 +157,17 @@
                             <option value="">Selecione...</option>
                             <?php
                             include("listar_estacao.php");
-                            foreach ($estacoes as $linha) {
-                                echo  "<option value='" . $linha['status_estacao'] . "'>" . $linha['status_estacao'] . "</option>";
+                            foreach ($estacoes as $estacao) {
+                                echo  "<option value='" . $estacao['status_estacao'] . "'>" . $estacao['status_estacao'] . "</option>";
+                            } ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="connections">Ligações: </label>
+                        <select id="connections" name="connections[]" required multiple="multiple">
+                            <?php
+                            foreach ($estacoes as $estacao) {
+                                echo  "<option value=" . $estacao['id_estacao'] . ">".$estacao['nome_estacao']."</option>";
                             } ?>
                         </select>
                     </div>

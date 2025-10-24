@@ -67,3 +67,30 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+window.onload = function() {
+    for(let i = 0; i<document.getElementsByClassName("route-info").length; i++) {
+        let stationName = document.getElementsByClassName("route-info")[i].getElementsByClassName("route-name")[0].innerText
+        pingStatus = pingStation(stationName).then((status) => {
+            console.log(i + " - " + stationName + ": " + status);
+            let child = document.getElementsByClassName("route-info")[i].parentElement.appendChild(document.createElement("md-suggestion-chip"));
+            child.label = status.toUpperCase();
+            if(status == "online") {
+                child.style = "background-color: #5BB65F; --_label-text-color:: #FAFAFA;";
+            }   else {
+                child.style = "background-color: #B45555; --_label-text-color: #FAFAFA;";
+            }
+        });
+    }
+};
+
+function pingStation(stationName) {
+    return fetch(`php/mqtt/ping_station.php?station=${encodeURIComponent(stationName)}`)
+    .then(response => response.json())
+    .then(data => {
+        return data.status;
+    })
+    .catch(error => {
+        console.error('Error pinging station:', error);
+    });
+}

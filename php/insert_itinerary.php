@@ -16,4 +16,4 @@ if ($stmt->execute()) {
 $stmt->close();
 $con->close();
 
-header("Location: ../html/index.html");
+header("Location: ../index.php?page=itinerary.html");

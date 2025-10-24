@@ -171,7 +171,7 @@
 
     <!--  Scripts:  -->
     <script src="./js/dark_mode.js"></script>
-    <script src="./js/maintenance-requests.js"></script>
+    <script src="./js/graph_relations_updater.js"></script>
     <!--  Fim dos Scripts  -->
 
 </body>

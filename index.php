@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("./php/db.php");
+require_once __DIR__ . '/vendor/autoload.php';
 
 if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
     include_once './html/login.html';

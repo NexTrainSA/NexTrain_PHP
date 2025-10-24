@@ -1421,6 +1421,12 @@ body.dark-mode .filters-panel {
     gap: 20px;
 }
 
+.routes-page-grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); */
+    gap: 20px;
+}
+
 /* Route Detail Cards */
 .route-detail-card {
     background: #FFFFFF;
