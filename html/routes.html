@@ -119,7 +119,7 @@
         <section class="routes-grid-section">
             <div class="routes-grid">
                 <!-- Route Card 1 -->
-                 <?php
+                <?php
 
                 include_once("php/listar_trem.php");
                 foreach($trens as $train) {
@@ -160,12 +160,13 @@
 
                         <div class="route-actions">
                             <md-text-button>
-                                <md-icon slot="icon">visibility</md-icon>
-                                Ver Detalhes
+                                <md-icon slot="icon">edit</md-icon>
+                                Editar
                             </md-text-button>
-                            <md-icon-button>
-                                <md-icon>more_vert</md-icon>
-                            </md-icon-button>
+                            <md-text-button class="delete-btn" data-trem-id="'.$routes['id_rota'].'">
+                                <md-icon slot="icon">delete</md-icon>
+                                Excluir
+                            </md-text-button>
                         </div>
                     </div>
                 </md-card>');}
@@ -182,13 +183,14 @@
         </section>
     </main>
 
-   
+
 
     <!--  Scripts:  -->
     <script src="./js/icon-loader.js"></script>
     <script src="./js/dark_mode.js"></script>
     <script src="./js/sidebar.js"></script>
     <script src="./js/routes.js"></script>
+    <script src="./js/confirm_delete.js"></script>
 </body>
 
 </html>

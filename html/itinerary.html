@@ -55,7 +55,8 @@
             <!-- Action Bar -->
             <div class="action-bar">
                 <div class="search-and-filters">
-                    <md-outlined-text-field id="route-search" label="Buscar Itinerários" type="search" class="search-field">
+                    <md-outlined-text-field id="route-search" label="Buscar Itinerários" type="search"
+                        class="search-field">
                         <md-icon slot="leading-icon">search</md-icon>
                     </md-outlined-text-field>
 
@@ -119,7 +120,7 @@
         <section class="routes-grid-section">
             <div class="routes-grid">
                 <!-- Route Card 1 -->
-                 <?php
+                <?php
                 include_once("php/listar_itinerario.php");
                 foreach($itinerarios as $linha) {
                     echo('
@@ -145,11 +146,22 @@
                                 
                             </div>
                         </div>
+                        <div class="route-actions">
+                            <md-text-button>
+                                <md-icon slot="icon">edit</md-icon>
+                                Editar
+                            </md-text-button>
+                            <md-text-button>
+                                <md-icon slot="icon">delete</md-icon>
+                                Excluir
+                            </md-text-button>
+                        </div>
 
                     </div>
                 </md-card>');}
                 ?>
             </div>
+
             <!--  Fim 1º Card  -->
 
             <!-- Load More Button -->
@@ -159,10 +171,11 @@
                     Carregar Mais Itinerários
                 </md-outlined-button>
             </div>
+
         </section>
     </main>
 
-   
+
 
     <!--  Scripts:  -->
     <script src="./js/icon-loader.js"></script>

@@ -1,20 +1,20 @@
 <?php
 
-require_once('db.php');
+require_once('conexao.php');
 
 $codigo = $_GET['codigo'];
 
-$stmt = $con->prepare("DELETE FROM rota WHERE id_rota = ?");
+$stmt = $conexao->prepare("DELETE FROM estacao WHERE pk_estacao = ?");
 $stmt->bind_param("i", $codigo);
 
 if ($stmt->execute()) {
-    header("Location: ../html/routes.html");
+    header("Location: stations.html");
     exit;
 } else {
     echo "Erro ao excluir a atividade: " . $stmt->error;
 }
 
 $stmt->close();
-$con->close();
+$conexao->close();
 
 ?>

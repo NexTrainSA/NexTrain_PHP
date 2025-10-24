@@ -55,7 +55,8 @@
             <!-- Action Bar -->
             <div class="action-bar">
                 <div class="search-and-filters">
-                    <md-outlined-text-field id="route-search" label="Buscar por estação" type="search" class="search-field">
+                    <md-outlined-text-field id="route-search" label="Buscar por estação" type="search"
+                        class="search-field">
                         <md-icon slot="leading-icon">search</md-icon>
                     </md-outlined-text-field>
                 </div>
@@ -71,7 +72,7 @@
         <section class="routes-grid-section">
             <div class="routes-grid">
                 <!-- Route Card 1 -->
-                 <?php
+                <?php
 
                 include_once("php/listar_estacao.php");
                 foreach($estacoes as $estacao) {
@@ -90,15 +91,15 @@
                                 <!-- <md-icon slot="icon">'.getIconFromStatus($estacao['status_estacao']).'</md-icon> -->
                             </md-chip>
                         </div>
-
                         <div class="route-actions">
                             <md-text-button>
-                                <md-icon slot="icon">visibility</md-icon>
-                                Ver Detalhes
+                                <md-icon slot="icon">edit</md-icon>
+                                Editar
                             </md-text-button>
-                            <md-icon-button>
-                                <md-icon>more_vert</md-icon>
-                            </md-icon-button>
+                            <md-text-button>
+                                <md-icon slot="icon">delete</md-icon>
+                                Excluir
+                            </md-text-button>
                         </div>
                     </div>
                 </md-card>');}
@@ -115,7 +116,7 @@
         </section>
     </main>
 
-   
+
 
     <!--  Scripts:  -->
     <script src="./js/icon-loader.js"></script>

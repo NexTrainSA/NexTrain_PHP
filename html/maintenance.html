@@ -67,6 +67,10 @@
                         <p class="alert-description">Alerta de tempestade detectado entre Estação Central e Terminal
                             Norte.</p>
                     </div>
+                    <md-text-button>
+                        <md-icon slot="icon">delete</md-icon>
+                        Excluir
+                    </md-text-button>
                 </md-card>
 
                 <!-- Card 2 -->
@@ -87,6 +91,10 @@
                         <p class="alert-description">Sensor detectou um objeto obstruindo o trilho próximo à Estação
                             Sul.</p>
                     </div>
+                    <md-text-button>
+                        <md-icon slot="icon">delete</md-icon>
+                        Excluir
+                    </md-text-button>
                 </md-card>
 
                 <!-- Card 3 -->
@@ -107,6 +115,10 @@
                         <p class="alert-description">O trem apresentou falha mecânica e está parado no Distrito
                             Industrial.</p>
                     </div>
+                    <md-text-button>
+                        <md-icon slot="icon">delete</md-icon>
+                        Excluir
+                    </md-text-button>
                 </md-card>
 
                 <!-- Card 4 -->
@@ -127,6 +139,12 @@
                         <p class="alert-description">Acidente registrado próximo ao Centro Histórico. Equipe a caminho.
                         </p>
                     </div>
+                    <div class="route-actions">
+                        <md-text-button>
+                            <md-icon slot="icon">delete</md-icon>
+                            Excluir
+                        </md-text-button>
+                    </div>
                 </md-card>
             </div>
         </section>
@@ -137,18 +155,18 @@
             onclick="window.location.href='?page=maintenance-requests.php'">
             <md-icon slot="icon">add</md-icon>
         </md-fab>
-    
 
-         <md-fab class="nxt-btn" label="Enviar um novo Alerta"
+
+        <md-fab class="nxt-btn" label="Enviar um novo Alerta"
             onclick="window.location.href='?page=alerts-requests.php'">
             <md-icon slot="icon">add</md-icon>
         </md-fab>
-   
 
-    <!-- Scripts -->
-    <script src="./js/dark_mode.js"></script>
-    <script src="./js/sidebar.js"></script>
-    <script src="./js/icon-loader.js"></script>
+
+        <!-- Scripts -->
+        <script src="./js/dark_mode.js"></script>
+        <script src="./js/sidebar.js"></script>
+        <script src="./js/icon-loader.js"></script>
 </body>
 
 </html>
