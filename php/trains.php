@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include ('db.php');
 ?>
 
 <!DOCTYPE html>
@@ -7,9 +7,43 @@ include 'db.php';
 
 <head>
     <meta charset="UTF-8">
+    <!--  Fontes e Estilos:  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trens</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script type="importmap">
+        {
+            "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+            }
+        }
+        </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+
+        // Ensure icons are loaded properly
+        document.addEventListener('DOMContentLoaded', function () {
+            // Force icon font load
+            const testIcon = document.createElement('md-icon');
+            testIcon.textContent = 'schedule';
+            testIcon.style.position = 'absolute';
+            testIcon.style.left = '-9999px';
+            document.body.appendChild(testIcon);
+
+            setTimeout(() => {
+                document.body.removeChild(testIcon);
+            }, 100);
+        });
+    </script>
 </head>
 
 <body>
@@ -133,7 +167,7 @@ include 'db.php';
                     endwhile;
                 else:
                 ?>
-                    <p style="text-align:center;">Nenhum trem encontrado.</p>
+                    <p style="text-align:center;">Não tem trem :(</p>
                 <?php endif; ?>
             </div>
 
