@@ -4,7 +4,7 @@ require_once('conexao.php');
 
 $codigo = $_GET['codigo'];
 
-$stmt = $conexao->prepare("DELETE FROM estacao WHERE pk_estacao = ?");
+$stmt = $conexao->prepare("DELETE FROM estacao WHERE id_estacao = ?");
 $stmt->bind_param("i", $codigo);
 
 if ($stmt->execute()) {
