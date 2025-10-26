@@ -1,3 +1,5 @@
+<main class="routes-container">
+    
 <div class="routes-grid">
 <?php
 $query = "SELECT * FROM trens"; 
@@ -42,7 +44,8 @@ if ($result && mysqli_num_rows($result) > 0) {
         ';
     }
 } else {
-    echo '<p style="text-align:center;">Nenhum trem encontrado.</p>';
+    echo '<p style="text-align:center;">Não tem trem :(.</p>';
 }
 ?>
 </div>
+</main>
