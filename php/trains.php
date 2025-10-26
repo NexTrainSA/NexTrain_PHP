@@ -14,7 +14,7 @@ include 'db.php';
 
 <body>
     <main class="routes-container">
-        <!-- Page Header -->
+    
         <section class="page-header">
             <div class="header-content">
                 <h1 class="page-title">Pra qual lugar você vai?</h1>
