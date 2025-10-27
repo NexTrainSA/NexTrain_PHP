@@ -1,4 +1,4 @@
-import Listar_estacao from "./modal_station.js";
+import ListaEstacoes from "./modal_station.js";
 import React, { useState } from "react";
 
 export default function ListaEstacoes() {
