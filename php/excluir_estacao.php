@@ -2,7 +2,7 @@
 
 require_once('db.php');
 
-$codigo = $_GET['codigo'];
+$codigo = $_GET['id'];
 
 $stmt = $con->prepare("DELETE FROM estacao WHERE id_estacao = ?");
 $stmt->bind_param("i", $codigo);

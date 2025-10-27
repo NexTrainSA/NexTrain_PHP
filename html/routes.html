@@ -110,47 +110,43 @@
             <div class="routes-page-grid">
                 <!-- Route Card 1 -->
                 <?php
-
                 include_once("php/listar_rotas.php");
                 foreach($routes as $route) {
                     echo('
                 <md-card class="route-detail-card" onclick="viewRouteDetails(`'.$route['id_rota'].'`)">
-                    <div class="route-card-content">
-                        <div class="route-header">
-                            <div class="route-icon-wrapper">
-                                <md-icon class="route-icon">'.($route['id_orig'] == $route['id_dest'] ? "circle" : "route").'</md-icon>
-                            </div>
-                            <div class="route-info">
-                                <h3 class="route-name">Rota '.$route['id_rota'].'</h3>
-                                <p class="route-line">'.($route['id_orig'] == $route['id_dest'] ? "Linha Circular" : "Linha Simples").'</p>
-                            </div>
-                            <md-chip label="Status" class="status-chip">
-                                <md-icon slot="icon">check_circle</md-icon>
-                            </md-chip>
-                        </div>
+    <div class="route-card-content">
+        <div class="route-header">
+            <div class="route-icon-wrapper">
+                <md-icon class="route-icon">'.($route['id_orig'] == $route['id_dest'] ? "circle" : "route").'</md-icon>
+            </div>
+            <div class="route-info">
+                <h3 class="route-name">Rota '.$route['id_rota'].'</h3>
+                <p class="route-line">'.($route['id_orig'] == $route['id_dest'] ? "Linha Circular" : "Linha Simples").'</p>
+            </div>
+            <md-chip label="Status" class="status-chip">
+                <md-icon slot="icon">check_circle</md-icon>
+            </md-chip>
+        </div>
 
-                        <div class="route-details">
-                            '.render_route_path($route).'
+        <div class="route-details">
+            '.render_route_path($route).'
+        </div>
 
-                            <span class="stat-label">Via '.get_trajectory_station_names($route["caminho_rota"]).'</span>
-                        </div>
-
-                        <div class="route-actions">
-                            <md-text-button>
-                                <md-icon slot="icon">edit</md-icon>
-                                Editar
-                            </md-text-button>
-                            <a href="php/excluir_rota.php?id=<?= $rota['id_rota'] ?>"
-                                        onclick="return confirm('Deseja mesmo excluir esta rota?')">
-                                        <md-text-button class="delete-btn">
-                                            <md-icon slot="icon">delete</md-icon>
-                                            Excluir
-                                        </md-text-button>
-                                    </a>
-                        </div>
-                    </div>
-                </md-card>');}
-                ?>
+        <div class="route-actions">
+            <md-text-button>
+                <md-icon slot="icon">edit</md-icon>
+                Editar
+            </md-text-button>
+            
+            <a href="../php/excluir_rota.php?id='.$route['id_rota'].'" onclick="return confirm(\'Deseja mesmo excluir esta rota?\')">
+                <md-text-button class="delete-btn">
+                    <md-icon slot="icon">delete</md-icon>Excluir
+                </md-text-button>
+            </a>
+        </div>
+    </div>
+</md-card>');}
+            ?>
             </div>
         </section>
     </main>

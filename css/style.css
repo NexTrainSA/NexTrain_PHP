@@ -1823,13 +1823,13 @@ body.dark-mode .empty-state p {
 }
 
 /* Comprehensive Icon Loading System */
-@font-face {
+/* @font-face {
     font-family: 'Material Symbols Outlined';
     font-style: normal;
     font-weight: 100 700;
     src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v145/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY3JY.woff2) format('woff2');
     font-display: block;
-}
+} */
 
 /* Force Material Icon Font Loading */
 .material-icons-load-test {
