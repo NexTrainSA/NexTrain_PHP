@@ -119,7 +119,7 @@
         <section class="routes-grid-section">
             <div class="routes-grid">
                 <?php
-                include('db.php');
+                require_once('db.php');
                 $query = "SELECT * FROM trens";
                 $result = $con->query($query);
 
@@ -154,11 +154,17 @@
                                         <md-icon slot="icon">edit</md-icon>
                                         Editar
                                     </md-text-button>
-                                    <md-text-button class="delete-btn" data-trem-id="<?= $trem['id_trem'] ?>">
-                                        <md-icon slot="icon">delete</md-icon>
-                                        Excluir
-                                    </md-text-button>
+                                    <a href="php/excluir_trem.php?id=<?= $trem['id_trem'] ?>"
+                                        onclick="return confirm('Deseja mesmo excluir este trem?')">
+                                        <md-text-button class="delete-btn">
+                                            <md-icon slot="icon">delete</md-icon>
+                                            Excluir
+                                        </md-text-button>
+                                    </a>
+
                                 </div>
+
+
                             </div>
                         </md-card>
                     <?php
@@ -166,14 +172,16 @@
                 else:
                     ?>
                     <p style="text-align:center;">Não tem trem :(</p>
-                <?php endif; ?>
+                <?php endif;
+                $con->close();
+                ?>
             </div>
 
             <!-- Load More Button -->
             <div class="load-more-section">
                 <md-outlined-button class="load-more-btn">
                     <md-icon slot="icon">expand_more</md-icon>
-                    Carregar Mais Rotas
+                    Carregar Mais Trens
                 </md-outlined-button>
             </div>
         </section>
@@ -185,11 +193,6 @@
     <script src="./js/sidebar.js"></script>
     <script src="./js/routes.js"></script>
 
-    <script>
-        function editTrain(id) {
-            window.location.href = `editar_trem.php?id=${id}`;
-        }
-    </script>
 </body>
 
 </html>

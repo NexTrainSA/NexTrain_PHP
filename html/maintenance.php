@@ -35,6 +35,60 @@
 
 </head>
 
+<div class="routes-grid">
+                <?php
+                require_once('db.php');
+                $query = "SELECT * FROM alertas";
+                $result = $con->query($query);
+
+                if ($result && $result->num_rows > 0):
+                    while ($alertas = $result->fetch_assoc()):
+                ?>
+                        <md-card class="route-detail-card">
+                            <div class="route-card-content">
+                                <div class="route-header">
+                                    <div class="route-icon-wrapper">
+                                        <md-icon class="route-icon">train</md-icon>
+                                    </div>
+                                    <div class="route-info">
+                                        <h3 class="route-name"><?= htmlspecialchars($alertas['id_alerta']) ?></h3>
+                                        <p class="route-line"><?= htmlspecialchars($alertas['id_funcionario']) ?></p>
+                                    </div>
+                                    <md-chip label="Ativo" class="status-chip status-on-time">
+                                        <md-icon slot="icon">check_circle</md-icon>
+                                    </md-chip>
+                                </div>
+
+                                <div class="route-details">
+                                    <div class="route-path">
+                                        <span class="station">Informações</span>
+                                        <md-icon class="path-arrow">arrow_forward</md-icon>
+                                        <span class="station"><?= htmlspecialchars($alertas['id_funcionario_recebe']) ?></span>
+                                    </div>
+                                </div>
+
+                                <div class="route-actions">
+                                    <md-text-button onclick="editTrain(<?= $alertas['descricao_alerta'] ?>)">
+                                        <md-icon slot="icon">edit</md-icon>
+                                        Editar
+                                    </md-text-button>
+                                    <md-text-button class="delete-btn" data-alertas-id="<?= $alertas['id_trem'] ?>">
+                                        <md-icon slot="icon">delete</md-icon>
+                                        Excluir
+                                    </md-text-button>
+                                </div>
+                            </div>
+                        </md-card>
+                    <?php
+                    endwhile;
+                else:
+                    ?>
+                    <p style="text-align:center;">Não tem trem :</p>
+                <?php endif; 
+                $con->close();
+                ?>
+            </div>
+                                
 <body>
     <main class="routes-container">
         <!-- Cabeçalho -->
