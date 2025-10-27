@@ -1,7 +1,3 @@
-<?php
-include ('db.php');
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -26,12 +22,14 @@ include ('db.php');
         </script>
     <script type="module">
         import '@material/web/all.js';
-        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+        import {
+            styles as typescaleStyles
+        } from '@material/web/typography/md-typescale-styles.js';
 
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
 
         // Ensure icons are loaded properly
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // Force icon font load
             const testIcon = document.createElement('md-icon');
             testIcon.textContent = 'schedule';
@@ -49,7 +47,7 @@ include ('db.php');
 <body>
 
     <main class="routes-container">
-    
+
         <section class="page-header">
             <div class="header-content">
                 <h1 class="page-title">Pra qual lugar você vai?</h1>
@@ -121,9 +119,9 @@ include ('db.php');
         <section class="routes-grid-section">
             <div class="routes-grid">
                 <?php
-                // Fetch trains from DB
+                include('db.php');
                 $query = "SELECT * FROM trens";
-                $result = $conn->query($query);
+                $result = $con->query($query);
 
                 if ($result && $result->num_rows > 0):
                     while ($trem = $result->fetch_assoc()):
@@ -163,10 +161,10 @@ include ('db.php');
                                 </div>
                             </div>
                         </md-card>
-                <?php
+                    <?php
                     endwhile;
                 else:
-                ?>
+                    ?>
                     <p style="text-align:center;">Não tem trem :(</p>
                 <?php endif; ?>
             </div>
@@ -189,7 +187,7 @@ include ('db.php');
 
     <script>
         function editTrain(id) {
-            window.location.href = `edit_train.php?id=${id}`;
+            window.location.href = `editar_trem.php?id=${id}`;
         }
     </script>
 </body>
