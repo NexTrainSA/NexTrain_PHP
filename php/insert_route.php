@@ -18,4 +18,4 @@ if ($stmt->execute()) {
 $stmt->close();
 $con->close();
 
-header("Location: ../index.php?page=routes.html");
+header("Location: routes.php");

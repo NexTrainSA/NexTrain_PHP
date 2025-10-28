@@ -17,4 +17,4 @@ if ($stmt->execute()) {
 $stmt->close();
 $con->close();
 
-header("Location: ../html/index.html");
+header("Location: maintenance.php");
