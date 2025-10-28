@@ -96,7 +96,7 @@
                                 <div class="route-path">
                                     <span class="station">Informações</span>
                                     <md-icon class="path-arrow">arrow_forward</md-icon>
-                                    <span class="station"><?= htmlspecialchars($alertas['id_funcionario_recebe']) ?></span>
+                                    <span class="station"><?= htmlspecialchars($alertas['descricao_alerta']) ?></span>
                                 </div>
                             </div>
 
@@ -105,10 +105,13 @@
                                     <md-icon slot="icon">edit</md-icon>
                                     Editar
                                 </md-text-button>
-                                <md-text-button class="delete-btn" data-alertas-id="<?= htmlspecialchars($alertas['id_alerta']) ?>">
-                                    <md-icon slot="icon">delete</md-icon>
-                                    Excluir
-                                </md-text-button>
+                                <a href="../php/excluir_alerta.php?id=<?= $alerta['id_alerta'] ?>"
+                                        onclick="return confirm('Deseja mesmo excluir este alerta?')">
+                                        <md-text-button class="delete-btn">
+                                            <md-icon slot="icon">delete</md-icon>
+                                            Excluir
+                                        </md-text-button>
+                                    </a>
                             </div>
                         </div>
                     </md-card>
