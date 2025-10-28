@@ -72,7 +72,7 @@
             
 
             $query = "SELECT a.id_alerta, 
-                 a.mensagem, 
+                 a.descricao_alerta, 
                  u.username_usuario AS nome_funcionario
           FROM alertas a
           JOIN usuarios u ON u.id_usuario = a.id_funcionario
