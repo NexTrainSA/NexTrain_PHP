@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="route-info">
                                     <h3 class="route-name"><?= htmlspecialchars($alertas['id_alerta']) ?></h3>
-                                    <p class="route-line"><?= htmlspecialchars($alertas['id_funcionario']) ?></p>
+                                    <p class="route-line"><?= htmlspecialchars($alertas['username_usuario']) ?></p>
                                 </div>
                                 <md-chip label="Ativo" class="status-chip status-on-time">
                                     <md-icon slot="icon">check_circle</md-icon>
