@@ -8,7 +8,7 @@ $stmt = $con->prepare("DELETE FROM rota WHERE id_rota = ?");
 $stmt->bind_param("i", $codigo);
 
 if ($stmt->execute()) {
-    header("Location: teste.php");
+    header("Location: routes.php");
     exit;
 } else {
     echo "Erro ao excluir a rota: " . $stmt->error;
