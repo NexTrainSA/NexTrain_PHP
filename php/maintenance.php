@@ -67,32 +67,44 @@
 
         <div class="routes-grid">
             <?php
-            require_once('db.php');
+session_start(); 
+require_once('db.php');
 
-            $query = "SELECT * FROM alertas";
-            $result = $con->query($query);
+// Verifica se há um funcionário logado
+if (!isset($_SESSION['id_funcionario'])) {
+    die("Usuário não está logado.");
+}
 
-            if (!$result) {
-                die("Erro na query: " . $con->error);
-            }
+$idFuncionario = $_SESSION['id_funcionario'];
 
-            if ($result->num_rows > 0):
-                while ($alertas = $result->fetch_assoc()):
-            ?>
-                    <md-card class="route-detail-card">
-                        <div class="route-card-content">
-                            <div class="route-header">
-                                <div class="route-icon-wrapper">
-                                    <md-icon class="route-icon">train</md-icon>
-                                </div>
-                                <div class="route-info">
-                                    <h3 class="route-name"><?= htmlspecialchars($alertas['id_alerta']) ?></h3>
-                                    <p class="route-line"><?= htmlspecialchars($alertas['id_funcionario']) ?></p>
-                                </div>
-                                <md-chip label="Ativo" class="status-chip status-on-time">
-                                    <md-icon slot="icon">check_circle</md-icon>
-                                </md-chip>
-                            </div>
+$query = "SELECT a.id_alerta, a.mensagem, u.nome AS nome_funcionario
+          FROM alertas a
+          JOIN usuarios u ON u.id_usuario = a.id_funcionario
+          WHERE a.id_funcionario = ?";
+
+$stmt = $con->prepare($query);
+$stmt->bind_param("i", $idFuncionario);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0):
+    while ($alertas = $result->fetch_assoc()):
+?>
+    <md-card class="route-detail-card">
+        <div class="route-card-content">
+            <div class="route-header">
+                <div class="route-icon-wrapper">
+                    <md-icon class="route-icon">train</md-icon>
+                </div>
+                <div class="route-info">
+                    <h3 class="route-name"><?= htmlspecialchars($alertas['mensagem']) ?></h3>
+                    <p class="route-line"><?= htmlspecialchars($alertas['nome_funcionario']) ?></p>
+                </div>
+                <md-chip label="Ativo" class="status-chip status-on-time">
+                    <md-icon slot="icon">check_circle</md-icon>
+                </md-chip>
+            </div>
+
 
                             <div class="route-details">
                                 <div class="route-path">
