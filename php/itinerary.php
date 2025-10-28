@@ -136,8 +136,12 @@
             <!--  Fim 1º Card  -->
         </section>
 
-        <md-filled-button id="add-route-btn" onclick="window.location.href='?page=add_itinerary.php'">
-            <md-icon slot="icon">add</md-icon>Novo Itinerário</md-filled-button>
+        <div class="action-bar">
+            <md-filled-button id="add-route-btn" onclick="window.location.href='?page=add_itinerary.php'">
+                <md-icon slot="icon">add</md-icon>
+                    Novo Itinerário
+                </md-filled-button>
+        </div>
 
     </main>
 
