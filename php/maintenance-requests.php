@@ -8,7 +8,9 @@
     <!--  Fontes e Estilos:  -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <<link rel="stylesheet" href="/css/maintenance.css">
+    <link rel="stylesheet" href="/html/templates/header.html">
+    <link rel="stylesheet" href="/html/templates/footer.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 

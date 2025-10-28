@@ -17,6 +17,8 @@
     <!-- Estilos -->
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/maintenance.css">
+    <link rel="stylesheet" href="/html/templates/header.html">
+    <link rel="stylesheet" href="/html/templates/footer.html">
 
     <!-- Material Web -->
     <script type="importmap">
