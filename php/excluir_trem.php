@@ -8,7 +8,7 @@ $stmt = $con->prepare("DELETE FROM trens WHERE id_trem = ?");
 $stmt->bind_param("i", $codigo);
 
 if ($stmt->execute()) {
-    header("Location: listar_trem.php");
+    header("Location: trains.php");
     exit;
 } else {
     echo "Erro ao excluir o trem: " . $stmt->error;
