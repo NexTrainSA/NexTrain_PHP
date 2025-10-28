@@ -69,11 +69,14 @@
             <?php
             require_once('db.php');
 
-            $query = "
-    SELECT a.*, f.nome AS nome_funcionario
-    FROM alertas a
-    LEFT JOIN funcionarios f ON a.id_funcionario = f.id_funcionario
-";
+            
+
+            $query = "SELECT a.id_alerta, 
+                 a.mensagem, 
+                 u.username_usuario AS nome_funcionario
+          FROM alertas a
+          JOIN usuarios u ON u.id_usuario = a.id_funcionario
+          WHERE a.id_funcionario = ?";
             $result = $con->query($query);
 
             if (!$result) {
@@ -91,7 +94,7 @@
                                 </div>
                                 <div class="route-info">
                                     <h3 class="route-name"><?= htmlspecialchars($alertas['id_alerta']) ?></h3>
-                                    <p class="route-line"><?= htmlspecialchars($alertas['nome_funcionario']) ?></p>
+                                    <p class="route-line"><?= htmlspecialchars($alertas['id_funcionario']) ?></p>
                                 </div>
                                 <md-chip label="Ativo" class="status-chip status-on-time">
                                     <md-icon slot="icon">check_circle</md-icon>
@@ -111,7 +114,7 @@
                                     <md-icon slot="icon">edit</md-icon>
                                     Editar
                                 </md-text-button>
-                                <a href="../php/excluir_alerta.php?id=<?= $alertas['id_alerta'] ?>"
+                                <a href="../php/excluir_alerta.php?id=<?= $alerta['id_alerta'] ?>"
                                         onclick="return confirm('Deseja mesmo excluir este alerta?')">
                                         <md-text-button class="delete-btn">
                                             <md-icon slot="icon">delete</md-icon>
