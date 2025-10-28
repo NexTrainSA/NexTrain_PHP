@@ -70,13 +70,13 @@
             require_once('db.php');
 
             $query = "SELECT 
-            a.id_alerta, 
-            a.descricao_alerta, 
-            a.id_funcionario,
-            a.id_funcionario_recebe,
-            u.username_usuario
-          FROM alertas a
-          JOIN usuario u ON u.id_usuario = a.id_funcionario";
+    a.id_alerta, 
+    a.descricao_alerta, 
+    remetente.username_usuario AS nome_remetente,
+    destinatario.username_usuario AS nome_destinatario
+FROM alertas a
+JOIN usuario remetente ON remetente.id_usuario = a.id_funcionario
+JOIN usuario destinatario ON destinatario.id_usuario = a.id_funcionario_recebe;";
 
             $result = $con->query($query);
 
@@ -94,8 +94,8 @@
                                     <md-icon class="route-icon">train</md-icon>
                                 </div>
                                 <div class="route-info">
-                                    <h3 class="route-name"><?= htmlspecialchars($alertas['id_alerta']) ?></h3>
-                                    <p class="route-line"><?= htmlspecialchars($alertas['username_usuario']) ?></p>
+                                    <h3 class="route-name"><?= htmlspecialchars($alertas['nome_destinatario']) ?></h3>
+                                    <p class="route-line"><?= htmlspecialchars($alertas['nome_remetente']) ?></p>
                                 </div>
                                 <md-chip label="Ativo" class="status-chip status-on-time">
                                     <md-icon slot="icon">check_circle</md-icon>
