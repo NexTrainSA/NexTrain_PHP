@@ -94,8 +94,8 @@
                                     <md-icon class="route-icon">train</md-icon>
                                 </div>
                                 <div class="route-info">
-                                    <h3 class="route-name"><?= htmlspecialchars($alertas['nome_remetente']) ?></h3>
-                                    <p class="route-line"><?= htmlspecialchars($alertas['nome_destinatario']) ?></p>
+                                    <md-chip label="DE" class="chip-remetente"><?= htmlspecialchars($alertas['nome_remetente']) ?></md-chip>
+                                    <md-chip label="PARA" class="chip-destinatario"><?= htmlspecialchars($alertas['nome_destinatario']) ?></md-chip>
                                 </div>
                                 <md-chip label="Ativo" class="status-chip status-on-time">
                                     <md-icon slot="icon">check_circle</md-icon>
