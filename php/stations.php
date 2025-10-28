@@ -100,11 +100,14 @@
                                 <md-icon slot="icon">edit</md-icon>
                                 Editar
                             </md-text-button>
-                            <a href="../php/excluir_estacao.php?id='.$estacao['id_estacao'].'" onclick="return confirm(\'Deseja mesmo excluir esta estação?\')">
-                                <md-text-button class="delete-btn">
-                                    <md-icon slot="icon">delete</md-icon>Excluir
-                                </md-text-button>
-                            </a>
+                            <a href="php/excluir_estacao.php?id='.$estacao['id_estacao'].'&redirect='.$_SERVER['REQUEST_URI'].'" 
+   onclick="return confirm(\'Deseja mesmo excluir esta estação?\')">
+    <md-text-button class="delete-btn">
+        <md-icon slot="icon">delete</md-icon>
+        Excluir
+    </md-text-button>
+</a>
+
                         </div>
                     </div>
                 </md-card>');}
