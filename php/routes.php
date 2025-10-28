@@ -54,17 +54,6 @@
                 <p class="page-subtitle">Visualize e gerencie todas as rotas</p>
             </div>
 
-            <!-- Action Bar -->
-            <div class="action-bar">
-
-                <md-filled-button id="add-route-btn" onclick="window.location.href='?page=add_route.php'">
-                    <md-icon slot="icon">add</md-icon>
-                    Nova Rota
-                </md-filled-button>
-
-
-            </div>
-
             <!-- Filters Panel (Initially Hidden) -->
             <div id="filters-panel" class="filters-panel" style="display: none;">
                 <div class="filters-content">
@@ -151,6 +140,12 @@
             ?>
             </div>
         </section>
+
+        <md-filled-button id="add-route-btn" onclick="window.location.href='?page=add_route.php'">
+                    <md-icon slot="icon">add</md-icon>
+                    Nova Rota
+                </md-filled-button>
+                
     </main>
 
 
