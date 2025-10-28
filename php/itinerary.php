@@ -145,6 +145,12 @@
 
             <!--  Fim 1º Card  -->
         </section>
+
+                    <md-fab class="nxt-btn" label="Abrir chamado de manutenção"
+            onclick="window.location.href='?page=maintenance-requests.php'">
+            <md-icon slot="icon">add</md-icon>
+        </md-fab>
+
     </main>
 
 
