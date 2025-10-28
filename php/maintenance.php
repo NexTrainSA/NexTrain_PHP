@@ -67,25 +67,19 @@
 
         <div class="routes-grid">
             <?php
-session_start(); 
 require_once('db.php');
 
-// Verifica se há um funcionário logado
-if (!isset($_SESSION['id_funcionario'])) {
-    die("Usuário não está logado.");
+// Busca alertas junto com o nome do funcionário
+$query = "
+    SELECT a.*, f.nome AS nome_funcionario
+    FROM alertas a
+    LEFT JOIN funcionarios f ON a.id_funcionario = f.id_funcionario
+";
+$result = $con->query($query);
+
+if (!$result) {
+    die("Erro na query: " . $con->error);
 }
-
-$idFuncionario = $_SESSION['id_funcionario'];
-
-$query = "SELECT a.id_alerta, a.mensagem, u.nome AS nome_funcionario
-          FROM alertas a
-          JOIN usuarios u ON u.id_usuario = a.id_funcionario
-          WHERE a.id_funcionario = ?";
-
-$stmt = $con->prepare($query);
-$stmt->bind_param("i", $idFuncionario);
-$stmt->execute();
-$result = $stmt->get_result();
 
 if ($result->num_rows > 0):
     while ($alertas = $result->fetch_assoc()):
@@ -97,46 +91,46 @@ if ($result->num_rows > 0):
                     <md-icon class="route-icon">train</md-icon>
                 </div>
                 <div class="route-info">
-                    <h3 class="route-name"><?= htmlspecialchars($alertas['mensagem']) ?></h3>
-                    <p class="route-line"><?= htmlspecialchars($alertas['nome_funcionario']) ?></p>
+                    <h3 class="route-name"><?= htmlspecialchars($alertas['id_alerta']) ?></h3>
+                    <!-- Exibe o nome do funcionário em vez do id -->
+                    <p class="route-line"><?= htmlspecialchars($alertas['nome_funcionario'] ?? 'Desconhecido') ?></p>
                 </div>
                 <md-chip label="Ativo" class="status-chip status-on-time">
                     <md-icon slot="icon">check_circle</md-icon>
                 </md-chip>
             </div>
 
+            <div class="route-details">
+                <div class="route-path">
+                    <span class="station">Informações</span>
+                    <md-icon class="path-arrow">arrow_forward</md-icon>
+                    <span class="station"><?= htmlspecialchars($alertas['descricao_alerta']) ?></span>
+                </div>
+            </div>
 
-                            <div class="route-details">
-                                <div class="route-path">
-                                    <span class="station">Informações</span>
-                                    <md-icon class="path-arrow">arrow_forward</md-icon>
-                                    <span class="station"><?= htmlspecialchars($alertas['descricao_alerta']) ?></span>
-                                </div>
-                            </div>
+            <div class="route-actions">
+                <md-text-button onclick="editTrain('<?= htmlspecialchars($alertas['descricao_alerta']) ?>')">
+                    <md-icon slot="icon">edit</md-icon>
+                    Editar
+                </md-text-button>
+                <a href="../php/excluir_alerta.php?id=<?= htmlspecialchars($alertas['id_alerta']) ?>"
+                   onclick="return confirm('Deseja mesmo excluir este alerta?')">
+                    <md-text-button class="delete-btn">
+                        <md-icon slot="icon">delete</md-icon>
+                        Excluir
+                    </md-text-button>
+                </a>
+            </div>
+        </div>
+    </md-card>
+<?php
+    endwhile;
+else:
+    echo "<p style='text-align:center;'>Nenhum alerta encontrado.</p>";
+endif;
 
-                            <div class="route-actions">
-                                <md-text-button onclick="editTrain('<?= htmlspecialchars($alertas['descricao_alerta']) ?>')">
-                                    <md-icon slot="icon">edit</md-icon>
-                                    Editar
-                                </md-text-button>
-                                <a href="../php/excluir_alerta.php?id=<?= $alerta['id_alerta'] ?>"
-                                        onclick="return confirm('Deseja mesmo excluir este alerta?')">
-                                        <md-text-button class="delete-btn">
-                                            <md-icon slot="icon">delete</md-icon>
-                                            Excluir
-                                        </md-text-button>
-                                    </a>
-                            </div>
-                        </div>
-                    </md-card>
-            <?php
-                endwhile;
-            else:
-                echo "<p style='text-align:center;'>Nenhum alerta encontrado.</p>";
-            endif;
-
-            $con->close();
-            ?>
+$con->close();
+?>
 
         </div>
 
