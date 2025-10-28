@@ -8,7 +8,7 @@ $stmt = $con->prepare("DELETE FROM estacao WHERE id_estacao = ?");
 $stmt->bind_param("i", $codigo);
 
 if ($stmt->execute()) {
-    header("Location: php/excluir_estacao.php");
+    header("Location: ../php/listar_estacao.php");
     exit;
 } else {
     echo "Erro ao excluir a estação: " . $stmt->error;
