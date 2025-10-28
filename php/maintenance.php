@@ -69,7 +69,15 @@
             <?php
             require_once('db.php');
 
-            $query = "SELECT * FROM alertas";
+            $query = "SELECT 
+            a.id_alerta, 
+            a.descricao_alerta, 
+            a.id_funcionario,
+            a.id_funcionario_recebe,
+            u.username_usuario
+          FROM alertas a
+          JOIN usuario u ON u.id_usuario = a.id_funcionario";
+
             $result = $con->query($query);
 
             if (!$result) {
