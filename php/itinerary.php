@@ -53,16 +53,6 @@
                 <p class="page-subtitle">Visualize e gerencie todos os itinerários</p>
             </div>
 
-            <!-- Action Bar -->
-            <div class="action-bar">
-                <md-filled-button id="add-route-btn" onclick="window.location.href='?page=add_itinerary.php'">
-                    <md-icon slot="icon">add</md-icon>
-                    Novo Itinerário
-                </md-filled-button>
-
-
-            </div>
-
             <!-- Filters Panel (Initially Hidden) -->
             <div id="filters-panel" class="filters-panel" style="display: none;">
                 <div class="filters-content">
@@ -146,10 +136,8 @@
             <!--  Fim 1º Card  -->
         </section>
 
-                    <md-fab class="nxt-btn" label="Abrir chamado de manutenção"
-            onclick="window.location.href='?page=maintenance-requests.php'">
-            <md-icon slot="icon">add</md-icon>
-        </md-fab>
+        <md-filled-button id="add-route-btn" onclick="window.location.href='?page=add_itinerary.php'">
+            <md-icon slot="icon">add</md-icon>Novo Itinerário</md-filled-button>
 
     </main>
 
