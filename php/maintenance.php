@@ -70,13 +70,13 @@
             require_once('db.php');
 
             $query = "SELECT 
-    a.id_alerta, 
-    a.descricao_alerta, 
-    remetente.username_usuario AS nome_remetente,
-    destinatario.username_usuario AS nome_destinatario
-FROM alertas a
-JOIN usuario remetente ON remetente.id_usuario = a.id_funcionario
-JOIN usuario destinatario ON destinatario.id_usuario = a.id_funcionario_recebe;";
+                a.id_alerta, 
+                a.descricao_alerta, 
+                remetente.username_usuario AS nome_remetente,
+                destinatario.username_usuario AS nome_destinatario
+            FROM alertas a
+            JOIN usuario remetente ON remetente.id_usuario = a.id_funcionario
+            JOIN usuario destinatario ON destinatario.id_usuario = a.id_funcionario_recebe;";
 
             $result = $con->query($query);
 
@@ -104,7 +104,7 @@ JOIN usuario destinatario ON destinatario.id_usuario = a.id_funcionario_recebe;"
 
                             <div class="route-details">
                                 <div class="route-path">
-                                    <span class="station">Informações</span>
+                                    <span class="station">Descrição do alerta</span>
                                     <md-icon class="path-arrow">arrow_forward</md-icon>
                                     <span class="station"><?= htmlspecialchars($alertas['descricao_alerta']) ?></span>
                                 </div>
@@ -250,7 +250,7 @@ JOIN usuario destinatario ON destinatario.id_usuario = a.id_funcionario_recebe;"
         </md-fab>
 
 
-        <md-fab class="nxt-btn" label="Enviar um novo Alerta"
+        <md-fab class="nxt-btn" label="Enviar um novo alerta"
             onclick="window.location.href='?page=alerts-requests.php'">
             <md-icon slot="icon">add</md-icon>
         </md-fab>
