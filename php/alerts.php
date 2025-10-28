@@ -60,7 +60,7 @@
         <section class="page-header">
             <div class="header-content">
                 <h1 class="page-title">Alertas e Manutenções</h1>
-                <p class="page-subtitle">Veja os trens e trajetos que estão com avisos ativos</p>
+                <p class="page-subtitle">Veja os alertas recentes</p>
             </div>
         </section>
 
