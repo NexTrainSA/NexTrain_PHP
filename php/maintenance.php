@@ -69,105 +69,39 @@
         <section class="routes-grid-section">
             <div class="routes-grid">
 
-                <!-- Card 1 -->
+                <!-- Teste -->
+                <?php 
+                include_once('listar_chamados_manutencao.php');
+                foreach ($chamados as $linha): ?>
                 <md-card class="route-alert-card thunderstorm">
                     <div class="route-card-content">
                         <div class="route-header">
-                            <div class="route-icon-wrapper">
-                                <md-icon class="route-icon">train</md-icon>
-                            </div>
-                            <div class="route-info">
-                                <h3 class="route-name">DB 8598</h3>
-                                <p class="route-line">Linha Azul</p>
-                            </div>
-                            <md-chip label="Trovoada no trajeto" class="status-chip alert-thunder">
-                                <md-icon slot="icon">bolt</md-icon>
-                            </md-chip>
-                        </div>
-                        <p class="alert-description">Alerta de tempestade detectado entre Estação Central e Terminal
-                            Norte.</p>
-                    </div>
-                    <md-text-button>
-                        <md-icon slot="icon">delete</md-icon>
-                        Excluir
-                    </md-text-button>
-                </md-card>
-
-                <!-- Card 2 -->
-                <md-card class="route-alert-card obstacle">
-                    <div class="route-card-content">
-                        <div class="route-header">
-                            <div class="route-icon-wrapper">
-                                <md-icon class="route-icon">train</md-icon>
-                            </div>
-                            <div class="route-info">
-                                <h3 class="route-name">DB 9360</h3>
-                                <p class="route-line">Linha Verde</p>
-                            </div>
-                            <md-chip label="Objeto no trilho" class="status-chip alert-obstacle">
-                                <md-icon slot="icon">warning</md-icon>
-                            </md-chip>
-                        </div>
-                        <p class="alert-description">Sensor detectou um objeto obstruindo o trilho próximo à Estação
-                            Sul.</p>
-                    </div>
-                    <md-text-button>
-                        <md-icon slot="icon">delete</md-icon>
-                        Excluir
-                    </md-text-button>
-                </md-card>
-
-                <!-- Card 3 -->
-                <md-card class="route-alert-card mechanical">
-                    <div class="route-card-content">
-                        <div class="route-header">
-                            <div class="route-icon-wrapper">
-                                <md-icon class="route-icon">train</md-icon>
-                            </div>
-                            <div class="route-info">
-                                <h3 class="route-name">DB 7521</h3>
-                                <p class="route-line">Linha Vermelha</p>
-                            </div>
-                            <md-chip label="Falha mecânica" class="status-chip alert-mechanical">
-                                <md-icon slot="icon">build</md-icon>
-                            </md-chip>
-                        </div>
-                        <p class="alert-description">O trem apresentou falha mecânica e está parado no Distrito
-                            Industrial.</p>
-                    </div>
-                    <md-text-button>
-                        <md-icon slot="icon">delete</md-icon>
-                        Excluir
-                    </md-text-button>
-                </md-card>
-
-                <!-- Card 4 -->
-                <md-card class="route-alert-card accident">
-                    <div class="route-card-content">
-                        <div class="route-header">
-                            <div class="route-icon-wrapper">
-                                <md-icon class="route-icon">train</md-icon>
-                            </div>
-                            <div class="route-info">
-                                <h3 class="route-name">DB 4182</h3>
-                                <p class="route-line">Linha Amarela</p>
-                            </div>
-                            <md-chip label="Acidente detectado" class="status-chip alert-accident">
-                                <md-icon slot="icon">emergency</md-icon>
-                            </md-chip>
-                        </div>
-                        <p class="alert-description">Acidente registrado próximo ao Centro Histórico. Equipe a caminho.
-                        </p>
-                    </div>
-                    <div class="route-actions">
-                        <md-text-button>
-                            <md-icon slot="icon">delete</md-icon>
-                            Excluir
-                        </md-text-button>
-                    </div>
-                </md-card>
+                        <div class="route-icon-wrapper">
+                <md-icon class="route-icon">train</md-icon>
             </div>
 
+            <div class="route-info">
+                <h3 class="route-name"><?= htmlspecialchars($linha['nome_trem']) ?></h3>
+            </div>
+            <md-chip label="<?= htmlspecialchars($linha['username_usuario']) ?>" 
+                     class="status-chip alert-thunder">
+                <md-icon slot="icon">build</md-icon>
+            </md-chip>
+        </div>
+
+        <p class="alert-description">
+            <?= htmlspecialchars($linha['descricao_problema']) ?>
+        </p>
+    </div>
+    <a href="php/excluir_chamados.php?id=<?= $linha['ordem_servico'] ?>"
+                                        onclick="return confirm('Deseja mesmo excluir este chamado?')">
+                                        <md-text-button class="delete-btn">
+                                            <md-icon slot="icon">delete</md-icon>
+                                            Excluir
+                                        </md-text-button>
+                                    </a>
+</md-card>
+<?php endforeach; ?>
 
         </section>
 

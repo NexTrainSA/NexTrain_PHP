@@ -57,7 +57,7 @@
             </div>
         </section>
 
-        <!-- Quick Stats Cards -->
+        <!-- Quick Stats Cards 
         <section class="stats-section">
             <div class="stats-grid">
                 <md-card class="stat-card">
@@ -90,7 +90,7 @@
                     </div>
                 </md-card>
             </div>
-        </section>
+        </section>-->
 
         <!-- Your Routes Section -->
         <section class="routes-section">
@@ -130,11 +130,45 @@
 
                 ?>
             </div>
-
-
         </section>
 
-        <!-- Alerts Section -->
+        <section class="routes-section">
+            <div class="section-header">
+                <h2 class="section-title">Seus Alertas</h2>
+                <md-text-button onclick="document.location.href = '?page=alerts.php'">
+                    Ver todos
+                    <md-icon slot="icon">arrow_forward</md-icon>
+                </md-text-button>
+            </div>
+
+            <div class="routes-grid">
+                <?php
+                include_once("php/listar_alertas.php");
+                foreach($alertas as $linha) {
+                    echo('
+                <md-card class="route-card">
+                    <div class="route-content">
+                        <div class="route-header">
+                            <md-icon class="route-icon">train</md-icon>
+                            <div class="route-info">
+                                <h3 class="route-name">De: '.$linha["nome_remetente"].'</h3>
+                                <p class="route-description">'.$linha["descricao_alerta"].'</p>
+                            </div>
+                        </div>
+                        <div class="route-status">
+                            <md-chip label="No horário" class="status-chip status-on-time">
+                                <md-icon slot="icon">check_circle</md-icon>
+                            </md-chip>
+                        </div>
+                    </div>
+                </md-card>
+                ');
+                }
+                ?>
+            </div>
+        </section>
+
+        <!-- Alerts Section
         <section class="alerts-section">
             <div class="section-header">
                 <h2 class="section-title">Alertas Recentes</h2>
@@ -173,7 +207,7 @@
                     </div>
                 </md-card>
             </div>
-        </section>
+        </section> -->
 
 
         <!-- Quick Actions -->

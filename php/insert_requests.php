@@ -18,4 +18,4 @@ if ($stmt->execute()) {
 $stmt->close();
 $con->close();
 
-header("Location: maintenance.php");
+header("Location:../index.php?page=maintenance.php");

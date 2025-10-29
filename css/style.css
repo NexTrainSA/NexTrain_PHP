@@ -45,7 +45,7 @@ main {
 }
 
 body.dark-mode {
-    background-color: #687b8f;
+    background-color: #8ecae6;  
     ;
     color: #FAFAFA !important;
 }
@@ -1952,4 +1952,3 @@ body.icons-loaded .route-icon::before,
 body.icons-loaded .alert-icon::before {
     display: none;
 }
-

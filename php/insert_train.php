@@ -18,4 +18,4 @@ if ($stmt->execute()) {
 $stmt->close();
 $con->close();
 
-header("Location: trains.php");
+header("Location: ../index.php?page=trains.php");

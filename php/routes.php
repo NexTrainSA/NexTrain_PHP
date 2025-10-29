@@ -129,7 +129,7 @@
                 Editar
             </md-text-button>
             
-            <a href="../php/excluir_rota.php?id='.$route['id_rota'].'" onclick="return confirm(\'Deseja mesmo excluir esta rota?\')">
+            <a href="php/excluir_rota.php?id='.$route['id_rota'].'" onclick="return confirm(\'Deseja mesmo excluir esta rota?\')">
                 <md-text-button class="delete-btn">
                     <md-icon slot="icon">delete</md-icon>Excluir
                 </md-text-button>

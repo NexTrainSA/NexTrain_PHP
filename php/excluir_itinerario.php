@@ -8,7 +8,7 @@ $stmt = $con->prepare("DELETE FROM itinerario WHERE id_itinerario = ?");
 $stmt->bind_param("i", $codigo);
 
 if ($stmt->execute()) {
-    header("Location: itinerary.php");
+    header("Location: ../index.php?page=itinerary.php");
     exit;
 } else {
     echo "Erro ao excluir a rota: " . $stmt->error;

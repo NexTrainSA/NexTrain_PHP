@@ -121,7 +121,7 @@
                                 <md-icon slot="icon">edit</md-icon>
                                 Editar
                             </md-text-button>
-                            <a href="../php/excluir_itinerario.php?id='.$itinerario['id_itinerario'].'" onclick="return confirm(\'Deseja mesmo excluir este itinerário?\')">
+                            <a href="php/excluir_itinerario.php?id='.$itinerario['id_itinerario'].'" onclick="return confirm(\'Deseja mesmo excluir este itinerário?\')">
                                 <md-text-button class="delete-btn">
                                     <md-icon slot="icon">delete</md-icon>Excluir
                                 </md-text-button>

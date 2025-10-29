@@ -115,7 +115,7 @@
                                     <md-icon slot="icon">edit</md-icon>
                                     Editar
                                 </md-text-button>
-                                <a href="../php/excluir_alerta.php?id=<?= $alertas['id_alerta'] ?>"
+                                <a href="php/excluir_alerta.php?id=<?= $alertas['id_alerta'] ?>"
                                         onclick="return confirm('Deseja mesmo excluir este alerta?')">
                                         <md-text-button class="delete-btn">
                                             <md-icon slot="icon">delete</md-icon>

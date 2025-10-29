@@ -185,6 +185,37 @@ body.dark-mode .alert-accident {
     background-color: #EF535022;
     color: #E57373;
 }
+/* Estilos para a mensagem de alerta */
+.alert-container {
+    padding: 15px 20px;
+    margin: 10px 0 20px 0;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    /* Ajuste para centralizar, se necessário */
+    max-width: 95%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alert-container p {
+    margin: 0;
+}
+
+/* Cor para Sucesso */
+.alert-container.success {
+    background-color: #e6f7d4; /* Fundo verde claro */
+    color: #38761d; /* Texto verde escuro */
+    border: 1px solid #73b34b;
+}
+
+/* Cor para Erro */
+.alert-container.error {
+    background-color: #fcebeb; /* Fundo vermelho claro */
+    color: #cc0000; /* Texto vermelho escuro */
+    border: 1px solid #e06666;
+}
 
 /* Responsividade mantém as mesmas regras */
 @media (max-width: 400px) {

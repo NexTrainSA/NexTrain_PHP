@@ -30,4 +30,4 @@ foreach ($CONNECTIONS as $id_connection) {
 
 $con->close();
 
-header("Location: stations.php");
+header("Location: ../index.php?page=stations.php");
