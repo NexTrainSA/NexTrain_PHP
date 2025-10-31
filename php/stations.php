@@ -156,10 +156,11 @@ if (isset($_GET['message'])) {
                     Carregar Mais Estações
                 </md-outlined-button>
             </div>
-            <?php
+        </section>
+
+        <?php
                             include("php/graph_view.php");
             ?>
-        </section>
 
     </main>
 

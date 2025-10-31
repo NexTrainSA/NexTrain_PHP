@@ -45,6 +45,39 @@
 </head>
 
 <body>
+    <?php
+// Adicione a lógica de exibição de mensagens de sucesso/erro aqui:
+if (isset($_GET['message'])) {
+    $message_type = $_GET['message'];
+    $alert_message = '';
+    $alert_class = '';
+
+    switch ($message_type) {
+        case 'edicao_sucesso':
+            $alert_message = ' Rota editada e salva com sucesso!';
+            $alert_class = 'success';
+            break;
+        case 'erro_dados_faltando':
+            $alert_message = ' Erro ao editar: Dados de rota incompletos.';
+            $alert_class = 'error';
+            break;
+        case 'erro_db':
+            $error_details = $_GET['details'] ?? 'Verifique o log de erros do servidor.';
+            $alert_message = ' Erro no banco de dados ao salvar a rota. Detalhes: ' . htmlspecialchars($error_details);
+            $alert_class = 'error';
+            break;
+        default:
+            $alert_message = '';
+            break;
+    }
+
+    if (!empty($alert_message)) {
+        echo '<div class="alert-container ' . $alert_class . '">';
+        echo '    <p>' . $alert_message . '</p>';
+        echo '</div>';
+    }
+}
+?>
 
     <main class="routes-container">
         <!-- Page Header -->
@@ -124,10 +157,12 @@
         </div>
 
         <div class="route-actions">
-            <md-text-button>
-                <md-icon slot="icon">edit</md-icon>
-                Editar
-            </md-text-button>
+            <a href="?page=edit_route.php&id='.$route['id_rota'].'" title="Editar Itinerário">
+                            <md-text-button>
+                             <md-icon slot="icon">edit</md-icon>
+                            Editar
+                            </md-text-button>
+                            </a>
             
             <a href="php/excluir_rota.php?id='.$route['id_rota'].'" onclick="return confirm(\'Deseja mesmo excluir esta rota?\')">
                 <md-text-button class="delete-btn">

@@ -1,6 +1,7 @@
 <?php
 
 require_once('db.php');
+$con = get_con();
 
 $stmt = $con->prepare("SELECT rota.*, it.origem_itinerario AS id_orig, it.destino_itinerario AS id_dest, est_1.nome_estacao AS n1, est_2.nome_estacao AS n2 FROM rota 
 	JOIN itinerario AS it ON itinerario_rota = it.id_itinerario
@@ -52,7 +53,7 @@ function render_route_path($route) {
 
     $traj = explode(",",$route["caminho_rota"]);
 
-    $traj = array_merge(array($route["id_orig"]), $traj);
+    $traj = array_merge(array($route["id_orig"]), $traj, array($route["id_dest"]));
 
     foreach ($traj as $index => $station_id) {
         global $con;

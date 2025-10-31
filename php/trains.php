@@ -52,14 +52,14 @@
 
         <section class="page-header">
             <div class="header-content">
-                <h1 class="page-title">Pra qual lugar você vai?</h1>
-                <p class="page-subtitle">Visualize e gerencie todas as suas rotas de trem</p>
+                <h1 class="page-title">Lista de Trens</h1>
+                <p class="page-subtitle">Visualize e gerencie todos os seus trens</p>
             </div>
 
             <!-- Action Bar -->
             <div class="action-bar">
                 <div class="search-and-filters">
-                    <md-outlined-text-field id="route-search" label="Buscar rotas" type="search" class="search-field">
+                    <md-outlined-text-field id="route-search" label="Buscar trens" type="search" class="search-field">
                         <md-icon slot="leading-icon">search</md-icon>
                     </md-outlined-text-field>
 

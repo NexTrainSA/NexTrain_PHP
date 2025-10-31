@@ -59,7 +59,7 @@
         <!-- Cabeçalho -->
         <section class="page-header">
             <div class="header-content">
-                <h1 class="page-title">Alertas e Manutenções</h1>
+                <h1 class="page-title">Alertas</h1>
                 <p class="page-subtitle">Veja os alertas recentes</p>
             </div>
         </section>

@@ -7,12 +7,12 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
     die("ID do itinerário não fornecido.");
 }
 
-$id_estacao = $_GET['id'];
+$id_itinerario = $_GET['id'];
 
 
 $con = get_con(); 
 
-$id_estacao_safe = mysqli_real_escape_string($con, $id_itinerario); 
+$id_itinerario_safe = mysqli_real_escape_string($con, $id_itinerario); 
 
 $query = "SELECT origem_itinerario, destino_itinerario FROM itinerario WHERE id_itinerario = '$id_itinerario_safe'";
 $result = mysqli_query($con, $query);
@@ -21,7 +21,7 @@ if (!$result || mysqli_num_rows($result) === 0) {
     die("Itinerário não encontrado ou erro na consulta.");
 }
 
-$estacao = mysqli_fetch_assoc($result);
+$itinerario = mysqli_fetch_assoc($result);
 mysqli_free_result($result);
 
 ?>
@@ -32,26 +32,39 @@ mysqli_free_result($result);
 </head>
 <body>
     <main class="edit-container">
-        <h1>Editar Estação: <?php echo htmlspecialchars($itinerario['origem_itinerario']); ?></h1>
-        
-        <form action="php/process_edit_station.php" method="POST">
-            <input type="hidden" name="id_itinerario" value="<?php echo htmlspecialchars($id_itinerario); ?>">
 
-            <label for="origem_itinerario">Nome da Origem:</label>
-            <md-outlined-text-field 
-                id="origem_itinerario" 
-                name="origem_itinerario" 
-                value="<?php echo htmlspecialchars($estacao['origem_itinerario']); ?>" 
-                required>
-            </md-outlined-text-field>
-            
-            <label for="destino_itinerario">Status:</label>
-            <select id="status_estacao" name="status_estacao" required>
-                <option value="OPEN" <?php if ($estacao['status_estacao'] == 'aberta') echo 'selected'; ?>>ABERTA</option>
-                <option value="PERMANENTLY_CLOSED" <?php if ($estacao['status_estacao'] == 'fechada') echo 'selected'; ?>>FECHADA </option>
-                <option value="UNKNOWN" <?php if ($estacao['status_estacao'] == 'unknown') echo 'selected'; ?>> DESCONHECIDO </option>
-                <option value="MAINTENANCE" <?php if ($estacao['status_estacao'] == 'manutencao') echo 'selected'; ?>>MANUTENÇÃO </option>
-            </select>
+
+        <h1>Editar Itinerário: <?php echo htmlspecialchars($itinerario['origem_itinerario']); ?></h1>
+
+        <form action="php/process_edit_itinerary.php" method="POST">
+            <input type="hidden" name="id_itinerario" value="<?php echo htmlspecialchars($id_itinerario); ?>">
+        <label for="origem_itinerario">Nome da Origem:</label>
+
+        <md-outlined-select id="origem_itinerario" name="origem_itinerario">
+        <?php
+            include_once("php/listar_estacao.php");
+
+            foreach($estacoes as $estacao) {
+                echo '<md-select-option value="'.htmlspecialchars($estacao['id_estacao']).'">
+                    <div slot="headline">'.htmlspecialchars($estacao['nome_estacao']).'</div>
+                </md-select-option>';
+            }
+        ?>
+
+        </md-outlined-select>
+        
+        <label for="destino_itinerario">Nome do Destino:</label>
+        <md-outlined-select id="destino_itinerario" name="destino_itinerario">
+        <?php
+
+            foreach($estacoes as $estacao) {
+                echo '<md-select-option value="'.htmlspecialchars($estacao['id_estacao']).'">
+                    <div slot="headline">'.htmlspecialchars($estacao['nome_estacao']).'</div>
+                </md-select-option>';
+            }
+        ?>
+
+        </md-outlined-select>
             
             <md-filled-button type="submit">
                 <md-icon slot="icon">save</md-icon>
