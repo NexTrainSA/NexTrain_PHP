@@ -11,7 +11,6 @@ $id_rota = $_GET['id'];
 $id_rota_safe = mysqli_real_escape_string($con, $id_rota); 
 
 // 2. Buscar dados ATUAIS da ROTA
-// Buscando os campos 'itinerario_rota' (ID) e 'caminho_rota' (String de IDs)
 $query_rota = "SELECT itinerario_rota, caminho_rota FROM rota WHERE id_rota = '$id_rota_safe'";
 $result_rota = mysqli_query($con, $query_rota);
 
@@ -23,7 +22,6 @@ mysqli_free_result($result_rota);
 
 
 // 3. Buscar TODOS os Itinerários para o SELECT
-// Usamos JOINs para buscar o nome das estações de Origem e Destino do itinerário
 $query_itinerarios = "SELECT 
                         i.id_itinerario, 
                         e_origem.nome_estacao AS nome_origem, 
@@ -36,11 +34,21 @@ $query_itinerarios = "SELECT
                         estacao AS e_destino ON i.destino_itinerario = e_destino.id_estacao";
                         
 $result_itinerarios = mysqli_query($con, $query_itinerarios);
-// Se houver erro, inicializa como array vazio para não quebrar a página
 $itinerarios = $result_itinerarios ? mysqli_fetch_all($result_itinerarios, MYSQLI_ASSOC) : [];
 if ($result_itinerarios) {
     mysqli_free_result($result_itinerarios);
 }
+
+// 4. Buscar TODAS as Estações para um possível SELECT de estação intermediária
+$query_estacoes = "SELECT id_estacao, nome_estacao FROM estacao ORDER BY nome_estacao ASC";
+$result_estacoes = mysqli_query($con, $query_estacoes);
+$estacoes = $result_estacoes ? mysqli_fetch_all($result_estacoes, MYSQLI_ASSOC) : [];
+if ($result_estacoes) {
+    mysqli_free_result($result_estacoes);
+}
+
+// O ID da(s) estação(ões) intermediária(s) atual(is)
+$caminho_ids = array_filter(explode(',', $rota['caminho_rota']));
 ?>
 
 <!DOCTYPE html>
@@ -49,8 +57,6 @@ if ($result_itinerarios) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Rota: <?php echo htmlspecialchars($id_rota); ?></title>
-    
-    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
     </head>
 <body>
     <main class="edit-container">
@@ -59,17 +65,15 @@ if ($result_itinerarios) {
         <form action="php/process_edit_route.php" method="POST">
             <input type="hidden" name="id_rota" value="<?php echo htmlspecialchars($id_rota); ?>">
             
-            <label for="itinerario_rota">Itinerário Associado:</label>
+            <label for="itinerario_rota">Indique o terminal em que está e o seu destino : </label>
             <md-outlined-select id="itinerario_rota" name="itinerario_rota" required>
             <?php
+            // Lógica para preencher e pré-selecionar o Itinerário (correto)
             if (empty($itinerarios)) {
                 echo '<md-select-option value="" disabled selected><div slot="headline">Nenhum itinerário encontrado</div></md-select-option>';
             } else {
                 foreach($itinerarios as $itinerario) {
-                    // Monta o nome de exibição: Itinerário X (Origem -> Destino)
                     $display_name = "Itinerário {$itinerario['id_itinerario']} ({$itinerario['nome_origem']} -> {$itinerario['nome_destino']})";
-                    
-                    // CRUCIAL: Pré-selecionar o itinerário atual
                     $selected = ($rota['itinerario_rota'] == $itinerario['id_itinerario']) ? 'selected' : '';
                     
                     echo "<md-select-option value=\"{$itinerario['id_itinerario']}\" {$selected}>
@@ -79,16 +83,35 @@ if ($result_itinerarios) {
             }
             ?>
             </md-outlined-select>
-
-            <label for="caminho_rota">Estações do Caminho (IDs separados por vírgula):</label>
-            <md-outlined-text-field 
-                id="caminho_rota" 
-                name="caminho_rota" 
-                value="<?php echo htmlspecialchars($rota['caminho_rota']); ?>" 
-                required
-                placeholder="Ex: 10,12,15">
-            </md-outlined-text-field>
             
+            <?php 
+            if (empty($caminho_ids)) {
+                // Se não há estações intermediárias, exibe um campo vazio para adição
+                $caminho_ids = ['']; // Adiciona um campo de seleção vazio
+            }
+
+            foreach($caminho_ids as $index => $current_id) {
+                // O nome do campo é crucial: 'caminho_rota[]' transforma em um array no POST
+                $field_name = "caminho_rota[]";
+                $field_label = "Estação entre o caminho" . ($index + 1);
+                
+                echo "<label for='interm_{$index}'>{$field_label}:</label>";
+                echo "<md-outlined-select id='interm_{$index}' name='{$field_name}' data-index='{$index}'>";
+                
+                // Opção vazia (Permite remover a estação)
+                echo '<md-select-option value=""><div slot="headline">Nenhuma</div></md-select-option>';
+
+                // Opções com todas as estações
+                foreach($estacoes as $estacao) {
+                    $selected = (string)$current_id === (string)$estacao['id_estacao'] ? 'selected' : '';
+                    
+                    echo "<md-select-option value=\"{$estacao['id_estacao']}\" {$selected}>
+                            <div slot=\"headline\">{$estacao['nome_estacao']}</div>
+                          </md-select-option>";
+                }
+                echo "</md-outlined-select>";
+            }
+            ?>
             <md-filled-button type="submit">
                 <md-icon slot="icon">save</md-icon>
                 Salvar Alterações
