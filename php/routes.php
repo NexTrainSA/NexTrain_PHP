@@ -157,7 +157,7 @@ if (isset($_GET['message'])) {
         </div>
 
         <div class="route-actions">
-            <a href="?page=edit_route.php&id='.$route['id_rota'].'" title="Editar Itinerário">
+            <a href="?page=edit_route.php&id='.$route['id_rota'].'" title="Editar Rotas">
                             <md-text-button>
                              <md-icon slot="icon">edit</md-icon>
                             Editar

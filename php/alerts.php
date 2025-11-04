@@ -111,17 +111,19 @@
                             </div>
 
                             <div class="route-actions">
-                                <md-text-button onclick="editTrain('<?= htmlspecialchars($alertas['descricao_alerta']) ?>')">
-                                    <md-icon slot="icon">edit</md-icon>
-                                    Editar
-                                </md-text-button>
+                                <a href="php/edit_alert.php?id_alerta=<?php echo htmlspecialchars($alertas['id_alerta']); ?>">
+    <md-text-button class="edit-btn">
+        <md-icon slot="icon">edit</md-icon>
+        Editar
+    </md-text-button>
+</a>
                                 <a href="php/excluir_alerta.php?id=<?= $alertas['id_alerta'] ?>"
-                                        onclick="return confirm('Deseja mesmo excluir este alerta?')">
-                                        <md-text-button class="delete-btn">
-                                            <md-icon slot="icon">delete</md-icon>
-                                            Excluir
-                                        </md-text-button>
-                                    </a>
+                                    onclick="return confirm('Deseja mesmo excluir este alerta?')">
+                                    <md-text-button class="delete-btn">
+                                        <md-icon slot="icon">delete</md-icon>
+                                        Excluir
+                                    </md-text-button>
+                                </a>
                             </div>
                         </div>
                     </md-card>
