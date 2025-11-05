@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nós</title>
+    <meta charset="UTF-8">
+    <!--  Fontes e Estilos:  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="importmap">
+        {
+            "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+            }
+        }
+        </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+            max-width: 85%;
+            margin: 1rem auto;
+            border-radius: 8px;
+        }
+
+        #search-box {
+            width: 85%;
+            max-width: 500px;
+            padding: 10px;
+            margin: 1rem auto;
+            display: block;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!doctype html>
+    <html lang="pt-BR">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>NexTrain — Sobre Nós</title>
+        <style>
+            
+            :root {
+                --bg: #f7f9fc;
+                --card: #ffffff;
+                --accent: #0b6efd;
+                --muted: #6b7280;
+                --radius: 14px;
+                --max-width: 1100px;
+                --gap: 24px;
+                font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            }
+
+            * {
+                box-sizing: border-box
+            }
+
+            body {
+                margin: 0;
+                background: var(--bg);
+                color: #0f1724;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                line-height: 1.6;
+                padding: 48px 20px;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                min-height: 100vh;
+            }
+
+            .card {
+                background: var(--card);
+                width: 100%;
+                max-width: var(--max-width);
+                border-radius: var(--radius);
+                box-shadow: 0 8px 30px rgba(12, 20, 40, 0.08);
+                padding: 38px;
+                display: grid;
+                grid-template-columns: 1fr 420px;
+                gap: var(--gap);
+                align-items: center;
+            }
+
+            .content h1 {
+                margin: 0 0 10px 0;
+                font-size: 28px;
+                letter-spacing: -0.2px;
+            }
+
+            .eyebrow {
+                display: inline-block;
+                font-weight: 600;
+                color: var(--accent);
+                font-size: 13px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+            }
+
+            .content p {
+                margin: 0 0 16px 0;
+                color: var(--muted)
+            }
+
+            .list {
+                margin-top: 8px;
+                padding-left: 18px;
+                color: var(--muted);
+            }
+
+            .right {
+                padding: 28px;
+                background: linear-gradient(180deg, rgba(11, 110, 253, 0.06), rgba(11, 110, 253, 0.03));
+                border-radius: 12px;
+                text-align: center;
+            }
+
+            .right h3 {
+                margin-top: 0
+            }
+
+            .pill {
+                display: inline-block;
+                padding: 8px 12px;
+                border-radius: 999px;
+                background: rgba(11, 110, 253, 0.12);
+                color: var(--accent);
+                font-weight: 600;
+                margin-bottom: 10px
+            }
+
+            .cta {
+                display: inline-block;
+                margin-top: 18px;
+                padding: 10px 16px;
+                border-radius: 10px;
+                text-decoration: none;
+                background: var(--accent);
+                color: white;
+                font-weight: 600;
+            }
+
+            @media (max-width:880px) {
+                .card {
+                    grid-template-columns: 1fr;
+                    padding: 26px
+                }
+
+                .right {
+                    order: -1
+                }
+            }
+        </style> 
+    </head>
+
+    <body>
+        <section class="content">
+        <article class="card" aria-labelledby="sobre-title"></article>
+            
+                <div class="eyebrow">Sobre o projeto</div>
+                <h1 id="sobre-title">NexTrain — Inovação e segurança no transporte ferroviário</h1>
+
+                <p><strong>O <em>NexTrain</em> é um projeto desenvolvido com o objetivo de unir inovação tecnológica e
+                        eficiência operacional no setor ferroviário.</strong> Nosso propósito é aprimorar o
+                    monitoramento e a segurança de trens e sistemas de transporte sobre trilhos por meio da Internet das
+                    Coisas (IoT), oferecendo soluções inteligentes e acessíveis para o acompanhamento em tempo real de
+                    alertas, sensores e manutenção.</p>
+
+                <p>O sistema foi concebido para otimizar a comunicação entre trens e centros de controle, possibilitando
+                    a detecção antecipada de falhas, o gerenciamento de dados de operação e a emissão de notificações
+                    automáticas para as equipes responsáveis. Com essa integração, o <strong>NexTrain</strong> contribui
+                    diretamente para a redução de riscos, aumento da eficiência operacional e melhoria da tomada de
+                    decisões no ambiente ferroviário.</p>
+
+                <p>Mais do que um projeto tecnológico, o <strong>NexTrain</strong> representa o compromisso com a
+                    inovação, segurança e sustentabilidade no transporte público. Nosso foco é oferecer uma ferramenta
+                    moderna e confiável que apoie empresas e operadores ferroviários na construção de um futuro mais
+                    conectado, inteligente e seguro para todos.</p>
+
+                <ul class="list">
+                    <li>Monitoramento em tempo real via IoT</li>
+                    <li>Detecção e notificação de falhas</li>
+                    <li>Suporte à manutenção preditiva</li>
+                </ul>
+            </section>
+
+            <aside class="right" aria-label="Resumo do projeto">
+                <div class="pill">NEXTRAIN</div>
+                <h3>Impacto e objetivo</h3>
+                <p style="color:var(--muted)">Aumentar a segurança, reduzir custos operacionais e permitir decisões mais
+                    rápidas e embasadas por dados nos sistemas ferroviários.</p>
+                <a class="cta" href="#">Saiba mais</a>
+            </aside>
+        </article>
+    </body>
+
+    </html>
+
+
+
+    <script src="./js/dark_mode.js"></script>
+    <script src="./js/sidebar.js"></script>
+
+</body>
