@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,8 +82,8 @@ if (isset($_GET['message'])) {
 }
 ?>
 
+<main class = "dashboard-container">
 <main class="routes-container">
-
     <main class="routes-container">
         <!-- Page Header -->
         <section class="page-header">
@@ -184,6 +182,8 @@ if (isset($_GET['message'])) {
                     Novo Itinerário
                 </md-filled-button>
 
+    </main>
+    </main>
     </main>
 
 

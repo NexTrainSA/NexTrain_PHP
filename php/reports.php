@@ -84,9 +84,9 @@ $con->close();
         }
     </style>
 </head>
-
 <body>
-
+    
+<main style= "max-width: 1200px; margin: 0 auto; padding: 24px 16px; gap: 32px;">
     <main class="routes-container">
         <section class="page-header">
             <div class="header-content">
@@ -167,7 +167,8 @@ $con->close();
                 }
             });
         </script>
-
+    </main>
+    </main>
 </body>
 
 </html>

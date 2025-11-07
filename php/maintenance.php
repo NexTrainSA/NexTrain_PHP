@@ -55,6 +55,7 @@
 </head>
 
 <body>
+    <main class = "dashboard-container">
     <main class="routes-container">
         <!-- Cabeçalho -->
         <section class="page-header">
@@ -116,6 +117,7 @@
         <script src="./js/dark_mode.js"></script>
         <script src="./js/sidebar.js"></script>
         <script src="./js/icon-loader.js"></script>
+        </main>
+    </main>
 </body>
-
 </html>

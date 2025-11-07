@@ -48,8 +48,8 @@
 
 <body>
 
+<main class = "dashboard-container">
     <main class="routes-container">
-
         <section class="page-header">
             <div class="header-content">
                 <h1 class="page-title">Lista de Trens</h1>
@@ -188,6 +188,7 @@
             </div>
         </section>
     </main>
+</main>
 
     <!--  Scripts:  -->
     <script src="./js/icon-loader.js"></script>

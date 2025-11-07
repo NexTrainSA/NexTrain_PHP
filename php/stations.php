@@ -1,3 +1,38 @@
+<?php
+if (isset($_GET['message'])) {
+    $message_type = $_GET['message'];
+    $alert_message = '';
+    $alert_class = '';
+
+    switch ($message_type) {
+        case 'edicao_sucesso':
+            $alert_message = ' Estação editada e salva com sucesso!';
+            $alert_class = 'success';
+            break;
+        case 'erro_dados_faltando':
+            $alert_message = ' Erro ao editar: Dados incompletos.';
+            $alert_class = 'error';
+            break;
+        case 'erro_db':
+            $error_details = $_GET['details'] ?? 'Verifique o log de erros do servidor.';
+            $alert_message = ' Erro no banco de dados. Detalhes: ' . htmlspecialchars($error_details);
+            $alert_class = 'error';
+            break;
+      
+        default:
+            $alert_message = ''; 
+            break;
+    }
+
+   
+    if (!empty($alert_message)) {
+        echo '<div class="alert-container ' . $alert_class . '">';
+        echo '    <p>' . $alert_message . '</p>';
+        echo '</div>';
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,44 +81,9 @@
 </head>
 
 <body>
-    <?php
-// Verifica se há uma mensagem na URL
-if (isset($_GET['message'])) {
-    $message_type = $_GET['message'];
-    $alert_message = '';
-    $alert_class = '';
-
-    switch ($message_type) {
-        case 'edicao_sucesso':
-            $alert_message = ' Estação editada e salva com sucesso!';
-            $alert_class = 'success';
-            break;
-        case 'erro_dados_faltando':
-            $alert_message = ' Erro ao editar: Dados incompletos.';
-            $alert_class = 'error';
-            break;
-        case 'erro_db':
-            $error_details = $_GET['details'] ?? 'Verifique o log de erros do servidor.';
-            $alert_message = ' Erro no banco de dados. Detalhes: ' . htmlspecialchars($error_details);
-            $alert_class = 'error';
-            break;
-      
-        default:
-            $alert_message = ''; 
-            break;
-    }
-
-   
-    if (!empty($alert_message)) {
-        echo '<div class="alert-container ' . $alert_class . '">';
-        echo '    <p>' . $alert_message . '</p>';
-        echo '</div>';
-    }
-}
-?>
-
+ <main class = "dashboard-container">
     <main class="routes-container">
-        <!-- Page Header OPAAAAAA -->
+        <!-- Page Header -->
         <section class="page-header">
             <div class="header-content">
                 <h1 class="page-title">Lista de Estações</h1>
@@ -158,14 +158,14 @@ if (isset($_GET['message'])) {
             </div>
         </section>
 
-        <?php
+        <div class="including-map" style="max-width: 800px; margin: 0 auto; display: flex; justify-content: center; align-items: center;">
+               <?php
                             include("php/graph_view.php");
-            ?>
+            ?> 
+            </div>
+</main>
 
-    </main>
-
-
-
+    
     <!--  Scripts:  -->
     <script src="./js/icon-loader.js"></script>
     <script src="./js/dark_mode.js"></script>

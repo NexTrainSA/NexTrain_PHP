@@ -133,7 +133,7 @@
         </section>
 
         <section class="routes-section">
-             <div class="section-header">
+            <div class="section-header">
                 <h2 class="section-title">Seus Alertas</h2>
                 <md-text-button onclick="document.location.href = '?page=alerts.php'">
                     Ver todos
@@ -166,7 +166,22 @@
                 }
                 ?>
             </div>
-        </section> 
+        </section>
+
+        <section class="routes-section">
+            <div class="section-header">
+                <h2 class="section-title">Mapa das Estações</h2>
+                <md-text-button onclick="document.location.href = '?page=stations.php'">
+                    Ver mais
+                    <md-icon slot="icon">arrow_forward</md-icon>
+                </md-text-button>
+            </div>
+            <div class="including-map" style="max-width: 800px; margin: 0 auto; display: flex; justify-content: center; align-items: center;">
+               <?php
+                            include("php/graph_view.php");
+            ?> 
+            </div>
+        </section>
 
         <!-- Alerts Section
         <section class="alerts-section">
@@ -218,6 +233,11 @@
                     Agenda
                 </md-outlined-button> -->
 
+                <md-outlined-button onclick="document.location.href = '?page=user.php'">
+                    <md-icon slot="icon">person</md-icon>
+                    Área do Usuário
+                </md-outlined-button>
+
                 <md-outlined-button onclick="document.location.href = '?page=alerts.php'">
                     <md-icon slot="icon">build</md-icon>
                     Alertas
@@ -246,6 +266,11 @@
                 <md-outlined-button onclick="document.location.href = '?page=routes.php'">
                     <md-icon slot="icon">route</md-icon>
                     Rotas
+                </md-outlined-button>
+
+                <md-outlined-button onclick="document.location.href = '?page=about_us.html'">
+                    <md-icon slot="icon"></md-icon>
+                    Sobre Nós
                 </md-outlined-button>
 
                 <md-outlined-button onclick="document.location.href = '?page=trains.php'">

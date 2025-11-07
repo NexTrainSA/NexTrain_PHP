@@ -55,6 +55,7 @@
 </head>
 
 <body>
+    <main class = "dashboard-container">
     <main class="routes-container">
         <!-- Cabeçalho -->
         <section class="page-header">
@@ -146,7 +147,8 @@
             <md-icon slot="icon">add</md-icon>
         </md-fab>
 
-
+        </main>
+        </main>
         <!-- Scripts -->
         <script src="./js/dark_mode.js"></script>
         <script src="./js/sidebar.js"></script>
