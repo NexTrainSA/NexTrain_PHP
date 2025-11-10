@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa com Busca</title>
+    <meta charset="UTF-8">
+    <!--  Fontes e Estilos:  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="importmap">
+        {
+            "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+            }
+        }
+        </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+</head>
+
+<body>
+    <section class="content">
+        <h1>Visualização em tempo real</h1>
+        <hr>
+
+        <h2 id="stations-label">Estações</h2>
+        <div class="stations">
+            <div class="station" id="s1">
+                <h2>Estação S1</h2>
+                <p>Temperatura: <span id="temp-s1">0</span>°C</p>
+                <p>Umidade: <span id="humidity-s1">0</span>%</p>
+                <p>Luminosidade: <span id="luminosity-s1">0</span>lx</p>
+                <p>Sensor de Presença: <span id="presence-s1">0</span></p>
+                <p>Estado LED: <span id="led-state-s1">Desligado</span></p>
+                <p>LED Status (RGB): <span id="led-rgb-s1">Desligado</span></p>
+                <button id="toggle-led-s1">Alternar LED</button>
+            </div>
+
+            <div class="station" id="s2">
+                <h2>Estação S2</h2>
+                <p>Presença 2: <span id="presence2-s2">0</span></p>
+                <p>Presença 4: <span id="presence4-s2">0</span></p>
+                <p>Servo 3: <span id="servo-s2">Desligado</span></p>
+                <p>Iluminação: <span id="led-state-s2">Desligado</span></p>
+                <p>LED Status (RGB): <span id="led-rgb-s2">Desligado</span></p>
+                <button id="toggle-led-s2">Alternar LED</button>
+                <button id="toggle-servo-s2">Alternar Servo</button>
+            </div>
+
+            <div class="station" id="s3">
+                <h2>Estação S3</h2>
+                <p>Presença 3: <span id="presence3-s3">0</span></p>
+                <p>Iluminação: <span id="led-state-s3">Desligado</span></p>
+                <p>LED Status (RGB): <span id="led-rgb-s3">Desligado</span></p>
+                <button id="toggle-led-s3">Alternar LED</button>
+            </div>
+
+            <div class="station" id="s4">
+                <h2>Estação S4 (Trem)</h2>
+                <p>LED Status (RGB): <span id="led-rgb-s4">Desligado</span></p>
+            </div>
+        </div>
+
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 SA NexTrain. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./js/live.js"></script>
+    <script src="./js/dark_mode.js"></script>
+    <script src="./js/sidebar.js"></script>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        #stations-label {
+            text-align: center;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .stations {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .station {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+
+        @media (max-width: 768px) {
+            .stations {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+</body>
