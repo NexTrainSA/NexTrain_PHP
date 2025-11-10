@@ -1,4 +1,4 @@
-Título do projeto: NexTrain
+Título do projeto: # NexTrain
 
 Objetivo do projeto: O principal objetivo é desenvolver um aplicativo móvel inteligente para gestão e monitoramento do transporte ferroviário em cidades inteligentes, com o intuito de otimizar o controle de rotas, acompanhar em tempo real o deslocamento dos trens, prever a necessidade de manutenção e reforçar a segurança operacional, promovendo assim a eficiência, sustentabilidade e tomadas de decisão com uma maior agilidade no sistema de transporte urbano. O aplicativo visa melhorar a eficiência dos serviços de transporte ferroviário, contribuindo para a redução de falhas, e no aumento da sustentabilidade e agilidade.
 
