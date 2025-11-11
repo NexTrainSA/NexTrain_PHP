@@ -28,10 +28,9 @@
         } from '@material/web/typography/md-typescale-styles.js';
 
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-
-        // Ensure icons are loaded properly
+        
         document.addEventListener('DOMContentLoaded', function() {
-            // Force icon font load
+            
             const testIcon = document.createElement('md-icon');
             testIcon.textContent = 'schedule';
             testIcon.style.position = 'absolute';
@@ -57,7 +56,7 @@
             </div>
 
             <?php
-            // Lógica de exibição de status (sucesso/erro)
+            
             if (isset($_GET['status'])):
                 $message = '';
                 $class = '';
@@ -68,7 +67,7 @@
                 } elseif ($_GET['status'] === 'error_edit') {
                     $message = "Erro ao editar o trem. Verifique os logs.";
                     $class = "status-error";
-                } elseif ($_GET['status'] === 'error_data') {
+                } elseif ($_GET['status'] === 'error_data') {''
                     $message = "Erro: Dados do formulário incompletos ou inválidos.";
                     $class = "status-error";
                 }
@@ -139,13 +138,9 @@
         <section class="routes-grid-section">
             <div class="routes-grid">
                 <?php
-                // Atenção: A conexão deve ser aberta antes da query
-                // Se a variável $con já foi inicializada em um require_once anterior, 
-                // você pode reabrí-la ou usá-la. Assumindo que $con está acessível ou será reaberta.
-                // Se você não está usando a página listar_trem.php,
-                // você PRECISA re-incluir o db.php e reabrir a conexão aqui se ela foi fechada.
+                
                 require_once('db.php');
-                $con = get_con(); // Chame a função que retorna a conexão
+                $con = get_con(); 
 
                 $query = "SELECT * FROM trens";
                 $result = $con->query($query);
