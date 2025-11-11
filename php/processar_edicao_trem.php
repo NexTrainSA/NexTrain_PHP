@@ -1,6 +1,6 @@
 <?php
 
-require_once('../db.php'); 
+require_once('db.php'); 
 
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
@@ -16,9 +16,9 @@ $modelo_trem = filter_input(INPUT_POST, 'modelo_trem', FILTER_SANITIZE_STRING);
 $infos_trem_input = filter_input(INPUT_POST, 'infos_trem', FILTER_SANITIZE_STRING);
 $infos_trem = empty($infos_trem_input) ? NULL : $infos_trem_input; 
 
-$id_funcionario_encarregado = filter_input(INPUT_POST, 'id_funcionario_encarregado', FILTER_VALIDATE_INT);
+$id_funcionario_encarregado_trem = filter_input(INPUT_POST, 'id_funcionario_encarregado_trem', FILTER_VALIDATE_INT);
 
-if (!$id_trem || !$nome_trem || !$modelo_trem || !$id_funcionario_encarregado) {
+if (!$id_trem || !$nome_trem || !$modelo_trem || !$id_funcionario_encarregado_trem) {
    
     header("Location: ../trains.php?status=error_data");
     exit();
@@ -39,10 +39,10 @@ $stmt = $con->prepare($query);
 
 if ($infos_trem === NULL) {
    
-    $stmt->bind_param("sssii", $nome_trem, $modelo_trem, $infos_trem_null, $id_funcionario_encarregado, $id_trem);
+    $stmt->bind_param("sssii", $nome_trem, $modelo_trem, $infos_trem_null, $id_funcionario_encarregado_trem, $id_trem);
     $infos_trem_null = NULL; 
 } else {
-    $stmt->bind_param("sssii", $nome_trem, $modelo_trem, $infos_trem, $id_funcionario_encarregado, $id_trem);
+    $stmt->bind_param("sssii", $nome_trem, $modelo_trem, $infos_trem, $id_funcionario_encarregado_trem, $id_trem);
 }
 
 
@@ -55,6 +55,7 @@ if ($stmt->execute()) {
 }
 
 $stmt->close();
+$con->close();
 
 
 exit();

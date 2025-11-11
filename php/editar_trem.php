@@ -69,13 +69,13 @@ $con->close();
                     maxlength="255"
                 ></md-outlined-text-field>
 
-                <md-outlined-select label="Funcionário Encarregado" name="id_funcionario_encarregado" required>
+                <md-outlined-select label="Funcionário Encarregado" name="id_funcionario_encarregado_trem" required>
                     <?php if (!empty($funcionarios)): ?>
                         <?php foreach ($funcionarios as $funcionario): ?>
                             <md-select-option 
                                 value="<?= htmlspecialchars($funcionario['id_usuario']) ?>"
                                 <?php 
-                                    // CORRIGIDO: Usar a chave correta para comparação
+                                   
                                     if ((int)$funcionario['id_usuario'] === (int)$trem['id_funcionario_encarregado_trem']) echo 'selected'; 
                                 ?>
                             >
