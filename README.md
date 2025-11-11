@@ -17,7 +17,7 @@ Rotas: os administradores criar rotas a partir dos itinerários, e essas rotas v
 Sobre: essa página fala sobre o propósito do projeto, as funções de seus criadores e o link da documentação do projeto.
 Trens: os administradores podem adicionar um novo trem, que vai ser disponibilizado para os usuários.
 
-**Tecnologías utilizadas:** PHP, HTML, Hack, CSS, JavaScript
+**Tecnologias utilizadas:** PHP, HTML, Hack, CSS, JavaScript
 
 **Equipe de desenvolvimento:** Fernanda Ribeiro Sant’Anna, Gabriela Vitória Maes, João Rodrigo Heinzelmann Luckow, Mariana Lopes Carvalho Pita e Yasmin Victhoria da Silva.
 
