@@ -3,7 +3,7 @@ require_once('db.php');
 
 $con = get_con(); 
 
-// 1. Buscar o ID do Trem na URL (usando 'id_trem')
+
 if (!isset($_GET['id_trem']) || !is_numeric($_GET['id_trem'])) {
     die("ID do trem inválido ou não fornecido.");
 }
@@ -12,7 +12,7 @@ $id_trem = (int)$_GET['id_trem'];
 $trem = null;
 $funcionarios = []; 
 
-// 2. Buscar dados do trem atual (CORRIGIDO: 'id_funcionario_encarregado_trem')
+
 $stmt_trem = $con->prepare("SELECT id_trem, nome_trem, modelo_trem, id_funcionario_encarregado_trem, infos_trem FROM trens WHERE id_trem = ?");
 $stmt_trem->bind_param("i", $id_trem);
 $stmt_trem->execute();
@@ -25,7 +25,7 @@ if ($resultado_trem->num_rows === 1) {
 }
 $stmt_trem->close();
 
-// 3. Buscar lista de funcionários
+
 $query_func = "SELECT id_usuario, username_usuario FROM usuario"; 
 $result_func = $con->query($query_func);
 

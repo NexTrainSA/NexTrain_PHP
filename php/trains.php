@@ -58,6 +58,33 @@
 
             <!-- Action Bar -->
             <div class="action-bar">
+                <section class="page-header">
+    <div class="header-content">
+        <h1 class="page-title">Lista de Trens</h1>
+        <p class="page-subtitle">Visualize e gerencie todos os seus trens</p>
+    </div>
+
+    <?php
+    if (isset($_GET['status'])):
+        $message = '';
+        $class = '';
+
+        if ($_GET['status'] === 'success_edit') {
+            $message = "Trem editado com sucesso! 🎉";
+            $class = "status-success";
+        } elseif ($_GET['status'] === 'error_edit') {
+            $message = "Erro ao editar o trem. Verifique os logs.";
+            $class = "status-error";
+        } elseif ($_GET['status'] === 'error_data') {
+            $message = "Erro: Dados do formulário incompletos ou inválidos.";
+            $class = "status-error";
+        }
+    ?>
+        <div class="<?= $class ?>" style="padding: 15px; margin-bottom: 20px; border-radius: 5px; text-align: center; color: white; background-color: <?php echo $class === 'status-success' ? '#4CAF50' : '#F44336'; ?>;">
+            <?= htmlspecialchars($message) ?>
+        </div>
+    <?php endif; ?>
+    <div class="action-bar">
                 <div class="search-and-filters">
                     <md-outlined-text-field id="route-search" label="Buscar trens" type="search" class="search-field">
                         <md-icon slot="leading-icon">search</md-icon>
@@ -195,6 +222,18 @@
     <script src="./js/dark_mode.js"></script>
     <script src="./js/sidebar.js"></script>
     <script src="./js/routes.js"></script>
+
+    <script>
+        function editTrain(id_trem) {
+            // Redireciona usando o roteamento ?page= e o parâmetro id_trem
+            window.location.href = '?page=editar_trem.php&id_trem=' + id_trem;
+        }
+
+        function toggleFilters() {
+            const filtersPanel = document.getElementById('filters-panel');
+            filtersPanel.style.display = filtersPanel.style.display === 'none' ? 'flex' : 'none';
+        }
+    </script>
 
 </body>
 
