@@ -51,10 +51,6 @@
 <main class = "dashboard-container">
     <main class="routes-container">
         <section class="page-header">
-            <div class="header-content">
-                <h1 class="page-title">Lista de Trens</h1>
-                <p class="page-subtitle">Visualize e gerencie todos os seus trens</p>
-            </div>
 
             <!-- Action Bar -->
             <div class="action-bar">
