@@ -48,18 +48,17 @@ $users = get_all_users_as_array();
                     <p class="page-subtitle">Alerta de: <?php echo htmlspecialchars(get_username_from_id($alerta_data['id_funcionario'])); ?></p>
                 </div>
             </section>
-
+            
             <form action="process_edit_alert.php" method="POST" class="edit-form-container">
 
                 <input type="hidden" name="id_alerta" value="<?php echo htmlspecialchars($alerta_data['id_alerta']); ?>">
 
                 <label for="descricao_alerta">Descrição do Alerta:</label><br>
                 <textarea id="descricao_alerta" name="descricao_alerta" rows="4" cols="80" required
-                    style="width: 100%; padding: 10px; margin-bottom: 20px;"><?php echo htmlspecialchars($alerta_data['descricao_alerta']); ?></textarea><br>
+                    ><?php echo htmlspecialchars($alerta_data['descricao_alerta']); ?></textarea><br>
 
                 <label for="id_funcionario_recebe">Alerta Para (Funcionário que Recebe):</label><br>
-                <select id="id_funcionario_recebe" name="id_funcionario_recebe" required
-                    style="width: 100%; padding: 10px; margin-bottom: 20px;">
+                <select id="id_funcionario_recebe" name="id_funcionario_recebe" required>
                     <?php foreach ($users as $user): ?>
                         <option value="<?php echo htmlspecialchars($user['id_usuario']); ?>"
                             <?php if ($user['id_usuario'] == $alerta_data['id_funcionario_recebe']) echo 'selected'; ?>>
@@ -74,7 +73,8 @@ $users = get_all_users_as_array();
                         Salvar Edição
                     </md-filled-button>
 
-                    <a href="../alerts.php"> <md-text-button>
+                    <a href="../alerts.php"> 
+                        <md-text-button>
                             Cancelar
                         </md-text-button>
                     </a>
