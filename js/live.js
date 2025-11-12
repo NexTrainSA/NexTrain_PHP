@@ -35,6 +35,8 @@ window.onload = function() {
         if(data.STATION === 'S4') {
             d2 = JSON.parse(data.data);
             document.getElementById('led-rgb-s4').innerText = d2.LED_RGB;
+            document.getElementById('speed-s4').innerText = d2.SPEED;
+            document.getElementById('direction-s4').innerText = d2.SPEED > 0 ? "Frente" : (d2.SPEED < 0 ? "Ré" : "Parado");
         }
     };
     document.getElementById('toggle-led-s1').onclick = function() {
@@ -50,4 +52,9 @@ window.onload = function() {
     document.getElementById('toggle-servo-s2').onclick = function() {
         ws.send(JSON.stringify({ STATION: 'S2', DATA: "TOGGLE_SERVO" }));
     };
+    document.getElementById('set-speed-s4').onclick = function() {
+        const speed = parseFloat(document.getElementById('speed-slider-s4').value);
+        ws.send(JSON.stringify({ STATION: 'S4', DATA: "speed/" + speed }));
+    };
+
 }
