@@ -75,40 +75,43 @@
 
 <body>
 
-  <section class="dashboard-container">
-  <section class="page-header">
-    <h1 class="page-title">Relatórios</h1>
-    <p class="dashboard-subtitle">Mantenha-se atualizado sobre seus relatórios</p>
-  </section>
-  
+  <section class="reports-container" style="padding: 200px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;">
+    <section class="page-header">
+      <h1 class="page-title">Relatórios</h1>
+      <p class="dashboard-subtitle">Mantenha-se atualizado sobre seus relatórios</p>
+    </section>
 
-  <section class="content">
-    <div class="dashboard">
+
+    <section class="content">
+      <div class="dashboard">
 
 
-      <div class="column">
-        <h2>Operações </h2>
-        <div id="chartPontualidade" class="chart-box"></div>
-        <div id="chartAlertas" class="chart-box"></div>
-    
+        <div class="column">
+          <h2>Operações </h2>
+          <div id="chartPontualidade" class="chart-box"></div>
+          <div id="chartAlertas" class="chart-box"></div>
+
+        </div>
+
+
+        <div class="column">
+          <h2>Infraestrutura e Motivos</h2>
+          <div id="chartEquipamentos" class="chart-box"></div>
+          <div id="chartMotivos" class="chart-box"></div>
+        </div>
+
+
+        <div class="column">
+          <h2>Usuários e Satisfação</h2>
+          <div id="chartTempo" class="chart-box"></div>
+          <div id="chartMovimento" class="chart-box"></div>
+        </div>
+
       </div>
-
-
-      <div class="column">
-        <h2>Infraestrutura e Motivos</h2>
-        <div id="chartEquipamentos" class="chart-box"></div>
-        <div id="chartMotivos" class="chart-box"></div>
-      </div>
-
-
-      <div class="column">
-        <h2>Usuários e Satisfação</h2>
-        <div id="chartTempo" class="chart-box"></div>
-        <div id="chartMovimento" class="chart-box"></div>
-      </div>
-
-    </div>
-  </section>
+    </section>
   </section>
 
   <script>
@@ -240,7 +243,7 @@
         ['19h - 22h', 60]
       ], 'Horário', 'Índice de Movimento');
 
-      
+
     });
   </script>
 

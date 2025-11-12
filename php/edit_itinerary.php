@@ -31,6 +31,7 @@ mysqli_free_result($result);
     <title>Editar origem: <?php echo htmlspecialchars($itinerario['origem_itinerario']); ?></title>
 </head>
 <body>
+    <section class="dashboard-container">
     <main class="edit-container">
 
 
@@ -75,6 +76,6 @@ mysqli_free_result($result);
                 Cancelar
             </md-outlined-button>
         </form>
-    </main>
+    </main></section>
 </body>
 </html>

@@ -45,8 +45,7 @@ main {
 }
 
 body.dark-mode {
-    background-color: #43627f;  
-    ;
+    background-color: #687b8f;  
     color: #FAFAFA !important;
 }
 
@@ -1951,4 +1950,95 @@ body.icons-loaded .stat-icon::before,
 body.icons-loaded .route-icon::before,
 body.icons-loaded .alert-icon::before {
     display: none;
+}
+
+.page-header {
+    /* Mantendo a cor no modo Light, mas adicionando uma separação visual */
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--md-sys-color-outline-variant, #E7E0EC); /* Fallback para Light Mode */
+    padding-bottom: 10px;
+}
+
+.page-title {
+    color: var(--md-sys-color-primary, #6750A4); /* Cor primária */
+    font-weight: 700;
+}
+
+.page-subtitle {
+    color: var(--md-sys-color-on-surface-variant, #49454F);
+    font-size: 1.1em;
+}
+
+body.dark-mode .page-title {
+    color: #D0BCFF; /* Cor primária no Dark Mode */
+}
+body.dark-mode .page-subtitle {
+    color: #CAC4D0;
+}
+
+.edit-form-container {
+    background-color: var(--md-sys-color-surface-container-low, #F7F2FA); /* Fundo suave */
+    padding: 30px;
+    border-radius: 16px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+body.dark-mode .edit-form-container {
+    background-color: #2B2930;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05); 
+}
+
+.edit-form-container label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface, #1D1B20);
+}
+body.dark-mode .edit-form-container label {
+    color: #E6E1E5;
+}
+
+.edit-form-container textarea,
+.edit-form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--md-sys-color-outline, #79747E);
+    border-radius: 8px;
+    background-color: var(--md-sys-color-surface, #FFFFFF);
+    transition: border-color 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+body.dark-mode .edit-form-container textarea,
+body.dark-mode .edit-form-container select {
+    background-color: #1D1B20;
+    border-color: #938F99;
+    color: #E6E1E5;
+}
+
+.edit-form-container textarea:focus,
+.edit-form-container select:focus {
+    border-color: var(--md-sys-color-primary, #6750A4);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--md-sys-color-primary, #6750A4);
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px; 
+    margin-top: 30px;
+    justify-content: flex-end; 
+}
+
+/* Ajuste o botão de editar na lista (alerts.php) para usar a cor primária */
+.route-actions a .edit-btn {
+    --md-text-button-label-text-color: var(--md-sys-color-primary, #6750A4);
+    --md-text-button-icon-color: var(--md-sys-color-primary, #6750A4);
+}
+body.dark-mode .route-actions a .edit-btn {
+    --md-text-button-label-text-color: #D0BCFF;
+    --md-text-button-icon-color: #D0BCFF;
 }
