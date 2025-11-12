@@ -2,7 +2,7 @@
     include_once 'mqtt.php';
     
     $stationName = $_GET['station'] ?? '';
-    $stationTopic = "nextrain/stations/" . $stationName;
+    $stationTopic = "input/" . $stationName;
     $mqtt->publish($stationTopic . "/ping", "ping", 0);
 
     $receivedPong = false;
