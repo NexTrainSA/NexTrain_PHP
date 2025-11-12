@@ -56,5 +56,9 @@ window.onload = function() {
         const speed = parseFloat(document.getElementById('speed-slider-s4').value);
         ws.send(JSON.stringify({ STATION: 'S4', DATA: "speed/" + speed }));
     };
+    document.getElementById('speed-slider-s4').oninput = function() {
+        const speed = parseFloat(document.getElementById('speed-slider-s4').value);
+        document.getElementById('speed-slider-s4-value').innerText = (speed * 100).toFixed(0);
+    };
 
 }
