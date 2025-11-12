@@ -35,7 +35,7 @@ window.onload = function() {
         if(data.STATION === 'S4') {
             d2 = JSON.parse(data.data);
             document.getElementById('led-rgb-s4').innerText = d2.LED_RGB;
-            document.getElementById('speed-s4').innerText = d2.SPEED;
+            document.getElementById('speed-s4').innerText = d2.SPEED * 100;
             document.getElementById('direction-s4').innerText = d2.SPEED > 0 ? "Frente" : (d2.SPEED < 0 ? "Ré" : "Parado");
         }
     };
