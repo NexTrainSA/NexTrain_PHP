@@ -44,8 +44,8 @@ main {
     height: auto;
 }
 
-body.dark-mode {
-    background-color: #687b8f;  
+.dark-mode body {
+    background-color: rgb(71, 94, 117); 
     color: #FAFAFA !important;
 }
 

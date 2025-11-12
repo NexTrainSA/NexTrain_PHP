@@ -63,6 +63,11 @@ $usuario = mysqli_fetch_assoc($resultado);
       font-family: 'Roboto', sans-serif;
     }
 
+    .dark-mode .user-info-card {
+      background-color: rgb(53, 72, 90);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
     .user-card-content {
       padding: 30px;
       display: flex;
@@ -94,6 +99,13 @@ $usuario = mysqli_fetch_assoc($resultado);
       font-weight: 600;
     }
 
+    .dark-mode .user-label {
+      color: white;
+    }
+
+    .dark-mode .user-value {
+      color: white;
+    }
     .user-value {
       font-size: 1rem;
       color: var(--text, #111827);

@@ -1,33 +1,43 @@
 <?php
 
-include 'db.php';
+
+include_once("db.php");
 
 
+if (!isset($_GET['id_alerta']) || empty($_GET['id_alerta'])) {
 
-if (!isset($_GET['id_alerta'])) {
-    die("ID do alerta não especificado.");
+    header("Location: alerts.php");
+    exit();
 }
 
 $id_alerta = $_GET['id_alerta'];
+
 $con = get_con();
 
 
-$stmt_alerta = $con->prepare("SELECT id_alerta, descricao_alerta, id_funcionario, id_funcionario_recebe FROM alertas WHERE id_alerta = ?");
+$id_alerta_safe = mysqli_real_escape_string($con, $id_alerta);
+$query_alerta = "SELECT id_funcionario, id_funcionario_recebe, descricao_alerta FROM alertas WHERE id_alerta = '$id_alerta_safe'";
+$result_alerta = mysqli_query($con, $query_alerta);
 
-$stmt_alerta->bind_param("i", $id_alerta);
-$stmt_alerta->execute();
-$result_alerta = $stmt_alerta->get_result();
+if (!$result_alerta || mysqli_num_rows($result_alerta) === 0) {
 
-if ($result_alerta->num_rows == 0) {
-    die("Alerta não encontrado.");
+    header("Location: alerts.php");
+    exit();
+}
+$alerta_data = mysqli_fetch_assoc($result_alerta);
+mysqli_free_result($result_alerta);
+
+$query_users = "SELECT id_usuario, username_usuario FROM usuario";
+$result_users = mysqli_query($con, $query_users);
+$users = [];
+if ($result_users) {
+    while ($row = mysqli_fetch_assoc($result_users)) {
+        $users[] = $row;
+    }
+    mysqli_free_result($result_users);
 }
 
-$alerta_data = $result_alerta->fetch_assoc();
-$stmt_alerta->close();
-
-$users = get_all_users_as_array();
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -36,36 +46,49 @@ $users = get_all_users_as_array();
     <title>Editar Alerta #<?php echo htmlspecialchars($alerta_data['id_alerta']); ?></title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+
+    <script type="importmap">
+        {
+            "imports": {
+                "@material/web/": "https://esm.run/@material/web/"
+            }
+        }
+    </script>
+    <script type="module">
+        import '@material/web/all.js';
+    </script>
+
 </head>
 
 <body>
-
     <section class="dashboard-container">
-        <section class="routes-container">
+        <main class="edit-container">
+
             <section class="page-header">
                 <div class="header-content">
                     <h1 class="page-title">Editar Alerta</h1>
-                    <p class="page-subtitle">Alerta de: <?php echo htmlspecialchars(get_username_from_id($alerta_data['id_funcionario'])); ?></p>
+                    <p class="page-subtitle">Alerta criado por: **<?php echo htmlspecialchars(get_username_from_id($alerta_data['id_funcionario'])); ?>**</p>
                 </div>
             </section>
-            
+
             <form action="process_edit_alert.php" method="POST" class="edit-form-container">
 
-                <input type="hidden" name="id_alerta" value="<?php echo htmlspecialchars($alerta_data['id_alerta']); ?>">
+                <input type="hidden" name="id_alerta" value="<?php echo htmlspecialchars($id_alerta); ?>">
 
-                <label for="descricao_alerta">Descrição do Alerta:</label><br>
-                <textarea id="descricao_alerta" name="descricao_alerta" rows="4" cols="80" required
-                    ><?php echo htmlspecialchars($alerta_data['descricao_alerta']); ?></textarea><br>
+                <label for="descricao_alerta">Descrição do Alerta:</label>
+                <textarea id="descricao_alerta" name="descricao_alerta" rows="4" required><?php echo htmlspecialchars($alerta_data['descricao_alerta']); ?></textarea>
 
-                <label for="id_funcionario_recebe">Alerta Para (Funcionário que Recebe):</label><br>
-                <select id="id_funcionario_recebe" name="id_funcionario_recebe" required>
-                    <?php foreach ($users as $user): ?>
-                        <option value="<?php echo htmlspecialchars($user['id_usuario']); ?>"
-                            <?php if ($user['id_usuario'] == $alerta_data['id_funcionario_recebe']) echo 'selected'; ?>>
-                            <?php echo htmlspecialchars($user['username_usuario']); ?>
-                        </option>
+                <label for="id_funcionario_recebe">Alerta Para (Funcionário que Recebe):</label>
+                <md-outlined-select id="id_funcionario_recebe" name="id_funcionario_recebe" label="Selecione o Destinatário">
+                    <?php
+                    $current_recipient_id = $alerta_data['id_funcionario_recebe'];
+                    foreach ($users as $user): ?>
+                        <md-select-option value="<?php echo htmlspecialchars($user['id_usuario']); ?>"
+                            <?php if ($user['id_usuario'] == $current_recipient_id) echo 'selected'; ?>>
+                            <div slot="headline"><?php echo htmlspecialchars($user['username_usuario']); ?></div>
+                        </md-select-option>
                     <?php endforeach; ?>
-                </select><br>
+                </md-outlined-select>
 
                 <div class="form-actions">
                     <md-filled-button type="submit">
@@ -73,14 +96,12 @@ $users = get_all_users_as_array();
                         Salvar Edição
                     </md-filled-button>
 
-                    <a href="../alerts.php"> 
-                        <md-text-button>
-                            Cancelar
-                        </md-text-button>
-                    </a>
+                    <md-outlined-button type="button" onclick="window.history.back()">
+                        Cancelar
+                    </md-outlined-button>
                 </div>
             </form>
-        </section>
+        </main>
     </section>
 </body>
 

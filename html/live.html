@@ -29,54 +29,47 @@
 
 <body>
     <section class="dashboard-container">
-    <section class="content">
-        <h1>Visualização em tempo real</h1>
-        <hr>
+        <section class="content">
+            <h1>Visualização em tempo real</h1>
+            <hr>
+            <h2 id="stations-label">Estações</h2>
+            <div class="stations">
+                <div class="station" id="s1">
+                    <h2>Estação S1</h2>
+                    <p>Temperatura: <span id="temp-s1">0</span>°C</p>
+                    <p>Umidade: <span id="humidity-s1">0</span>%</p>
+                    <p>Luminosidade: <span id="luminosity-s1">0</span>lx</p>
+                    <p>Sensor de Presença: <span id="presence-s1">0</span></p>
+                    <p>Estado LED: <span id="led-state-s1">Desligado</span></p>
+                    <p>LED Status (RGB): <span id="led-rgb-s1">Desligado</span></p>
+                    <button id="toggle-led-s1">Alternar LED</button>
+                </div>
 
-        <h2 id="stations-label">Estações</h2>
-        <div class="stations">
-            <div class="station" id="s1">
-                <h2>Estação S1</h2>
-                <p>Temperatura: <span id="temp-s1">0</span>°C</p>
-                <p>Umidade: <span id="humidity-s1">0</span>%</p>
-                <p>Luminosidade: <span id="luminosity-s1">0</span>lx</p>
-                <p>Sensor de Presença: <span id="presence-s1">0</span></p>
-                <p>Estado LED: <span id="led-state-s1">Desligado</span></p>
-                <p>LED Status (RGB): <span id="led-rgb-s1">Desligado</span></p>
-                <button id="toggle-led-s1">Alternar LED</button>
+                <div class="station" id="s2">
+                    <h2>Estação S2</h2>
+                    <p>Presença 2: <span id="presence2-s2">0</span></p>
+                    <p>Presença 4: <span id="presence4-s2">0</span></p>
+                    <p>Servo 3: <span id="servo-s2">Desligado</span></p>
+                    <p>Iluminação: <span id="led-state-s2">Desligado</span></p>
+                    <p>LED Status (RGB): <span id="led-rgb-s2">Desligado</span></p>
+                    <button id="toggle-led-s2">Alternar LED</button>
+                    <button id="toggle-servo-s2">Alternar Servo</button>
+                </div>
+
+                <div class="station" id="s3">
+                    <h2>Estação S3</h2>
+                    <p>Presença 3: <span id="presence3-s3">0</span></p>
+                    <p>Iluminação: <span id="led-state-s3">Desligado</span></p>
+                    <p>LED Status (RGB): <span id="led-rgb-s3">Desligado</span></p>
+                    <button id="toggle-led-s3">Alternar LED</button>
+                </div>
+
+                <div class="station" id="s4">
+                    <h2>Estação S4 (Trem)</h2>
+                    <p>LED Status (RGB): <span id="led-rgb-s4">Desligado</span></p>
+                </div>
             </div>
-
-            <div class="station" id="s2">
-                <h2>Estação S2</h2>
-                <p>Presença 2: <span id="presence2-s2">0</span></p>
-                <p>Presença 4: <span id="presence4-s2">0</span></p>
-                <p>Servo 3: <span id="servo-s2">Desligado</span></p>
-                <p>Iluminação: <span id="led-state-s2">Desligado</span></p>
-                <p>LED Status (RGB): <span id="led-rgb-s2">Desligado</span></p>
-                <button id="toggle-led-s2">Alternar LED</button>
-                <button id="toggle-servo-s2">Alternar Servo</button>
-            </div>
-
-            <div class="station" id="s3">
-                <h2>Estação S3</h2>
-                <p>Presença 3: <span id="presence3-s3">0</span></p>
-                <p>Iluminação: <span id="led-state-s3">Desligado</span></p>
-                <p>LED Status (RGB): <span id="led-rgb-s3">Desligado</span></p>
-                <button id="toggle-led-s3">Alternar LED</button>
-            </div>
-
-            <div class="station" id="s4">
-                <h2>Estação S4 (Trem)</h2>
-                <p>LED Status (RGB): <span id="led-rgb-s4">Desligado</span></p>
-                <p>Velocidade: <span id="speed-s4">0</span>% (alterando para <span id="speed-slider-s4-value">0</span>%)</p>
-                <p>Direção: <span id="direction-s4">Parado</span></p>
-                <input type="range" id="speed-slider-s4" min="-1" max="1" step="0.1" value="0">
-                <button id="set-speed-s4">Definir Velocidade</button>
-            </div>
-        </div>
-
-
-    </section>
+        </section>
     </section>
 
     <script src="./js/live.js"></script>
@@ -88,6 +81,11 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             background-color: #f4f4f4;
+        }
+
+        body.dark-mode {
+            font-family: 'Roboto', sans-serif;
+            background-color: rgb(71, 94, 117);
         }
 
         #stations-label {
@@ -103,7 +101,13 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        h1, h2 {
+        .content.dark-mode {
+            background-color: rgb(53, 72, 90);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1,
+        h2 {
             color: #333;
         }
 
@@ -111,6 +115,10 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
+        }
+
+        .stations.dark-mode {
+            color:black;
         }
 
         .station {

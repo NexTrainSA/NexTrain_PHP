@@ -45,7 +45,7 @@ function get_permission_id_by_name($permissionName)
     }
     return null;
 }
-
+if (!function_exists('get_username_from_id')) {
 function get_username_from_id($id)
 {
     global $con;
@@ -57,6 +57,7 @@ function get_username_from_id($id)
         return $row ? $row['username_usuario'] : null;
     }
     return null;
+}
 }
 
 function check_user_permission($username, $permission)

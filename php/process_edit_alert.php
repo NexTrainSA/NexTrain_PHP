@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt === false) {
         
         error_log("Erro na preparação do statement: " . $con->error);
-        header("Location: alerts.php?status=error_prepare");
+        header("Location: ../index.php?page=alerts.php?status=error_prepare");
         exit();
     }
 
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        
         $stmt->close();
         $con->close();
-        header("Location: alerts.php?status=success_edit");
+        header("Location: ../index.php?page=alerts.php&status=success_edit");
         exit();
     } else {
         
@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     
-    header("Location: alerts.php");
+    header("Location: ../index.php?page=alerts.php");
     exit();
 }
 ?>
