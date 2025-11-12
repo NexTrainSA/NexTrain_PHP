@@ -1,7 +1,7 @@
 <?php
 
 
-require_once('../db.php');
+require_once('db.php');
 
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
@@ -55,10 +55,10 @@ $stmt->bind_param(
 
 if ($stmt->execute()) {
 
-    header("Location: ../trains.php?status=success_edit");
+    header("Location: ../index.php?page=trains.php&status=success_edit");
 } else {
 
-    header("Location: ../trains.php?status=error_edit&db_error=" . urlencode($stmt->error));
+    header("Location: ../index.php?page=trains.php&status=error_edit&db_error=" . urlencode($stmt->error));
 }
 
 $stmt->close();

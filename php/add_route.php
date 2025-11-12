@@ -141,38 +141,39 @@
 
 <body>
 
-    <section class="content" >
-        <div class="form-schedule">
-            <h1>Adicionar Itinerário</h1>
-            <form id="formOS" action="./php/insert_route.php" method="post">
-                <fieldset>
-                    <legend>Adicione:</legend>
-                    <div class="form-group">
-                        <label for="itinerary">Itinerário da Rota</label>
-                        <select id="itinerary" name="itinerary" required>
-                            <option value="">Selecione...</option>
-                            <?php
-                            include("listar_itinerario.php");
-                            foreach ($itinerarios as $itinerario) {
-                                echo '<option value="'.$itinerario["id_itinerario"].'">' . $itinerario["nome_origem"] . ' -> ' . $itinerario["nome_destino"] . '</option>';
-                            } ?>
-                        </select>
-                    </div>
-                    <div class="form-group" id="trajectory-group">
-                        <label for="trajectory">Trajeto: </label>
-                        <!-- <select id="trajectory" name="trajectory" required>
+    <section class="dashboard-container">
+        <section class="content">
+            <div class="form-schedule">
+                <h1>Adicionar Itinerário</h1>
+                <form id="formOS" action="./php/insert_route.php" method="post">
+                    <fieldset>
+                        <legend>Adicione:</legend>
+                        <div class="form-group">
+                            <label for="itinerary">Itinerário da Rota</label>
+                            <select id="itinerary" name="itinerary" required>
+                                <option value="">Selecione...</option>
+                                <?php
+                                include("listar_itinerario.php");
+                                foreach ($itinerarios as $itinerario) {
+                                    echo '<option value="' . $itinerario["id_itinerario"] . '">' . $itinerario["nome_origem"] . ' -> ' . $itinerario["nome_destino"] . '</option>';
+                                } ?>
+                            </select>
+                        </div>
+                        <div class="form-group" id="trajectory-group">
+                            <label for="trajectory">Trajeto: </label>
+                            <!-- <select id="trajectory" name="trajectory" required>
                             <?php
                             foreach ($estacoes as $estacao) {
                                 echo  "<option value='" . $itinerario['nome_'] . "</option>";
                             } ?>
                         </select> -->
-                    </div>
-                </fieldset>
-                <button type="submit" value="Adicionar Itinerário">Adicionar Itinerário</button>
-            </form>
-        </div>
+                        </div>
+                    </fieldset>
+                    <button type="submit" value="Adicionar Itinerário">Adicionar Itinerário</button>
+                </form>
+            </div>
+        </section>
     </section>
-
 
     <!--  Scripts:  -->
     <script src="./js/dark_mode.js"></script>
