@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <!--  Fontes e Estilos:  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
@@ -21,7 +20,7 @@
             "@material/web/": "https://esm.run/@material/web/"
             }
         }
-        </script>
+    </script>
     <script type="module">
         import '@material/web/all.js';
         import {
@@ -30,9 +29,9 @@
 
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
 
-        // Ensure icons are loaded properly
+
         document.addEventListener('DOMContentLoaded', function() {
-            // Force icon font load
+
             const testIcon = document.createElement('md-icon');
             testIcon.textContent = 'schedule';
             testIcon.style.position = 'absolute';
@@ -50,13 +49,35 @@
 
     <main class="dashboard-container">
         <main class="routes-container">
+
             <section class="page-header">
                 <div class="header-content">
                     <h1 class="page-title">Lista de Trens</h1>
                     <p class="page-subtitle">Visualize e gerencie todos os seus trens</p>
                 </div>
 
-                <!-- Action Bar -->
+                <?php
+
+                if (isset($_GET['status'])):
+                    $message = '';
+                    $class = '';
+
+                    if ($_GET['status'] === 'success_edit') {
+                        $message = "Trem editado com sucesso! 🎉";
+                        $class = "status-success";
+                    } elseif ($_GET['status'] === 'error_edit') {
+                        $message = "Erro ao editar o trem. Verifique os logs.";
+                        $class = "status-error";
+                    } elseif ($_GET['status'] === 'error_data') {
+                        $message = "Erro: Dados do formulário incompletos ou inválidos.";
+                        $class = "status-error";
+                    }
+                ?>
+                    <div class="<?= $class ?>" style="padding: 15px; margin-bottom: 20px; border-radius: 5px; text-align: center; color: white; background-color: <?php echo $class === 'status-success' ? '#4CAF50' : '#F44336'; ?>;">
+                        <?= htmlspecialchars($message) ?>
+                    </div>
+                <?php endif; ?>
+
                 <div class="action-bar">
                     <div class="search-and-filters">
                         <md-outlined-text-field id="route-search" label="Buscar trens" type="search" class="search-field">
@@ -75,7 +96,6 @@
                     </md-filled-button>
                 </div>
 
-                <!-- Filters Panel (Initially Hidden) -->
                 <div id="filters-panel" class="filters-panel" style="display: none;">
                     <div class="filters-content">
                         <div class="filter-group">
@@ -116,12 +136,13 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Routes Grid -->
             <section class="routes-grid-section">
                 <div class="routes-grid">
                     <?php
+
                     require_once('db.php');
+                    $con = get_con();
+
                     $query = "SELECT * FROM trens";
                     $result = $con->query($query);
 
@@ -152,8 +173,10 @@
                                     </div>
 
                                     <div class="route-actions">
-                                        
-                                        <md-text-button onclick="editTrain(<?= $trem['id_trem'] ?>)"> <md-icon slot="icon">edit</md-icon> Editar</md-text-button>
+                                        <md-text-button onclick="editTrain(<?= $trem['id_trem'] ?>)">
+                                            <md-icon slot="icon">edit</md-icon>
+                                            Editar
+                                        </md-text-button>
                                         <a href="php/excluir_trem.php?id=<?= $trem['id_trem'] ?>"
                                             onclick="return confirm('Deseja mesmo excluir este trem?')">
                                             <md-text-button class="delete-btn">
@@ -163,21 +186,21 @@
                                         </a>
 
                                     </div>
-
-
                                 </div>
                             </md-card>
                         <?php
                         endwhile;
                     else:
                         ?>
-                        <p style="text-align:center;">Não tem trem :(</p>
+                        <p style="text-align:center;">Não tem trem :</p>
                     <?php endif;
-                    $con->close();
+
+                    if (isset($con) && $con instanceof mysqli) {
+                        $con->close();
+                    }
                     ?>
                 </div>
 
-                <!-- Load More Button -->
                 <div class="load-more-section">
                     <md-outlined-button class="load-more-btn">
                         <md-icon slot="icon">expand_more</md-icon>
@@ -188,17 +211,16 @@
         </main>
     </main>
 
-    <!--  Scripts:  -->
     <script src="./js/icon-loader.js"></script>
     <script src="./js/dark_mode.js"></script>
     <script src="./js/sidebar.js"></script>
     <script src="./js/routes.js"></script>
 
     <script>
-       function editTrain(id_trem) {
-        // Redireciona com o parâmetro 'id_trem' na URL
-        window.location.href = '?page=editar_trem.php&id_trem=' + id_trem; 
-    }
+        function editTrain(id_trem) {
+
+            window.location.href = '?page=editar_trem.php&id_trem=' + id_trem;
+        }
 
         function toggleFilters() {
             const filtersPanel = document.getElementById('filters-panel');

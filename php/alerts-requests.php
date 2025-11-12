@@ -29,167 +29,169 @@
 </head>
 
 <style>
-        .form-maintenance * {
-            font-family: Arial, sans-serif !important;
-            color: #333 !important;
-            font-size: 14px !important;
-        }
+    .form-maintenance * {
+        font-family: Arial, sans-serif !important;
+        color: #333 !important;
+        font-size: 14px !important;
+    }
 
-        .form-maintenance {
-            max-width: 800px;
-            margin: 30px auto;
-            background-color: whitesmoke;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    .form-maintenance {
+        max-width: 800px;
+        margin: 30px auto;
+        background-color: whitesmoke;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .form-maintenance h1 {
-            text-align: center;
-            font-size: 22px;
-            margin-bottom: 25px;
-            color: #222;
-        }
+    .form-maintenance h1 {
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 25px;
+        color: #222;
+    }
 
-        .form-maintenance fieldset {
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            padding: 15px;
-        }
+    .form-maintenance fieldset {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        padding: 15px;
+    }
 
-        .form-maintenance legend {
-            font-weight: bold;
-            padding: 0 10px;
-            font-size: 15px;
-            color: #555;
-        }
+    .form-maintenance legend {
+        font-weight: bold;
+        padding: 0 10px;
+        font-size: 15px;
+        color: #555;
+    }
 
-        .form-maintenance .form-group {
-            margin-bottom: 15px;
-        }
+    .form-maintenance .form-group {
+        margin-bottom: 15px;
+    }
 
-        .form-maintenance label {
-            display: block;
-            margin-bottom: 5px;
-        }
+    .form-maintenance label {
+        display: block;
+        margin-bottom: 5px;
+    }
 
-        .form-maintenance input,
-        .form-maintenance select,
-        .form-maintenance textarea {
-            width: 100%;
-            padding: 8px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            background-color: #fff;
-            color: #000 !important;
-        }
+    .form-maintenance input,
+    .form-maintenance select,
+    .form-maintenance textarea {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #fff;
+        color: #000 !important;
+    }
 
-        .form-maintenance input:focus,
-        .form-maintenance select:focus,
-        .form-maintenance textarea:focus {
-            outline: 2px solid rgb(115, 149, 184);
-        }
+    .form-maintenance input:focus,
+    .form-maintenance select:focus,
+    .form-maintenance textarea:focus {
+        outline: 2px solid rgb(115, 149, 184);
+    }
 
-        .form-maintenance button {
-            background-color: rgb(71, 94, 117);
-            color: white !important;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 15px;
-            transition: background-color 0.3s;
-        }
+    .form-maintenance button {
+        background-color: rgb(71, 94, 117);
+        color: white !important;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 15px;
+        transition: background-color 0.3s;
+    }
 
-        .form-maintenance button:hover {
-            background-color: rgb(115, 149, 184);
-        }
+    .form-maintenance button:hover {
+        background-color: rgb(115, 149, 184);
+    }
 
-        .form-maintenance input:invalid,
-        .form-maintenance select:invalid,
-        .form-maintenance textarea:invalid {
-            border-color: rgb(115, 149, 184);
-        }
+    .form-maintenance input:invalid,
+    .form-maintenance select:invalid,
+    .form-maintenance textarea:invalid {
+        border-color: rgb(115, 149, 184);
+    }
 
-        /* Dark Mode */
+    /* Dark Mode */
 
-        body.dark-mode .form-maintenance {
-            background-color: rgb(53, 72, 90);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
+    body.dark-mode .form-maintenance {
+        background-color: rgb(53, 72, 90);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
 
-        body.dark-mode .form-maintenance legend {
-            color: #fafafa !important;
-        }
+    body.dark-mode .form-maintenance legend {
+        color: #fafafa !important;
+    }
 
-        body.dark-mode .form-maintenance label {
-            color: #fafafa !important;
-        }
+    body.dark-mode .form-maintenance label {
+        color: #fafafa !important;
+    }
 
-        body.dark-mode .form-maintenance button {
-            background-color: rgb(88, 116, 143);
-        }
+    body.dark-mode .form-maintenance button {
+        background-color: rgb(88, 116, 143);
+    }
 
-        body.dark-mode .form-maintenance h1 {
-            color: #fafafa !important;
-        }
-    </style>
+    body.dark-mode .form-maintenance h1 {
+        color: #fafafa !important;
+    }
+</style>
 
 <body>
 
-    <section class="content">
-        <div class="form-maintenance">
-            <h1>Enviar Alerta</h1>
-            <form id="formOS" action="./php/insert_alerts_requests.php" method="post">
-                <fieldset>
-                    <legend>Suas informações:</legend>
+    <section class="dashboard-container">
+        <section class="content">
+            <div class="form-maintenance">
+                <h1>Enviar Alerta</h1>
+                <form id="formOS" action="./php/insert_alerts_requests.php" method="post">
+                    <fieldset>
+                        <legend>Suas informações:</legend>
 
-                    <div class="form-group">
-                        <label for="id-funcionario">Seu ID de funcionário:*</label>
-                        <select id="funcionario" name="funcionario_manda" required>
-                            <option value="">Selecione...</option>
-                            <?php
-                            include("listar_funcionarios.php");
-                            foreach ($funcionarios as $linha) {
-                                echo  "<option value='" . $linha['id_usuario'] . "'>" . $linha['id_usuario'] . "</option>";
-                            } ?>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                            <label for="id-funcionario">Seu ID de funcionário:*</label>
+                            <select id="funcionario" name="funcionario_manda" required>
+                                <option value="">Selecione...</option>
+                                <?php
+                                include("listar_funcionarios.php");
+                                foreach ($funcionarios as $linha) {
+                                    echo  "<option value='" . $linha['id_usuario'] . "'>" . $linha['id_usuario'] . "</option>";
+                                } ?>
+                            </select>
+                        </div>
 
-                </fieldset>
+                    </fieldset>
 
-                <fieldset>
-                    <legend>Quem vai receber o alerta:</legend>
-                    <div class="form-group">
-                       <label for="id-funcionario">Nome de quem vai receber o Alerta:*</label>
-                        <select id="funcionario" name="funcionario_recebe" required>
-                            <option value="">Selecione...</option>
-                            <?php
-                            include("listar_funcionarios.php");
-                            foreach ($funcionarios as $linha) {
-                                echo  "<option value='" . $linha['id_usuario'] . "'>" . $linha['username_usuario'] . "</option>";
-                            } ?>
-                        </select>
-                    </div>
-                </fieldset>
+                    <fieldset>
+                        <legend>Quem vai receber o alerta:</legend>
+                        <div class="form-group">
+                            <label for="id-funcionario">Nome de quem vai receber o Alerta:*</label>
+                            <select id="funcionario" name="funcionario_recebe" required>
+                                <option value="">Selecione...</option>
+                                <?php
+                                include("listar_funcionarios.php");
+                                foreach ($funcionarios as $linha) {
+                                    echo  "<option value='" . $linha['id_usuario'] . "'>" . $linha['username_usuario'] . "</option>";
+                                } ?>
+                            </select>
+                        </div>
+                    </fieldset>
 
-                <fieldset>
-                    <legend>Descrição do Problema</legend>
+                    <fieldset>
+                        <legend>Descrição do Problema</legend>
 
-                    <div class="form-group">
-                        <label for="descricao">Descrição do Problema:*</label>
-                        <textarea id="descricao" name="descricao" rows="4" required></textarea>
-                    </div>
+                        <div class="form-group">
+                            <label for="descricao">Descrição do Problema:*</label>
+                            <textarea id="descricao" name="descricao" rows="4" required></textarea>
+                        </div>
 
-                </fieldset>
+                    </fieldset>
 
-                <button type="submit" value="Enviar Chamado">Enviar Alerta</button>
-            </form>
-        </div>
+                    <button type="submit" value="Enviar Chamado">Enviar Alerta</button>
+                </form>
+            </div>
+        </section>
     </section>
 
     <!--  Scripts:  -->

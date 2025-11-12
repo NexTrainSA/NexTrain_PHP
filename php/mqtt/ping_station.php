@@ -2,12 +2,12 @@
     include_once 'mqtt.php';
     
     $stationName = $_GET['station'] ?? '';
-    $stationTopic = "nextrain/stations/" . $stationName;
-    $mqtt->publish($stationTopic . "/ping", "ping", 0);
+    $stationTopic = "input/" . $stationName;
+    $mqtt->publish($stationTopic, "ping", 0);
 
     $receivedPong = false;
 
-    $mqtt->subscribe($stationTopic . "/pong", function ($topic, $message) {
+    $mqtt->subscribe("out/" . $stationName, function ($topic, $message) {
         // Handle pong response here
         if ($message === 'pong') {
             echo '{"status":"online"}';

@@ -141,37 +141,39 @@
 
 <body>
 
-    <section class="content">
-        <div class="form-schedule">
-            <h1>Adicionar Itinerário</h1>
-            <form id="formOS" action="./php/insert_itinerary.php" method="post">
-                <fieldset>
-                    <legend>Adicione:</legend>
-                    <div class="form-group">
-                        <label for="origem">Origem:*</label>
-                        <select id="origem" name="origem" required>
-                            <option value="">Selecione...</option>
-                            <?php
-                            include("listar_estacao.php");
-                            foreach ($estacoes as $linha) {
-                                echo  "<option value='" . $linha['id_estacao'] . "'>" . $linha['nome_estacao'] . "</option>";
-                            } ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="destino">Destino:*</label>
-                        <select id="destino" name="destino" required>
-                            <option value="">Selecione...</option>
-                            <?php
-                            foreach ($estacoes as $linha) {
-                                echo  "<option value='" . $linha['id_estacao'] . "'>" . $linha['nome_estacao'] . "</option>";
-                            } ?>
-                        </select>
-                    </div>
-                </fieldset>
-                <button type="submit" value="Adicionar Itinerário">Adicionar Itinerário</button>
-            </form>
-        </div>
+    <section class="dashboard-container">
+        <section class="content">
+            <div class="form-schedule">
+                <h1>Adicionar Itinerário</h1>
+                <form id="formOS" action="./php/insert_itinerary.php" method="post">
+                    <fieldset>
+                        <legend>Adicione:</legend>
+                        <div class="form-group">
+                            <label for="origem">Origem:*</label>
+                            <select id="origem" name="origem" required>
+                                <option value="">Selecione...</option>
+                                <?php
+                                include("listar_estacao.php");
+                                foreach ($estacoes as $linha) {
+                                    echo  "<option value='" . $linha['id_estacao'] . "'>" . $linha['nome_estacao'] . "</option>";
+                                } ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="destino">Destino:*</label>
+                            <select id="destino" name="destino" required>
+                                <option value="">Selecione...</option>
+                                <?php
+                                foreach ($estacoes as $linha) {
+                                    echo  "<option value='" . $linha['id_estacao'] . "'>" . $linha['nome_estacao'] . "</option>";
+                                } ?>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <button type="submit" value="Adicionar Itinerário">Adicionar Itinerário</button>
+                </form>
+            </div>
+        </section>
     </section>
 
     <!--  Scripts:  -->

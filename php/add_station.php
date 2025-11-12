@@ -141,6 +141,7 @@
 
 <body>
 
+<section>
     <section class="content">
         <div class="form-schedule">
             <h1>Adicionar Estação</h1>
@@ -177,6 +178,7 @@
 
             </form>
         </div>
+    </section>
     </section>
 
     <!--  Scripts:  -->
