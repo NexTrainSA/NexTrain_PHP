@@ -141,7 +141,7 @@
 
 <body>
 
-<section>
+<section class="dashboard-container">
     <section class="content">
         <div class="form-schedule">
             <h1>Adicionar Estação</h1>
