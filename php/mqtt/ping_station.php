@@ -7,7 +7,7 @@
 
     $receivedPong = false;
 
-    $mqtt->subscribe($stationTopic . "/pong", function ($topic, $message) {
+    $mqtt->subscribe("out/" . $stationName, function ($topic, $message) {
         // Handle pong response here
         if ($message === 'pong') {
             echo '{"status":"online"}';
