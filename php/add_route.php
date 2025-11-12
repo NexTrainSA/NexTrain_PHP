@@ -170,9 +170,6 @@
                 </fieldset>
                 <button type="submit" value="Adicionar Itinerário">Adicionar Itinerário</button>
             </form>
-    <?php
-        include_once("php/graph_view.php");
-    ?>
         </div>
     </section>
 
