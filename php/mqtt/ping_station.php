@@ -3,7 +3,7 @@
     
     $stationName = $_GET['station'] ?? '';
     $stationTopic = "input/" . $stationName;
-    $mqtt->publish($stationTopic . "/ping", "ping", 0);
+    $mqtt->publish($stationTopic, "ping", 0);
 
     $receivedPong = false;
 
