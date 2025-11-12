@@ -45,7 +45,7 @@ if ($result_users) {
     <meta charset="UTF-8">
     <title>Editar Alerta #<?php echo htmlspecialchars($alerta_data['id_alerta']); ?></title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
     <script type="importmap">
         {
@@ -61,7 +61,12 @@ if ($result_users) {
 </head>
 
 <body>
-    <section class="dashboard-container">
+    <section style="max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;">
         <main class="edit-container">
 
             <section class="page-header">

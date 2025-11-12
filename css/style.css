@@ -44,7 +44,7 @@ main {
     height: auto;
 }
 
-.dark-mode body {
+body.dark-mode {
     background-color: rgb(71, 94, 117); 
     color: #FAFAFA !important;
 }
@@ -52,7 +52,6 @@ main {
 body.dark-mode h2#train-name {
     font-family: 'Roboto';
     color: white;
-
 }
 
 body.dark-mode h3 {

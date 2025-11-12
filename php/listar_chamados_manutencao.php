@@ -2,6 +2,8 @@
 
 require_once('db.php');
 
+$con = get_con();
+
 $stmt = $con->prepare("SELECT 
             c.ordem_servico,
             c.descricao_problema,
@@ -16,5 +18,3 @@ $stmt->execute();
 $resultado = $stmt->get_result();
 
 $chamados = $resultado->FETCH_ALL(MYSQLI_ASSOC);
-
-

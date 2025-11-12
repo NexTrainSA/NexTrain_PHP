@@ -55,69 +55,79 @@
 </head>
 
 <body>
-    <main class = "dashboard-container">
-    <main class="routes-container">
-        <!-- Cabeçalho -->
-        <section class="page-header">
-            <div class="header-content">
-                <h1 class="page-title">Manutenções</h1>
-                <p class="page-subtitle">Veja os chamados de manutenção</p>
-            </div>
-        </section>
+    <main class="dashboard-container">
+        <main class="routes-container">
+            <!-- Cabeçalho -->
+            <section class="page-header">
+                <div class="header-content">
+                    <h1 class="page-title">Manutenções</h1>
+                    <p class="page-subtitle">Veja os chamados de manutenção</p>
+                </div>
+            </section>
 
 
-        <!-- Cards de Alertas -->
-        <section class="routes-grid-section">
-            <div class="routes-grid">
+            <!-- Cards de Alertas -->
+            <section class="routes-grid-section">
+                <div class="routes-grid">
 
-                <!-- Teste -->
-                <?php 
-                include_once('listar_chamados_manutencao.php');
-                foreach ($chamados as $linha): ?>
-                <md-card class="route-alert-card thunderstorm">
-                    <div class="route-card-content">
-                        <div class="route-header">
-                        <div class="route-icon-wrapper">
-                <md-icon class="route-icon">train</md-icon>
-            </div>
+                    <!-- Teste -->
+                    <?php
+                    include_once('listar_chamados_manutencao.php');
+                    foreach ($chamados as $linha): ?>
+                        <md-card class="route-alert-card thunderstorm">
+                            <div class="route-card-content">
+                                <div class="route-header">
+                                    <div class="route-icon-wrapper">
+                                        <md-icon class="route-icon">train</md-icon>
+                                    </div>
 
-            <div class="route-info">
-                <h3 class="route-name"><?= htmlspecialchars($linha['nome_trem']) ?></h3>
-            </div>
-            <md-chip label="<?= htmlspecialchars($linha['username_usuario']) ?>" 
-                     class="status-chip alert-thunder">
-                <md-icon slot="icon">build</md-icon>
-            </md-chip>
-        </div>
+                                    <div class="route-info">
+                                        <h3 class="route-name"><?= htmlspecialchars($linha['nome_trem']) ?></h3>
+                                    </div>
+                                    <md-chip label="<?= htmlspecialchars($linha['username_usuario']) ?>"
+                                        class="status-chip alert-thunder">
+                                        <md-icon slot="icon">build</md-icon>
+                                    </md-chip>
+                                </div>
 
-        <p class="alert-description">
-            <?= htmlspecialchars($linha['descricao_problema']) ?>
-        </p>
-    </div>
-    <a href="php/excluir_chamados.php?id=<?= $linha['ordem_servico'] ?>"
-                                        onclick="return confirm('Deseja mesmo excluir este chamado?')">
-                                        <md-text-button class="delete-btn">
-                                            <md-icon slot="icon">delete</md-icon>
-                                            Excluir
-                                        </md-text-button>
-                                    </a>
-</md-card>
-<?php endforeach; ?>
+                                <p class="alert-description">
+                                    <?= htmlspecialchars($linha['descricao_problema']) ?>
+                                </p>
+                            </div>
 
-        </section>
+                            <div class="route-actions">
+                               <a href="php/editar_chamados.php?ordem_servico=<?= htmlspecialchars($linha['ordem_servico']) ?>">
+                                    <md-text-button class="edit-btn">
+                                        <md-icon slot="icon">edit</md-icon>
+                                        Editar
+                                    </md-text-button>
+                                </a>
+                                <a href="php/excluir_chamados.php?id=<?= $linha['ordem_servico'] ?>"
+                                    onclick="return confirm('Deseja mesmo excluir este chamado?')">
+                                    <md-text-button class="delete-btn">
+                                        <md-icon slot="icon">delete</md-icon>
+                                        Excluir
+                                    </md-text-button>
+                                </a>
+                            </div>
+                        </md-card>
+                    <?php endforeach; ?>
+
+            </section>
 
 
-        <!-- Botão Flutuante -->
-        <md-fab class="nxt-btn" label="Abrir chamado de manutenção"
-            onclick="window.location.href='?page=maintenance-requests.php'">
-            <md-icon slot="icon">add</md-icon>
-        </md-fab>
+            <!-- Botão Flutuante -->
+            <md-fab class="nxt-btn" label="Abrir chamado de manutenção"
+                onclick="window.location.href='?page=maintenance-requests.php'">
+                <md-icon slot="icon">add</md-icon>
+            </md-fab>
 
-        <!-- Scripts -->
-        <script src="./js/dark_mode.js"></script>
-        <script src="./js/sidebar.js"></script>
-        <script src="./js/icon-loader.js"></script>
+            <!-- Scripts -->
+            <script src="./js/dark_mode.js"></script>
+            <script src="./js/sidebar.js"></script>
+            <script src="./js/icon-loader.js"></script>
         </main>
     </main>
 </body>
+
 </html>
