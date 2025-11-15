@@ -31,6 +31,7 @@ mysqli_free_result($result);
     <title>Editar Estação: <?php echo htmlspecialchars($estacao['nome_estacao']); ?></title>
 </head>
 <body>
+    <section class ="dashboard-container">
     <main class="edit-container">
         <h1>Editar Estação: <?php echo htmlspecialchars($estacao['nome_estacao']); ?></h1>
         
@@ -63,5 +64,6 @@ mysqli_free_result($result);
             </md-outlined-button>
         </form>
     </main>
+    </section>
 </body>
 </html>

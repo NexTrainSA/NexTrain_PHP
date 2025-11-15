@@ -59,6 +59,7 @@ $caminho_ids = array_filter(explode(',', $rota['caminho_rota']));
     <title>Editar Rota: <?php echo htmlspecialchars($id_rota); ?></title>
     </head>
 <body>
+    <section class ="dashboard-container">
     <main class="edit-container">
         <h1>Editar Rota: <?php echo htmlspecialchars($id_rota); ?></h1> 
 
@@ -122,5 +123,6 @@ $caminho_ids = array_filter(explode(',', $rota['caminho_rota']));
             </md-outlined-button>
         </form>
     </main>
+    </section>
 </body>
 </html>
