@@ -140,7 +140,7 @@
 </style>
 
 <body>
-
+<section class="dashboard-container">
     <section class="content">
         <div class="form-schedule">
             <h1>Adicionar Estação</h1>
@@ -178,7 +178,7 @@
             </form>
         </div>
     </section>
-
+</section>
     <!--  Scripts:  -->
     <script src="./js/dark_mode.js"></script>
     <script src="./js/add_task.js"></script>

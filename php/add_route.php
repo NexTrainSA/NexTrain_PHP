@@ -140,7 +140,7 @@
 </style>
 
 <body>
-
+<section class="dashboard-container">
     <section class="content" >
         <div class="form-schedule">
             <h1>Adicionar Itinerário</h1>
@@ -175,7 +175,7 @@
     ?>
         </div>
     </section>
-
+</section>
 
     <!--  Scripts:  -->
     <script src="./js/dark_mode.js"></script>

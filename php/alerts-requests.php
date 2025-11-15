@@ -140,7 +140,7 @@
     </style>
 
 <body>
-
+<section class="dashboard-container">
     <section class="content">
         <div class="form-maintenance">
             <h1>Enviar Alerta</h1>
@@ -191,7 +191,7 @@
             </form>
         </div>
     </section>
-
+</section>
     <!--  Scripts:  -->
     <script src="./js/dark_mode.js"></script>
     <script src="./js/maintenance-requests.js"></script>

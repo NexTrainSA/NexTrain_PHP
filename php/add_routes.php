@@ -139,7 +139,7 @@
 </head>
 
 <body>
-
+<section class="dashboard-container">
     <section class="content">
         <div class="form-maintenance">
             <h1>Adicionar rota</h1>
@@ -168,7 +168,7 @@
             </form>
         </div>
     </section>
-
+</section>
     <!--  Scripts:  -->
     <script src="./js/dark_mode.js"></script>
     <script src="./js/graph_relations_updater.js"></script>
