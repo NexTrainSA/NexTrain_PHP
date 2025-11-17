@@ -1,5 +1,5 @@
 window.onload = function() {
-    const ws = new WebSocket('ws://179.155.211.130:6777');
+    const ws = new WebSocket('ws://179.222.224.26:6777');
 
     ws.onmessage = function(event) {
         if(!event.data.startsWith('{')) return;

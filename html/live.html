@@ -32,6 +32,7 @@
         <section class="content">
             <h1>Visualização em tempo real</h1>
             <hr>
+
             <h2 id="stations-label">Estações</h2>
             <div class="stations">
                 <div class="station" id="s1">
@@ -67,6 +68,11 @@
                 <div class="station" id="s4">
                     <h2>Estação S4 (Trem)</h2>
                     <p>LED Status (RGB): <span id="led-rgb-s4">Desligado</span></p>
+                    <p>Velocidade: <span id="speed-s4">0</span>% (alterando para <span
+                            id="speed-slider-s4-value">0</span>%)</p>
+                    <p>Direção: <span id="direction-s4">Parado</span></p>
+                    <input type="range" id="speed-slider-s4" min="-1" max="1" step="0.1" value="0">
+                    <button id="set-speed-s4">Definir Velocidade</button>
                 </div>
             </div>
         </section>
@@ -99,11 +105,6 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .content.dark-mode {
-            background-color: rgb(53, 72, 90);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         h1,
