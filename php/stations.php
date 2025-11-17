@@ -148,14 +148,6 @@ if (isset($_GET['message'])) {
                 </md-card>');}
                 ?>
             </div>
-
-            <!-- Load More Button -->
-            <div class="load-more-section">
-                <md-outlined-button class="load-more-btn">
-                    <md-icon slot="icon">expand_more</md-icon>
-                    Carregar Mais Estações
-                </md-outlined-button>
-            </div>
         </section>
 
         <div class="including-map" style="max-width: 800px; margin: 0 auto; display: flex; justify-content: center; align-items: center;">

@@ -82,6 +82,13 @@ $con->close();
             width: 100%;
             height: 400px;
         }
+
+        @media (max-width: 600px) {
+            body {
+                padding-top: 60px;
+            }
+            
+        }
     </style>
 </head>
 <body>

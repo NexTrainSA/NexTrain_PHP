@@ -39,8 +39,8 @@ $users = get_all_users_as_array();
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-
-    <main class="routes-container">
+<section class ="dashboard-container">
+    <section class="routes-container">
         <section class="page-header">
             <div class="header-content">
                 <h1 class="page-title">Editar Alerta</h1>
@@ -80,6 +80,7 @@ $users = get_all_users_as_array();
                 </a>
             </div>
         </form>
-    </main>
+                </section>
+</section>
 </body>
 </html>
