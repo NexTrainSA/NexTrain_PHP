@@ -22,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt_update->bind_param("iisss", $id_funcionario, $id_trem, $descricao_problema, $data_entrada, $ordem_servico_post);
     
     if ($stmt_update->execute()) {
-       
-        header("Location: maintenance.php?status=success_edit");
+
+        header("Location: ../index.php?page=maintenance.php&status=success_edit");
         exit();
     } else {
         $mensagem = "❌ Erro ao salvar a edição: " . $stmt_update->error;

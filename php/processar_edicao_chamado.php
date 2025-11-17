@@ -16,7 +16,7 @@ $data_entrada = $_POST['data_entrada'] ?? null;
 
 
 if (empty($ordem_servico) || empty($id_funcionario) || empty($id_trem) || empty($descricao_problema) || empty($data_entrada)) {
-    header("Location: editar_chamados.php?ordem_servico={$ordem_servico}&status=missing_fields");
+    header("Location:  ../index.php?page=editar_chamados.php&ordem_servico={$ordem_servico}&status=missing_fields");
     exit();
 }
 
