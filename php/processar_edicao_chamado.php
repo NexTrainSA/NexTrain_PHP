@@ -35,9 +35,9 @@ $stmt->bind_param("iisss", $id_funcionario, $id_trem, $descricao_problema, $data
 
 if ($stmt->execute()) {
 
-    header("Location: ../index.php?page=maintenance.php&status=success_edit"); //Location: ../index.php?page=alerts.php&status=success_edit
+    header("Location: /index.php?page=maintenance.php&status=success_edit");
 } else {
-   
-    header("Location: maintenance.php?status=error_edit");
+
+    header("Location: /index.php?page=maintenance.php&status=error_edit");
 }
 exit();
