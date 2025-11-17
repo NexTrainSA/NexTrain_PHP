@@ -4,7 +4,7 @@ require_once('db.php');
 
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: listar_chamados_manutencao.php?status=error_method");
+    header("Location: listar_chamados_manutencao.php&status=error_method");
     exit();
 }
 
@@ -16,7 +16,7 @@ $data_entrada = $_POST['data_entrada'] ?? null;
 
 
 if (empty($ordem_servico) || empty($id_funcionario) || empty($id_trem) || empty($descricao_problema) || empty($data_entrada)) {
-    header("Location:  ../index.php?page=editar_chamados.php&ordem_servico={$ordem_servico}&status=missing_fields");
+    header("Location:  ../editar_chamados.php&ordem_servico={$ordem_servico}&status=missing_fields");
     exit();
 }
 
@@ -35,9 +35,9 @@ $stmt->bind_param("iisss", $id_funcionario, $id_trem, $descricao_problema, $data
 
 if ($stmt->execute()) {
 
-    header("Location: /index.php?page=maintenance.php&status=success_edit");
+    header("Location: /index.php?page=maintenance.php");
 } else {
 
-    header("Location: /index.php?page=maintenance.php&status=error_edit");
+    header("Location: /index.php?page=maintenance.php");
 }
 exit();

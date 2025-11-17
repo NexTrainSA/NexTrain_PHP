@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if ($stmt_update->execute()) {
 
-        header("Location: ../index.php?page=maintenance.php&status=success_edit");
+        header("Location: ../index.php?page=maintenance.php");
         exit();
     } else {
         $mensagem = "❌ Erro ao salvar a edição: " . $stmt_update->error;
@@ -40,7 +40,7 @@ if (!$ordem_servico) {
 
 if (!isset($ordem_servico) || !is_numeric($ordem_servico)) {
     
-    header("Location: maintenance.php?status=error_data");
+    header("Location: ../index.php?page=maintenance.php");
     exit();
 }
 $ordem_servico = (int)$ordem_servico; 
@@ -54,7 +54,7 @@ $resultado_chamado = $stmt_chamado->get_result();
 if ($resultado_chamado->num_rows === 1) {
     $chamado = $resultado_chamado->fetch_assoc();
 } else {
-    header("Location: maintenance.php?status=not_found");
+    header("Location: ../index.php?page=maintenance.php");
     exit();
 }
 $stmt_chamado->close();
